@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/01/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>2023.3.5 第一次课</title>
+    <url>/2024/03/05/20240305/</url>
+    <content><![CDATA[<h1 id="下载-Python"><a href="#下载-Python" class="headerlink" title="下载 Python"></a>下载 Python</h1><p>链接：<a href="https://www.python.org/">Welcome to Python.org</a></p>
+<p><strong>要求使用 3.x 以上版本的 Python</strong></p>
+<h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><p>交互式窗口的程序不会存储到硬盘里，如果关闭了交互式窗口，已得到的数据会消失。</p>
+<h2 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h2><p>允许脚本保存，便于调试与修改。</p>
+<h2 id="数据长度"><a href="#数据长度" class="headerlink" title="数据长度"></a>数据长度</h2><p>与 C&#x2F;C++ 不同，Python 中的数据没有长度限制。只需在交互模式中就能够进行大数计算：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">123456789</span> * <span class="number">123456789</span></span><br><span class="line"><span class="number">15241578750190521</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>Python 无需单独定义数据类型，变量的类型通过赋值得到。</p>
+<h2 id="美化代码"><a href="#美化代码" class="headerlink" title="美化代码"></a>美化代码</h2><ul>
+<li><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>=</code> 等前后有空格，例如 <code>pi = 3.14</code></li>
+<li><code>,</code> 前无空格后有空格，例如 <code>print(2 * 2, 2 * 3)</code></li>
+<li>使用有意义的变量名，避免使用 <code>a</code> <code>b</code> <code>c</code> <code>d</code> 这样的变量名</li>
+</ul>
+<h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p>使用 <code>&#39;</code> <code>&quot;</code> 确定字符串的内容。单引号内不能再加单引号，但是可以加双引号，vice versa。例如</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pi = <span class="number">3.14</span></span><br><span class="line">r = <span class="number">5</span></span><br><span class="line">area = pi * r * r</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The circle&#x27;s area = &quot;</span>, area)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: The circle&#x27;s area = 78.5</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>article_for_searching_test</title>
-    <url>/2024/03/02/article-for-searching-test/</url>
-    <content><![CDATA[<h1 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h1><h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><h3 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h3><h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><h1 id="0x04"><a href="#0x04" class="headerlink" title="0x04"></a>0x04</h1><h2 id="0x05"><a href="#0x05" class="headerlink" title="0x05"></a>0x05</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello, World!&#x27;</span>)</span><br><span class="line"><span class="comment"># Test Program</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Yet Another Test Program</span></span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><ul>
+<li>整型</li>
+<li>浮点型</li>
+<li>字符串，使用 <code>&quot;</code> 或 <code>&#39;</code> 定界符表示</li>
+<li>逻辑真值，即布尔类型，有 <code>True</code> 和 <code>False</code> 两个值。<strong>Python 是大小写敏感的语言，<code>True</code> 和 <code>False</code> 的首字母必须大写</strong></li>
+</ul>
+<h1 id="半角与全角"><a href="#半角与全角" class="headerlink" title="半角与全角"></a>半角与全角</h1><p>简单来说，半角字符即占用一个字节（8 个二进制位）的字符，全角字符即占用两个字节（16 个二进制位）的字符。<code>,</code> 为半角字符而 <code>，</code> 为全角字符。全部的英文字符都是半角字符。</p>
+<h1 id="程序如何执行"><a href="#程序如何执行" class="headerlink" title="程序如何执行"></a>程序如何执行</h1><p>使用编辑器编写代码 -&gt; 编译器将代码转化为可执行文件 -&gt; 解释器将程序运行结果输出</p>
+<h2 id="编译语言与解释语言"><a href="#编译语言与解释语言" class="headerlink" title="编译语言与解释语言"></a>编译语言与解释语言</h2><p>将全部代码编译后运行的语言为编译语言，可以单步执行代码的语言为解释语言。</p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello, world!"></a>Hello, world!</h1><p><strong>Python 中所有函数调用等都需要使用括号。</strong></p>
+<p><code>print()</code> 函数用于输出内容，每一个 <code>print()</code> 执行后会默认输出一个换行符，因此如果 <code>print()</code> 中没有内容，则程序会输出一个换行符。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***************&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*Hello, world!*&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***************&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">***************</span></span><br><span class="line"><span class="string">*Hello, world!*</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">***************</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python 编程导论笔记</category>
+      </categories>
+      <tags>
+        <tag>Python 编程导论笔记</tag>
+      </tags>
   </entry>
 </search>

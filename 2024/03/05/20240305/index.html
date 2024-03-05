@@ -7,16 +7,21 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="-GDN&#39;s blog-">
-<meta property="og:url" content="http://example.com/archives/2024/01/index.html">
+<meta name="description" content="下载 Python链接：Welcome to Python.org 要求使用 3.x 以上版本的 Python 认识 Python交互模式交互式窗口的程序不会存储到硬盘里，如果关闭了交互式窗口，已得到的数据会消失。 脚本模式允许脚本保存，便于调试与修改。 数据长度与 C&#x2F;C++ 不同，Python 中的数据没有长度限制。只需在交互模式中就能够进行大数计算： 12&gt;&gt;&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023.3.5 第一次课">
+<meta property="og:url" content="http://example.com/2024/03/05/20240305/index.html">
 <meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="下载 Python链接：Welcome to Python.org 要求使用 3.x 以上版本的 Python 认识 Python交互模式交互式窗口的程序不会存储到硬盘里，如果关闭了交互式窗口，已得到的数据会消失。 脚本模式允许脚本保存，便于调试与修改。 数据长度与 C&#x2F;C++ 不同，Python 中的数据没有长度限制。只需在交互模式中就能够进行大数计算： 12&gt;&gt;&gt;">
 <meta property="og:locale">
+<meta property="article:published_time" content="2024-03-05T13:16:08.320Z">
+<meta property="article:modified_time" content="2024-03-05T13:22:42.683Z">
 <meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Python 编程导论笔记">
 <meta name="twitter:card" content="summary">
 
 
-<title >-GDN's blog-</title>
+<title >2023.3.5 第一次课</title>
 
 <!-- Favicon -->
 
@@ -58,8 +63,8 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung Des Privateigentums","The best people in life are free","We never go out of style"],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2024-03-04 23:54:01"};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung Des Privateigentums","The best people in life are free","We never go out of style"],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":"flase"},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-05 21:22:42"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
@@ -238,10 +243,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            2023.3.5 第一次课
                         </h1>
 
                         
@@ -251,7 +256,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        archives
+                                        2024
                                     </span>
                                 </li>
                             </ul>
@@ -362,73 +367,74 @@
             
             <div class="trm-page-content col-lg-8">
                 <div id="trm-content" class="trm-content">
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">（2）</span></li></ul>
-                
-            </div>
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/05
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            21:16
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
         </div>
     </div>
 </div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="下载-Python"><a href="#下载-Python" class="headerlink" title="下载 Python"></a>下载 Python</h1><p>链接：<a target="_blank" rel="noopener" href="https://www.python.org/">Welcome to Python.org</a></p>
+<p><strong>要求使用 3.x 以上版本的 Python</strong></p>
+<h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><p>交互式窗口的程序不会存储到硬盘里，如果关闭了交互式窗口，已得到的数据会消失。</p>
+<h2 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h2><p>允许脚本保存，便于调试与修改。</p>
+<h2 id="数据长度"><a href="#数据长度" class="headerlink" title="数据长度"></a>数据长度</h2><p>与 C&#x2F;C++ 不同，Python 中的数据没有长度限制。只需在交互模式中就能够进行大数计算：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">123456789</span> * <span class="number">123456789</span></span><br><span class="line"><span class="number">15241578750190521</span></span><br></pre></td></tr></table></figure>
 
-<!-- history -->
+<p>Python 无需单独定义数据类型，变量的类型通过赋值得到。</p>
+<h2 id="美化代码"><a href="#美化代码" class="headerlink" title="美化代码"></a>美化代码</h2><ul>
+<li><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>=</code> 等前后有空格，例如 <code>pi = 3.14</code></li>
+<li><code>,</code> 前无空格后有空格，例如 <code>print(2 * 2, 2 * 3)</code></li>
+<li>使用有意义的变量名，避免使用 <code>a</code> <code>b</code> <code>c</code> <code>d</code> 这样的变量名</li>
+</ul>
+<h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p>使用 <code>&#39;</code> <code>&quot;</code> 确定字符串的内容。单引号内不能再加单引号，但是可以加双引号，vice versa。例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pi = <span class="number">3.14</span></span><br><span class="line">r = <span class="number">5</span></span><br><span class="line">area = pi * r * r</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The circle&#x27;s area = &quot;</span>, area)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: The circle&#x27;s area = 78.5</span></span><br></pre></td></tr></table></figure>
 
-<div class="row">
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><ul>
+<li>整型</li>
+<li>浮点型</li>
+<li>字符串，使用 <code>&quot;</code> 或 <code>&#39;</code> 定界符表示</li>
+<li>逻辑真值，即布尔类型，有 <code>True</code> 和 <code>False</code> 两个值。<strong>Python 是大小写敏感的语言，<code>True</code> 和 <code>False</code> 的首字母必须大写</strong></li>
+</ul>
+<h1 id="半角与全角"><a href="#半角与全角" class="headerlink" title="半角与全角"></a>半角与全角</h1><p>简单来说，半角字符即占用一个字节（8 个二进制位）的字符，全角字符即占用两个字节（16 个二进制位）的字符。<code>,</code> 为半角字符而 <code>，</code> 为全角字符。全部的英文字符都是半角字符。</p>
+<h1 id="程序如何执行"><a href="#程序如何执行" class="headerlink" title="程序如何执行"></a>程序如何执行</h1><p>使用编辑器编写代码 -&gt; 编译器将代码转化为可执行文件 -&gt; 解释器将程序运行结果输出</p>
+<h2 id="编译语言与解释语言"><a href="#编译语言与解释语言" class="headerlink" title="编译语言与解释语言"></a>编译语言与解释语言</h2><p>将全部代码编译后运行的语言为编译语言，可以单步执行代码的语言为解释语言。</p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello, world!"></a>Hello, world!</h1><p><strong>Python 中所有函数调用等都需要使用括号。</strong></p>
+<p><code>print()</code> 函数用于输出内容，每一个 <code>print()</code> 执行后会默认输出一个换行符，因此如果 <code>print()</code> 中没有内容，则程序会输出一个换行符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***************&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*Hello, world!*&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***************&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">***************</span></span><br><span class="line"><span class="string">*Hello, world!*</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">***************</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                2024 年的归档
-            
-            <span data-number="01"></span>
+            其他文章
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/01/14/hello-world/" class="trm-anima-link">
-                                        Hello World
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">01/14</li>
-                                        <li class="trm-accent-color">19:19</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-        </div>
-        <!-- timeline end -->
-    </div>
+    
+    
 </div>
 
-<!-- history end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
-    </div>
-
-
+    
 
 
 
@@ -467,7 +473,7 @@
 
     
         <div class="trm-footer-item">
-            ;-)
+            Nice Day ;-)
         </div>
      
 </footer>
@@ -485,6 +491,10 @@
             
 <div class="trm-fixed-container">
     
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
     
     
         <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
@@ -565,6 +575,10 @@
     
 
     <!-- 评论插件 -->
+    
+        
+
+        
     
 
 
