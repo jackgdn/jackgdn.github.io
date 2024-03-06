@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。 NFKC利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unicode 学习记录">
+<meta property="og:url" content="https://jackgdn.github.io/2024/03/06/Unicode%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。 NFKC利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了">
+<meta property="og:locale">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-03-06T04:20:26.435Z">
+<meta property="article:modified_time" content="2024-03-06T04:55:42.680Z">
+<meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Unicode">
+<meta property="article:tag" content="编码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jackgdn.github.io/img/404.jpg">
+
+
+<title >Unicode 学习记录</title>
+
+<!-- Favicon -->
+
+    <link href='/img/16.ico?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/32.ico?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/ico.jpg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/img/G.png' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung Des Privateigentums","The best people in life are free","We never go out of style"],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":"flase"},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-06 12:55:42"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/img/GL.png"> <img alt="logo" class=" trm-dark-icon" src="/img/G.png">
+    
+    
+        <div class="trm-logo-text">
+            GDN&#39;s <span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    链接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Unicode 学习记录
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/%5Cimg%5Cico.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        jack_gdn
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/jackgdn/" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                居住地:
+            </div>
+            <div class="trm-label trm-label-light">
+                Earth
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                未知
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                性别:
+            </div>
+            <div class="trm-label trm-label-light">
+                武装直升机
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:li_chungyao@outlook.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/06
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            12:20
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。</p>
+<h1 id="NFKC"><a href="#NFKC" class="headerlink" title="NFKC"></a>NFKC</h1><p>利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！</p>
+<p>简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (<em><code>U+FB03</code></em>) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。</p>
+<p>因此在 Python 中就会有如下输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;１&quot;</span> == <span class="string">&quot;1&quot;</span>)  <span class="comment"># U+FF11</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="string">&quot;１&quot;</span>) == <span class="built_in">int</span>(<span class="string">&quot;1&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+
+<p>在下面两个网站里可以找到取代某个 ASCII 字符的 Unicode 字符：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/h13t0ry/UnicodeToy">Github - h13t0ry&#x2F;UnicodeToy: Unicode fuzzer for various purposes</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.compart.com/en/unicode/bidiclass/EN">List of Unicode Characters of Bidirectional Class “European Number”</a></p>
+<p>看下面一道例题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag</span><br><span class="line">data = <span class="built_in">input</span>(<span class="string">&#x27;&gt; &#x27;</span>)</span><br><span class="line"><span class="keyword">assert</span> <span class="built_in">len</span>(data) &lt;= <span class="number">9</span> <span class="keyword">and</span> <span class="built_in">all</span>(i <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">&#x27;123456789&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> data) <span class="keyword">and</span> <span class="built_in">int</span>(data) == <span class="number">123456789</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+<p>看上去不是很麻烦。题目会在远程服务器上运行，secret 模块及其中的 flag 常量都存储在远程服务器上。 如果我们输入的 data 能够满足这个 assert 中的条件，flag 就会自己跳出来。</p>
+<p>条件如下：</p>
+<ul>
+<li><p>data 的长度小于等于 9</p>
+</li>
+<li><p>data 中不含 “123456789” 中的任意一个字符</p>
+</li>
+<li><p>data 转化为整型后与 123456789 相等</p>
+</li>
+</ul>
+<p>根据上面提到的内容，我们知道这道题需要利用 NFKC 得到正确的输入，不妨用下述代码遍历：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// filename: Exp_123456789</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Exp_123456789</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// superscript numbers</span></span><br><span class="line">        System.out.printf(<span class="string">&quot;%c%c%c&quot;</span>, <span class="string">&#x27;\u00B9&#x27;</span>, <span class="string">&#x27;\u00B2&#x27;</span>, <span class="string">&#x27;\u00B3&#x27;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> <span class="variable">i</span> <span class="operator">=</span> <span class="string">&#x27;\u2074&#x27;</span>; i &lt;= <span class="string">&#x27;\u2079&#x27;</span>; i++) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">        <span class="comment">// subscript numbers</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> <span class="variable">i</span> <span class="operator">=</span> <span class="string">&#x27;\u2081&#x27;</span>; i &lt;= <span class="string">&#x27;\u2089&#x27;</span>; i++) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">        <span class="comment">// numbers with full stop</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> <span class="variable">i</span> <span class="operator">=</span> <span class="string">&#x27;\u2488&#x27;</span>; i &lt;= <span class="string">&#x27;\u2490&#x27;</span>; i++) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">        <span class="comment">//full width numbers</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> <span class="variable">i</span> <span class="operator">=</span> <span class="string">&#x27;\uFF11&#x27;</span>; i &lt;= <span class="string">&#x27;\uFF19&#x27;</span>; i++) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">output:</span></span><br><span class="line"><span class="comment">¹²³⁴⁵⁶⁷⁸⁹</span></span><br><span class="line"><span class="comment">₁₂₃₄₅₆₇₈₉</span></span><br><span class="line"><span class="comment">⒈⒉⒊⒋⒌⒍⒎⒏⒐</span></span><br><span class="line"><span class="comment">１２３４５６７８９</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>其实这段代码用 Python 实现更为方便，为了锻炼 Java 能力就先这么写了。不过后面判断哪一组数据符合条件，依然要使用 Python：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">code = <span class="string">&quot;assert len(data) &lt;= 9 and all(i not in &#x27;123456789&#x27; for i in data) and int(data) == 123456789&quot;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    data = <span class="string">&quot;¹²³⁴⁵⁶⁷⁸⁹&quot;</span> <span class="comment"># superscript numbers</span></span><br><span class="line">    <span class="built_in">exec</span>(code)</span><br><span class="line">    <span class="built_in">print</span>(data)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        data = <span class="string">&quot;₁₂₃₄₅₆₇₈₉&quot;</span> <span class="comment"># subscript numbers</span></span><br><span class="line">        <span class="built_in">exec</span>(code)</span><br><span class="line">        <span class="built_in">print</span>(data)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            data = <span class="string">&quot;⒈⒉⒊⒋⒌⒍⒎⒏⒐&quot;</span> <span class="comment"># numbers with full stop</span></span><br><span class="line">            <span class="built_in">exec</span>(code)</span><br><span class="line">            <span class="built_in">print</span>(data)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            data = <span class="string">&quot;１２３４５６７８９&quot;</span> <span class="comment"># full width numbers</span></span><br><span class="line">            <span class="built_in">exec</span>(code)       </span><br><span class="line">             <span class="built_in">print</span>(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: １２３４５６７８９</span></span><br></pre></td></tr></table></figure>
+
+<p>宽字符赢得了比赛！</p>
+<h1 id="零宽字符隐写"><a href="#零宽字符隐写" class="headerlink" title="零宽字符隐写"></a>零宽字符隐写</h1><p>前几天想用零宽字符给述职报告凑字数，然后知道了这个东西。不妨先看看零宽字符是什么个东西。通俗来讲，零宽字符就是“宽度为 0 的字符”，一般在从右向左书写的语言以及字与字之间有连笔的语言，如阿拉伯语。下面是一个零宽字符的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">&quot;A&quot;</span> + <span class="string">&quot;\u200C\u200C\u200D\u200D&quot;</span> + <span class="string">&quot;b&quot;</span></span><br><span class="line"><span class="built_in">print</span>(string)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(string))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># A‌‌‍‍b</span></span><br><span class="line"><span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，我们用到了 <code>U+200C</code> 与 <code>U+200D</code> 这两个零宽字符，它们分别是 “断字符” 和 “连字符”，用于控制阿拉伯语的连笔，故在英文语境下不会被打印出来。下面这张表是 Unicode 中全部零宽字符：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>编码</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">U+200A</td>
+<td align="center">ZERO WIDTH SPACE</td>
+</tr>
+<tr>
+<td align="center">U+200B</td>
+<td align="center">ZERO WIDTH SPACE</td>
+</tr>
+<tr>
+<td align="center">U+200C</td>
+<td align="center">ZERO WIDTH NON-JOINER</td>
+</tr>
+<tr>
+<td align="center">U+200D</td>
+<td align="center">ZERO WIDTH JOINER</td>
+</tr>
+<tr>
+<td align="center">U+200E</td>
+<td align="center">LEFT-TO-RIGHT MARK</td>
+</tr>
+<tr>
+<td align="center">U+200F</td>
+<td align="center">LEFT-TO-RIGHT MARK</td>
+</tr>
+<tr>
+<td align="center">U+202A</td>
+<td align="center">LEFT-TO-RIGHT EMBEDDING</td>
+</tr>
+<tr>
+<td align="center">U+202C</td>
+<td align="center">POP DIRECTIONAL FORMATTING</td>
+</tr>
+<tr>
+<td align="center">U+202D</td>
+<td align="center">LEFT-TO-RIGHT OVERRIDE</td>
+</tr>
+<tr>
+<td align="center">U+2062</td>
+<td align="center">INVISIBLE TIMES</td>
+</tr>
+<tr>
+<td align="center">U+2063</td>
+<td align="center">INVISIBLE SEPARATOR</td>
+</tr>
+<tr>
+<td align="center">U+FEFF</td>
+<td align="center">ZERO WIDTH NO-BREAK SPACE</td>
+</tr>
+</tbody></table>
+<p>如果一段文本中夹杂了零宽字符，一般的文本编辑器无法显示，但是放入 Cyberchef 或者 Vim 中就能看到了。用上面的 “A‌‌‍‍b” 举例子：</p>
+<p><img src="/image-1.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="/%5CUnicode%E5%AE%B6%E6%97%8F%5Cimage-2.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>那么什么是零宽字符隐写呢？零宽字符隐写将密文对应的编码转化为不同的零宽字符，并将其混杂在正常的文本中。例如说，我使用 <code>U+200C</code> 与 <code>U+200D</code> 两种零宽字符作为用于加密，我可以令 <code>U+200C</code> 对应二进制 0，<code>U+200D</code> 对应二进制 1。下面这段代码，将 “Meschenrechte” 这个单词隐写入 “Hello, World!” 这句话中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World&quot;</span>, end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">secret = <span class="string">&quot;Meschenrechte&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> secret:</span><br><span class="line">    s = <span class="built_in">str</span>(<span class="built_in">bin</span>(<span class="built_in">ord</span>(i)))[<span class="number">2</span>:]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\u200C&quot;</span>, end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> k == <span class="string">&quot;0&quot;</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;\u200C&quot;</span>, end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;\u200D&quot;</span>, end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: Hello, World‌‍‌‌‍‍‌‍‌‍‍‌‌‍‌‍‌‍‍‍‌‌‍‍‌‍‍‌‌‌‍‍‌‍‍‌‍‌‌‌‌‍‍‌‌‍‌‍‌‍‍‌‍‍‍‌‌‍‍‍‌‌‍‌‌‍‍‌‌‍‌‍‌‍‍‌‌‌‍‍‌‍‍‌‍‌‌‌‌‍‍‍‌‍‌‌‌‍‍‌‌‍‌‍!</span></span><br></pre></td></tr></table></figure>
+
+<p>在这一样例程序，我们只是把密文转换成 <code>U+200C</code> 与 <code>U+200D</code> 两种零宽字符并全部放入了 ‘d’ 与 ‘!’ 之间的位置。然而在实际操作中，密文可以使用其他几种零宽字符、使用其他编码格式、打乱顺序等等。由此可见，零宽字符隐写并没有一个统一的标准，我可以用任意的符号来代替一种编码，因此实际上零宽字符隐写最大的优势在于它看不见。正是出于这个原因，我认为 2023 安洵杯“疯狂的麦克斯”一题并不严谨。有许多在线工具可以进行零宽字符的加密与解密，安洵杯中使用的是这个：</p>
+<p><a target="_blank" rel="noopener" href="https://www.mzy0.com/ctftools/zerowidth1/">Unicode Steganography with Zero-Width Characters</a></p>
+<p>哦对了，还需要一个解密脚本，对应我自己设计的隐写脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">&quot;Hello, World‌‍‌‌‍‍‌‍‌‍‍‌‌‍‌‍‌‍‍‍‌‌‍‍‌‍‍‌‌‌‍‍‌‍‍‌‍‌‌‌‌‍‍‌‌‍‌‍‌‍‍‌‍‍‍‌‌‍‍‍‌‌‍‌‌‍‍‌‌‍‌‍‌‍‍‌‌‌‍‍‌‍‍‌‍‌‌‌‌‍‍‍‌‍‌‌‌‍‍‌‌‍‌‍!&quot;</span></span><br><span class="line">cip = text[<span class="number">12</span>: -<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">104</span>, <span class="number">8</span>):</span><br><span class="line">    seg = cip[i: i + <span class="number">8</span>]</span><br><span class="line">    dat = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">8</span>):</span><br><span class="line">        <span class="keyword">if</span> seg[k] == <span class="string">&quot;\u200D&quot;</span>:</span><br><span class="line">            dat = dat + <span class="number">2</span>**(<span class="number">7</span> - k)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(dat), end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: Meschenrechte</span></span><br></pre></td></tr></table></figure>
+
+<p>试了一下，我自己的隐写脚本得到的结果，拖到那个网站里解密会失败 <code>(っ °Д °;)っ</code></p>
+<p>Unicode 中的零宽字符早已被人们开发出更多的用途，例如添加文字水印防止剽窃、反爬虫摸出关键字防止屏蔽或者给文章凑字数。</p>
+<h1 id="Unicode-附加字符"><a href="#Unicode-附加字符" class="headerlink" title="Unicode 附加字符"></a>Unicode 附加字符</h1><p>这个似乎与 CTF 的关系并不大，但是也挺有意思。演示一下：</p>
+<p>̀́̂̃̄̅̆̇̈ ̉̊̋̌̍̎̏̐̑ ̖̗̘̙̒̓̔̕̚ ̡̢̛̜̝̞̟̠̣ ̧̨̤̥̦̩̪̫̬ ̴̵̭̮̯̰̱̲̳ ̶̷̸̹̺̻̼̽̾ ͇̿̀́͂̓̈́͆ͅ ͈͉͍͎͊͋͌͏͐ ͓͔͕͖͙͑͒͗͘ ͚͛͜͟͢͝͞͠͡ ͣͤͥͦͧͨͩͪͫ ͬͭͮͯ</p>
+<p>这一坨是 Unicode 中的一些附加字符堆在一块的样子。附加字符在很多情境下都会被使用，例如：拼音。下面两组字符虽然看上去一样，但是对应的编码不一样。前者使用附加字符实现，后者是微软输入法特殊字符表中的打印字符。</p>
+<p>ö：<code>\u006F\u0308</code></p>
+<p>ö：<code>\u00F6</code></p>
+<p>用 Python 就可以打印出附加字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x300</span>, <span class="number">0x310</span>):</span><br><span class="line">    string = string + <span class="built_in">chr</span>(char)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(string)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># output:  ̀́̂̃̄̅̆̇̈̉̊̋̌̍̎̏</span></span><br></pre></td></tr></table></figure>
+<p>于是我们得到了一张鬼画符（？）</p>
+<p>Unicode 附加字符的优点正如你所看到的一样：更加灵活。</p>
+<h1 id="代码混淆"><a href="#代码混淆" class="headerlink" title="代码混淆"></a>代码混淆</h1><p>Python 似乎是支持中文变量名的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dis <span class="keyword">as</span> 蒂斯</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">我再也不学Python了</span>():</span><br><span class="line">    苹果 = <span class="number">10</span></span><br><span class="line">    香蕉 = <span class="number">20</span></span><br><span class="line">    <span class="built_in">print</span>(苹果 + 香蕉)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(我再也不学Python了))</span><br><span class="line"></span><br><span class="line">我再也不学Python了()</span><br><span class="line"></span><br><span class="line">蒂斯.dis(我再也不学Python了)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">30</span></span><br><span class="line"><span class="string">&lt;class &#x27;function&#x27;&gt;</span></span><br><span class="line"><span class="string"> 38           0 RESUME                   0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 39           2 LOAD_CONST               1 (10)</span></span><br><span class="line"><span class="string">              4 STORE_FAST               0 (苹果)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 40           6 LOAD_CONST               2 (20)</span></span><br><span class="line"><span class="string">              8 STORE_FAST               1 (香蕉)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 41          10 LOAD_GLOBAL              1 (NULL + print)</span></span><br><span class="line"><span class="string">             20 LOAD_FAST                0 (苹果)</span></span><br><span class="line"><span class="string">             22 LOAD_FAST                1 (香蕉)</span></span><br><span class="line"><span class="string">             24 BINARY_OP                0 (+)</span></span><br><span class="line"><span class="string">             28 CALL                     1</span></span><br><span class="line"><span class="string">             36 POP_TOP</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 42          38 LOAD_GLOBAL              1 (NULL + print)</span></span><br><span class="line"><span class="string">             48 LOAD_GLOBAL              3 (NULL + type)</span></span><br><span class="line"><span class="string">             58 LOAD_GLOBAL              4 (我再也不学Python了)</span></span><br><span class="line"><span class="string">             68 CALL                     1</span></span><br><span class="line"><span class="string">             76 CALL                     1</span></span><br><span class="line"><span class="string">             84 POP_TOP</span></span><br><span class="line"><span class="string">             86 RETURN_CONST             0 (None)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种混淆算是较为一般的混淆，单纯修改变量名而不对运行逻辑进行修改，有些类似于“0O”混淆。但是这不禁让我想到，既然中文能够作为变量名，那么是不是大部分 Unicode 字符都可以当作变量名，甚至包括上文提到的零宽字符！</p>
+<p>实际上是不能的。但是零宽字符确实可以用于另一种形式的代码混淆，例如下面这段代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">encoded = <span class="string">&quot;‍‍‍‌‌‌‌​‍‍‍‌‌‍‌​‍‍‌‍‌‌‍​‍‍‌‍‍‍‌​‍‍‍‌‍‌‌​‍‌‍‌‌‌​‍‌‌‍‍‍​‍‌‌‍‌‌‌​‍‍‌‌‍‌‍​‍‍‌‍‍‌‌​‍‍‌‍‍‌‌​‍‍‌‍‍‍‍​‍‌‍‍‌‌​‍‌‌‌‌‌​‍‌‍‌‍‍‍​‍‍‌‍‍‍‍​‍‍‍‌‌‍‌​‍‍‌‍‍‌‌​‍‍‌‌‍‌‌​‍‌‌‌‌‍​‍‌‌‍‍‍​‍‌‍‌‌‍&quot;</span></span><br><span class="line"><span class="built_in">exec</span>(<span class="string">&quot;&quot;</span>.join([<span class="built_in">chr</span>(<span class="built_in">int</span>(i.replace(<span class="string">&#x27;\u200C&#x27;</span>, <span class="string">&#x27;0&#x27;</span>).replace(<span class="string">&#x27;\u200D&#x27;</span>, <span class="string">&#x27;1&#x27;</span>), <span class="number">2</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> encoded.split(<span class="string">&#x27;\u200B&#x27;</span>)]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: Hello, World!</span></span><br></pre></td></tr></table></figure>
+
+<p>我去，很神奇是不是！其原理也简单，使用零宽度字符隐写的方式将实际要执行的代码（在本案例中是 <code>print(&quot;Hello, World!)</code>）编码，在执行的过程中再解码，有 SMC 那味。此案例中 <code>encoded</code> 生成的方式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">code = <span class="string">&quot;&quot;&quot;print(&#x27;Hello, World!&#x27;)&quot;&quot;&quot;</span></span><br><span class="line">encoded = <span class="string">&#x27;_&#x27;</span> + <span class="string">&#x27;\u200B&#x27;</span>.join([<span class="built_in">bin</span>(<span class="built_in">ord</span>(i))[<span class="number">2</span>:].replace(<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;\u200C&#x27;</span>).replace(<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;\u200D&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> code]) + <span class="string">&#x27;_&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(encoded)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: _‍‍‍‌‌‌‌​‍‍‍‌‌‍‌​‍‍‌‍‌‌‍​‍‍‌‍‍‍‌​‍‍‍‌‍‌‌​‍‌‍‌‌‌​‍‌‌‍‍‍​‍‌‌‍‌‌‌​‍‍‌‌‍‌‍​‍‍‌‍‍‌‌​‍‍‌‍‍‌‌​‍‍‌‍‍‍‍​‍‌‍‍‌‌​‍‌‌‌‌‌​‍‌‍‌‍‍‍​‍‍‌‍‍‍‍​‍‍‍‌‌‍‌​‍‍‌‍‍‌‌​‍‍‌‌‍‌‌​‍‌‌‌‌‍​‍‌‌‍‍‍​‍‌‍‌‌‍_</span></span><br><span class="line"><span class="comment"># 为了便于复制，我在编码的前后各加了一个下划线</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="UTF-7"><a href="#UTF-7" class="headerlink" title="UTF-7"></a>UTF-7</h1><p>UTF-7 编码并不是一种严格的 Unicode 编码。个人认为，这种编码实际上更加类似于 Base64 编码。UTF-7 的出现，是为了满足早期只能传输 7-bit 字符的 SMTP 标准，故现在 UTF-7 编码也正在逐渐被弃用。UTF-7 原理较为简单，下面是一个简单的 UTF-7 与 UTF-8 转化的例子。首先我们拿出待转化的 UTF-8 字符：</p>
+<p><code>绷</code></p>
+<p>然后打印出它的编码的二进制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">bin</span>(<span class="built_in">ord</span>(<span class="string">&#x27;绷&#x27;</span>))[<span class="number">2</span>:].rjust(<span class="number">16</span>, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;0111111011110111&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后像 Base64 编码那样将其六位一组切开，不够的位置补零。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="string">&#x27;0111111011110111&#x27;</span>.ljust(<span class="number">18</span>, <span class="string">&#x27;0&#x27;</span>)[i: i + <span class="number">6</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">18</span>, <span class="number">6</span>)]</span><br><span class="line">[<span class="string">&#x27;011111&#x27;</span>, <span class="string">&#x27;101111&#x27;</span>, <span class="string">&#x27;011100&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>随后查表。UTF-7 中使用的 Base64 编码表和标准 Base64 编码表有一些区别。UTF-7 使用的编码表并不使用 <code>=</code> 补齐。由此我们可以写出编码转化的最后一步了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;&quot;</span>.join([<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>[<span class="built_in">int</span>(j, <span class="number">2</span>)] <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="string">&#x27;011111&#x27;</span>, <span class="string">&#x27;101111&#x27;</span>, <span class="string">&#x27;011100&#x27;</span>]])</span><br><span class="line"><span class="string">&#x27;fvc&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>于是我们得到了 <code>绷</code> 这个汉字的 UTF-7 编码：<code>fvc</code>。</p>
+<p>把上面的代码碎片合计一下，我们就能得到获取单个 UTF-8 字符的 UTF-7 编码的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>[<span class="built_in">int</span>(j, <span class="number">2</span>)] <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="built_in">bin</span>(<span class="built_in">ord</span>(<span class="string">&#x27;绷&#x27;</span>))[<span class="number">2</span>:].rjust(<span class="number">16</span>, <span class="string">&#x27;0&#x27;</span>).ljust(<span class="number">18</span>, <span class="string">&#x27;0&#x27;</span>)[i: i + <span class="number">6</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">18</span>, <span class="number">6</span>)]]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: fvc</span></span><br></pre></td></tr></table></figure>
+
+<p>UTF-7 编码有许多例外的情况：</p>
+<ul>
+<li>62 个数字与英语字母不需要转化；<code>&#39; ( ) , - . / : ?</code> 这九种字符也无需转化。</li>
+<li><code>+</code> 被编码做 <code>+-</code>。</li>
+<li>每一个区块以 <code>+</code> 为开头，<code>-</code> 为结尾。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;+&quot;</span> + <span class="string">&quot;-+&quot;</span>.join([<span class="string">&quot;&quot;</span>.join([<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>[<span class="built_in">int</span>(j, <span class="number">2</span>)] <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="built_in">bin</span>(<span class="built_in">ord</span>(k))[<span class="number">2</span>:].rjust(<span class="number">16</span>, <span class="string">&#x27;0&#x27;</span>).ljust(<span class="number">18</span>, <span class="string">&#x27;0&#x27;</span>)[i: i + <span class="number">6</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">18</span>, <span class="number">6</span>)]]) <span class="keyword">for</span> k <span class="keyword">in</span> <span class="string">&quot;绷不住了，笑えるwww&quot;</span>]) + <span class="string">&quot;-&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: +fvc-+Tg0-+T08-+ToY-+/ww-+exE-+MEg-+MIs-+AHc-+AHc-+AHc-</span></span><br></pre></td></tr></table></figure>
+
+<p>上面这行代码能且只能<strong>标准地编码非 ASCII 编码字符的 UTF-8 编码字符，而不能对 ASCII 编码字符进行标准地编码，因为有近一半的 ASCII 字符的 UTF-7 编码与其 ASCII 编码一致——正如上文提到的那样</strong>。Cyberchef 里面带有 UTF-7 的编码和解码工具，并且那一解码工具能够对我这段非标准的编码进行解码。</p>
+<p><img src="/%5CUnicode%E5%AE%B6%E6%97%8F%5Cimage-5.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><em>其实硬解也能解码，不是吗？</em></p>
+<p>既然编码代码都有了，那不妨把对应的解码代码造出来吧。还是要<strong>优雅地</strong>塞到一行里去：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([<span class="built_in">chr</span>(<span class="built_in">int</span>(<span class="built_in">int</span>((<span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">0</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>) + <span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">1</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>) + <span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">2</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>))[: -<span class="number">2</span>], <span class="number">2</span>))) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;+fvc-+Tg0-+T08-+ToY-+/ww-+exE-+MEg-+MIs-+AHc-+AHc-+AHc-&#x27;</span>[<span class="number">1</span>:-<span class="number">1</span>].split(<span class="string">&quot;-+&quot;</span>)]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 绷不住了，笑えるwww</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上字符串位置是可以用 <code>input()</code> 的，我们不妨改成更易于在 Python Shell 里运行的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;+&quot;</span> + <span class="string">&quot;-+&quot;</span>.join([<span class="string">&quot;&quot;</span>.join([<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>[<span class="built_in">int</span>(j, <span class="number">2</span>)] <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="built_in">bin</span>(<span class="built_in">ord</span>(k))[<span class="number">2</span>:].rjust(<span class="number">16</span>, <span class="string">&#x27;0&#x27;</span>).ljust(<span class="number">18</span>, <span class="string">&#x27;0&#x27;</span>)[i: i + <span class="number">6</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">18</span>, <span class="number">6</span>)]]) <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">input</span>(<span class="string">&quot;&gt; &quot;</span>)]) + <span class="string">&quot;-&quot;</span>)</span><br><span class="line">&gt; 先帝创业未半而骈死于槽枥之间</span><br><span class="line">+UUg-+Xh0-+Uhs-+Tho-+Zyo-+U0o-+gAw-+mog-+a3s-+To4-+af0-+Z6U-+Tks-+lfQ-</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([<span class="built_in">chr</span>(<span class="built_in">int</span>(<span class="built_in">int</span>((<span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">0</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>) + <span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">1</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>) + <span class="built_in">bin</span>(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>.index(i[<span class="number">2</span>]))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>))[: -<span class="number">2</span>], <span class="number">2</span>))) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">input</span>(<span class="string">&quot;&gt; &quot;</span>)[<span class="number">1</span>:-<span class="number">1</span>].split(<span class="string">&quot;-+&quot;</span>)]))</span><br><span class="line">&gt; +UUg-+Xh0-+Uhs-+Tho-+Zyo-+U0o-+gAw-+mog-+a3s-+To4-+af0-+Z6U-+Tks-+lfQ-</span><br><span class="line">先帝创业未半而骈死于槽枥之间</span><br></pre></td></tr></table></figure>
+
+<p><em>本段 UTF-7 相关代码纯手搓，Just for fun!</em></p>
+<h1 id="Unicode-与-UTF-8、UTF-16、UTF-32"><a href="#Unicode-与-UTF-8、UTF-16、UTF-32" class="headerlink" title="Unicode 与 UTF-8、UTF-16、UTF-32"></a>Unicode 与 UTF-8、UTF-16、UTF-32</h1><p>本来这一段应该是留给 UTF-16 的，但是学习了一些内容之后我感觉我对 UTF-8 也一点都不了解。遂把这些合并到一起去。</p>
+<p>这四者的关系，Unicode 是字符集，字符集中的每一个字符都有唯一的编号；后面四者为编码方式，用不同的方式表示出某一个字符。举一个例子：<code>绷</code> 这个字的 Unicode 编号是 <code>U+7EF7</code>，UTF-8 编码是 <code>E7 BB B7</code>，UTF-16LE 编码是 <code>EB AF B7</code>，UTF-32LE 编码是 <code>F1 BB AF A7</code>。</p>
+<p>下面这张表列出了你能见到 Unicode 编号以及编码的地方：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Unicode 编号</th>
+<th align="center">UTF 编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">形如 U+XXXX 的</td>
+<td align="center">二进制文本查看器</td>
+</tr>
+<tr>
+<td align="center">各种编程语言中 <code>\uXXXX</code> 或者 <code>\UXXXXXXXX</code></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">各种编程语言中打印 <code>0xXXXX</code> 对应的字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Python 中使用 <code>ord()</code> 函数</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>所以说，本文前面的某些内容是不严谨的（我长期错把 Unicode 编号当作 UTF-8 编码） ㄟ( ▔, ▔ )ㄏ </p>
+<h2 id="Unicode-与-UTF-8"><a href="#Unicode-与-UTF-8" class="headerlink" title="Unicode 与 UTF-8"></a>Unicode 与 UTF-8</h2><p>Unicode 编号范围是 <code>U+0000</code> 到 <code>U+10FFFF</code>，占据字节大小为 1 到 3 个不等。下表展示了 Unicode 编号长度与 UTF-8 编码长度的关系：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unicode 编号范围</th>
+<th align="left">UTF-8 编码二进制格式</th>
+<th align="center">UTF-8 编码占据字节数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">U+00 - U+7F</td>
+<td align="left">0XXXXXXX</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">U+80 - U+07FF</td>
+<td align="left">110XXXXX 10XXXXXX</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">U+0800 - U+FFFF</td>
+<td align="left">1110XXXX 10XXXXXX 10XXXXXX</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left">U+010000 - U+10FFFF</td>
+<td align="left">11110XXX 10XXXXXX 10XXXXXX 10XXXXXX</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>0 - 7F 的范围是 ASCII 编码的范围，这一部分 UTF-8 与 ASCII 编码是一致的。在后面的编码中，每个编码由多个字节组成，其中第一个字节前面由若干个连续的 1 和一个 0 开头，这用于告诉计算机，有多少个连续的 1，就说明字符从这一个字节开始，共占据了多少个字节。其后每一个字节都以 10 开头。中间的 X 则使用 Unicode 编号的二进制填充。</p>
+<p>例如 <code>绷</code> 这个字，其 Unicode 编号为 <code>U+7EF7</code>，在上表中显然位于第三行。我们先打印出其二进制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">bin</span>(<span class="built_in">ord</span>(<span class="string">&#x27;绷&#x27;</span>))[<span class="number">2</span>:].rjust(<span class="number">16</span>, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">‘0111111011110111’</span><br></pre></td></tr></table></figure>
+
+<p>随后按照 4+6+6 的宽度将其切成三份：<code>0111 111011 110111</code>。</p>
+<p>然后手动填充格式，得到 UTF-8 编码的二进制：<code>11100111 10111011 10110111</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">0b111001111011101110110111</span>)</span><br><span class="line"><span class="string">&#x27;0xe7bbb7&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>于是，我们得到了 <code>绷</code> 这个字的 UTF-8 编码：<code>E7 BB B7</code></p>
+<p>需要注意的是，填充那一步需要从右向左填充，因而如果最高位是 0 就可以省略（不然你猜为什么 2 字节 UTF-8 编码中可填充的二进制位只有 11 个）。</p>
+<h2 id="Unicode-与-UTF-16"><a href="#Unicode-与-UTF-16" class="headerlink" title="Unicode 与 UTF-16"></a>Unicode 与 UTF-16</h2><p>与 UTF-8 一样，UTF-16 也是一种变长字节编码格式。不过 UTF-16 的编码方式更为简单粗暴:</p>
+<ol>
+<li>对于编号在 <code>U+0000</code> 到 <code>U+FFFF</code> 的字符，直接把编号当作编码，统一占两个字节</li>
+<li>对于编号在 <code>U+10000</code> 到 <code>U+10FFFF</code> 的字符，先给它减去 0x10000，再填进 <code>110110XX XXXXXXXX 110111XX XXXXXXXX</code></li>
+</ol>
+<p>举个例子：<code>兔</code></p>
+<p>如果你复制下来，你会发现它这个字占了四个字节，它的 Unicode 编号是 <code>U+2F80E</code>。我在“中日韩兼容表意文字区（CJK Compatibility Ideographs）”复制了这个字符，一些日语汉字会出现在这个区间。使用某些日语输入法打印出来的日语汉字的编码会与中文一样，这一区间用于存储日、韩、越语言中特有或者异形汉字。但是根据 NFKC 标准化，在网页上你是能够直接通过搜索“兔”找到这个字的。</p>
+<p>把它转换成 UTF-16，首先将其 Unicode 编号减去 0x10000：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">bin</span>(<span class="built_in">ord</span>(<span class="string">&#x27;兔&#x27;</span>) - <span class="number">0x10000</span>)[<span class="number">2</span>:].rjust(<span class="number">20</span>, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;00011111100000001111&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>随后按照 2+8+2+8 的宽度将其切成四份：<code>00 01111110 00 00001111</code>。</p>
+<p>然后手动填充格式，得到 UTF-16 编码的二进制：<code>11011000 01111110 11011100 00001111</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">0b11011000011111101101110000001111</span>)</span><br><span class="line"><span class="string">&#x27;0xd87edc0f&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>于是，我们得到了 <code>兔</code> 这个字的 UTF-16 编码：<code>D8 7E DC 0F</code></p>
+<p>UTTF-16 编码是两个字节为一组读取，因此就要考虑字节序的问题。上面这一种为大端序，也就是 UTF-16BE，其小端序存储形式 UTF-16LE 为 <code>7E D8 0F DC</code>。为了区分大小端序，文件开头部分会有 <code>FE FF</code>（大端序）或 <code>FF FE</code>（小端序）的标注。而 UTF-8 编码中，计算机按顺序每次读取一个字节，因此不存在大小端序的问题。</p>
+<p>这时聪明的小朋友就要问了，计算机怎么知道这一个字符占了两个字节还是四个字节呢？这就不得不说 Unicode 的巧妙之处了。如果你仔细观察 Unicode 字符集，你会发现 <code>U+D800</code> 到 <code>U+DBFF</code> 被描述为”High Surrogate”（高代理项），<code>U+DC00</code> 到 <code>U+DFFF</code> 被描述为”Low Surrogate”（低代理项）。这两个区间内（连起来就是一个区间）并不存储字符，而这两个区间又分别是 <code>110110XX XXXXXXXX</code> 与 <code>110111XX XXXXXXXX</code> 的范围。因此，当计算机两字节一组读取到 <code>D8</code> 到 <code>DB</code> 中的某个值，就知道这个字符占据四个字节；读取到 <code>DC</code> 到 <code>DF</code> 中某个字节，就知道这两个字节要跟着前面两个字节一块解码。</p>
+<h2 id="Unicode-与-UTF-32"><a href="#Unicode-与-UTF-32" class="headerlink" title="Unicode 与 UTF-32"></a>Unicode 与 UTF-32</h2><p>UTF-32 是固定宽度编码，每一个编码占据 4 个字节，因此也许是最好理解的一种编码，直接由 Unicode 编号作为编码，因此 UTF-32 也有浪费存储空间的特点。</p>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/03/06/Unicode 学习记录/" title="Unicode 学习记录">https://jackgdn.github.io/2024/03/06/Unicode 学习记录/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/05/20240305/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Python-%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/">
+                    Python 编程导论笔记
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/05/20240305/" class="trm-anima-link">
+                    2023.3.5 第一次课
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/05</li>
+                <li>21:16</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'jackgdn/jackgdn.github.io',
+            "data-repo-id": 'R_kgDOLYEWwg',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
+            "data-mapping": 'title',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2024- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">jack_gdn</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            Nice Day ;-)
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="NFKC"><a rel="nofollow" class="trm-toc-link" href="#NFKC"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">NFKC</span></a></li><li class="trm-toc-item trm-toc-level-1" title="零宽字符隐写"><a rel="nofollow" class="trm-toc-link" href="#零宽字符隐写"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">零宽字符隐写</span></a></li><li class="trm-toc-item trm-toc-level-1" title="Unicode 附加字符"><a rel="nofollow" class="trm-toc-link" href="#Unicode-附加字符"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">Unicode 附加字符</span></a></li><li class="trm-toc-item trm-toc-level-1" title="代码混淆"><a rel="nofollow" class="trm-toc-link" href="#代码混淆"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">代码混淆</span></a></li><li class="trm-toc-item trm-toc-level-1" title="UTF-7"><a rel="nofollow" class="trm-toc-link" href="#UTF-7"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">UTF-7</span></a></li><li class="trm-toc-item trm-toc-level-1" title="Unicode 与 UTF-8、UTF-16、UTF-32"><a rel="nofollow" class="trm-toc-link" href="#Unicode-与-UTF-8、UTF-16、UTF-32"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">Unicode 与 UTF-8、UTF-16、UTF-32</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="Unicode 与 UTF-8"><a rel="nofollow" class="trm-toc-link" href="#Unicode-与-UTF-8"><span class="trm-toc-number">6.1.</span> <span class="trm-toc-text">Unicode 与 UTF-8</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Unicode 与 UTF-16"><a rel="nofollow" class="trm-toc-link" href="#Unicode-与-UTF-16"><span class="trm-toc-number">6.2.</span> <span class="trm-toc-text">Unicode 与 UTF-16</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Unicode 与 UTF-32"><a rel="nofollow" class="trm-toc-link" href="#Unicode-与-UTF-32"><span class="trm-toc-number">6.3.</span> <span class="trm-toc-text">Unicode 与 UTF-32</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.10"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
