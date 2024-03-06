@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="users &amp; users_revenge两道题可以用同一个脚本解。两道题区别就是题目 1 给出 200 个用户名，题目 2 给出 500 个用户名，密码为用户名的 MD5，其中有一个用户里有 flag，考虑使用 pwntools 连接。 123456789101112131415161718192021222324252627282930313233343536373839from pw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NSSCTF Round#18 WP">
+<meta property="og:url" content="https://jackgdn.github.io/2024/03/06/NSS18/index.html">
+<meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="users &amp; users_revenge两道题可以用同一个脚本解。两道题区别就是题目 1 给出 200 个用户名，题目 2 给出 500 个用户名，密码为用户名的 MD5，其中有一个用户里有 flag，考虑使用 pwntools 连接。 123456789101112131415161718192021222324252627282930313233343536373839from pw">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-03-06T11:21:57.025Z">
+<meta property="article:modified_time" content="2024-03-06T11:31:58.765Z">
+<meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Reverse">
+<meta property="article:tag" content="Pwn">
+<meta property="article:tag" content="WP">
+<meta name="twitter:card" content="summary">
+
+
+<title >NSSCTF Round#18 WP</title>
+
+<!-- Favicon -->
+
+    <link href='/img/16.ico?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/32.ico?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/ico.jpg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/img/G.png' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung Des Privateigentums","The best people in life are free","We never go out of style"],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":"flase"},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-06 19:31:58"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/img/GL.png"> <img alt="logo" class=" trm-dark-icon" src="/img/G.png">
+    
+    
+        <div class="trm-logo-text">
+            GDN&#39;s <span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    链接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            贡献分数 1157/1989
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            NSSCTF Round#18 WP
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/ico.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        jack_gdn
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/jackgdn/" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                居住地:
+            </div>
+            <div class="trm-label trm-label-light">
+                Earth
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                未知
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                性别:
+            </div>
+            <div class="trm-label trm-label-light">
+                武装直升机
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:li_chungyao@outlook.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/06
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            19:21
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="users-users-revenge"><a href="#users-users-revenge" class="headerlink" title="users &amp; users_revenge"></a>users &amp; users_revenge</h1><p>两道题可以用同一个脚本解。两道题区别就是题目 1 给出 200 个用户名，题目 2 给出 500 个用户名，密码为用户名的 MD5，其中有一个用户里有 flag，考虑使用 pwntools 连接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">usrlst = []</span><br><span class="line">pwdlst = []</span><br><span class="line">flaglst = []</span><br><span class="line">sususrlst = []</span><br><span class="line">suspwdlst = []</span><br><span class="line">excptlst = []</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">file_name = </span></span><br><span class="line"><span class="string">given_host = </span></span><br><span class="line"><span class="string">given_port = </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_name, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> wordlist:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> wordlist:</span><br><span class="line">        username = line.rstrip()  <span class="comment"># 去除换行符</span></span><br><span class="line">        usrlst.append(username)</span><br><span class="line">        pwdlst.append(hashlib.md5(username.encode()).hexdigest())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(usrlst)):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        shell = ssh(host = given_host, port = given_port, user = usrlst[i], password = pwdlst[i])  <span class="comment"># 题目使用 SSH 连接</span></span><br><span class="line">        sh = shell.run(<span class="string">&#x27;ls -a&#x27;</span>)  <span class="comment"># 不知道文件名与路径，先使用 ls -a 探探虚实。最后知道 flag.txt 确实是一个隐藏文件</span></span><br><span class="line">        flag = sh.recvall()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(flag) != <span class="number">47</span>:  <span class="comment"># 如果没有 flag，接收到默认文件名和路径名一共是 47 Bits，有 flag.txt 则会接收到 56 Bits</span></span><br><span class="line">            flaglst.append(flag)</span><br><span class="line">            sususrlst.append(i)</span><br><span class="line">            usupwdlst.append()</span><br><span class="line">        shell.close()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    excptlst.append(i)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(flaglst)</span><br><span class="line"><span class="built_in">print</span>(sususrlst)</span><br><span class="line"><span class="built_in">print</span>(suspwdlst)</span><br><span class="line"><span class="built_in">print</span>(excptlst)</span><br></pre></td></tr></table></figure>
+
+<p>由于不知道存储 flag 文件的文件名以及路径，这一脚本只用于筛选可疑用户，找到可疑用户后再手动搜索 flag。不过好在每一道题中都只筛选出了一个可疑用户</p>
+<h1 id="炒鸡常见的编码哇"><a href="#炒鸡常见的编码哇" class="headerlink" title="炒鸡常见的编码哇"></a>炒鸡常见的编码哇</h1><p>IDA 打开程序，通过字符串找到程序的核心部分：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sub_40160E</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v0; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> v1; <span class="comment">// edx</span></span><br><span class="line">  <span class="type">int</span> v2; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">char</span> v4[<span class="number">9</span>]; <span class="comment">// [esp+17h] [ebp-21h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> k; <span class="comment">// [esp+20h] [ebp-18h]</span></span><br><span class="line">  <span class="type">int</span> j; <span class="comment">// [esp+24h] [ebp-14h]</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [esp+28h] [ebp-10h]</span></span><br><span class="line">  <span class="type">int</span> v8; <span class="comment">// [esp+2Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  sub_40C270();</span><br><span class="line">  v8 = <span class="number">0</span>;</span><br><span class="line">  sub_4A3450(&amp;dword_4B0960, <span class="string">&quot;Please input Your flag to start Happy New Year!!&quot;</span>);</span><br><span class="line">  sub_46AFB0(sub_4A1540);</span><br><span class="line">  sub_4A4130(&amp;dword_4B0780, Str);</span><br><span class="line">  dword_4F8924 = <span class="number">8</span> * <span class="built_in">strlen</span>(Str);</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; Str[i]; ++i )  </span><br><span class="line">  &#123;</span><br><span class="line">    sub_4014BC(Str[i], v4);</span><br><span class="line">    <span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt;= <span class="number">7</span>; ++j )</span><br><span class="line">    &#123;</span><br><span class="line">      v0 = v8++;</span><br><span class="line">      byte_4F8120[v0] = v4[j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> ( k = <span class="number">0</span>; k &lt; dword_4F8924; k += <span class="number">6</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    sub_40150A(&amp;byte_4F8120[k]);</span><br><span class="line">    v1 = sub_4015CA(&amp;byte_4F8120[k]);</span><br><span class="line">    v2 = dword_4F8A40++;</span><br><span class="line">    byte_4F8940[v2] = byte_4AF020[v1];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> ( !<span class="built_in">memcmp</span>(byte_4F8940, &amp;unk_4AF080, <span class="number">0x80</span>u) )</span><br><span class="line">    sub_4A3450(&amp;dword_4B0960, <span class="string">&quot;Good Job!&quot;</span>);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    sub_4A3450(&amp;dword_4B0960, <span class="string">&quot;Try Again!&quot;</span>);</span><br><span class="line">  sub_46AFB0(sub_4A1540);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是另外三个重要函数 sub_4014BC()、sub_40150A() 与 sub_4015CA() 的定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">sub_4014BC</span><span class="params">(<span class="type">char</span> a1, <span class="type">int</span> a2)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [esp+10h] [ebp-4h]</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">7</span>; i &gt;= <span class="number">0</span>; --i )</span><br><span class="line">    *(<span class="number">7</span> - i + a2) = (a1 &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">  result = a2 + <span class="number">8</span>;</span><br><span class="line">  *(a2 + <span class="number">8</span>) = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> __cdecl <span class="title function_">sub_40150A</span><span class="params">(<span class="type">int</span> a1)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [esp+18h] [ebp-10h]</span></span><br><span class="line">  <span class="type">int</span> v3; <span class="comment">// [esp+18h] [ebp-10h]</span></span><br><span class="line">  <span class="type">int</span> v4; <span class="comment">// [esp+1Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v4 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;= <span class="number">255</span>; i = v3 + <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    v3 = (i + <span class="number">1</span>) % <span class="number">256</span>;</span><br><span class="line">    v4 = (v3 + v4 + <span class="number">1</span>) % <span class="number">256</span>;</span><br><span class="line">    result = sub_4A1658(v3 % <span class="number">6</span> + a1, v4 % <span class="number">6</span> + a1);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> __cdecl <span class="title function_">sub_4015CA</span><span class="params">(<span class="type">int</span> a1)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [esp+4h] [ebp-Ch]</span></span><br><span class="line">  <span class="type">int</span> v3; <span class="comment">// [esp+8h] [ebp-8h]</span></span><br><span class="line">  <span class="type">int</span> v4; <span class="comment">// [esp+Ch] [ebp-4h]</span></span><br><span class="line"></span><br><span class="line">  v4 = <span class="number">0</span>;</span><br><span class="line">  v3 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">5</span>; i &gt;= <span class="number">0</span>; --i )</span><br><span class="line">  &#123;</span><br><span class="line">    v4 += v3 * *(i + a1);</span><br><span class="line">    v3 *= <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> v4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>sub_4014BC()</code> 将输入字符串的每一个字节转化为八位二进制数并存储进新的数组，在 <code>sub_40160E()</code> 中，输入字符串的二进制形式被存储在 <code>byte_4F8120</code> 中，这一转换过程在第一个 <code>for</code> 循环语句中完成。</p>
+<p><code>sub_4015CA()</code> 将二进制数组六个一组进行编码，在 <code>sub_40160E()</code> 的第二个 <code>for</code> 循环语句中，程序完成了变种 Base64 重新编码的过程。编码表存储在 <code>byte_4AF020</code> 中。</p>
+<p><code>sub_40150A()</code> 比较难以理解，但是大体能看出是在以六字节个为一组进行改变顺序的操作。经过调试可以知道该函数改变顺序的逻辑：</p>
+<table>
+<thead>
+<tr>
+<th align="center">调整前索引</th>
+<th align="center">调整后索引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p>具体调试的过程，就是在 <code>byte_4F8120</code> 被调整顺序前，将其修改为由 1 个 1 和 5 个 0 组成的六位二进制数，通过改变 1 的位置查看 <code>sub_40150A()</code> 打乱顺序的方式。</p>
+<p>编码后的字符串存储在 <code>byte_4F8940</code> 中。解题脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">cipher = [<span class="number">0xE2</span>, <span class="number">0xF7</span>, <span class="number">0xD3</span>, <span class="number">0xE2</span>, <span class="number">0xC8</span>, <span class="number">0xB4</span>, <span class="number">0xD8</span>, <span class="number">0xC5</span>, <span class="number">0xCF</span>, <span class="number">0xB4</span>, </span><br><span class="line">          <span class="number">0xE7</span>, <span class="number">0xEE</span>, <span class="number">0xE1</span>, <span class="number">0xD9</span>, <span class="number">0xF1</span>, <span class="number">0xEF</span>, <span class="number">0xCB</span>, <span class="number">0xEB</span>, <span class="number">0xD9</span>, <span class="number">0xC9</span>, </span><br><span class="line">          <span class="number">0xCE</span>, <span class="number">0xC5</span>, <span class="number">0xD9</span>, <span class="number">0xE5</span>, <span class="number">0xCC</span>, <span class="number">0xB7</span>, <span class="number">0xD1</span>, <span class="number">0xED</span>, <span class="number">0xE0</span>, <span class="number">0xB4</span>, </span><br><span class="line">          <span class="number">0xF1</span>, <span class="number">0xEE</span>, <span class="number">0xE0</span>, <span class="number">0xE7</span>, <span class="number">0xD2</span>, <span class="number">0xF6</span>, <span class="number">0xCB</span>, <span class="number">0xF3</span>, <span class="number">0xC9</span>, <span class="number">0xF3</span>, </span><br><span class="line">          <span class="number">0xD3</span>, <span class="number">0xD5</span>, <span class="number">0xEF</span>]</span><br><span class="line">table = [<span class="number">0xC0</span>, <span class="number">0xC1</span>, <span class="number">0xC2</span>, <span class="number">0xC3</span>, <span class="number">0xC4</span>, <span class="number">0xC5</span>, <span class="number">0xC6</span>, <span class="number">0xC7</span>, <span class="number">0xC8</span>, <span class="number">0xC9</span>, </span><br><span class="line">         <span class="number">0xCA</span>, <span class="number">0xCB</span>, <span class="number">0xCC</span>, <span class="number">0xCD</span>, <span class="number">0xCE</span>, <span class="number">0xCF</span>, <span class="number">0xD0</span>, <span class="number">0xD1</span>, <span class="number">0xD2</span>, <span class="number">0xD3</span>, </span><br><span class="line">         <span class="number">0xD4</span>, <span class="number">0xD5</span>, <span class="number">0xD6</span>, <span class="number">0xD7</span>, <span class="number">0xD8</span>, <span class="number">0xD9</span>, <span class="number">0xE0</span>, <span class="number">0xE1</span>, <span class="number">0xE2</span>, <span class="number">0xE3</span>, </span><br><span class="line">         <span class="number">0xE4</span>, <span class="number">0xE5</span>, <span class="number">0xE6</span>, <span class="number">0xE7</span>, <span class="number">0xE8</span>, <span class="number">0xE9</span>, <span class="number">0xEA</span>, <span class="number">0xEB</span>, <span class="number">0xEC</span>, <span class="number">0xED</span>, </span><br><span class="line">         <span class="number">0xEE</span>, <span class="number">0xEF</span>, <span class="number">0xF0</span>, <span class="number">0xF1</span>, <span class="number">0xF2</span>, <span class="number">0xF3</span>, <span class="number">0xF4</span>, <span class="number">0xF5</span>, <span class="number">0xF6</span>, <span class="number">0xF7</span>, </span><br><span class="line">         <span class="number">0xF8</span>, <span class="number">0xF9</span>, <span class="number">0xAF</span>, <span class="number">0xB0</span>, <span class="number">0xB1</span>, <span class="number">0xB2</span>, <span class="number">0xB3</span>, <span class="number">0xB4</span>, <span class="number">0xB5</span>, <span class="number">0xB6</span>, </span><br><span class="line">         <span class="number">0xB7</span>, <span class="number">0xB8</span>, <span class="number">0xAA</span>, <span class="number">0xAE</span>]</span><br><span class="line"></span><br><span class="line">binaries = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">    binaries += <span class="built_in">str</span>(<span class="built_in">bin</span>(table.index(i)))[<span class="number">2</span>:].rjust(<span class="number">6</span>, <span class="string">&#x27;0&#x27;</span>)  <span class="comment"># 将每个编码转成 6 位二进制数</span></span><br><span class="line">blst = <span class="built_in">list</span>(binaries)  <span class="comment"># 拼接成一个 258 位二进制数</span></span><br><span class="line"></span><br><span class="line">flag = [<span class="string">&#x27;N&#x27;</span>] * <span class="number">258</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">258</span>, <span class="number">6</span>):  <span class="comment"># 恢复正确顺序</span></span><br><span class="line">    flag[i] = blst[i]</span><br><span class="line">    flag[i + <span class="number">1</span>] = blst[i + <span class="number">2</span>]</span><br><span class="line">    flag[i + <span class="number">2</span>] = blst[i + <span class="number">4</span>]</span><br><span class="line">    flag[i + <span class="number">3</span>] = blst[i + <span class="number">5</span>]</span><br><span class="line">    flag[i + <span class="number">4</span>] = blst[i + <span class="number">3</span>]</span><br><span class="line">    flag[i + <span class="number">5</span>] = blst[i + <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(<span class="built_in">int</span>(<span class="string">&#x27;&#x27;</span>.join(flag)[:-<span class="number">2</span>], <span class="number">2</span>)).decode())  <span class="comment"># 舍弃最后补位的两个 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output: NSSCTF&#123;Y0u_4reThe_K1ng_0fBase64&#125;</span></span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/03/06/NSS18/" title="NSSCTF Round#18 WP">https://jackgdn.github.io/2024/03/06/NSS18/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/06/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-Overcooked!-2-%E5%A4%AA%E9%9A%BE%EF%BC%8C%E4%BA%8E%E6%98%AF%E4%BB%96%E2%80%A6%E2%80%A6/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/06/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-Overcooked!-2-%E5%A4%AA%E9%9A%BE%EF%BC%8C%E4%BA%8E%E6%98%AF%E4%BB%96%E2%80%A6%E2%80%A6/" class="trm-anima-link">
+                    一小伙觉得 Overcooked! 2 太难，于是他……
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/06</li>
+                <li>14:03</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'jackgdn/jackgdn.github.io',
+            "data-repo-id": 'R_kgDOLYEWwg',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
+            "data-mapping": 'title',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2024- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">jack_gdn</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            Nice Day ;-)
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="users &amp; users_revenge"><a rel="nofollow" class="trm-toc-link" href="#users-users-revenge"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">users &amp; users_revenge</span></a></li><li class="trm-toc-item trm-toc-level-1" title="炒鸡常见的编码哇"><a rel="nofollow" class="trm-toc-link" href="#炒鸡常见的编码哇"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">炒鸡常见的编码哇</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.10"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
