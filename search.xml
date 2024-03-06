@@ -325,5 +325,11 @@
 <p><img src="https://raw.githubusercontent.com/jackgdn/jackgdn.github.io/main/img/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-Overcooked!-2-%E5%A4%AA%E9%9A%BE%EF%BC%8C%E4%BA%8E%E6%98%AF%E4%BB%96%E2%80%A6%E2%80%A6/image-15.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <p>特别需要注意的是，最开始我使用 .NET 8.0 运行这个程序，但是在解密时并不能成功；而相同的代码在 .NET 3.1（原程序使用了 .NET 3.5）可以完美运行，不过程序中使用的 <code>Crc32</code> 类（出现于 .NET 6.0）在 .NET 3.1 中不受支持，于是只好再将 <code>Crc32</code> 类的定义代码抄过来。</p>
 ]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
   </entry>
 </search>
