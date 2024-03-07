@@ -456,4 +456,98 @@
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2023.3.7 第二次课</title>
+    <url>/2024/03/07/20240307/</url>
+    <content><![CDATA[<h1 id="执行-py-文件"><a href="#执行-py-文件" class="headerlink" title="执行 .py 文件"></a>执行 <code>.py</code> 文件</h1><p>在命令行中输入 <code>Python filename</code> 执行程序，<code>filename</code> 为待执行的代码。</p>
+<h2 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h2><p>cmd 的路径为 <code>C:\Windows\system32</code>，当且仅当待执行代码在当前文件夹下，可以使用相对路径，否则必须使用绝对路径。</p>
+<p>举一个例子，假设待执行代码为 program.py，位置在 <code>C:\Windows\system32\</code>，则可以直接输入 <code>python program.py</code> 执行代码；若位置在 <code>E:\program\</code> 下，则需要输入 <code>python E:\program\program.py</code> 执行代码。</p>
+<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>在 Python 中，四则运算的优先级与数学中四则运算优先级相同，先算括号，其次是乘方，再次是乘除，最后是加减。</p>
+<h2 id="除与整除"><a href="#除与整除" class="headerlink" title="除与整除"></a>除与整除</h2><p><code>/</code> 为除，得到浮点型数据；<code>//</code> 为整除，得到整型数据。举例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> / <span class="number">4</span></span><br><span class="line"><span class="number">1.75</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> // <span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h2><p>Python 中使用 <code>**</code> 代表乘方：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">2</span></span><br><span class="line"><span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<p>同时，<code>**</code> 也可以用于计算开根：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">0.5</span></span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，我们还可以用 Python 自带的 <code>math</code> 模块的 <code>sqrt()</code> 方法计算二次方根。导入模块的方法为 <code>import module</code>，<code>module</code> 为待导入的模块，<code>help(module)</code> 可以查看某个模块中可用的类、方法、常量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.<span class="built_in">pow</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">25.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.sqrt(<span class="number">5</span>)</span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="主函数传递参数"><a href="#主函数传递参数" class="headerlink" title="主函数传递参数"></a>主函数传递参数</h1><p>之前研究过 C&#x2F;C++ 中的 <code>main()</code> 函数参数传递，直接粘过来：</p>
+<p>What is <code>int main(int argc, char **argv, char **enpv)</code> ?</p>
+<h2 id="argc"><a href="#argc" class="headerlink" title="argc"></a>argc</h2><p><code>argc</code> 为整型数据，存储命令行参数的个数。</p>
+<h2 id="argv"><a href="#argv" class="headerlink" title="argv"></a>argv</h2><p><code>argv</code> 为“指向指针的指针”，即字符串数组，用于存储命令行参数。该参数亦可写作 <code>*argv[]</code>。argc的值即为<code>argv</code>元素的数量。<code>argv[0]</code> 存储的是当前程序的位置。</p>
+<h2 id="envp"><a href="#envp" class="headerlink" title="envp"></a>envp</h2><p><code>envp</code> 的类型也是“指向指针的指针”，存放当前程序运行环境的参数.</p>
+<p>我们不妨运行下面的代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; argv[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; envp[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>随后我们能得到下面的结果</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">E:\Documents\Test Programs\Test\Debug\Test.exe</span><br><span class="line">ADSK_3DSMAX_x64</span><br></pre></td></tr></table></figure>
+
+<p>前面提到，<code>argv</code> 用于存储命令行参数，如果我们在运行程序时添加一些参数，就能改变argc与argv的值。</p>
+<p>我们不妨修改一下代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; argc; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; argv[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>随后在同一文件夹下创建 Test.txt，在命令行中运行命令 <code>start Test.exe Test.txt</code>，可以看到程序的输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">Test.exe</span><br><span class="line">Test.txt</span><br></pre></td></tr></table></figure>
+
+<p>在 Python 中，向程序传递的参数存储在 <code>sys.argv</code> 中，需要提前导入 <code>sys</code> 模块；在 Java 中是 <code>String[] args</code></p>
+<h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><p>Python 支持二进制、八进制、十进制、十六进制。如无特殊说明，则默认使用十进制。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">标识</th>
+<th align="center">转换方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">二进制</td>
+<td align="center"><code>0b</code></td>
+<td align="center"><code>bin</code></td>
+</tr>
+<tr>
+<td align="center">八进制</td>
+<td align="center"><code>0o</code></td>
+<td align="center"><code>oct</code></td>
+</tr>
+<tr>
+<td align="center">十进制</td>
+<td align="center">无</td>
+<td align="center"><code>int</code></td>
+</tr>
+<tr>
+<td align="center">十六进制</td>
+<td align="center"><code>0x</code></td>
+<td align="center"><code>hex</code></td>
+</tr>
+</tbody></table>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">0b1101</span>)  <span class="comment"># 将二进制 1101 转化为十进制</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">0o1453</span>)  <span class="comment"># 将八进制 1453 转化为十六进制</span></span><br><span class="line"><span class="string">&#x27;0x32b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="小整数池"><a href="#小整数池" class="headerlink" title="小整数池"></a>小整数池</h1><p>见文章 <a href="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E5%B0%8F%E6%95%B4%E6%95%B0%E6%B1%A0">Python 内存相关学习记录 - 小整数池</a></p>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><p>操作符分为单目操作符、双目操作符与三目操作符，即用于标识操作符前后的操作数个数。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="literal">True</span>  <span class="comment"># not 是弹幕操作符</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> + <span class="number">2</span>  <span class="comment"># + 是双目操作符</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="除余操作（模运算）"><a href="#除余操作（模运算）" class="headerlink" title="除余操作（模运算）"></a>除余操作（模运算）</h2><p><code>%</code> 是一个双目操作数，用于取余数。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> % <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><em>在 Python 中，浮点类型数据也可以做模运算，不过意义不大。</em></p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符又三个 <code>and</code> <code>or</code> <code>not</code>，运算结果为布尔型。<code>and</code> <code>or</code> 的优先级低于数学运算符。</p>
+<h1 id="Python-变量命名规则"><a href="#Python-变量命名规则" class="headerlink" title="Python 变量命名规则"></a>Python 变量命名规则</h1><ul>
+<li>可以使用字母或下划线开头，不能使用数字开头</li>
+<li>仅数字、字母与下划线可以出现在变量名中</li>
+<li>Python 关键字不可用于变量名</li>
+</ul>
+<p><strong>注意：虽然一些有特殊含义与用途的单词允许被用作变量名（例如 <code>str</code> <code>int</code>），但这样做会引发歧义，因此不建议这样命名变量！</strong></p>
+]]></content>
+      <categories>
+        <category>Python 编程导论笔记</category>
+      </categories>
+      <tags>
+        <tag>Python 编程导论笔记</tag>
+      </tags>
+  </entry>
 </search>
