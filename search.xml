@@ -4,7 +4,7 @@
     <title>2023.3.5 第一次课</title>
     <url>/2024/03/05/20240305/</url>
     <content><![CDATA[<h1 id="下载-Python"><a href="#下载-Python" class="headerlink" title="下载 Python"></a>下载 Python</h1><p>链接：<a href="https://www.python.org/">Welcome to Python.org</a></p>
-<p><strong>要求使用 3.x 以上版本的 Python</strong></p>
+<p><strong>要求使用 3.x 版本的 Python</strong></p>
 <h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><p>交互式窗口的程序不会存储到硬盘里，如果关闭了交互式窗口，已得到的数据会消失。</p>
 <h2 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h2><p>允许脚本保存，便于调试与修改。</p>
 <h2 id="数据长度"><a href="#数据长度" class="headerlink" title="数据长度"></a>数据长度</h2><p>与 C&#x2F;C++ 不同，Python 中的数据没有长度限制。只需在交互模式中就能够进行大数计算：</p>
@@ -391,6 +391,69 @@
         <tag>Reverse</tag>
         <tag>Pwn</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 内存相关学习记录</title>
+    <url>/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><strong>本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 <code>&gt;&gt;&gt;</code> 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。</strong></p>
+<h1 id="可变对象与不可变对象"><a href="#可变对象与不可变对象" class="headerlink" title="可变对象与不可变对象"></a>可变对象与不可变对象</h1><table>
+<thead>
+<tr>
+<th align="center">可变对象</th>
+<th align="center">不可变对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">列表、字典、集合</td>
+<td align="center">整型、浮点型、布尔型、字符串、元组</td>
+</tr>
+</tbody></table>
+<p>简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用转移到新创建的对象上。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dictnry = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">1</span>&#125;  <span class="comment"># 字典对象为可变对象</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(dictnry))</span><br><span class="line">dictnry[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(dictnry))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">1570839226304</span></span><br><span class="line"><span class="string">1570839226304</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>下面是一个不可变对象的例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">string = <span class="string">&#x27;Hello, world?&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(string))</span><br><span class="line">new_string = string.replace(<span class="string">&#x27;?&#x27;</span>, <span class="string">&#x27;!&#x27;</span>)  <span class="comment"># 因为字符串是不可变对象，因此在修改时需要一个新的变量接受修改后的字符串</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(new_string))</span><br><span class="line"><span class="built_in">print</span>(string)</span><br><span class="line"><span class="built_in">print</span>(new_string)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">1668896675760</span></span><br><span class="line"><span class="string">1668896210864</span></span><br><span class="line"><span class="string">Hello, world?</span></span><br><span class="line"><span class="string">Hello, world!</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h1><ul>
+<li>浅拷贝：拷贝对象的引用。当原对象的数据改变时，拷贝的对象也会发生改变。</li>
+<li>深拷贝：创建一个新的对象并将原数据存入新的对象。原对象数据改变不影响拷贝对象</li>
+</ul>
+<hr>
+<p>打开 Python Shell，尝试以下操作：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = -<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = -<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;hi!&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;hi!&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;hello_world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;hello_world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：Python 中 <code>==</code> 运算符用于判断两个数据在数值上是否相等，而 <code>is</code> 关键字用于判断两个数据的引用是否一致，通俗来说就是地址是否一致。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="小整数池"><a href="#小整数池" class="headerlink" title="小整数池"></a>小整数池</h1><p>Python 为了节约运行内存，添加了小整数池机制。Python 会将 -5 到 256 （含 -5 与 256）的数据存储在固定位置，在需要时直接引用，而不是创建一个新的整形对象。因此：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">140720040721112</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">140720040721112</span></span><br></pre></td></tr></table></figure>
+<p>除了整型对象，仅有的两个布尔型对象也有固定的地址，每次引用都是相同的 <code>True</code>（或者 <code>False</code>）。然而，对于超出小整数池的数据，在引用时就会创建出一个新的对象：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">2180555911728</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">2180558782128</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，上面的操作都在 Python Shell 中完成。如果在 IDLE 中编写好代码再运行，结果也许会有些许不同……</p>
+<h1 id="Interning"><a href="#Interning" class="headerlink" title="Interning"></a>Interning</h1><p>对于上面的例子，在 IDLE 中写好代码运行的结果如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1234</span></span><br><span class="line">b = <span class="number">1234</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">True</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>不难发现，这一次运行程序，两个 1234 的引用一致。这是因为，Python 在创建了一个整型对象 <code>1234</code> 并被变量 <code>a</code> 引用后，变量 <code>b</code> 也需要引用一个整型对象 <code>1234</code>，因此 <code>b</code> 也引用了刚才创建的整型对象。</p>
+<p>不仅仅是整型对象，除元组外的不可变对象<strong>在编译模式下</strong>都适用 Interning 机制，而仅当元组内的所有元素都为不可变对象时，元组才适用 Intern 机制。</p>
+<h1 id="字符串驻留"><a href="#字符串驻留" class="headerlink" title="字符串驻留"></a>字符串驻留</h1><p>上述 Interning 机制是对于编译模式来讲的，而在交互模式中，同样有字符串驻留机制用于节约内存，以下情况会在交互模式中触发：</p>
+<ul>
+<li>字符串的长度为 0 或 1</li>
+<li>字符串长度大于 1 且字符串中仅含有字母、数字及下划线</li>
+<li>驻留发生在编译时而非运行时</li>
+</ul>
+<p>在查找资料时，许多文章都提到由乘法得到的字符串长度小于等于 20 且仅含有字母、数字及下划线时也会触发驻留机制，然而依据我再 Python 3.12 中的尝试：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;1234567890qwertyuiop_ASDFGHJKL&#x27;</span> * <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;1234567890qwertyuiop_ASDFGHJKL&#x27;</span> * <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(a)</span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(b)</span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>这一条似乎并不成立。</p>
+<p>这里面最难以理解的应该是第三条，可以用下面的例子解释：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;Hi_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;Hi&#x27;</span> + <span class="string">&#x27;_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span>  <span class="comment"># 编译时</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;Hi_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;Hi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b + <span class="string">&#x27;_&#x27;</span> <span class="keyword">is</span> a</span><br><span class="line"><span class="literal">False</span>  <span class="comment"># 运行时</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>学习记录</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>

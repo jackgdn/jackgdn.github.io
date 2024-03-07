@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 &gt;&gt;&gt; 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。 可变对象与不可变对象   可变对象 不可变对象    列表、字典、集合 整型、浮点型、布尔型、字符串、元组   简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 内存相关学习记录">
+<meta property="og:url" content="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 &gt;&gt;&gt; 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。 可变对象与不可变对象   可变对象 不可变对象    列表、字典、集合 整型、浮点型、布尔型、字符串、元组   简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-03-07T00:03:01.470Z">
+<meta property="article:modified_time" content="2024-03-07T09:03:07.471Z">
+<meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<title >Python 内存相关学习记录</title>
+
+<!-- Favicon -->
+
+    <link href='/img/16.ico?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/32.ico?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/ico.jpg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/img/G.png' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung Des Privateigentums","The best people in life are free","We never go out of style"],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-07 17:03:07"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/img/GL.png"> <img alt="logo" class=" trm-dark-icon" src="/img/G.png">
+    
+    
+        <div class="trm-logo-text">
+            GDN&#39;s <span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    链接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/index.jpg">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            学习记录
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Python 内存相关学习记录
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/ico.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        jack_gdn
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/jackgdn/" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                居住地:
+            </div>
+            <div class="trm-label trm-label-light">
+                Earth
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                未知
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                性别:
+            </div>
+            <div class="trm-label trm-label-light">
+                武装直升机
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:li_chungyao@outlook.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            08:03
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p><strong>本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 <code>&gt;&gt;&gt;</code> 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。</strong></p>
+<h1 id="可变对象与不可变对象"><a href="#可变对象与不可变对象" class="headerlink" title="可变对象与不可变对象"></a>可变对象与不可变对象</h1><table>
+<thead>
+<tr>
+<th align="center">可变对象</th>
+<th align="center">不可变对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">列表、字典、集合</td>
+<td align="center">整型、浮点型、布尔型、字符串、元组</td>
+</tr>
+</tbody></table>
+<p>简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用转移到新创建的对象上。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dictnry = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">1</span>&#125;  <span class="comment"># 字典对象为可变对象</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(dictnry))</span><br><span class="line">dictnry[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(dictnry))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">1570839226304</span></span><br><span class="line"><span class="string">1570839226304</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>下面是一个不可变对象的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">&#x27;Hello, world?&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(string))</span><br><span class="line">new_string = string.replace(<span class="string">&#x27;?&#x27;</span>, <span class="string">&#x27;!&#x27;</span>)  <span class="comment"># 因为字符串是不可变对象，因此在修改时需要一个新的变量接受修改后的字符串</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(new_string))</span><br><span class="line"><span class="built_in">print</span>(string)</span><br><span class="line"><span class="built_in">print</span>(new_string)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">1668896675760</span></span><br><span class="line"><span class="string">1668896210864</span></span><br><span class="line"><span class="string">Hello, world?</span></span><br><span class="line"><span class="string">Hello, world!</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h1><ul>
+<li>浅拷贝：拷贝对象的引用。当原对象的数据改变时，拷贝的对象也会发生改变。</li>
+<li>深拷贝：创建一个新的对象并将原数据存入新的对象。原对象数据改变不影响拷贝对象</li>
+</ul>
+<hr>
+<p>打开 Python Shell，尝试以下操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = -<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = -<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;hi!&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;hi!&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;hello_world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;hello_world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：Python 中 <code>==</code> 运算符用于判断两个数据在数值上是否相等，而 <code>is</code> 关键字用于判断两个数据的引用是否一致，通俗来说就是地址是否一致。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="小整数池"><a href="#小整数池" class="headerlink" title="小整数池"></a>小整数池</h1><p>Python 为了节约运行内存，添加了小整数池机制。Python 会将 -5 到 256 （含 -5 与 256）的数据存储在固定位置，在需要时直接引用，而不是创建一个新的整形对象。因此：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">140720040721112</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">140720040721112</span></span><br></pre></td></tr></table></figure>
+<p>除了整型对象，仅有的两个布尔型对象也有固定的地址，每次引用都是相同的 <code>True</code>（或者 <code>False</code>）。然而，对于超出小整数池的数据，在引用时就会创建出一个新的对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1234</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">2180555911728</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">2180558782128</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，上面的操作都在 Python Shell 中完成。如果在 IDLE 中编写好代码再运行，结果也许会有些许不同……</p>
+<h1 id="Interning"><a href="#Interning" class="headerlink" title="Interning"></a>Interning</h1><p>对于上面的例子，在 IDLE 中写好代码运行的结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1234</span></span><br><span class="line">b = <span class="number">1234</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">True</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>不难发现，这一次运行程序，两个 1234 的引用一致。这是因为，Python 在创建了一个整型对象 <code>1234</code> 并被变量 <code>a</code> 引用后，变量 <code>b</code> 也需要引用一个整型对象 <code>1234</code>，因此 <code>b</code> 也引用了刚才创建的整型对象。</p>
+<p>不仅仅是整型对象，除元组外的不可变对象<strong>在编译模式下</strong>都适用 Interning 机制，而仅当元组内的所有元素都为不可变对象时，元组才适用 Intern 机制。</p>
+<h1 id="字符串驻留"><a href="#字符串驻留" class="headerlink" title="字符串驻留"></a>字符串驻留</h1><p>上述 Interning 机制是对于编译模式来讲的，而在交互模式中，同样有字符串驻留机制用于节约内存，以下情况会在交互模式中触发：</p>
+<ul>
+<li>字符串的长度为 0 或 1</li>
+<li>字符串长度大于 1 且字符串中仅含有字母、数字及下划线</li>
+<li>驻留发生在编译时而非运行时</li>
+</ul>
+<p>在查找资料时，许多文章都提到由乘法得到的字符串长度小于等于 20 且仅含有字母、数字及下划线时也会触发驻留机制，然而依据我再 Python 3.12 中的尝试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;1234567890qwertyuiop_ASDFGHJKL&#x27;</span> * <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;1234567890qwertyuiop_ASDFGHJKL&#x27;</span> * <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(a)</span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(b)</span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>这一条似乎并不成立。</p>
+<p>这里面最难以理解的应该是第三条，可以用下面的例子解释：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;Hi_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;Hi&#x27;</span> + <span class="string">&#x27;_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span>  <span class="comment"># 编译时</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;Hi_&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">&#x27;Hi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b + <span class="string">&#x27;_&#x27;</span> <span class="keyword">is</span> a</span><br><span class="line"><span class="literal">False</span>  <span class="comment"># 运行时</span></span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/03/07/Python-内存相关学习记录/" title="Python 内存相关学习记录">https://jackgdn.github.io/2024/03/07/Python-内存相关学习记录/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/06/NSS18/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-date">
+                    <div class="trm-cover-day">06</div>
+                    <div class="trm-cover-month">2024/03</div>
+                </div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/WP/">
+                    WP
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/06/NSS18/" class="trm-anima-link">
+                    NSSCTF Round#18 WP
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/06</li>
+                <li>19:21</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'jackgdn/jackgdn.github.io',
+            "data-repo-id": 'R_kgDOLYEWwg',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
+            "data-mapping": 'title',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2024- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">jack_gdn</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            Nice Day ;-)
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="可变对象与不可变对象"><a rel="nofollow" class="trm-toc-link" href="#可变对象与不可变对象"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">可变对象与不可变对象</span></a></li><li class="trm-toc-item trm-toc-level-1" title="深拷贝与浅拷贝"><a rel="nofollow" class="trm-toc-link" href="#深拷贝与浅拷贝"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">深拷贝与浅拷贝</span></a></li><li class="trm-toc-item trm-toc-level-1" title="小整数池"><a rel="nofollow" class="trm-toc-link" href="#小整数池"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">小整数池</span></a></li><li class="trm-toc-item trm-toc-level-1" title="Interning"><a rel="nofollow" class="trm-toc-link" href="#Interning"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">Interning</span></a></li><li class="trm-toc-item trm-toc-level-1" title="字符串驻留"><a rel="nofollow" class="trm-toc-link" href="#字符串驻留"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">字符串驻留</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.10"></script>
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://unpkg.com/katex@latest/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://unpkg.com/katex@latest/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
