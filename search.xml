@@ -175,7 +175,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1234</span></span><br><span class="line">b = <span class="number">1234</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">2230861897584</span></span><br><span class="line"><span class="string">True</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>不难发现，这一次运行程序，两个 1234 的引用一致。这是因为，Python 在创建了一个整型对象 <code>1234</code> 并被变量 <code>a</code> 引用后，变量 <code>b</code> 也需要引用一个整型对象 <code>1234</code>，因此 <code>b</code> 也引用了刚才创建的整型对象。</p>
-<p>不仅仅是整型对象，除元组外的不可变对象<strong>在编译模式下</strong>都适用 Interning 机制，而仅当元组内的所有元素都为不可变对象时，元组才适用 Intern 机制。</p>
+<p>不仅仅是整型对象，除元组外的不可变对象<strong>在编译模式下</strong>都适用 Interning 机制，而仅当元组内的所有元素都为不可变对象时，元组才适用 Interning 机制。</p>
 <h1 id="字符串驻留"><a href="#字符串驻留" class="headerlink" title="字符串驻留"></a>字符串驻留</h1><p>上述 Interning 机制是对于编译模式来讲的，而在交互模式中，同样有字符串驻留机制用于节约内存，以下情况会在交互模式中触发：</p>
 <ul>
 <li>字符串的长度为 0 或 1</li>
