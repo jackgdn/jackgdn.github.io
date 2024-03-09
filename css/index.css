@@ -3233,6 +3233,20 @@ details p {
 .trm-exit-readmode:hover {
   color: var(--primary);
 }
+.trm-single-column .trm-banner .col-lg-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.trm-single-column .trm-banner .trm-banner-text {
+  text-align: center;
+}
+.trm-single-column .trm-page-sidebar {
+  display: none;
+}
+.trm-single-column .trm-page-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
 /* code title */
 /* mac style title */
 /* max height */
