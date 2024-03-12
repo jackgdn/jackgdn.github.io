@@ -180,7 +180,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> % <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p><em>在 Python 中，浮点类型数据也可以做模运算，不过意义不大。</em></p>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符又三个 <code>and</code> <code>or</code> <code>not</code>，运算结果为布尔型。<code>and</code> <code>or</code> 的优先级低于数学运算符。</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符又三个 <code>and</code> <code>or</code> <code>not</code>，运算结果为布尔型。<code>and</code> <code>or</code> 的优先级低于算术运算符。</p>
 <h1 id="Python-变量命名规则"><a href="#Python-变量命名规则" class="headerlink" title="Python 变量命名规则"></a>Python 变量命名规则</h1><ul>
 <li>可以使用字母或下划线开头，不能使用数字开头</li>
 <li>仅数字、字母与下划线可以出现在变量名中</li>
@@ -495,7 +495,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;sharedStrings.xml&quot;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> xml:</span><br><span class="line">    s = xml.read().split(<span class="string">&#x27;&lt;/t&gt;&lt;/si&gt;&lt;si&gt;&lt;t&gt;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">40001</span>):</span><br><span class="line">    fake = <span class="string">f&quot;fake_flag<span class="subst">&#123;i&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> fake <span class="keyword">not</span> <span class="keyword">in</span> s:</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 1351</span></span><br></pre></td></tr></table></figure>
 
 <p>第 1351 个 flag 是 real flag。</p>
-<p>其实眼里好的话，有几行宽度不一样，也可以直接看出来。</p>
+<p>其实眼力好的话，有几行宽度不一样，也可以直接看出来。</p>
 <p><img src="https://raw.githubusercontent.com/jackgdn/jackgdn.github.io/main/img/Pearl2024/image-7.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 ]]></content>
       <categories>
@@ -628,6 +628,83 @@
         <tag>Reverse</tag>
         <tag>WP</tag>
         <tag>Pwn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023.3.12 第三次课</title>
+    <url>/2024/03/12/20240312/</url>
+    <content><![CDATA[<h1 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h1><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center"><code>==</code></td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;=</code></td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;=</code></td>
+<td align="center">小于等于</td>
+</tr>
+</tbody></table>
+<p>Python 支持连续比较的操作，例如 <code>score &gt;= 80 and score &lt; 90</code> 亦可写成 <code>80 &lt;= score &lt; 90</code></p>
+<p><strong>优先级顺序： 括号 &gt; 算术运算符 &gt; 关系运算符 &gt; 逻辑运算符</strong></p>
+<p><strong>用于表示优先级的括号只可以是小括号。</strong></p>
+<h1 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h1><p>为了便于程序阅读，可以将程序中的常量用大写字母和下划线表示，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> importlib.util <span class="keyword">import</span> *</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>MAGIC_NUMBER</span><br><span class="line"><span class="string">b&#x27;\xcb\r\r\n&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="交换两个变量的值"><a href="#交换两个变量的值" class="headerlink" title="交换两个变量的值"></a>交换两个变量的值</h2><p>方法一：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"><span class="comment"># 借助中间变量</span></span><br><span class="line">c = a</span><br><span class="line">a = b</span><br><span class="line">b = c</span><br></pre></td></tr></table></figure>
+
+<p>方法二：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">a, b = b, a  <span class="comment"># Python 中特有的赋值方法</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>这里有生动形象的解释：<a href="https://www.runoob.com/cplusplus/cpp-classes-objects.html">类 &amp; 对象</a></p>
+<p><code>id()</code> 函数可以用于查看当前对象的引用（地址）。另附一个链接：<a href="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1">Python 内存相关学习记录</a></p>
+<h1 id="复合运算符"><a href="#复合运算符" class="headerlink" title="复合运算符"></a>复合运算符</h1><p><code>x = x + 1</code> 可以写成 <code>x += 1</code>，<code>m = m * 4</code> 可以写成 <code>m *= 4</code></p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h2><p>字符串连接可以使用 <code>+</code> 完成，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;hello&#x27;</span> + <span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="string">&#x27;helloworld&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;123&#x27;</span> + <span class="number">456</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: can only concatenate <span class="built_in">str</span> (<span class="keyword">not</span> <span class="string">&quot;int&quot;</span>) to <span class="built_in">str</span></span><br></pre></td></tr></table></figure>
+
+<p><code>str()</code> 可以将其他类型数据转为字符串，<code>int()</code> 可以将其他类型的数据转化为整型，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">str</span>(<span class="string">&#x27;12345&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;12345&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&#x27;12345&#x27;</span>)</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>int()</code> 将字符串转化为整型时，字符串必须可以表示为一个整型数据：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&#x27;123a&#x27;</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> <span class="built_in">int</span>() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">&#x27;123a&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&#x27;123.45&#x27;</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> <span class="built_in">int</span>() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">&#x27;123.45&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>转化小数时，可以使用 <code>float()</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&#x27;123.45&#x27;</span>)</span><br><span class="line"><span class="number">123.45</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-input-读取键盘输入"><a href="#使用-input-读取键盘输入" class="headerlink" title="使用 input() 读取键盘输入"></a>使用 <code>input()</code> 读取键盘输入</h1><p><code>input()</code> 的参数可以是字符串，用于在读取输入前输出内容：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name = <span class="built_in">input</span>(<span class="string">&quot;Name: &quot;</span>)</span><br><span class="line">Name: gdn</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&#x27;Name:&#x27;</span>, name)</span><br><span class="line">Name: gdn</span><br></pre></td></tr></table></figure>
+
+<p><code>tpye()</code> 可以用于输出对象的类型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>age = <span class="built_in">input</span>()</span><br><span class="line"><span class="number">19</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(age)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;str&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>由此可见，<code>input()</code> 接受的默认数据类型为字符串。</p>
+<p>函数可以嵌套执行，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()</span><br><span class="line">a = <span class="built_in">int</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>可以修改为</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python 编程导论笔记</category>
+      </categories>
+      <tags>
+        <tag>Python 编程导论笔记</tag>
       </tags>
   </entry>
 </search>
