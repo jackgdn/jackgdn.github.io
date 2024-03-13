@@ -250,7 +250,7 @@
 <p>转化小数时，可以使用 <code>float()</code>：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&#x27;123.45&#x27;</span>)</span><br><span class="line"><span class="number">123.45</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="使用-input-读取键盘输入"><a href="#使用-input-读取键盘输入" class="headerlink" title="使用 input() 读取键盘输入"></a>使用 <code>input()</code> 读取键盘输入</h1><p><code>input()</code> 的参数可以是字符串，用于在读取输入前输出内容：</p>
+<h1 id="使用-input-读取输入"><a href="#使用-input-读取输入" class="headerlink" title="使用 input() 读取输入"></a>使用 <code>input()</code> 读取输入</h1><p><code>input()</code> 的参数可以是字符串，用于在读取输入前输出内容：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name = <span class="built_in">input</span>(<span class="string">&quot;Name: &quot;</span>)</span><br><span class="line">Name: gdn</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&#x27;Name:&#x27;</span>, name)</span><br><span class="line">Name: gdn</span><br></pre></td></tr></table></figure>
 
 <p><code>tpye()</code> 可以用于输出对象的类型：</p>
