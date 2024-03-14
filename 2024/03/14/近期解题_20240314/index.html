@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="[SWPU2019]ReverseMe乍一看 main() 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。  通过使用“广撒网”的打断点方式（在每一个可疑的 call 指令打断点），找到输入函数的位置：  紧接着下面就对输入内容的长度进行判定，输入内容的长度为 0x20。 继续调试，可以看到输入的内容在下面位置进行了异或操作：   最后在下面与密文进行比较：  根据此操">
+<meta name="description" content="[SWPU2019]ReverseMe乍一看 main() 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。  通过使用“广撒网”的打断点方式（在每一个可疑的 call 指令打断点），找到输入函数的位置：  紧接着下面就对输入内容的长度进行判定，输入内容的长度为 0x20。 继续调试，可以看到输入的内容在下面位置进行了异或操作：   最后在下面与密文进行比较：  根据此操作的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="-GDN&#39;s blog-">
 <meta property="og:url" content="https://jackgdn.github.io/2024/03/14/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/index.html">
 <meta property="og:site_name" content="-GDN&#39;s blog-">
-<meta property="og:description" content="[SWPU2019]ReverseMe乍一看 main() 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。  通过使用“广撒网”的打断点方式（在每一个可疑的 call 指令打断点），找到输入函数的位置：  紧接着下面就对输入内容的长度进行判定，输入内容的长度为 0x20。 继续调试，可以看到输入的内容在下面位置进行了异或操作：   最后在下面与密文进行比较：  根据此操">
+<meta property="og:description" content="[SWPU2019]ReverseMe乍一看 main() 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。  通过使用“广撒网”的打断点方式（在每一个可疑的 call 指令打断点），找到输入函数的位置：  紧接着下面就对输入内容的长度进行判定，输入内容的长度为 0x20。 继续调试，可以看到输入的内容在下面位置进行了异或操作：   最后在下面与密文进行比较：  根据此操作的">
 <meta property="og:locale">
 <meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
 <meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
@@ -20,13 +20,13 @@
 <meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
 <meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
 <meta property="article:published_time" content="2024-03-14T07:50:39.866Z">
-<meta property="article:modified_time" content="2024-03-14T08:50:31.315Z">
+<meta property="article:modified_time" content="2024-03-14T15:38:31.110Z">
 <meta property="article:author" content="JackGDN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jackgdn.github.io/img/404.jpg">
 
 
-<title >-GDN's blog-</title>
+<title >-GDN's blog-</title><meta name="robots" content="noindex">
 
 <!-- Favicon -->
 
@@ -71,7 +71,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung des Privateigentums","The best people in life are free.","We never go out of style.","Cogito, ergo sum."],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了，文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-14 16:50:31"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-14 23:38:31"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
@@ -409,9 +409,7 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <hr>
-<hr>
-<h1 id="SWPU2019-ReverseMe"><a href="#SWPU2019-ReverseMe" class="headerlink" title="[SWPU2019]ReverseMe"></a>[SWPU2019]ReverseMe</h1><p>乍一看 <code>main()</code> 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。</p>
+    <h1 id="SWPU2019-ReverseMe"><a href="#SWPU2019-ReverseMe" class="headerlink" title="[SWPU2019]ReverseMe"></a>[SWPU2019]ReverseMe</h1><p>乍一看 <code>main()</code> 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友—— SEH。</p>
 <p><img src="/image.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <p>通过使用“广撒网”的打断点方式（在每一个可疑的 <code>call</code> 指令打断点），找到输入函数的位置：</p>
 <p><img src="/image-4.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
@@ -431,7 +429,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pub.key&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> pubkey:</span><br><span class="line">    key = RSA.importKey(pubkey.read())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(key.n)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br></pre></td></tr></table></figure>
 
 <p>上面的脚本从 <code>pub.key</code> 中读取出了 <code>n</code>，分解后可以解出 flag：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">n = <span class="number">86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br><span class="line">p = <span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q = <span class="number">304008741604601924494328155975272418463</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;flag.enc&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> flag:</span><br><span class="line">    c = bytes_to_long(flag.read())</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: b&#x27;\x02\x9d &#123;zR\x1e\x08\xe4\xe6\x18\x06\x00flag&#123;decrypt_256&#125;\n&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">n = <span class="number">86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br><span class="line">p = <span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q = <span class="number">304008741604601924494328155975272418463</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;flag.enc&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> flag:</span><br><span class="line">    c = bytes_to_long(flag.read())</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: b&#x27;\x02\x9d &#123;zR\x1e\x08\xe4\xe6\x18\x06\x00flag&#123;decrypt_256&#125;\n&#x27;</span></span><br></pre></td></tr></table></figure><!-- flag of hidden posts -->
 </article>
     
     
@@ -462,74 +460,6 @@
         </h5>
     </div>
     
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/03/14/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-date">
-                    <div class="trm-cover-day">14</div>
-                    <div class="trm-cover-month">2024/03</div>
-                </div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" #.">
-                    未分类
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/03/14/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="trm-anima-link">
-                    
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/03/14</li>
-                <li>16:54</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/03/12/20240312/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-date">
-                    <div class="trm-cover-day">12</div>
-                    <div class="trm-cover-month">2024/03</div>
-                </div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/Python-%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/">
-                    Python 编程导论笔记
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/03/12/20240312/" class="trm-anima-link">
-                    2023.3.12 第三次课
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/03/12</li>
-                <li>15:11</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
     
 </div>
 
