@@ -26,9 +26,9 @@
 <meta property="article:modified_time" content="2024-03-12T07:12:05.089Z">
 <meta property="article:author" content="JackGDN">
 <meta property="article:tag" content="Reverse">
-<meta property="article:tag" content="WP">
 <meta property="article:tag" content="Misc">
 <meta property="article:tag" content="Forensics">
+<meta property="article:tag" content="WP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jackgdn.github.io/img/404.jpg">
 
@@ -566,50 +566,6 @@
 </div>
 
     
-
-    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
-<script data-swup-reload-script>
-    function loadGiscus() {
-        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
-        const config = {
-            src: 'https://giscus.app/client.js',
-            "data-repo": 'jackgdn/jackgdn.github.io',
-            "data-repo-id": 'R_kgDOLYEWwg',
-            "data-category": 'Announcements',
-            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
-            "data-mapping": 'title',
-            "data-reactions-enabled": '1',
-            "data-emit-metadata": '0',
-            "data-theme": nowTheme,
-            "data-lang": 'zh-CN',
-            crossorigin: "anonymous",
-            async: true
-        }
-        let ele = document.createElement('script')
-        for (let key in config) {
-            ele.setAttribute(key, config[key])
-        }
-        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
-    }
-
-    function changeGiscusTheme() {
-        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
-
-        function sendMessage(message) {
-            const iframe = document.querySelector('iframe.giscus-frame');
-            if (!iframe) return;
-            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-
-        sendMessage({
-            setConfig: {
-                theme: theme
-            }
-        });
-    }
-
-    loadGiscus();
-</script>
 
 
 
