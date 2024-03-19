@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="Python str 类型 不可变对象 可迭代对象 - 字符串的每一个字符可以通过下标访问。  转义字符 \当转义字符与其他字符连接到一起的时候，允许使用特殊符号，常见的特殊符号：    转义字符 效果    \\ \   \&#39; &#39;   \&quot; &quot;   \n 换行符   \u Unicode 编号（四位十六进制数）   \U Unicode 编号（八位十六进制数）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023.3.19 第四次课">
+<meta property="og:url" content="https://jackgdn.github.io/2024/03/19/20240319/index.html">
+<meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="Python str 类型 不可变对象 可迭代对象 - 字符串的每一个字符可以通过下标访问。  转义字符 \当转义字符与其他字符连接到一起的时候，允许使用特殊符号，常见的特殊符号：    转义字符 效果    \\ \   \&#39; &#39;   \&quot; &quot;   \n 换行符   \u Unicode 编号（四位十六进制数）   \U Unicode 编号（八位十六进制数）">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-03-19T05:44:01.398Z">
+<meta property="article:modified_time" content="2024-03-19T12:57:44.315Z">
+<meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Python 编程导论笔记">
+<meta name="twitter:card" content="summary">
+
+
+<title >2023.3.19 第四次课</title>
+
+<!-- Favicon -->
+
+    <link href='/img/16.ico?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/32.ico?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/ico.jpg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/img/G.png' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung des Privateigentums","The best people in life are free.","We never go out of style.","Cogito, ergo sum."],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了，文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-19 20:57:44"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" class=" trm-light-icon" src="/img/GL.png"> <img alt="logo" class=" trm-dark-icon" src="/img/G.png">
+    
+    
+        <div class="trm-logo-text">
+            GDN&#39;s <span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    链接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/index.jpg">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            Python 编程导论笔记
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            2023.3.19 第四次课
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/ico.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        jack_gdn
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/jackgdn/" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://discordapp.com/users/1197744806026280980" title="Discord" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-discord"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                IP 属地:
+            </div>
+            <div class="trm-label trm-label-light">
+                朝鲜
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                居住地:
+            </div>
+            <div class="trm-label trm-label-light">
+                Arrakis
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                未知
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                性别:
+            </div>
+            <div class="trm-label trm-label-light">
+                武装直升机
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:li_chungyao@outlook.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/19
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            13:44
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="Python-str-类型"><a href="#Python-str-类型" class="headerlink" title="Python str 类型"></a>Python <code>str</code> 类型</h1><ul>
+<li><a href="https://jackgdn.github.io/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1">不可变对象</a></li>
+<li>可迭代对象 - 字符串的每一个字符可以通过下标访问。</li>
+</ul>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符 \"></a>转义字符 <code>\</code></h2><p>当转义字符与其他字符连接到一起的时候，允许使用特殊符号，常见的特殊符号：</p>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>\\</code></td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center"><code>\&#39;</code></td>
+<td align="center"><code>&#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>\&quot;</code></td>
+<td align="center"><code>&quot;</code></td>
+</tr>
+<tr>
+<td align="center"><code>\n</code></td>
+<td align="center">换行符</td>
+</tr>
+<tr>
+<td align="center"><code>\u</code></td>
+<td align="center">Unicode 编号（四位十六进制数）</td>
+</tr>
+<tr>
+<td align="center"><code>\U</code></td>
+<td align="center">Unicode 编号（八位十六进制数）</td>
+</tr>
+</tbody></table>
+<h2 id="len-函数"><a href="#len-函数" class="headerlink" title="len() 函数"></a><code>len()</code> 函数</h2><p><code>len()</code> 函数可以用于查找字符串的长度（字符个数）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(<span class="string">&#x27;Hello, World!&#x27;</span>)</span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(<span class="string">&#x27;你好，世界！&#x27;</span>)  <span class="comment"># Python 会根据编码计算字符数而非字节数</span></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><p>字符串进行大小比较时，比较的是首字母 ASCII 码的大小。使用 <code>ord()</code> 查看字符的 ASCII 码，得到整型数据；<code>chr()</code> 将 ASCII 码转化为对应的字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"><span class="number">65</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">chr</span>(<span class="number">0x20</span>)</span><br><span class="line"><span class="string">&#x27; &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">ord</span>(<span class="string">&#x27;你&#x27;</span>)  <span class="comment"># 可以查看 Unicode 字符集的字符编号</span></span><br><span class="line"><span class="number">20320</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="random-模块"><a href="#random-模块" class="headerlink" title="random 模块"></a><code>random</code> 模块</h1><p><code>random</code> 模块中有用于生成随机数的方法。</p>
+<h2 id="random-random"><a href="#random-random" class="headerlink" title="random.random()"></a><code>random.random()</code></h2><p>随机生成 0-1 之间的一个小数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.18286591628885118</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.9337826281711219</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="random-randint-与-random-randrange"><a href="#random-randint-与-random-randrange" class="headerlink" title="random.randint() 与 random.randrange()"></a><code>random.randint()</code> 与 <code>random.randrange()</code></h2><p>随机生成指定指定范围的整数。区别在于 <code>randint()</code> 中的参数组成闭区间，<code>randrange()</code> 中的参数组成左闭右开区间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="comment"># 使用 randint(0, 2) 允许输出 2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.randrange(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="comment"># 使用 randrange(0, 2) 中只有 0 或 1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="round-函数"><a href="#round-函数" class="headerlink" title="round() 函数"></a><code>round()</code> 函数</h1><p>四舍五入函数，用于保留指定位数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(<span class="number">3.1415926</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">3.14</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(<span class="number">3.1415926</span>, <span class="number">0</span>)</span><br><span class="line"><span class="number">3.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(<span class="number">3.1415926</span>)  <span class="comment"># 缺省第二个参数，返回整型数据</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(<span class="number">12345.6789</span>, -<span class="number">1</span>)  <span class="comment"># 限定数据精确度</span></span><br><span class="line"><span class="number">12350.0</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h1><p>Python<strong>严格</strong>按照缩进执行程序！</p>
+<h2 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a><code>while</code> 循环</h2><p>例题：从 1 开始对自然数累加，当和大于 10000 时停止，求此时加到了哪一个数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">res = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> res &lt; <span class="number">10000</span>:</span><br><span class="line">    res += i</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(res, i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 10011 142</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="for-循环与-range-方法"><a href="#for-循环与-range-方法" class="headerlink" title="for 循环与 range() 方法"></a><code>for</code> 循环与 <code>range()</code> 方法</h2><p>例题：计算 1 到 100 求和。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">101</span>):  <span class="comment"># 左闭右开区间，该 range() 生成的是一个 0-100 的迭代器</span></span><br><span class="line">    res += i  <span class="comment"># 严格缩进</span></span><br><span class="line"><span class="built_in">print</span>(res)  <span class="comment"># 要求最后输出结果，因此 print() 放在循环外</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 5050</span></span><br></pre></td></tr></table></figure>
+
+<p>紧跟 <code>for</code> 的是循环变量，<code>in</code> 后边需要紧跟一个可迭代对象。通俗的讲，可迭代对象就是可以通过下标访问对象中某个元素的对象，常见的可迭代对象有字符串、列表、字典、集合、元组等。文件对象也是可迭代对象，可以通过下标访问文件的某一行；Python 还可以直接通过下标访问 <code>.csv</code> 文件的某一行某一列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;Hello, World!&#x27;</span>: <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">output:</span></span><br><span class="line"><span class="string">H</span></span><br><span class="line"><span class="string">e</span></span><br><span class="line"><span class="string">l</span></span><br><span class="line"><span class="string">l</span></span><br><span class="line"><span class="string">o</span></span><br><span class="line"><span class="string">,</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">W</span></span><br><span class="line"><span class="string">o</span></span><br><span class="line"><span class="string">r</span></span><br><span class="line"><span class="string">l</span></span><br><span class="line"><span class="string">d</span></span><br><span class="line"><span class="string">!</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>range()</code> 方法有三个参数，完整写法为 <code>range(start, end, step)</code>，分别为开始、结束、步长，三个参数均为整型，<code>start</code> 与 <code>end</code> 组成左闭右开区间且都为整型。</p>
+<p>如果只传入一个参数，则默认为 <code>end</code>，并默认补全为 <code>range(0, end, 1)</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<p>如果传入两个参数，则依次被识别为 <code>start</code> 与 <code>end</code>，默认补全为 <code>range(start, end, 1)</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>, <span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<p>传入三个参数，效果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>, <span class="number">10</span>, <span class="number">3</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lst</span><br><span class="line">[<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>对于固定循环次数，使用 <code>for</code> 会更加便捷</strong></p>
+<h2 id="break-关键字"><a href="#break-关键字" class="headerlink" title="break 关键字"></a><code>break</code> 关键字</h2><p>用于强制跳出循环。</p>
+<p>将上面 <code>while</code> 中的例子用 <code>for</code> 实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">200</span>):</span><br><span class="line">    res += i</span><br><span class="line">    <span class="keyword">if</span> res &gt; <span class="number">10000</span>:</span><br><span class="line">        <span class="built_in">print</span>(res, i)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output: 10011 141</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="print-的第二个参数"><a href="#print-的第二个参数" class="headerlink" title="print() 的第二个参数"></a><code>print()</code> 的第二个参数</h2><h3 id="end"><a href="#end" class="headerlink" title="end"></a><code>end</code></h3><p>输出完成后的参数，默认为 <code>\n</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;Hello, World!&#x27;</span>: <span class="built_in">print</span>(i, end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment"># output: Hello, World!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sep"><a href="#sep" class="headerlink" title="sep"></a><code>sep</code></h3><p>多个输出中间的分隔符，默认为 <code> </code>（空格）:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(*<span class="string">&#x27;Hello, World!&#x27;</span>, sep = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment"># output: Hello, World!</span></span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/03/19/20240319/" title="2023.3.19 第四次课">https://jackgdn.github.io/2024/03/19/20240319/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/16/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-date">
+                    <div class="trm-cover-day">16</div>
+                    <div class="trm-cover-month">2024/03</div>
+                </div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/WP/">
+                    WP
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/16/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="trm-anima-link">
+                    近期解题 2024.3.16
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/16</li>
+                <li>23:14</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2024- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">jack_gdn</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+    
+        <div class="trm-footer-item">
+            Nice Day ;-)
+        </div>
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="Python str 类型"><a rel="nofollow" class="trm-toc-link" href="#Python-str-类型"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">Python str 类型</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="转义字符 \"><a rel="nofollow" class="trm-toc-link" href="#转义字符"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">转义字符 \</span></a></li><li class="trm-toc-item trm-toc-level-2" title="len() 函数"><a rel="nofollow" class="trm-toc-link" href="#len-函数"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">len() 函数</span></a></li><li class="trm-toc-item trm-toc-level-2" title="字符串比较"><a rel="nofollow" class="trm-toc-link" href="#字符串比较"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">字符串比较</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="random 模块"><a rel="nofollow" class="trm-toc-link" href="#random-模块"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">random 模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="random.random()"><a rel="nofollow" class="trm-toc-link" href="#random-random"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">random.random()</span></a></li><li class="trm-toc-item trm-toc-level-2" title="random.randint() 与 random.randrange()"><a rel="nofollow" class="trm-toc-link" href="#random-randint-与-random-randrange"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">random.randint() 与 random.randrange()</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="round() 函数"><a rel="nofollow" class="trm-toc-link" href="#round-函数"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">round() 函数</span></a></li><li class="trm-toc-item trm-toc-level-1" title="循环结构"><a rel="nofollow" class="trm-toc-link" href="#循环结构"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">循环结构</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="while 循环"><a rel="nofollow" class="trm-toc-link" href="#while-循环"><span class="trm-toc-number">4.1.</span> <span class="trm-toc-text">while 循环</span></a></li><li class="trm-toc-item trm-toc-level-2" title="for 循环与 range() 方法"><a rel="nofollow" class="trm-toc-link" href="#for-循环与-range-方法"><span class="trm-toc-number">4.2.</span> <span class="trm-toc-text">for 循环与 range() 方法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="break 关键字"><a rel="nofollow" class="trm-toc-link" href="#break-关键字"><span class="trm-toc-number">4.3.</span> <span class="trm-toc-text">break 关键字</span></a></li><li class="trm-toc-item trm-toc-level-2" title="print() 的第二个参数"><a rel="nofollow" class="trm-toc-link" href="#print-的第二个参数"><span class="trm-toc-number">4.4.</span> <span class="trm-toc-text">print() 的第二个参数</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="end"><a rel="nofollow" class="trm-toc-link" href="#end"><span class="trm-toc-number">4.4.1.</span> <span class="trm-toc-text">end</span></a></li><li class="trm-toc-item trm-toc-level-3" title="sep"><a rel="nofollow" class="trm-toc-link" href="#sep"><span class="trm-toc-number">4.4.2.</span> <span class="trm-toc-text">sep</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.1.10"></script>
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://unpkg.com/katex@latest/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://unpkg.com/katex@latest/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
