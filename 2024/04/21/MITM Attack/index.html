@@ -7,16 +7,31 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="-GDN&#39;s blog-">
-<meta property="og:url" content="https://jackgdn.github.io/archives/index.html">
+<meta name="description" content="前置知识用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试">
+<meta property="og:url" content="https://jackgdn.github.io/2024/04/21/MITM%20Attack/index.html">
 <meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="前置知识用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收">
 <meta property="og:locale">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="og:image" content="https://jackgdn.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-04-21T13:35:31.261Z">
+<meta property="article:modified_time" content="2024-04-21T15:35:38.769Z">
 <meta property="article:author" content="JackGDN">
+<meta property="article:tag" content="Pen Test">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jackgdn.github.io/img/404.jpg">
 
 
-<title >-GDN's blog-</title>
+<title >如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试</title>
 
 <!-- Favicon -->
 
@@ -61,7 +76,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung des Privateigentums","The best people in life are free.","We never go out of style.","Cogito, ergo sum."],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了，文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2024-04-21 23:37:18"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-04-21 23:35:38"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
@@ -151,7 +166,7 @@
                 
             </li>
             
-            <li class="menu-item-has-children current-menu-item">
+            <li class="menu-item-has-children ">
                 <a  href="/archives/" target="">
                     归档
                 </a>
@@ -240,10 +255,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            没有网络我可怎么活QAQ
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试
                         </h1>
 
                         
@@ -253,7 +268,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        archives
+                                        2024
                                     </span>
                                 </li>
                             </ul>
@@ -377,311 +392,178 @@
             
             <div class="trm-page-content col-lg-8">
                 <div id="trm-content" class="trm-content">
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">（10）</span></li></ul>
-                
-            </div>
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            04/21
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            21:35
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            JackGDN
         </div>
     </div>
 </div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p>用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收到 A 的请求后将自己的位置告诉 A，随后两人就可以开始通信。</p>
+<p>但是，这是出现了一个不怀好意的 C，当 A 发送请求的时候，C 就拼命地给 A 回复“我就是 13 号”以至于 A 根本听不到 B 给他的回复，因此 A 就会把 C 当作 B 并与之通信，C 便可以借机充当中间人实施攻击。</p>
+<h1 id="动手尝试"><a href="#动手尝试" class="headerlink" title="动手尝试"></a>动手尝试</h1><h2 id="攻击前准备"><a href="#攻击前准备" class="headerlink" title="攻击前准备"></a>攻击前准备</h2><p>本次攻击尝试中，攻击机与靶机均为使用 NAT 模式连接物理机的虚拟机。这样既可以使两台虚拟机连接到外部网络，又不会在攻击过程中造成流量泄露。</p>
+<p><strong>攻击机配置</strong></p>
+<ul>
+<li>操作系统：Kali Linux</li>
+<li>IPv4 地址：192.168.107.135</li>
+<li>MAC 地址：00:0c:29:62:a9:97</li>
+</ul>
+<p><strong>靶机配置</strong></p>
+<ul>
+<li>操作系统：Windows 10</li>
+<li>IPv4 地址：192.168.107.139</li>
+<li>MAC 地址：00:0C:29:B6:7E:52</li>
+</ul>
+<p><strong>网关配置</strong></p>
+<ul>
+<li>IPv4 地址：192.168.107.2</li>
+<li>MAC 地址：00:50:56:f2:3a:1f</li>
+</ul>
+<p>在开始攻击前，使用 <code>arp -a</code> 命令查看靶机 ARP 缓存中的 MAC 地址。此时，靶机中记录的 MAC 地址为正确的地址，测试用网址 <code>example.com</code> 也能够正常访问。</p>
+<p><img src="/image-1.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="ARP-欺骗"><a href="#ARP-欺骗" class="headerlink" title="ARP 欺骗"></a>ARP 欺骗</h2><p>在攻击机中使用 ettercap 工具，该工具可用于执行多种形式的中间人攻击，本次 ARP 欺骗以及 DNS 劫持都需要用到该工具。<code>sudo ettercap -G</code> 命令可用于打开该工具的图形化界面。</p>
+<p><img src="/image-2.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>首先扫描局域网下的存活主机，并将网关作为 Target 1, 靶机作为 Target 2：</p>
+<p><img src="/image-3.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>此时选择 ARP Poisoning 选项进行 ARP 欺骗攻击。这时再使用 <code>arp -a</code> 查看靶机上的 ARP 缓存就会发现，网关的 MAC 地址已经变成了攻击机的 MAC 地址。此时靶机再访问任何外界网站，流量都会首先通过攻击机。</p>
+<p><img src="/image-4.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="DNS-劫持"><a href="#DNS-劫持" class="headerlink" title="DNS 劫持"></a>DNS 劫持</h2><p>在进行 DNS 劫持中，ettercap 会将攻击机作为一台伪 DNS 解析服务器，向靶机发送虚假的服务器地址。首先修改 <code>/etc/ettercap/etter.dns</code> 文件来添加规则。例如说，我们在文件中添加一行 <code>* A 127.0.0.1</code>，则 ettercap 会对靶机发送的任何解析域名请求返回本机回环地址 <code>127.0.0.1</code>。</p>
+<p><img src="/image-5.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>修改好后，启用 ettercap 的 dns_spoof 插件进行 DNS 劫持攻击。</p>
+<p><img src="/image-6.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>这时就能发现，靶机断网了，因为任何通过域名访问外界的请求，都会被解析成 127.0.0.1。</p>
+<p><img src="/image-7.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/image-8.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>但是不经过域名解析，直接使用 IP 弟子连接的服务器则不受影响。</p>
+<p><img src="/image-11.png" alt="Alt text" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'>a</p>
 
-<!-- history -->
+</article>
+    
+    
 
-<div class="row">
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        JackGDN
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://jackgdn.github.io/2024/04/21/MITM Attack/" title="如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试">https://jackgdn.github.io/2024/04/21/MITM Attack/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0 ">CC BY-NC-ND 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                所有归档
-            
-            <span data-number="01"></span>
+            其他文章
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/30/%E8%84%9A%E6%9C%AC%E5%BA%93/" class="trm-cover-frame trm-anima-link">
             
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/04/21/MITM%20Attack/" class="trm-anima-link">
-                                        如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">04/21</li>
-                                        <li class="trm-accent-color">21:35</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
+            
+                <div class="trm-cover-date">
+                    <div class="trm-cover-day">30</div>
+                    <div class="trm-cover-month">2024/03</div>
                 </div>
-            </div>
             
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/30/%E8%84%9A%E6%9C%AC%E5%BA%93/" class="trm-anima-link">
-                                        逆向相关算法脚本（暂时停更）
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/30</li>
-                                        <li class="trm-accent-color">17:01</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">
+                    未分类
+                </a>
             </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/16/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="trm-anima-link">
-                                        近期解题 2024.3.14
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/16</li>
-                                        <li class="trm-accent-color">23:14</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/14/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="trm-anima-link">
-                                        范德蒙德行列式证明
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/14</li>
-                                        <li class="trm-accent-color">16:54</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/11/%E9%BA%BB%E7%83%A6%E5%AF%86%E7%A0%81%E6%89%8B%E7%A0%B4%E8%A7%A3%E4%B8%80%E4%B8%8B%E5%AF%86%E7%A0%81/" class="trm-anima-link">
-                                        麻烦密码手破解一下密码 =)
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/11</li>
-                                        <li class="trm-accent-color">14:50</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="trm-publication trm-mt-15">
-                                Don't brute force ;-)
-                            </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/10/Pearl2024/" class="trm-anima-link">
-                                        PearlCTF 2024 WP
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/10</li>
-                                        <li class="trm-accent-color">08:02</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/07/Python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="trm-anima-link">
-                                        Python 内存相关学习记录
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/07</li>
-                                        <li class="trm-accent-color">08:03</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/06/NSS18/" class="trm-anima-link">
-                                        NSSCTF Round#18 WP
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/06</li>
-                                        <li class="trm-accent-color">19:21</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/06/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-Overcooked!-2-%E5%A4%AA%E9%9A%BE%EF%BC%8C%E4%BA%8E%E6%98%AF%E4%BB%96%E2%80%A6%E2%80%A6/" class="trm-anima-link">
-                                        修改 Overcooked! 2 存档
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/06</li>
-                                        <li class="trm-accent-color">14:03</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2024/03/06/Unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="trm-anima-link">
-                                        Unicode 学习记录
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">03/06</li>
-                                        <li class="trm-accent-color">12:20</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
+            <h5>
+                <a href="/2024/03/30/%E8%84%9A%E6%9C%AC%E5%BA%93/" class="trm-anima-link">
+                    逆向相关算法脚本（暂时停更）
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/30</li>
+                <li>17:01</li>
+                
+                
+            </ul>
         </div>
-        <!-- timeline end -->
     </div>
 </div>
+    
+</div>
 
-<!-- history end -->
+    
 
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'jackgdn/jackgdn.github.io',
+            "data-repo-id": 'R_kgDOLYEWwg',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDOLYEWws4CdvZ-',
+            "data-mapping": 'title',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
 
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
-    </div>
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
 
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
 
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
 
 
 
@@ -735,9 +617,29 @@
 
             
 
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="前置知识"><a rel="nofollow" class="trm-toc-link" href="#前置知识"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">前置知识</span></a></li><li class="trm-toc-item trm-toc-level-1" title="动手尝试"><a rel="nofollow" class="trm-toc-link" href="#动手尝试"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">动手尝试</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="攻击前准备"><a rel="nofollow" class="trm-toc-link" href="#攻击前准备"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">攻击前准备</span></a></li><li class="trm-toc-item trm-toc-level-2" title="ARP 欺骗"><a rel="nofollow" class="trm-toc-link" href="#ARP-欺骗"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">ARP 欺骗</span></a></li><li class="trm-toc-item trm-toc-level-2" title="DNS 劫持"><a rel="nofollow" class="trm-toc-link" href="#DNS-劫持"><span class="trm-toc-number">2.3.</span> <span class="trm-toc-text">DNS 劫持</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
             
 <div class="trm-fixed-container">
     
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
     
     
         <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
@@ -841,6 +743,10 @@
     
 
     <!-- 评论插件 -->
+    
+        
+
+        
     
 
 
