@@ -64,7 +64,7 @@
       </tags>
   </entry>
   <entry>
-    <title>如何给室友断网 - 记一次 ARP 欺骗 + DNS 劫持攻击的尝试</title>
+    <title>记一次 ARP 欺骗 + DNS 劫持攻击的尝试</title>
     <url>/2024/04/21/MITM%20Attack/</url>
     <content><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p>用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收到 A 的请求后将自己的位置告诉 A，随后两人就可以开始通信。</p>
 <p>但是，这是出现了一个不怀好意的 C，当 A 发送请求的时候，C 就拼命地给 A 回复“我就是 13 号”以至于 A 根本听不到 B 给他的回复，因此 A 就会把 C 当作 B 并与之通信，C 便可以借机充当中间人实施攻击。</p>
@@ -701,24 +701,5 @@
         <tag>WP</tag>
         <tag>Crypto</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>麻烦密码手破解一下密码 =)</title>
-    <url>/2024/03/11/%E9%BA%BB%E7%83%A6%E5%AF%86%E7%A0%81%E6%89%8B%E7%A0%B4%E8%A7%A3%E4%B8%80%E4%B8%8B%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="猜对了密码我就给你看" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="5d7cccba0e97063b4cbc5e8130393ff6a66fc7adeae6c3273e631a9ed0bb88e8">de884df74033657ae94fc02001040990d11658e6e3243d34392dfdf1312486610910b11eae983d7e1f2aabfb2e92c93fcf7b12adb61a5aa821f833d2103d12142f175ccd1caa47c1b24ce96a5cd371c7a9a60a4d0f17ad4302ef9393e87825146dad36e63db67bba786636ca651aeb62a13ae0fc2abbecc0981d44686a1300645f87e8aec9caf3ef1b71407c6df8eacf4f590aa77fe7e523d82c64c8e0a2dacafe245dd74a59e4f51d83557bcdd3673f</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Don't brute force ;-)</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
   </entry>
 </search>
