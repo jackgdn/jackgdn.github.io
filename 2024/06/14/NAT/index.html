@@ -7,13 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="远程拍照（无内网穿透）前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="远程控制一台在内网中的设备">
 <meta property="og:url" content="https://jackgdn.github.io/2024/06/14/NAT/index.html">
 <meta property="og:site_name" content="-GDN&#39;s blog-">
+<meta property="og:description" content="远程拍照（无内网穿透）前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-06-14T05:13:34.123Z">
-<meta property="article:modified_time" content="2024-06-14T06:05:29.754Z">
+<meta property="article:modified_time" content="2024-06-15T01:50:29.695Z">
 <meta property="article:author" content="JackGDN">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -64,7 +66,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"jackgdn.github.io","author":"JackGDN","root":"/","typed_text":["Per Aspera Ad Astra","无限风光在险峰","Aufhebung des Privateigentums","The best people in life are free.","We never go out of style.","Cogito, ergo sum."],"theme_version":"2.1.10","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"/img/GL.png","icon16":"/img/16.ico","icon32":"/img/32.ico","appleTouchIcon":"/img/ico.jpg","webmanifest":"/img/G.png","visibilitychange":true,"hidden":"/img/0.ico","showText":"Du bist wieder!","hideText":"Kommst jetzt hierher!","dark_logo":"/img/G.png"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了，文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"02/26/2024 00:00:00","prefix":"GDN's Blog 已经运行 undefined 天"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"trigger":"auto","path":"search.xml"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-06-14 14:05:29"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-06-15 09:50:29"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
@@ -402,7 +404,25 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    
+    <h1 id="远程拍照（无内网穿透）"><a href="#远程拍照（无内网穿透）" class="headerlink" title="远程拍照（无内网穿透）"></a>远程拍照（无内网穿透）</h1><p>前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 <code>fswebcam</code> 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我想在宿舍里连接树莓派则需要每天交 1 元钱网费。</p>
+<h2 id="拍照、旋转、上传"><a href="#拍照、旋转、上传" class="headerlink" title="拍照、旋转、上传"></a>拍照、旋转、上传</h2><p>wanqian 师傅出于安全性的考虑，不希望我使用内网穿透控制树莓派拍照。所以，我只能让树莓派与我的云服务器单线联系。因此我想到让树莓派检测云服务器上的某个端口是否开放，若开放则自动执行拍照上传等一系列命令，所以有了下面一个脚本（路径为 <code>/home/gdn/gwc/agwc.sh</code>。下文为便于叙述，树莓派用 R 表示，云服务器用 S 表示，个人计算机用 PC 表示）:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">CONN=<span class="string">&#x27;nc -zv IP_S 8963&#x27;</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> <span class="variable">$CONN</span> ; <span class="keyword">then</span></span><br><span class="line">                time=$(<span class="built_in">date</span> +<span class="string">&quot;%Y-%m-%d_%H-%M-%S&quot;</span>)</span><br><span class="line">                fswebcam --no-banner -r 1920x1080 /home/gdn/gwc/fagwc/<span class="variable">$time</span>.jpg</span><br><span class="line">                convert /home/gdn/gwc/fagwc/<span class="variable">$time</span>.jpg -rotate 180 /home/gdn/gwc/fagwc/<span class="variable">$time</span>.jpg</span><br><span class="line">                nc -v IP_S 8965 &lt; /home/gdn/gwc/fagwc/<span class="variable">$time</span>.jpg</span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">        <span class="built_in">sleep</span> 10</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>该脚本在 R 上运行，每隔十秒钟就会检测一次 S 的 8963 端口是否开放，如果开放，则使用 <code>fswebcam</code> 命令拍照，使用 <code>convert</code> 命令（在 ImageMagisk 工具集中）旋转图片并将图片使用 netcat 传输到 S 的 8965 端口上去。由于 netcat 连接特性，开放两个端口是必需的。另外，<code>#!</code> 的shebang 不能缺失，因为如果我们想将它写入 <code>.service</code> 文件自动运行，shebang 可以告诉计算机执行该脚本的解释器是什么。</p>
+<h2 id="利用-systemd-自动执行"><a href="#利用-systemd-自动执行" class="headerlink" title="利用 systemd 自动执行"></a>利用 <code>systemd</code> 自动执行</h2><p>下面的服务文件（路径为 <code>/etc/systemd/system/agwc.service</code>）用于自动执行该脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Autonomous Gideon-watching Client</span><br><span class="line">After=NetworkManager.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/home/gdn/gwc/agwc.sh</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>有了这个脚本，前面的 agwc.sh 就会在开机后自动运行。只需执行 <code>sudo systemctl daemon-reload</code> 与 <code>sudo systemctl enable agwc.service</code>，在下次树莓派开机时，这个服务就可以自动运行了。</p>
+<h2 id="配置服务器接受图片"><a href="#配置服务器接受图片" class="headerlink" title="配置服务器接受图片"></a>配置服务器接受图片</h2><p>下面需要配置服务端，需要让 S 能在我需要的时候开放端口，接收图片然后关闭端口。下面这一脚本的路径为 <code>/home/USER_S/gdnwatch.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=8963/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8965/tcp --permanent</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">time=$(<span class="built_in">date</span> +<span class="string">&quot;%Y-%m-%d_%H-%M-%S&quot;</span>)</span><br><span class="line">nc -vl 8963 &amp;</span><br><span class="line">nc -vl 8965 &gt; ~/pictures/<span class="variable">$time</span>.jpg &amp;</span><br><span class="line"><span class="built_in">sleep</span> 10</span><br><span class="line">ps aux | grep <span class="string">&#x27;nc -vl 8963&#x27;</span> | grep -v grep | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | xargs <span class="built_in">kill</span> -9</span><br><span class="line">ps aux | grep <span class="string">&#x27;nc -vl 8965&#x27;</span> | grep -v grep | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | xargs <span class="built_in">kill</span> -9</span><br><span class="line">sudo firewall-cmd --zone=public --remove-port=8963/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --remove-port=8965/tcp --permanent</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">find ./pictures/ -size -1b -<span class="built_in">exec</span> <span class="built_in">rm</span> &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<p>这一脚本在 S 上运行。脚本首先将 8963 与 8965 端口打开并监听这两个端口并等待十秒，这两个端口分别用于标志和接受文件。接收到文件后，脚本会将两个 netcat 进程关闭以便于下次能够继续使用 netcat 监听这两个端口。再然后，关闭 8963 与 8965 两个端口。在某些情况下（例如 R 没有开机），S 接收不到任何信息并创建一个空文件，这时就需要将文件大小小于 1B 的图片删除。</p>
+<h2 id="传输到个人计算机上浏览图片"><a href="#传输到个人计算机上浏览图片" class="headerlink" title="传输到个人计算机上浏览图片"></a>传输到个人计算机上浏览图片</h2><p>进行到这一步，只剩下最后一个问题没有解决，就是浏览图片。S 上没有远程桌面，我不能在 S 上查看这些图片，我只能再将图片传输到 PC 上查看。因此，我们在 PC 上创建下面这个脚本（<code>get-pictures.cmd</code>，在 Linux 系统上将后缀改为 <code>.sh</code> 同样可以运行）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh USER_S@IP_S <span class="string">&quot;bash ~/gdnwatch.sh&quot;</span></span><br><span class="line">sftp USER_S@IP_S:pictures/* C:\Users\jack_gdn\Pictures\Raspberry-Pi\pictures\</span><br><span class="line">ssh USER_S@IP_S <span class="string">&quot;find ~/pictures/ -name &#x27;*.*&#x27; -exec rm &#123;&#125; \;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个脚本控制 S 运行 <code>gdnwatch.sh</code>  脚本，随后自动将图片传输回 PC，并且删除 S 上的图片缓存以节省存储空间。</p>
+<p>至此，我只需要在 PC 上运行 <code>get-pictures.cmd</code> 脚本就可以坐等图片传输回 PC 了。当然，既然使用了 SSH 与 SFTP，那么 <code>ssh-genkey -t rsa</code> 与 <code>ssh-copy-id</code> 实现免密码登录必不可少。上面这种远程拍照方式会使 S 每月额外消耗大约 170M 流量。</p>
+<h1 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h1>
 </article>
     
     
@@ -568,8 +588,24 @@
 
             
 
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="远程拍照（无内网穿透）"><a rel="nofollow" class="trm-toc-link" href="#远程拍照（无内网穿透）"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">远程拍照（无内网穿透）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="拍照、旋转、上传"><a rel="nofollow" class="trm-toc-link" href="#拍照、旋转、上传"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">拍照、旋转、上传</span></a></li><li class="trm-toc-item trm-toc-level-2" title="利用 systemd 自动执行"><a rel="nofollow" class="trm-toc-link" href="#利用-systemd-自动执行"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">利用 systemd 自动执行</span></a></li><li class="trm-toc-item trm-toc-level-2" title="配置服务器接受图片"><a rel="nofollow" class="trm-toc-link" href="#配置服务器接受图片"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">配置服务器接受图片</span></a></li><li class="trm-toc-item trm-toc-level-2" title="传输到个人计算机上浏览图片"><a rel="nofollow" class="trm-toc-link" href="#传输到个人计算机上浏览图片"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">传输到个人计算机上浏览图片</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="内网穿透"><a rel="nofollow" class="trm-toc-link" href="#内网穿透"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">内网穿透</span></a></li></ol>
+      </div>
+    </div>
+
             
 <div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
     
     
         <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
