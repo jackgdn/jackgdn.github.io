@@ -1,1 +1,0 @@
-# jackgdn.github.io
