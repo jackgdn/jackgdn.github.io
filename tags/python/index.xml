@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on -GDN&#39;s Blog-</title>
+    <link>https://jackgdn.github.io/tags/python/</link>
+    <description>Recent content in Python on -GDN&#39;s Blog-</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2024, jack_gdn; 保留一切权利。</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 课程设计项目报告</title>
+      <link>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>逆向相关算法脚本（暂时停更）</title>
+      <link>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</link>
+      <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</guid>
+      <description>
+        
+          
+            与逆向相关的编码、加解密、信息摘要算法脚本库（未完成，已停更）
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Python 内存相关学习记录</title>
+      <link>https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>
+        
+          
+            初步学习 Python 的内存管理机制，包括可变对象与不可变对象、深浅拷贝、小整数池、Intering、字符串驻留五个部分。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Unicode 学习记录</title>
+      <link>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>
+        
+          
+            Unicode 相关知识
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
