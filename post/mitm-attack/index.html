@@ -179,8 +179,7 @@
 <li>MAC 地址：00:50:56:f2:3a:1f</li>
 </ul>
 <p>在开始攻击前，使用 <code>arp -a</code> 命令查看靶机 ARP 缓存中的 MAC 地址。此时，靶机中记录的 MAC 地址为正确的地址，测试用网址 <code>example.com</code> 也能够正常访问。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -196,10 +195,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="1920"
-        height="1080"
-        src="/post/mitm-attack/image-1.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-1.png"
       
       
     />
@@ -209,8 +206,7 @@
 </p>
 <h2 id="arp-欺骗">ARP 欺骗</h2>
 <p>在攻击机中使用 ettercap 工具，该工具可用于执行多种形式的中间人攻击，本次 ARP 欺骗以及 DNS 劫持都需要用到该工具。<code>sudo ettercap -G</code> 命令可用于打开该工具的图形化界面。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -226,10 +222,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="2560"
-        height="1600"
-        src="/post/mitm-attack/image-2.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-2.png"
       
       
     />
@@ -238,8 +232,7 @@
 </figure>
 </p>
 <p>首先扫描局域网下的存活主机，并将网关作为 Target 1, 靶机作为 Target 2：</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -255,10 +248,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="2560"
-        height="1600"
-        src="/post/mitm-attack/image-3.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-3.png"
       
       
     />
@@ -267,8 +258,7 @@
 </figure>
 </p>
 <p>此时选择 ARP Poisoning 选项进行 ARP 欺骗攻击。这时再使用 <code>arp -a</code> 查看靶机上的 ARP 缓存就会发现，网关的 MAC 地址已经变成了攻击机的 MAC 地址。此时靶机再访问任何外界网站，流量都会首先通过攻击机。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -284,10 +274,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="1920"
-        height="1080"
-        src="/post/mitm-attack/image-4.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-4.png"
       
       
     />
@@ -297,8 +285,7 @@
 </p>
 <h2 id="dns-劫持">DNS 劫持</h2>
 <p>在进行 DNS 劫持中，ettercap 会将攻击机作为一台伪 DNS 解析服务器，向靶机发送虚假的服务器地址。首先修改 <code>/etc/ettercap/etter.dns</code> 文件来添加规则。例如说，我们在文件中添加一行 <code>* A 127.0.0.1</code>，则 ettercap 会对靶机发送的任何解析域名请求返回本机回环地址 <code>127.0.0.1</code>。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -314,10 +301,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="2560"
-        height="1600"
-        src="/post/mitm-attack/image-5.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-5.png"
       
       
     />
@@ -326,8 +311,7 @@
 </figure>
 </p>
 <p>修改好后，启用 ettercap 的 dns_spoof 插件进行 DNS 劫持攻击。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -343,10 +327,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="2560"
-        height="1600"
-        src="/post/mitm-attack/image-6.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-6.png"
       
       
     />
@@ -355,8 +337,7 @@
 </figure>
 </p>
 <p>这时就能发现，靶机断网了，因为任何通过域名访问外界的请求，都会被解析成 127.0.0.1。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -372,10 +353,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="1920"
-        height="1080"
-        src="/post/mitm-attack/image-7.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-7.png"
       
       
     />
@@ -383,8 +362,7 @@
     </picture>
 </figure>
 </p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -400,10 +378,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="1920"
-        height="1080"
-        src="/post/mitm-attack/image-8.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-8.png"
       
       
     />
@@ -412,8 +388,7 @@
 </figure>
 </p>
 <p>但是不经过域名解析，直接使用 IP 地址连接的服务器则不受影响。</p>
-<p>
-  <figure>
+<p><figure>
   <picture>
 
     
@@ -429,10 +404,8 @@
       decoding="async"
       alt="Alt text"
       
-        class="image_figure image_internal image_processed"
-        width="1920"
-        height="1080"
-        src="/post/mitm-attack/image-11.png"
+        class="image_figure image_internal image_unprocessed"
+        src="image-11.png"
       
       
     />
@@ -781,8 +754,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='https://jackgdn.github.io/logos/GL.png' class="icon icon_2 transparent" alt="Copyright © 2024, jack_gdn; 保留一切权利。">
-    <p>Copyright&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;COPYRIGHT © 2024, JACK_GDN; 保留一切权利。. All Rights Reserved</p><a class="to_top" href="#documentTop">
+    <img src='https://jackgdn.github.io/logos/GL.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
+    <p>Copyright&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;-GDN&#39;S BLOG-. All Rights Reserved</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>
   <use xlink:href="#to-top"></use>
