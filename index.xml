@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>-GDN&#39;s Blog-</title>
+    <title>Clarity</title>
     <link>https://jackgdn.github.io/</link>
-    <description>Recent content on -GDN&#39;s Blog-</description>
+    <description>Recent content on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
     <lastBuildDate>Tue, 06 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>日志-2024-08-06</title>
+      <title>Log-2024-08-06</title>
       <link>https://jackgdn.github.io/post/log-2024-08-06/</link>
       <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
       
