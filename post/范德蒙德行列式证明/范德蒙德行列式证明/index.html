@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html
-  lang="en"
+  lang="zh-cn"
   data-figures=""
   
     class="page"
@@ -9,7 +9,7 @@
   
   >
   <head>
-<title>Links | -GDN&#39;s Blog-</title>
+<title>范德蒙德行列式证明 | -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,39 +19,28 @@
 
 
 
-  
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="zh-cn" />
+<meta property="og:locale:alternate" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Docs &amp; Tutorials Esolang
-Markdown Tutorial
-Python Documentation
-Runoob Chinese Language Only
-Tools Compiler Explorer
-Convertio - File Converter
-CyberChef …" />
+<meta name="description" content="范德蒙德行列式：
+$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Links" />
+<meta name="twitter:title" content="范德蒙德行列式证明" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/en/links/" />
-<meta property="og:title" content="Links" />
-<meta property="og:description" content="Docs &amp; Tutorials Esolang
-Markdown Tutorial
-Python Documentation
-Runoob Chinese Language Only
-Tools Compiler Explorer
-Convertio - File Converter
-CyberChef …" />
+<meta property="og:url" content="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" />
+<meta property="og:title" content="范德蒙德行列式证明" />
+<meta property="og:description" content="范德蒙德行列式：
+$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/en/links/">
+<link rel="canonical" href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/">
 
 
 
@@ -59,8 +48,8 @@ CyberChef …" />
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/en/js/bundle.62de4a3fbf663017209f46c17f6346493f1e74d4d17f5437ae8b86d419e11000d8936334698c87915d7419a09729c9f9c484a8bc9bf2cc79c27e75bdd7509e88.js" as="script" integrity=
-"sha512-Yt5KP79mMBcgn0bBf2NGST8edNTRf1Q3rouG1BnhEADYk2M0aYyHkV10GaCXKcn5xISovJvyzHnCfnW911CeiA==" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" as="script" integrity=
+"sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
 <link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
@@ -70,11 +59,11 @@ CyberChef …" />
     data-code="13"
     data-lines="true"
     id="documentTop"
-    data-lang="en"
+    data-lang="zh-cn"
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='https://jackgdn.github.io/en/' class="nav_brand nav_item nav_hide" title="-GDN&#39;s Blog-">
+  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="-GDN&#39;s Blog-">
   <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="-GDN&#39;s Blog-">
   <div class="nav_close">
     <div><svg class="icon">
@@ -96,13 +85,13 @@ CyberChef …" />
         
 
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/en/" class="nav_item" title="Home">Home </a>
+    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/en/about/" class="nav_item" title="About">About </a>
+    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
   </div>
-  <div class="nav_parent nav_active">
-    <a href="https://jackgdn.github.io/en/links/" class="nav_item" title="Links">Links </a>
+  <div class="nav_parent">
+    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
   </div>
       
       <div class="nav_parent">
@@ -115,7 +104,7 @@ CyberChef …" />
           <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
           
         </div>
-      </div><a href='https://jackgdn.github.io/en/' class="nav_brand nav_item nav_center" title="-GDN&#39;s Blog-">
+      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="-GDN&#39;s Blog-">
   <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="-GDN&#39;s Blog-">
 </a>
 
@@ -148,7 +137,7 @@ CyberChef …" />
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Links</h1>
+    <h1 class="post_title">范德蒙德行列式证明</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -156,79 +145,34 @@ CyberChef …" />
 </svg>
 </span>
     <span class="post_date">
-      2024-08-08</span>
-    <span class="post_time"> · 1 min read</span>
+      2024-03-14</span>
+    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' title="线性代数" class="post_tag button button_translucent">线性代数
+        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' title="数学" class="post_tag button button_translucent">数学
+        </a>
+    </span>
   </div>
 
-    <div class="post_body"><p>
-  <figure>
-  <picture>
-
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt=""
-      
-        class="image_figure image_internal image_processed"
-        width="5472"
-        height="3648"
-        src="/links/links/index.jpg"
-      
-      
-    />
-
-    </picture>
-</figure>
-</p>
-<h1 id="docs--tutorials">Docs &amp; Tutorials</h1>
-<p><a href="https://esolangs.org/wiki/Main_Page">Esolang</a></p>
-<p><a href="https://www.markdowntutorial.com/">Markdown Tutorial</a></p>
-<p><a href="https://docs.python.org/3/">Python Documentation</a></p>
-<p><a href="https://www.runoob.com/">Runoob</a> <em>Chinese Language Only</em></p>
-<hr>
-<h1 id="tools">Tools</h1>
-<p><a href="https://godbolt.org/">Compiler Explorer</a></p>
-<p><a href="https://convertio.co/en/">Convertio - File Converter</a></p>
-<p><a href="https://cyberchef.org/">CyberChef</a></p>
-<p><a href="https://www.deepl.com/en/translator">DeepL Translate</a></p>
-<p><a href="https://www.dnsleaktest.com/">DNS Leak Test</a></p>
-<p><a href="https://app.diagrams.net/">Draw.io</a></p>
-<p><a href="https://skilldrick.github.io/easy6502/index.html">Easy 6502</a></p>
-<p><a href="https://factordb.com/">Factordb</a></p>
-<p><a href="https://github-history.netlify.app/">Git History</a></p>
-<p><a href="https://it-tools.tech/">IT Tools</a></p>
-<p><a href="https://md5.cn/">Magic Data 5</a></p>
-<p><a href="https://mermaid.live/edit">Mermaid Live Editor</a></p>
-<p><a href="https://www.photopea.com/">Photopea</a></p>
-<p><a href="https://www.lddgo.net/en/string/pyc-compile-decompile">PYC Decompile</a></p>
-<p><a href="https://pyinstxtractor-web.netlify.app/">Pyinstxtractor WEB</a></p>
-<p><a href="https://www.mzy0.com/ctftools/zerowidth1/">Unicode Steganography with 0-Width Characters</a></p>
-<p><a href="https://www.guballa.de/vigenere-solver">Vigenere Solver</a></p>
-<hr>
-<h1 id="blogs">Blogs</h1>
-<p><em>Some are under maintainance.</em></p>
-<p><a href="https://roath-c.github.io/">RoATH</a></p>
-<p><a href="https://www.v3r1tas.top/">chen04</a></p>
-<p><a href="https://hexobd.github.io/">hexobd</a></p>
-<p><a href="https://weblog.chr0n0s.tech/">Chr0n0s</a></p>
-<p><a href="https://miguoqaq.github.io/">MiguoQAQ</a></p>
+    <div class="post_body"><p>范德蒙德行列式：</p>
+<p>$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) $$</p>
+<p>证明如下：</p>
+<p>从第 $n$ 行开始，将行列式中的后一行减去前一行的 $x_1$ 倍，得到下式：</p>
+<p>$$ \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix}\\ \ \\ \ \\ = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} $$</p>
+<p>将得到的行列式按第 $1$ 行展开，得到</p>
+<p>$$ \begin{vmatrix} x_2-x_1 &amp; x_3-x_1 &amp; \cdots &amp; x_n-x_1 \\ x_2(x_2-x_1) &amp; x_3(x_3-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2}(x_2-x_1) &amp; x_3^{n-2}(x_3-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \\ \ \\ \ \\ = (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} \end{vmatrix} $$</p>
+<p>此时该式右端为一个 $n-1$ 阶的范德蒙德行列式，可以写成：</p>
+<p>$$ (x_3-x_2)(x_4-x_2) \cdots (x_n-x_2) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_3 &amp; x_4 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_3^{n-3} &amp; x_4^{n-3} &amp; \cdots &amp; x_3^{n-3} \end{vmatrix} $$</p>
+<p>根据数学归纳法，可以把范德蒙德行列式写作：</p>
+<p>$$ (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1)(x_3-x_2)(x_4-x_2) \cdots (x_n-x_{n-1}) \\ \ \\ \ \\ = \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) $$</p>
+<p>证毕。</p>
 
     </div>
 
 
 <div class="post_i18n">
-  <h3 class="mb-0">Translations:</h3>
+  <h3 class="mb-0">翻译:</h3>
   <nav class="tags_nav">
     
-      <a href="https://jackgdn.github.io/links/" class="post_tag button button_translucent">简体中文</a> 
+      <a href="https://jackgdn.github.io/en/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="post_tag button button_translucent">English</a> 
       
     
     </nav>
@@ -243,7 +187,7 @@ CyberChef …" />
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope=''>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -256,31 +200,79 @@ CyberChef …" />
 
         <h2>jack_gdn</h2>
       <div class="author_bio">
-        Undergraduate student at NEFU, majoring in CST.
+        东北林业大学在读本科生，学习计算机科学与技术专业。
       </div>
-      <a href='https://jackgdn.github.io/en/about/' class="button mt-1" role="button" title='Read More'>Read More</a>
+      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
 
     
     
-    <h2 class="mt-4">Recent Posts</h2>
+    <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/en/post/log-2024-08-06/" class="nav-link" title="Log-2024-08-06">Log-2024-08-06</a>
+        <a href="https://jackgdn.github.io/post/log-2024-08-06/" class="nav-link" title="日志-2024-08-06">日志-2024-08-06</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/en/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="Proof of Vandermonde Matrix">Proof of Vandermonde Matrix</a>
+        <a href="https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" class="nav-link" title="Python 课程设计项目报告">Python 课程设计项目报告</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/nat/" class="nav-link" title="远程控制一台在内网中的设备">远程控制一台在内网中的设备</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/mitm-attack/" class="nav-link" title="记一次 ARP 欺骗 &#43; DNS 劫持攻击的尝试">记一次 ARP 欺骗 + DNS 劫持攻击的尝试</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/" class="nav-link" title="逆向相关算法脚本（暂时停更）">逆向相关算法脚本（暂时停更）</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="nav-link" title="近期解题 2024.3.14">近期解题 2024.3.14</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/pearl2024/" class="nav-link" title="PearlCTF 2024 WP">PearlCTF 2024 WP</a>
       </li>
     </ul>
     <div>
-      <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
+      <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/en/categories/logs/' class="post_tag button button_translucent" title="logs">
-          LOGS
+        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+          学习记录
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+          逆向
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://jackgdn.github.io/en/categories/mathematics/' class="post_tag button button_translucent" title="mathematics">
-          MATHEMATICS
+        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+          数学
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+          渗透
           <span class="button_tally">1</span>
         </a>
         
@@ -288,24 +280,153 @@ CyberChef …" />
       </nav>
     </div>
     <div>
-      <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
+      <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/en/tags/linear-mathematics/' class="post_tag button button_translucent" title="linear mathematics">
-          LINEAR MATHEMATICS
+        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+          REVERSE
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags//' class="post_tag button button_translucent" title=" ">
+           
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://jackgdn.github.io/en/tags/log/' class="post_tag button button_translucent" title="log">
-          LOG
+        <a href='https://jackgdn.github.io/tags/c%23/' class="post_tag button button_translucent" title="c#">
+          C#
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://jackgdn.github.io/en/tags/mathematics/' class="post_tag button button_translucent" title="mathematics">
-          MATHEMATICS
+        <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/crypto/' class="post_tag button button_translucent" title="crypto">
+          CRYPTO
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/forensics/' class="post_tag button button_translucent" title="forensics">
+          FORENSICS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
+          MISC
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/penetration/' class="post_tag button button_translucent" title="penetration">
+          PENETRATION
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/pwn/' class="post_tag button button_translucent" title="pwn">
+          PWN
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/unicode/' class="post_tag button button_translucent" title="unicode">
+          UNICODE
           <span class="button_tally">1</span>
         </a>
         
         
+        <br>
+        <div class="post_tags_toggle button">所有标签</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='https://jackgdn.github.io/tags//' class=" post_tag button button_translucent" data-position=1 title=" "> <span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=1 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=1 title="crypto">CRYPTO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=1 title="forensics">FORENSICS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=1 title="linux">LINUX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=1 title="misc">MISC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=1 title="pwn">PWN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=4 title="python">PYTHON<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=5 title="reverse">REVERSE<span class="button_tally">5</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=3 title="wp">WP<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=1 title="日志">日志<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
       </nav>
     </div>
   </section>
@@ -422,7 +543,7 @@ CyberChef …" />
   </div>
 </footer>
 
-<script type="text/javascript" src="https://jackgdn.github.io/en/js/bundle.62de4a3fbf663017209f46c17f6346493f1e74d4d17f5437ae8b86d419e11000d8936334698c87915d7419a09729c9f9c484a8bc9bf2cc79c27e75bdd7509e88.js" integrity="sha512-Yt5KP79mMBcgn0bBf2NGST8edNTRf1Q3rouG1BnhEADYk2M0aYyHkV10GaCXKcn5xISovJvyzHnCfnW911CeiA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
 
   <script src="https://jackgdn.github.io/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
 
