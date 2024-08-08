@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,19 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/links/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/links/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/links/"
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/-/</loc>
