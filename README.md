@@ -1,1 +1,0 @@
-[-GDN's Blog-](https://jackgdn.github.io)

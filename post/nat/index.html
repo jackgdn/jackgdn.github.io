@@ -22,14 +22,14 @@
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="远程拍照（无内网穿透） 前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机 …" />
+<meta name="description" content="前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查 …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="远程控制一台在内网中的设备" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/nat/" />
 <meta property="og:title" content="远程控制一台在内网中的设备" />
-<meta property="og:description" content="远程拍照（无内网穿透） 前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机 …" />
+<meta property="og:description" content="前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查 …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -40,7 +40,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -48,7 +48,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -74,7 +74,7 @@
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -142,13 +142,36 @@
 </span>
     <span class="post_date">
       2024-06-15</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/linux/' title="Linux" class="post_tag button button_translucent">Linux
+    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Linux" class="post_tag button button_translucent">Linux
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/nat/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
-    <div class="post_body"><h1 id="远程拍照无内网穿透">远程拍照（无内网穿透）</h1>
-<p>前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 <code>fswebcam</code> 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我想在宿舍里连接树莓派则需要每天交 1 元钱网费。</p>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#拍照旋转上传">拍照、旋转、上传</a></li>
+    <li><a href="#利用-systemd-自动执行">利用 <code>systemd</code> 自动执行</a></li>
+    <li><a href="#配置服务器接受图片">配置服务器接受图片</a></li>
+    <li><a href="#传输到个人计算机上浏览图片">传输到个人计算机上浏览图片</a></li>
+  </ul>
+</nav>
+      </div>
+    
+    <div class="post_body"><p>前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 <code>fswebcam</code> 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我想在宿舍里连接树莓派则需要每天交 1 元钱网费。</p>
 <h2 id="拍照旋转上传">拍照、旋转、上传</h2>
 <p>wanqian 师傅出于安全性的考虑，不希望我使用内网穿透控制树莓派拍照。所以，我只能让树莓派与我的云服务器单线联系。因此我想到让树莓派检测云服务器上的某个端口是否开放，若开放则自动执行拍照上传等一系列命令，所以有了下面一个脚本（路径为 <code>/home/gdn/gwc/agwc.sh</code>。下文为便于叙述，树莓派用 R 表示，云服务器用 S 表示，个人计算机用 PC 表示）:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
@@ -231,7 +254,7 @@
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     

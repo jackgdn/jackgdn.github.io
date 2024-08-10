@@ -40,7 +40,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -48,7 +48,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -74,7 +74,7 @@
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -142,16 +142,44 @@
 </span>
     <span class="post_date">
       2024-04-21</span>
-    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/penetration/' title="Penetration" class="post_tag button button_translucent">Penetration
+    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Penetration" class="post_tag button button_translucent">Penetration
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/mitm-attack/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
-    <div class="post_body"><h1 id="前置知识">前置知识</h1>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置知识">前置知识</a></li>
+    <li><a href="#动手尝试">动手尝试</a>
+      <ul>
+        <li><a href="#攻击前准备">攻击前准备</a></li>
+        <li><a href="#arp-欺骗">ARP 欺骗</a></li>
+        <li><a href="#dns-劫持">DNS 劫持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+    <div class="post_body"><h2 id="前置知识">前置知识</h2>
 <p>用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收到 A 的请求后将自己的位置告诉 A，随后两人就可以开始通信。</p>
 <p>但是，这是出现了一个不怀好意的 C，当 A 发送请求的时候，C 就拼命地给 A 回复“我就是 13 号”以至于 A 根本听不到 B 给他的回复，因此 A 就会把 C 当作 B 并与之通信，C 便可以借机充当中间人实施攻击。</p>
-<h1 id="动手尝试">动手尝试</h1>
-<h2 id="攻击前准备">攻击前准备</h2>
+<h2 id="动手尝试">动手尝试</h2>
+<h3 id="攻击前准备">攻击前准备</h3>
 <p>本次攻击尝试中，攻击机与靶机均为使用 NAT 模式连接物理机的虚拟机。这样既可以使两台虚拟机连接到外部网络，又不会在攻击过程中造成流量泄露。</p>
 <p><strong>攻击机配置</strong></p>
 <ul>
@@ -199,7 +227,7 @@
     </picture>
 </figure>
 </p>
-<h2 id="arp-欺骗">ARP 欺骗</h2>
+<h3 id="arp-欺骗">ARP 欺骗</h3>
 <p>在攻击机中使用 ettercap 工具，该工具可用于执行多种形式的中间人攻击，本次 ARP 欺骗以及 DNS 劫持都需要用到该工具。<code>sudo ettercap -G</code> 命令可用于打开该工具的图形化界面。</p>
 <p>
   <figure>
@@ -287,7 +315,7 @@
     </picture>
 </figure>
 </p>
-<h2 id="dns-劫持">DNS 劫持</h2>
+<h3 id="dns-劫持">DNS 劫持</h3>
 <p>在进行 DNS 劫持中，ettercap 会将攻击机作为一台伪 DNS 解析服务器，向靶机发送虚假的服务器地址。首先修改 <code>/etc/ettercap/etter.dns</code> 文件来添加规则。例如说，我们在文件中添加一行 <code>* A 127.0.0.1</code>，则 ettercap 会对靶机发送的任何解析域名请求返回本机回环地址 <code>127.0.0.1</code>。</p>
 <p>
   <figure>
@@ -464,7 +492,7 @@
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     

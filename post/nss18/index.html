@@ -42,7 +42,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -50,7 +50,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -76,7 +76,7 @@
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -144,14 +144,36 @@
 </span>
     <span class="post_date">
       2024-03-06</span>
-    <span class="post_time"> · 4 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/pwn/' title="Pwn" class="post_tag button button_translucent">Pwn
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+    <span class="post_time"> · 4 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Reverse" class="post_tag button button_translucent">Reverse
+        </a><a href='https://jackgdn.github.io/' title="Pwn" class="post_tag button button_translucent">Pwn
+        </a><a href='https://jackgdn.github.io/' title="WP" class="post_tag button button_translucent">WP
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/nss18/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
-    <div class="post_body"><h1 id="users--users_revenge">users &amp; users_revenge</h1>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#users--users_revenge">users &amp; users_revenge</a></li>
+    <li><a href="#炒鸡常见的编码哇">炒鸡常见的编码哇</a></li>
+  </ul>
+</nav>
+      </div>
+    
+    <div class="post_body"><h2 id="users--users_revenge">users &amp; users_revenge</h2>
 <p>两道题可以用同一个脚本解。两道题区别就是题目 1 给出 200 个用户名，题目 2 给出 500 个用户名，密码为用户名的 MD5，其中有一个用户里有 flag，考虑使用 pwntools 连接。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">hashlib</span>
@@ -193,7 +215,7 @@
 </span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">suspwdlst</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">excptlst</span><span class="p">)</span>
 </span></span></code></pre></div><p>由于不知道存储 flag 文件的文件名以及路径，这一脚本只用于筛选可疑用户，找到可疑用户后再手动搜索 flag。不过好在每一道题中都只筛选出了一个可疑用户</p>
-<h1 id="炒鸡常见的编码哇">炒鸡常见的编码哇</h1>
+<h2 id="炒鸡常见的编码哇">炒鸡常见的编码哇</h2>
 <p>IDA 打开程序，通过字符串找到程序的核心部分：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="nf">sub_40160E</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
@@ -383,7 +405,7 @@
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     

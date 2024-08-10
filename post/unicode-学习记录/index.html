@@ -42,7 +42,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -50,7 +50,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -76,7 +76,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -144,15 +144,47 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span>
     <span class="post_date">
       2024-03-06</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a><a href='https://jackgdn.github.io/tags/unicode/' title="Unicode" class="post_tag button button_translucent">Unicode
-        </a><a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' title="编码" class="post_tag button button_translucent">编码
+    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Python" class="post_tag button button_translucent">Python
+        </a><a href='https://jackgdn.github.io/' title="Unicode" class="post_tag button button_translucent">Unicode
+        </a><a href='https://jackgdn.github.io/' title="编码" class="post_tag button button_translucent">编码
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nfkc">NFKC</a></li>
+    <li><a href="#零宽字符隐写">零宽字符隐写</a></li>
+    <li><a href="#unicode-附加字符">Unicode 附加字符</a></li>
+    <li><a href="#代码混淆">代码混淆</a></li>
+    <li><a href="#utf-7">UTF-7</a></li>
+    <li><a href="#unicode-与-utf-8utf-16utf-32">Unicode 与 UTF-8、UTF-16、UTF-32</a>
+      <ul>
+        <li><a href="#unicode-与-utf-8">Unicode 与 UTF-8</a></li>
+        <li><a href="#unicode-与-utf-16">Unicode 与 UTF-16</a></li>
+        <li><a href="#unicode-与-utf-32">Unicode 与 UTF-32</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
     <div class="post_body"><p>前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。</p>
-<h1 id="nfkc">NFKC</h1>
+<h2 id="nfkc">NFKC</h2>
 <p>利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！</p>
 <p>简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (<em><code>U+FB03</code></em>) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。</p>
 <p>因此在 Python 中就会有如下输出：</p>
@@ -242,7 +274,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">20</span><span class="cl">
 </span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="c1"># output: １２３４５６７８９</span>
 </span></span></code></pre></div><p>宽字符赢得了比赛！</p>
-<h1 id="零宽字符隐写">零宽字符隐写</h1>
+<h2 id="零宽字符隐写">零宽字符隐写</h2>
 <p>前几天想用零宽字符给述职报告凑字数，然后知道了这个东西。不妨先看看零宽字符是什么个东西。通俗来讲，零宽字符就是“宽度为 0 的字符”，一般在从右向左书写的语言以及字与字之间有连笔的语言，如阿拉伯语。下面是一个零宽字符的例子：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">string</span> <span class="o">=</span> <span class="s2">&#34;A&#34;</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\u200C\u200C\u200D\u200D</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;b&#34;</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
@@ -401,7 +433,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># output: Meschenrechte</span>
 </span></span></code></pre></div><p>试了一下，我自己的隐写脚本得到的结果，拖到那个网站里解密会失败 <code>(っ °Д °;)っ</code></p>
 <p>Unicode 中的零宽字符早已被人们开发出更多的用途，例如添加文字水印防止剽窃、反爬虫摸出关键字防止屏蔽或者给文章凑字数。</p>
-<h1 id="unicode-附加字符">Unicode 附加字符</h1>
+<h2 id="unicode-附加字符">Unicode 附加字符</h2>
 <p>这个似乎与 CTF 的关系并不大，但是也挺有意思。演示一下：</p>
 <p>̀́̂̃̄̅̆̇̈ ̉̊̋̌̍̎̏̐̑ ̖̗̘̙̒̓̔̕̚ ̡̢̛̜̝̞̟̠̣ ̧̨̤̥̦̩̪̫̬ ̴̵̭̮̯̰̱̲̳ ̶̷̸̹̺̻̼̽̾ ͇̿̀́͂̓̈́͆ͅ ͈͉͍͎͊͋͌͏͐ ͓͔͕͖͙͑͒͗͘ ͚͛͜͟͢͝͞͠͡ ͣͤͥͦͧͨͩͪͫ ͬͭͮͯ</p>
 <p>这一坨是 Unicode 中的一些附加字符堆在一块的样子。附加字符在很多情境下都会被使用，例如：拼音。下面两组字符虽然看上去一样，但是对应的编码不一样。前者使用附加字符实现，后者是微软输入法特殊字符表中的打印字符。</p>
@@ -419,7 +451,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="c1"># output:  ̀́̂̃̄̅̆̇̈̉̊̋̌̍̎̏</span>
 </span></span></code></pre></div><p>于是我们得到了一张鬼画符（？）</p>
 <p>Unicode 附加字符的优点正如你所看到的一样：更加灵活。</p>
-<h1 id="代码混淆">代码混淆</h1>
+<h2 id="代码混淆">代码混淆</h2>
 <p>Python 似乎是支持中文变量名的：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">dis</span> <span class="k">as</span> <span class="nn">蒂斯</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
@@ -475,7 +507,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">4</span><span class="cl">
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"># output: _‍‍‍‌‌‌‌​‍‍‍‌‌‍‌​‍‍‌‍‌‌‍​‍‍‌‍‍‍‌​‍‍‍‌‍‌‌​‍‌‍‌‌‌​‍‌‌‍‍‍​‍‌‌‍‌‌‌​‍‍‌‌‍‌‍​‍‍‌‍‍‌‌​‍‍‌‍‍‌‌​‍‍‌‍‍‍‍​‍‌‍‍‌‌​‍‌‌‌‌‌​‍‌‍‌‍‍‍​‍‍‌‍‍‍‍​‍‍‍‌‌‍‌​‍‍‌‍‍‌‌​‍‍‌‌‍‌‌​‍‌‌‌‌‍​‍‌‌‍‍‍​‍‌‍‌‌‍_</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"># 为了便于复制，我在编码的前后各加了一个下划线</span>
-</span></span></code></pre></div><h1 id="utf-7">UTF-7</h1>
+</span></span></code></pre></div><h2 id="utf-7">UTF-7</h2>
 <p>UTF-7 编码并不是一种严格的 Unicode 编码。个人认为，这种编码实际上更加类似于 Base64 编码。UTF-7 的出现，是为了满足早期只能传输 7-bit 字符的 SMTP 标准，故现在 UTF-7 编码也正在逐渐被弃用。UTF-7 原理较为简单，下面是一个简单的 UTF-7 与 UTF-8 转化的例子。首先我们拿出待转化的 UTF-8 字符：</p>
 <p><code>绷</code></p>
 <p>然后打印出它的编码的二进制：</p>
@@ -543,7 +575,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">&gt;</span> <span class="o">+</span><span class="n">UUg</span><span class="o">-+</span><span class="n">Xh0</span><span class="o">-+</span><span class="n">Uhs</span><span class="o">-+</span><span class="n">Tho</span><span class="o">-+</span><span class="n">Zyo</span><span class="o">-+</span><span class="n">U0o</span><span class="o">-+</span><span class="n">gAw</span><span class="o">-+</span><span class="n">mog</span><span class="o">-+</span><span class="n">a3s</span><span class="o">-+</span><span class="n">To4</span><span class="o">-+</span><span class="n">af0</span><span class="o">-+</span><span class="n">Z6U</span><span class="o">-+</span><span class="n">Tks</span><span class="o">-+</span><span class="n">lfQ</span><span class="o">-</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">先帝创业未半而骈死于槽枥之间</span>
 </span></span></code></pre></div><p><em>本段 UTF-7 相关代码纯手搓，Just for fun!</em></p>
-<h1 id="unicode-与-utf-8utf-16utf-32">Unicode 与 UTF-8、UTF-16、UTF-32</h1>
+<h2 id="unicode-与-utf-8utf-16utf-32">Unicode 与 UTF-8、UTF-16、UTF-32</h2>
 <p>本来这一段应该是留给 UTF-16 的，但是学习了一些内容之后我感觉我对 UTF-8 也一点都不了解。遂把这些合并到一起去。</p>
 <p>这四者的关系，Unicode 是字符集，字符集中的每一个字符都有唯一的编号；后面四者为编码方式，用不同的方式表示出某一个字符。举一个例子：<code>绷</code> 这个字的 Unicode 编号是 <code>U+7EF7</code>，UTF-8 编码是 <code>E7 BB B7</code>，UTF-16LE 编码是 <code>EB AF B7</code>，UTF-32LE 编码是 <code>F1 BB AF A7</code>。</p>
 <p>下面这张表列出了你能见到 Unicode 编号以及编码的地方：</p>
@@ -574,7 +606,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </tbody>
 </table>
 <p>所以说，本文前面的某些内容是不严谨的（我长期错把 Unicode 编号当作 UTF-8 编码） ㄟ( ▔, ▔ )ㄏ</p>
-<h2 id="unicode-与-utf-8">Unicode 与 UTF-8</h2>
+<h3 id="unicode-与-utf-8">Unicode 与 UTF-8</h3>
 <p>Unicode 编号范围是 <code>U+0000</code> 到 <code>U+10FFFF</code>，占据字节大小为 1 到 3 个不等。下表展示了 Unicode 编号长度与 UTF-8 编码长度的关系：</p>
 <table>
 <thead>
@@ -617,7 +649,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="s1">&#39;0xe7bbb7&#39;</span>
 </span></span></code></pre></div><p>于是，我们得到了 <code>绷</code> 这个字的 UTF-8 编码：<code>E7 BB B7</code></p>
 <p>需要注意的是，填充那一步需要从右向左填充，因而如果最高位是 0 就可以省略（不然你猜为什么 2 字节 UTF-8 编码中可填充的二进制位只有 11 个）。</p>
-<h2 id="unicode-与-utf-16">Unicode 与 UTF-16</h2>
+<h3 id="unicode-与-utf-16">Unicode 与 UTF-16</h3>
 <p>与 UTF-8 一样，UTF-16 也是一种变长字节编码格式。不过 UTF-16 的编码方式更为简单粗暴:</p>
 <ol>
 <li>对于编号在 <code>U+0000</code> 到 <code>U+FFFF</code> 的字符，直接把编号当作编码，统一占两个字节</li>
@@ -635,7 +667,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span></span></code></pre></div><p>于是，我们得到了 <code>兔</code> 这个字的 UTF-16 编码：<code>D8 7E DC 0F</code></p>
 <p>UTTF-16 编码是两个字节为一组读取，因此就要考虑字节序的问题。上面这一种为大端序，也就是 UTF-16BE，其小端序存储形式 UTF-16LE 为 <code>7E D8 0F DC</code>。为了区分大小端序，文件开头部分会有 <code>FE FF</code>（大端序）或 <code>FF FE</code>（小端序）的标注。而 UTF-8 编码中，计算机按顺序每次读取一个字节，因此不存在大小端序的问题。</p>
 <p>这时聪明的小朋友就要问了，计算机怎么知道这一个字符占了两个字节还是四个字节呢？这就不得不说 Unicode 的巧妙之处了。如果你仔细观察 Unicode 字符集，你会发现 <code>U+D800</code> 到 <code>U+DBFF</code> 被描述为&quot;High Surrogate&quot;（高代理项），<code>U+DC00</code> 到 <code>U+DFFF</code> 被描述为&quot;Low Surrogate&quot;（低代理项）。这两个区间内（连起来就是一个区间）并不存储字符，而这两个区间又分别是 <code>110110XX XXXXXXXX</code> 与 <code>110111XX XXXXXXXX</code> 的范围。因此，当计算机两字节一组读取到 <code>D8</code> 到 <code>DB</code> 中的某个值，就知道这个字符占据四个字节；读取到 <code>DC</code> 到 <code>DF</code> 中某个字节，就知道这两个字节要跟着前面两个字节一块解码。</p>
-<h2 id="unicode-与-utf-32">Unicode 与 UTF-32</h2>
+<h3 id="unicode-与-utf-32">Unicode 与 UTF-32</h3>
 <p>UTF-32 是固定宽度编码，每一个编码占据 4 个字节，因此也许是最好理解的一种编码，直接由 Unicode 编号作为编码，因此 UTF-32 也有浪费存储空间的特点。</p>
 
     </div>
@@ -669,7 +701,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     

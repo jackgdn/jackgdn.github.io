@@ -46,7 +46,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -54,7 +54,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -80,7 +80,7 @@
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -148,14 +148,38 @@
 </span>
     <span class="post_date">
       2024-03-14</span>
-    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/crypto/' title="Crypto" class="post_tag button button_translucent">Crypto
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Reverse" class="post_tag button button_translucent">Reverse
+        </a><a href='https://jackgdn.github.io/' title="Crypto" class="post_tag button button_translucent">Crypto
+        </a><a href='https://jackgdn.github.io/' title="WP" class="post_tag button button_translucent">WP
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
-    <div class="post_body"><h1 id="swpu2019-reverseme">[SWPU2019] ReverseMe</h1>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#swpu2019-reverseme">[SWPU2019] ReverseMe</a></li>
+    <li><a href="#buuctf---rsa">buuctf - rsa</a></li>
+    <li><a href="#qctf2018-xman-babymips">[QCTF2018] Xman-babymips</a></li>
+    <li><a href="#wmctf2020-easy_re">[WMCTF2020] easy_re</a></li>
+  </ul>
+</nav>
+      </div>
+    
+    <div class="post_body"><h2 id="swpu2019-reverseme">[SWPU2019] ReverseMe</h2>
 <p>乍一看 <code>main()</code> 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友——SEH。</p>
 <p>
   <figure>
@@ -321,7 +345,7 @@
 </span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">k1</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">13</span><span class="p">])</span> <span class="o">^</span> <span class="n">k2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">k3</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># output: flag{Y0uaretheB3st!#@_VirtualCC}</span>
-</span></span></code></pre></div><h1 id="buuctf---rsa">buuctf - rsa</h1>
+</span></span></code></pre></div><h2 id="buuctf---rsa">buuctf - rsa</h2>
 <p>不是很懂，为什么一道 RSA 被放到了逆向里。</p>
 <p>题目附件中有两个文件： <code>pub.key</code> 和 <code>flag.enc</code>。</p>
 <p>万事俱备，直接解：</p>
@@ -352,7 +376,7 @@
 </span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># output: b&#39;\x02\x9d {zR\x1e\x08\xe4\xe6\x18\x06\x00flag{decrypt_256}\n&#39;</span>
-</span></span></code></pre></div><h1 id="qctf2018-xman-babymips">[QCTF2018] Xman-babymips</h1>
+</span></span></code></pre></div><h2 id="qctf2018-xman-babymips">[QCTF2018] Xman-babymips</h2>
 <p>题目唯一亮点在于它是 MIPS 架构汇编，不过用 IDA 7.7 照样可以反编译。</p>
 <p>核心代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">a2</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">a3</span><span class="p">)</span>
@@ -408,7 +432,7 @@
 </span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="mi">32</span> <span class="o">-</span> <span class="n">i</span><span class="p">),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">
 </span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c1"># output: qctf{ReA11y_4_B@89_mlp5_4_XmAn_}</span>
-</span></span></code></pre></div><h1 id="wmctf2020-easy_re">[WMCTF2020] easy_re</h1>
+</span></span></code></pre></div><h2 id="wmctf2020-easy_re">[WMCTF2020] easy_re</h2>
 <p>这道题的程序使用 Perl 语言编写，随后通过 ActivePerl 将代码打包成可执行文件。运行程序，程序会输出 &quot;please input the flag:&quot; 提示输入 flag。但是在 IDA 中搜索字符串，无法找到相应字符串。</p>
 <p>
   <figure>
@@ -539,7 +563,7 @@
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     

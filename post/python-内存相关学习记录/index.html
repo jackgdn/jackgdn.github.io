@@ -42,7 +42,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
 
 
 
@@ -50,7 +50,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
 
   </head>
   <body
@@ -76,7 +76,7 @@
   </div>
 </a>
 
-    <div class='nav_body nav_body_left'>
+    <div class='nav_body nav_body_right'>
       
       
       
@@ -144,13 +144,38 @@
 </span>
     <span class="post_date">
       2024-03-07</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
+    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/' title="Python" class="post_tag button button_translucent">Python
         </a>
     </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
   </div>
 
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#可变对象与不可变对象">可变对象与不可变对象</a></li>
+    <li><a href="#深拷贝与浅拷贝">深拷贝与浅拷贝</a></li>
+    <li><a href="#小整数池">小整数池</a></li>
+    <li><a href="#interning">Interning</a></li>
+    <li><a href="#字符串驻留">字符串驻留</a></li>
+  </ul>
+</nav>
+      </div>
+    
     <div class="post_body"><p><strong>本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 <code>&gt;&gt;&gt;</code> 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。</strong></p>
-<h1 id="可变对象与不可变对象">可变对象与不可变对象</h1>
+<h2 id="可变对象与不可变对象">可变对象与不可变对象</h2>
 <table>
 <thead>
 <tr>
@@ -191,7 +216,7 @@
 </span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s1">Hello, world?
 </span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="s1">Hello, world!
 </span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
-</span></span></code></pre></div><h1 id="深拷贝与浅拷贝">深拷贝与浅拷贝</h1>
+</span></span></code></pre></div><h2 id="深拷贝与浅拷贝">深拷贝与浅拷贝</h2>
 <ul>
 <li>浅拷贝：拷贝对象的引用。当原对象的数据改变时，拷贝的对象也会发生改变。</li>
 <li>深拷贝：创建一个新的对象并将原数据存入新的对象。原对象数据改变不影响拷贝对象</li>
@@ -225,7 +250,7 @@
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="kc">True</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="kc">False</span>
-</span></span></code></pre></div><h1 id="小整数池">小整数池</h1>
+</span></span></code></pre></div><h2 id="小整数池">小整数池</h2>
 <p>Python 为了节约运行内存，添加了小整数池机制。Python 会将 -5 到 256 （含 -5 与 256）的数据存储在固定位置，在需要时直接引用，而不是创建一个新的整形对象。因此：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
@@ -241,7 +266,7 @@
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="mi">2180558782128</span>
 </span></span></code></pre></div><p>当然，上面的操作都在 Python Shell 中完成。如果在 IDLE 中编写好代码再运行，结果也许会有些许不同……</p>
-<h1 id="interning">Interning</h1>
+<h2 id="interning">Interning</h2>
 <p>对于上面的例子，在 IDLE 中写好代码运行的结果如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">1234</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">1234</span>
@@ -257,7 +282,7 @@
 </span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
 </span></span></code></pre></div><p>不难发现，这一次运行程序，两个 1234 的引用一致。这是因为，Python 在创建了一个整型对象 <code>1234</code> 并被变量 <code>a</code> 引用后，变量 <code>b</code> 也需要引用一个整型对象 <code>1234</code>，因此 <code>b</code> 也引用了刚才创建的整型对象。</p>
 <p>不仅仅是整型对象，除元组外的不可变对象<strong>在编译模式下</strong>都适用 Interning 机制，而仅当元组内的所有元素都为不可变对象时，元组才适用 Interning 机制。</p>
-<h1 id="字符串驻留">字符串驻留</h1>
+<h2 id="字符串驻留">字符串驻留</h2>
 <p>上述 Interning 机制是对于编译模式来讲的，而在交互模式中，同样有字符串驻留机制用于节约内存，以下情况会在交互模式中触发：</p>
 <ul>
 <li>字符串的长度为 0 或 1</li>
@@ -315,7 +340,7 @@
 
     
       <div class="sidebardisclaimer">
-        <h2 class="mt-4">Disclaimer</h2>
+        <h2 class="mt-4">注意</h2>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     
