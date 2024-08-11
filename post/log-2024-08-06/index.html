@@ -16,6 +16,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+<script async defer data-domain="jackgdn.github.io"
+src='https://plausible.io/js/plausible.js'>
+</script>
 
 
 
@@ -44,7 +47,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.a43851d3e2dadfac9dbd70f462011a93d7914abc78e7b4dbabd5de7a1cf30d03996356359aacdb8048c074f9ba255388d5adca85a37476161218188c7ad5107b.css" integrity = "sha512-pDhR0&#43;La36ydvXD0YgEak9eRSrx457Tbq9XeehzzDQOZY1Y1mqzbgEjAdPm6JVOI1a3KhaN0dhYSGBiMetUQew==" as="style" crossorigin="anonymous">
 
 
 
@@ -52,7 +55,7 @@
 "sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.a43851d3e2dadfac9dbd70f462011a93d7914abc78e7b4dbabd5de7a1cf30d03996356359aacdb8048c074f9ba255388d5adca85a37476161218188c7ad5107b.css" integrity="sha512-pDhR0&#43;La36ydvXD0YgEak9eRSrx457Tbq9XeehzzDQOZY1Y1mqzbgEjAdPm6JVOI1a3KhaN0dhYSGBiMetUQew==" crossorigin="anonymous">
 
   </head>
   <body
@@ -165,22 +168,7 @@
 
     <div class="post_body"><p>经过几天的工作，我将个人博客从 Hexo 迁移至 Hugo 基本完成了。在之前，我使用的是 <a href="https://hexo-theme-async.imalun.com/">Hexo-Theme-Async</a> 主题。Hexo 和 Hugo 各有优缺点。Hexo 的优点是简单易上手，只需傻瓜式操作就可以快速搭建完一个美观的博客；Hugo 的优点则是生成速度快并且客制化程度高。</p>
 <p>首先就生成速度快来说，运行 <code>hugo server</code> 这条命令的直观感觉就是比 <code>hexo g</code> 与 <code>hexo s</code> 要快很多倍，并且 Hugo 的热重载模式要优于 Hexo。当我修改完一篇文章时，Hugo 可以直接把我修改的内容展示出来，而使用 Hexo 还要重新生成，再加上 Hexo 极慢的生成速度……Hugo 显然更胜一筹。</p>
-<p>而至于客制化，我现在使用的是 <a href="https://github.com/chipzoller/hugo-clarity/">hugo-clarity</a> 主题，而这一主题并没有给出音乐播放器外链留出位置，因此我自定义一段 shortcode，直接在文章中插入下面这个外链音乐播放器：</p>
-
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height=86 src="//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66"></iframe>
-<p>这里我自定义了文件名为 <code>ncm.html</code> 的 shortcode，模板内容如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">src</span> <span class="o">:=</span> <span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;src&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">width</span> <span class="o">:=</span> <span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;width&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">&lt;</span><span class="nx">iframe</span> <span class="nx">frameborder</span><span class="p">=</span><span class="s">&#34;no&#34;</span> <span class="nx">border</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginwidth</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginheight</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">width</span><span class="p">=</span><span class="s">&#34;{{ $width }}&#34;</span> <span class="nx">height</span><span class="p">=</span><span class="mi">86</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;{{ $src }}&#34;</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">iframe</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>随后我在网易云音乐中获取到这首音乐的外链代码，略加修改后插入到这一篇 Markdown 文档中。</p>
-<p>外链代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&#34;no&#34;</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">530</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>插入的代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nx">ncm</span> <span class="nx">frameborder</span><span class="p">=</span><span class="s">&#34;no&#34;</span> <span class="nx">border</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginwidth</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginheight</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">width</span><span class="p">=</span><span class="mi">530</span> <span class="nx">height</span><span class="p">=</span><span class="mi">86</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66&#34;</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>这一主题支持多语言版本，我也借此机会学习与专业相关的英语词汇。
+<p>这一主题支持多语言版本，我也借此机会学习与专业相关的英语词汇。
 转移到 Hugo 上后，原先大气精美的归档页面和友链页面都消失了；交互式网站标题和图标，还有各种有趣的小组件也都不能再使用。取而代之的是一个更简洁、更商务的博客主题。
 这后面一段时间，我还需要尽量翻译几篇博客，给博客加入密码和评论的插件。</p>
 <p>
@@ -583,7 +571,7 @@
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='https://jackgdn.github.io/logos/GL.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
+    <img src='https://jackgdn.github.io/logos/G.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
     <p>版权所有&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;-GDN&#39;S BLOG-. 保留一切权利</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>

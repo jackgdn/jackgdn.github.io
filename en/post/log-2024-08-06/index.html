@@ -16,6 +16,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+<script async defer data-domain="jackgdn.github.io"
+src='https://plausible.io/js/plausible.js'>
+</script>
 
 
 
@@ -42,7 +45,7 @@
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity = "sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" as="style" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.a43851d3e2dadfac9dbd70f462011a93d7914abc78e7b4dbabd5de7a1cf30d03996356359aacdb8048c074f9ba255388d5adca85a37476161218188c7ad5107b.css" integrity = "sha512-pDhR0&#43;La36ydvXD0YgEak9eRSrx457Tbq9XeehzzDQOZY1Y1mqzbgEjAdPm6JVOI1a3KhaN0dhYSGBiMetUQew==" as="style" crossorigin="anonymous">
 
 
 
@@ -50,7 +53,7 @@
 "sha512-Yt5KP79mMBcgn0bBf2NGST8edNTRf1Q3rouG1BnhEADYk2M0aYyHkV10GaCXKcn5xISovJvyzHnCfnW911CeiA==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.71acdf03912801c544d676842bbba75162a794af22005f5e3219fce68d0b9900be421d4da0ae134cb15d650d6941051bd046d93bc1b4cc70941de600f291eedb.css" integrity="sha512-cazfA5EoAcVE1naEK7unUWKnlK8iAF9eMhn85o0LmQC&#43;Qh1NoK4TTLFdZQ1pQQUb0EbZO8G0zHCUHeYA8pHu2w==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.a43851d3e2dadfac9dbd70f462011a93d7914abc78e7b4dbabd5de7a1cf30d03996356359aacdb8048c074f9ba255388d5adca85a37476161218188c7ad5107b.css" integrity="sha512-pDhR0&#43;La36ydvXD0YgEak9eRSrx457Tbq9XeehzzDQOZY1Y1mqzbgEjAdPm6JVOI1a3KhaN0dhYSGBiMetUQew==" crossorigin="anonymous">
 
   </head>
   <body
@@ -144,7 +147,7 @@
 </span>
     <span class="post_date">
       2024-08-06</span>
-    <span class="post_time"> · 2 min read</span><span>&nbsp;· <a href='https://jackgdn.github.io/en/tags/log/' title="Log" class="post_tag button button_translucent">Log
+    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='https://jackgdn.github.io/en/tags/log/' title="Log" class="post_tag button button_translucent">Log
         </a>
     </span>
     <span class="page_only">&nbsp;·
@@ -162,23 +165,8 @@
   </div>
 
     <div class="post_body"><p>After several days of work, I have completed the basic migration of my personal blog from Hexo to Hugo. I was using <a href="https://hexo-theme-async.imalun.com/">Hexo-Theme-Async</a> theme previously. Both Hexo and Hugo have their own advantages and disadvantages. The advantage of Hexo is its simplicity. Without complex operations can anyone construct a pleasing blog with Hexo. Meanwhile, Hugo excels in speed of generation and high customization capabilities.</p>
-<p>First, in terms of generation speed, running <code>hugo server</code> command is significantly faster than running <code>hexo g</code> and <code>hexo s</code> combined. Additonally, Hugo's hot reload mode surpasses that of Hexo's. Whenever I make a change to an article, Hugo directly displays modified contents, whereas using Hexo requires regeneration with its slow generation speed... Clearly, Hugo is superior to Hexo.</p>
-<p>Regarding customization, I am currently using the <a href="https://github.com/chipzoller/hugo-clarity/">hugo-clarity</a> theme, which does not provide a position for an external music player link. Consequently, I customized a shortcode to directly embed the following external music player in this article:</p>
-
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height=86 src="//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66"></iframe>
-<p>Here, I customized a shortcode named <code>ncm.html</code> with the following template content:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">src</span> <span class="o">:=</span> <span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;src&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">width</span> <span class="o">:=</span> <span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;width&#34;</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">&lt;</span><span class="nx">iframe</span> <span class="nx">frameborder</span><span class="p">=</span><span class="s">&#34;no&#34;</span> <span class="nx">border</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginwidth</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginheight</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">width</span><span class="p">=</span><span class="s">&#34;{{ $width }}&#34;</span> <span class="nx">height</span><span class="p">=</span><span class="mi">86</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;{{ $src }}&#34;</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">iframe</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>Subsequently, I obtained the embed code for this track from Netease Cloud Music and made some slight modifications before inserting it into this Markdown document.</p>
-<p>Embed code:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&#34;no&#34;</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">530</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>Inserted code:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nx">ncm</span> <span class="nx">frameborder</span><span class="p">=</span><span class="s">&#34;no&#34;</span> <span class="nx">border</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginwidth</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">marginheight</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="nx">width</span><span class="p">=</span><span class="mi">530</span> <span class="nx">height</span><span class="p">=</span><span class="mi">86</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;//music.163.com/outchain/player?type=2&amp;id=2062178646&amp;auto=0&amp;height=66&#34;</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>This theme supports multi-language versions, and I am taking this opportunity to learn terminologies of CST.
+<p>In terms of generation speed, running <code>hugo server</code> command is significantly faster than running <code>hexo g</code> and <code>hexo s</code> combined. Additonally, Hugo's hot reload mode surpasses that of Hexo's. Whenever I make a change to an article, Hugo directly displays modified contents, whereas using Hexo requires regeneration with its slow generation speed... Clearly, Hugo is superior to Hexo.</p>
+<p>This theme supports multi-language versions, and I am taking this opportunity to learn terminologies of CST.
 After the transition to Hugo, the previously delicate archive and friend page have disappeared. Interactive website titles and icons, as well as various interesting widgets, can no longer be used. In their place is a simpler and more business-oriented blog theme.
 In the coming weeks, I will aim to translate several blog posts and integrate password and comment plugins into the blog.</p>
 <p>
@@ -404,7 +392,7 @@ In the coming weeks, I will aim to translate several blog posts and integrate pa
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='https://jackgdn.github.io/logos/GL.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
+    <img src='https://jackgdn.github.io/logos/G.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
     <p>Copyright&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;-GDN&#39;S BLOG-. All Rights Reserved</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>
