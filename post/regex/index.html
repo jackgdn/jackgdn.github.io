@@ -9,7 +9,7 @@
   
   >
   <head>
-<title>关于我 | -GDN&#39;s Blog-</title>
+<title>正则表达式学习记录（上） | -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,27 +22,36 @@ src='https://plausible.io/js/plausible.js'>
 
 
 
-  
 <meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="en" />
-
 <meta property="og:type" content="article">
-<meta name="description" content="东北林业大学在读本科生，学习计算机科学与技术专业。" />
+<meta name="description" content="正则表达式的编写 交互式学习正则表达式：RegexOne 中文
+正则表达式练习：RegExr
+正则表达式文档：MDN Web Docs 正则表达式
+基础篇 标记
+说明 样例 直接匹配，输入什么匹配什么。 RegEx: abc
+Match: abc
+Match: xyzabcdef . 匹配任何单个字符。 RegEx: …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="关于我" />
+<meta name="twitter:title" content="正则表达式学习记录（上）" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/about/" />
-<meta property="og:title" content="关于我" />
-<meta property="og:description" content="东北林业大学在读本科生，学习计算机科学与技术专业。" />
+<meta property="og:url" content="https://jackgdn.github.io/post/regex/" />
+<meta property="og:title" content="正则表达式学习记录（上）" />
+<meta property="og:description" content="正则表达式的编写 交互式学习正则表达式：RegexOne 中文
+正则表达式练习：RegExr
+正则表达式文档：MDN Web Docs 正则表达式
+基础篇 标记
+说明 样例 直接匹配，输入什么匹配什么。 RegEx: abc
+Match: abc
+Match: xyzabcdef . 匹配任何单个字符。 RegEx: …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/about/">
+<link rel="canonical" href="https://jackgdn.github.io/post/regex/">
 
 
 
@@ -89,7 +98,7 @@ src='https://plausible.io/js/plausible.js'>
   <div class="nav_parent">
     <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
   </div>
-  <div class="nav_parent nav_active">
+  <div class="nav_parent">
     <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
   </div>
   <div class="nav_parent">
@@ -139,7 +148,7 @@ src='https://plausible.io/js/plausible.js'>
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">关于我</h1>
+    <h1 class="post_title">正则表达式学习记录（上）</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -147,12 +156,16 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2024-08-05</span>
-    <span class="post_time"> · 1 分钟阅读</span>
+      2024-08-10</span>
+    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/regex/' title="RegEx" class="post_tag button button_translucent">RegEx
+        </a><a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
+        </a><a href='https://jackgdn.github.io/tags/javascript/' title="JavaScript" class="post_tag button button_translucent">JavaScript
+        </a>
+    </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/about/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/regex/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -163,48 +176,264 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-    <div class="post_body"><p>
-  <figure>
-  <picture>
-
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#正则表达式的编写">正则表达式的编写</a>
+      <ul>
+        <li><a href="#基础篇">基础篇</a></li>
+        <li><a href="#进阶篇">进阶篇</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试正则表达式">测试正则表达式</a></li>
+  </ul>
+</nav>
+      </div>
     
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt=""
-      
-        class="image_figure image_internal image_processed"
-        width="5184"
-        height="3456"
-        src="/about/about/index.jpg"
-      
-      
-    />
+    <div class="post_body"><style>
+    .no-wrap {
+        white-space: pre;
+    }
+</style>
+<h2 id="正则表达式的编写">正则表达式的编写</h2>
+<p>交互式学习正则表达式：<a href="https://imageslr.github.io/regexone-cn/">RegexOne 中文</a></p>
+<p>正则表达式练习：<a href="https://regexr-cn.com/">RegExr</a></p>
+<p>正则表达式文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions">MDN Web Docs 正则表达式</a></p>
+<h3 id="基础篇">基础篇</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><p class="no-wrap">标记</p></th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left">直接匹配，输入什么匹配什么。</td>
+<td style="text-align:left">RegEx: <code>abc</code><br>Match: <code>abc</code><br>Match: xyz<code>abc</code>def</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>.</code></td>
+<td style="text-align:left">匹配<strong>任何单个</strong>字符。</td>
+<td style="text-align:left">RegEx: <code>.a</code><br>Match: 12<code>3a</code>bc</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\</code></td>
+<td style="text-align:left">转义字符，用于匹配某个用于标记的原始字符。</td>
+<td style="text-align:left">RegEx: <code>\.</code><br>Match: Hi<code>.</code><br>Match: 3<code>.</code>14</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[]</code></td>
+<td style="text-align:left">匹配特定范围内的<strong>单个</strong>字符</td>
+<td style="text-align:left">RegEx: <code>[abc]an</code><br>Match: <code>ban</code>ana<br>Match: ab<code>can</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[-]</code></td>
+<td style="text-align:left">用简略的方式表示范围。例如 <code>[2-6]</code> 等价于 <code>[23456]</code></td>
+<td style="text-align:left">RegEx: <code>[0-3][a-c]</code><br>Match: <code>1a</code>​<code>2b</code>8y9z</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[^]</code></td>
+<td style="text-align:left">排除特定范围内的<strong>单个</strong>字符</td>
+<td style="text-align:left">RegEx: <code>b[^e]r</code><br>Match: <code>bar</code>ber</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\d</code></td>
+<td style="text-align:left">匹配 0-9 中的<strong>单个</strong>数字字符，相当于 <code>[0-9]</code></td>
+<td style="text-align:left">RegEx: <code>\da</code><br>Match: 0<code>1a</code>2b34</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\D</code></td>
+<td style="text-align:left">匹配<strong>单个非数字字符</strong>，相当于 <code>[^0-9]</code></td>
+<td style="text-align:left">RegEx: <code>\D2</code><br>Match: 1a<code>a2</code>b34</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\s</code></td>
+<td style="text-align:left">匹配<strong>单个</strong>空白字符，相当于 <code>[\f\n\r\t\v\u0020\u00a0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>。<br><br>其中，<code>\f</code>​<code>\n</code>​<code>\r</code>​<code>\t</code>​<code>\v</code> 与 ASCII 字符集中相同记号的转义字符同义，<code>\uhhhh</code> 为 Unicode 字符集对应字符的编号。</td>
+<td style="text-align:left">RegEx: <code>\s</code><br>Match: Hello,<code> </code>world!</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\S</code></td>
+<td style="text-align:left">匹配<strong>单个非空白字符</strong>，相当于 <code>[^\f\n\r\t\v\u0020\u00a0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>。</td>
+<td style="text-align:left">RegEx: <code>\S</code><br>Match: <code>H</code>​<code>e</code>​<code>l</code>​<code>l</code>​<code>o</code>​<code>,</code>​ <code>w</code>​<code>o</code>​<code>r</code>​<code>l</code>​<code>d</code>​<code>!</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\w</code></td>
+<td style="text-align:left">匹配<strong>单个单字字符</strong>，等价于 <code>[A-Za-z0-9_]</code>。</td>
+<td style="text-align:left">RegEx: <code>\w</code><br>Match: <code>3</code>.<code>14</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\W</code></td>
+<td style="text-align:left">匹配<strong>单个非单字字符</strong>，等价于 <code>[^A-Za-z0-9_]</code></td>
+<td style="text-align:left">RegEx: <code>\W</code><br>Match: 3<code>.</code>14</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\b</code></td>
+<td style="text-align:left">表示单词边界，匹配一个单词的开始或结束，而<strong>不匹配任何实际字符</strong>。</td>
+<td style="text-align:left">RegEx: <code>\bword\b</code><br>Match: <code>word</code> and sword</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\B</code></td>
+<td style="text-align:left">表示<strong>非</strong>单词边界，匹配字母或数字中间的位置，而<strong>不匹配任何实际字符</strong>。</td>
+<td style="text-align:left">RegEx: <code>\d\B\w\B</code><br>Match: 0<code>1A</code>B<br>Match: A<code>4A</code>2-g74t</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:left">用于匹配 <strong>1 个或更多</strong>前面的标记。</td>
+<td style="text-align:left">RegEx: <code>a+b+</code><br>Match: <code>aaabb</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:left">用于匹配<strong>任意多个</strong>前面的标记，匹配的前面标记的数量<strong>可以为 0</strong>。</td>
+<td style="text-align:left">RegEx: <code>a+b*c</code><br>Match: <code>aaabbbc</code>cc<br>Match: <code>aaac</code>cc</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:left">用于匹配前一个标记<strong>出现 0 次或 1 次</strong>。</td>
+<td style="text-align:left">RegEx: <code>apples?</code><br>Match: <code>apple</code><br>Match: <code>apples</code>s</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{}</code></td>
+<td style="text-align:left">用于匹配指定数量的前一个标记。</td>
+<td style="text-align:left">RegEx: <code>\d{2}</code><br>Match: Jan <code>14</code>, <code>20</code>​<code>05</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><p class="no-wrap"><code>{,}</code></p></td>
+<td style="text-align:left">用于匹配指定数量范围的前一个标记，<code>,</code> 后可以为空。当 <code>,</code> 后留空时，则标识匹配前一个标记的最小值。</td>
+<td style="text-align:left">RegEx: <code>\d{3,}</code><br>Match: Jan 14, <code>2005</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:left">放在标记前，用于匹配开头的字符。</td>
+<td style="text-align:left">RegEx: <code>^[Oo]n[Ee]</code><br>Match: <code>One</code> by onE</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$</code></td>
+<td style="text-align:left">放在标记后，用于匹配末尾的字符。</td>
+<td style="text-align:left">RegEx: <code>[Oo]n[Ee]$</code><br>Match: One by <code>onE</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>|</code></td>
+<td style="text-align:left">或，<code>|</code> 前后的条件满足一个即可匹配</td>
+<td style="text-align:left"><p class="no-wrap">RegEx: <code>I love (dogs|cats)\.</code><br></p>Match: <code>I love dogs.</code><br>Match: <code>I love cats.</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="进阶篇">进阶篇</h3>
+<ul>
+<li>捕获组</li>
+</ul>
+<p>捕获组用 <code>()</code> 表示，括号中的内容为一组。在一个正则表达式中的捕获组，按照上括号 <code>(</code> 的顺序进行编号，对于嵌套捕获组同样适用。例如在表达式 <code>((\d+) plus )\d+</code> 中，捕获组 <code>((\d+) plus )</code> 的编号为 1，而 <code>\d+</code> 这一捕获组的编号为 2。</p>
+<p>在正则表达式中，<code>\</code> 后直接加一个数字 n 相当于“复制”了第 n 个捕获组，从而允许表达式匹配相同的内容。例如，对于表达式 <code>(\w{3}) plus \1</code> 就可以匹配 &quot;one plus one&quot;，&quot;two plus two&quot;，但是<strong>无法</strong>匹配 &quot;one plus two&quot;。</p>
+<p>如果不想让某个捕获组获得编号，可以在 <code>(</code> 后加入 <code>?:</code>，这样捕获组就会成为非捕获组，非捕获组不会获得编号。例如对于 &quot;one plus one, two puls two&quot; 这个字符串中除去 <code>, </code> 之外的内容，可以使用 <code>((\w{3}) plus \2)</code> 匹配，也可以使用 <code>(?:(\w{3}) plus \1)</code> 匹配。</p>
+<ul>
+<li>零宽断言</li>
+</ul>
+<p>零宽断言有四种，分别是零宽正向先行断言 <code>(?=)</code>（指定后缀）、零宽正向后行断言 <code>(?&lt;=)</code>（指定前缀）、零宽负向先行断言 <code>(?!)</code>（指定后缀<strong>不是</strong>）、零宽负向后行断言 <code>(?&lt;!)</code>（指定前缀<strong>不是</strong>）。其中，被指定为或不为前缀或后缀的内容放在零宽断言中下括号 <code>)</code> 前，先行断言置于标记后，后行断言置于标记前，且零宽断言只用于限定而不参与匹配。</p>
+<p>例如我们想匹配 &quot;hopefully seriously&quot; 这两个单词中 &quot;ly&quot; 前的部分，即 &quot;hopeful&quot; 和 &quot;serious&quot;，就可以使用零宽正向先行断言匹配后缀为 &quot;ly&quot; 的内容，因此我们使用表达式 <code>\w+(?=ly)</code> 进行匹配，并且 &quot;ly&quot; 并不会被匹配。如果我们想匹配 &quot;Qty.: 100, Price: £150&quot; 中数量 &quot;Qty.&quot; 对应的值，则可使用 <code>(?&lt;!£)\d{3}</code></p>
+<ul>
+<li>懒惰匹配</li>
+</ul>
+<p>正则表达式默认遵循“贪婪匹配”原则，即尽可能匹配多的字符。例如使用表达式 <code>a\w+c</code> 匹配字符串 &quot;abcabc&quot; 时，会匹配整个字符串，而非单独某一段 &quot;abc&quot;。如果想让匹配尽量短，则可以使用 “懒惰匹配” 模式。懒惰匹配有如下几种模式：<code>+?</code>（出现至少一次，但是长度尽量短）、<code>*?</code>（出现任意次，但是长度尽量短）、<code>??</code>（至多出现一次，但是长度尽量短）、<code>{,}?</code>（出现指定次数，但是长度尽量短）。</p>
+<p>例如对于字符串 &quot;abcabc&quot;，若需要其匹配为两段 &quot;abc&quot;，则可以使用表达式 <code>a\w+?c</code>。使用表达式 <code>a\w{2,7}?c</code> 可以匹配到 &quot;abbbbcabbcabc&quot; 的 &quot;abbbc&quot; 和 &quot;abbc&quot;，而非将 &quot;abbbcabbc&quot; 作为一个整体匹配。</p>
+<p>另外需要注意的是，正则表达式从字符串的开头开始匹配，使用懒惰匹配只会改变匹配到的结尾的位置，而非开头的位置。例如使用 <code>a\w*?c</code> 匹配字符串 &quot;aaaccc&quot; 会得到 &quot;aaac&quot; 而非 &quot;ac&quot;。</p>
+<ul>
+<li>标志位</li>
+</ul>
+<p>到目前为止，本文中出现的所有正则表达式都未使用标志位，而前文中所有的表达式都是默认使用 <code>/g</code> 作为标志位得到的相应的结果。正则表达式中有如下常见标志位：<code>g</code>（global，全局匹配）、<code>i</code>（case intensitive，不区分大小写）、<code>m</code>（multiline，多行匹配）、<code>s</code>（single line，单行匹配）。</p>
+<p>对于上面的正则表达式 <code>a\w*?c</code>，其完整的写法是 <code>/a\w*?c/g</code>。例如在匹配 &quot;jack_gdn JackGDN JGDN&quot; 这几个单词时，一个完整的正则表达式是 <code>/j.*?gdn/gi</code>。<code>s</code> 标志位会将多行内容看作一行内容，并且去除 <code>\n</code> 或 <code>\r\n</code>。<code>m</code> 标志位对于 <code>^</code> 和 <code>$</code> 标记格外有用。例如对于一段文本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">jack_gdn
+</span></span><span class="line"><span class="ln">2</span><span class="cl">JackGDN
+</span></span><span class="line"><span class="ln">3</span><span class="cl">JGDN
+</span></span></code></pre></div><p>如果使用 <code>/^j.*?gdn/gi</code> 匹配，则只会匹配到第一行的 &quot;jack_gdn&quot;，而如果使用 <code>/^j.*?gdn/gim</code> 匹配，则会将三行内容全部匹配上。</p>
+<h2 id="测试正则表达式">测试正则表达式</h2>
+<style>
+    #output {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        outline: none;
+        color: var(--text);
+        background: var(--post-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 1rem;
+        box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+        white-space: pre-wrap;
+        margin-top: 10px;
+        min-height: 44px;
+    }
+    input[type="text"],
+    textarea {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        outline: none;
+        color: var(--text);
+        background: var(--post-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 1rem;
+        box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+        font-family: 'Metropolis', sans-serif;
+        min-height: 44px;
+        resize: vertical;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        outline: none;
+        color: var(--text);
+        background: var(--post-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 1rem;
+        box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1)
+    }
+    .input-container {
+            display: flex;
+            gap: 10px;
+    }
+    #regex {
+        flex: 1.5;
+    }
+    #flag {
+        flex: 0.5;
+    }
+</style>
+<div class="input-container">
+    <input type="text" id="regex" placeholder="输入正则表达式，例如：\d+" />
+    <input type="text" id="flag" placeholder="输入标志位，例如：g" />
+</div><br>
+<textarea id="text" rows="6" cols="50" placeholder="输入文本，例如：12345"></textarea>
+<div onclick="highlightText()" class="button mt-1" title="匹配">匹配</div>
+<h3>匹配结果:</h3>
+<div id="output"></div>
+<script>
+    function highlightText() {
+        const regexInput = document.getElementById('regex').value;
+        const flagInput = document.getElementById('flag').value;
+        const textInput = document.getElementById('text').value;
+        const output = document.getElementById('output');
+        output.innerHTML = '';
 
-    </picture>
-</figure>
-
-东北林业大学在读本科生，学习计算机科学与技术专业。</p>
-
+        try {
+            const regex = new RegExp(regexInput, flagInput);
+            let highlightedText = textInput.replace(regex, (match) => `<code class="noClass">${match}</code>`);
+            if (regexInput == '') {
+                output.innerHTML = '无效的正则表达式。';
+            } else {
+                output.innerHTML = highlightedText || '没有匹配到任何内容。';
+            }
+        } catch (e) {
+            output.innerHTML = '无效的正则表达式。';
+        }
+    }
+</script>
     </div>
 
-
-<div class="post_i18n">
-  <h3 class="mb-0">翻译:</h3>
-  <nav class="tags_nav">
-    
-      <a href="https://jackgdn.github.io/en/about/" class="post_tag button button_translucent">English</a> 
-      
-    
-    </nav>
-</div>
 
 
 
@@ -215,7 +444,7 @@ src='https://plausible.io/js/plausible.js'>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope=''>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>

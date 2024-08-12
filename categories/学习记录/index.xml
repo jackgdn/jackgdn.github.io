@@ -6,7 +6,23 @@
     <description>Recent content in 学习记录 on -GDN&#39;s Blog-</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式学习记录（上）</title>
+      <link>https://jackgdn.github.io/post/regex/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/regex/</guid>
+      <description>
+        
+          
+            学习正则表达式的编写
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Python 内存相关学习记录</title>
       <link>https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>

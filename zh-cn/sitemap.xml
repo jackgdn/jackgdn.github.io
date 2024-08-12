@@ -18,6 +18,22 @@
     <loc>https://jackgdn.github.io/tags/-/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://jackgdn.github.io/categories/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/javascript/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -30,6 +46,12 @@
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/post/"
                 />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/python/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/regex/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
@@ -44,6 +66,12 @@
                 href="https://jackgdn.github.io/tags/"
                 />
   </url><url>
+    <loc>https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/regex/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jackgdn.github.io/links/</loc>
     <lastmod>2024-08-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -55,19 +83,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/links/"
-                />
-  </url><url>
-    <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/categories/"
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
@@ -101,9 +116,6 @@
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/about/"
                 />
-  </url><url>
-    <loc>https://jackgdn.github.io/tags/python/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/python/</loc>
     <lastmod>2024-06-25T00:00:00+00:00</lastmod>
@@ -185,9 +197,6 @@
     <lastmod>2024-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2024-03-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/c%23/</loc>
