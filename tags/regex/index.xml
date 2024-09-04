@@ -2,17 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RegEx on -GDN&#39;s Blog-</title>
-    <link>http://localhost:1313/tags/regex/</link>
+    <link>https://jackgdn.github.io/tags/regex/</link>
     <description>Recent content in RegEx on -GDN&#39;s Blog-</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式学习记录（二）——正则表达式在 Python 中的运用</title>
+      <link>https://jackgdn.github.io/post/pegex-pt-2/</link>
+      <pubDate>Wed, 14 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/pegex-pt-2/</guid>
+      <description>
+        
+          
+            学习 Python re 模块
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>正则表达式学习记录（一）——正则表达式的编写</title>
-      <link>http://localhost:1313/post/regex-pt-1/</link>
+      <link>https://jackgdn.github.io/post/regex-pt-1/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/regex-pt-1/</guid>
+      <guid>https://jackgdn.github.io/post/regex-pt-1/</guid>
       <description>
         
           
