@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on -GDN&#39;s Blog-</title>
-    <link>https://jackgdn.github.io/tags/javascript/</link>
+    <link>http://localhost:1313/tags/javascript/</link>
     <description>Recent content in JavaScript on -GDN&#39;s Blog-</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>正则表达式学习记录（上）</title>
-      <link>https://jackgdn.github.io/post/regex-pt-1/</link>
+      <link>http://localhost:1313/post/regex-pt-1/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/regex-pt-1/</guid>
+      <guid>http://localhost:1313/post/regex-pt-1/</guid>
       <description>
         
           

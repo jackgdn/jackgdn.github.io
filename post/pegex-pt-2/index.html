@@ -4,38 +4,36 @@
   lang="zh-cn"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<title>Posts | -GDN&#39;s Blog-</title>
+<title>正则表达式学习记录（二）——正则表达式在 Python 中的运用 | -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-  
 <meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="en" />
-
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用 学习 Python re 模块" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Posts" />
+<meta name="twitter:title" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用" />
 <meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
-<meta property="og:url" content="http://localhost:1313/post/" />
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="http://localhost:1313/post/pegex-pt-2/" />
+<meta property="og:title" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用" />
+<meta property="og:description" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用 学习 Python re 模块" />
 <meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
 <link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
 
-<link rel="canonical" href="http://localhost:1313/post/">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/post/index.xml" title="-GDN's Blog-" />
+<link rel="canonical" href="http://localhost:1313/post/pegex-pt-2/">
 
 
 
@@ -129,19 +127,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="http://localhost:1313/post/nss18/" title="NSSCTF Round#18 WP">NSSCTF Round#18 WP</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">正则表达式学习记录（二）——正则表达式在 Python 中的运用</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -149,16 +138,15 @@
 </svg>
 </span>
     <span class="post_date">
-      2024-03-06</span>
-    <span class="post_time"> · 4 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='http://localhost:1313/tags/pwn/' title="Pwn" class="post_tag button button_translucent">Pwn
-        </a><a href='http://localhost:1313/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+      2024-08-14</span>
+    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/regex/' title="RegEx" class="post_tag button button_translucent">RegEx
+        </a><a href='http://localhost:1313/tags/python/' title="Python" class="post_tag button button_translucent">Python
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="http://localhost:1313/post/nss18/" title="Copy Link" class="link link_yank">
+    <a href="http://localhost:1313/post/pegex-pt-2/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -169,167 +157,29 @@
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>贡献分数 1157/1989</p>
-          
-          <br>
-          <a href="http://localhost:1313/post/nss18/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#不转义的字符串">不转义的字符串</a></li>
+    <li><a href="#recompile-方法"><code>re.compile()</code> 方法</a></li>
+  </ul>
+</nav>
       </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Unicode 学习记录">Unicode 学习记录</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-06</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a><a href='http://localhost:1313/tags/unicode/' title="Unicode" class="post_tag button button_translucent">Unicode
-        </a><a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' title="编码" class="post_tag button button_translucent">编码
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>Unicode 相关知识</p>
-          
-          <br>
-          <a href="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="http://localhost:1313/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-06</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/c%23/' title="C#" class="post_tag button button_translucent">C#
-        </a><a href='http://localhost:1313/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="http://localhost:1313/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
-  <figure>
-  <picture>
-
     
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt="修改 Overcooked! 2 存档"
-      
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/thumbnail.jpeg"
-      
-      
-    />
+    <div class="post_body"><p><a href="https://jackgdn.github.io/post/regex-pt-1/">正则表达式学习记录（一）——正则表达式的编写</a></p>
+<p><a href="https://docs.python.org/zh-cn/3/library/re.html">re --- 正则表达式操作 — Python 3.12.5 文档</a></p>
+<p>正则表达式在 Python 中的使用，主要依靠 <code>re</code> 模块实现。本文主要介绍几个 re 中常用函数及方法。</p>
+<h2 id="不转义的字符串">不转义的字符串</h2>
+<p>众所周知，在当今流行的大多数高级语言中，<code>\\</code> 被作为转义字符表示</p>
+<h2 id="recompile-方法"><code>re.compile()</code> 方法</h2>
 
-    </picture>
-</figure>
-
-      </div>
-      
-        <div class="pale">
-            
-          
-            <p>《胡闹厨房 2》对游戏存档加密，使用逆向手段找到加解密算法后，对游戏存档进行解密、修改并且重新加密。</p>
-          
-          <br>
-          <a href="http://localhost:1313/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
     </div>
-  </li>
 
-      <li>
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/post/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/post/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/post/" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-      </li>
-    </ul>
-  </div>
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
@@ -363,6 +213,9 @@
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="http://localhost:1313/post/pegex-pt-2/" class="nav-link" title="正则表达式学习记录（二）——正则表达式在 Python 中的运用">正则表达式学习记录（二）——正则表达式在 Python 中的运用</a>
+      </li>
+      <li>
         <a href="http://localhost:1313/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
       </li>
       <li>
@@ -383,20 +236,17 @@
       <li>
         <a href="http://localhost:1313/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
       </li>
-      <li>
-        <a href="http://localhost:1313/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="nav-link" title="近期解题 2024.3.14">近期解题 2024.3.14</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
-          WP
-          <span class="button_tally">3</span>
-        </a>
-        
         <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
           学习记录
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
+          WP
           <span class="button_tally">3</span>
         </a>
         
@@ -436,19 +286,24 @@
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
+        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">5</span>
+        </a>
+        
         <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">5</span>
         </a>
         
-        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
-          PYTHON
-          <span class="button_tally">4</span>
-        </a>
-        
         <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">3</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/regex/' class="post_tag button button_translucent" title="regex">
+          REGEX
+          <span class="button_tally">2</span>
         </a>
         
         <a href='http://localhost:1313/tags//' class="post_tag button button_translucent" title=" ">
@@ -496,11 +351,6 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='http://localhost:1313/tags/regex/' class="post_tag button button_translucent" title="regex">
-          REGEX
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">所有标签</div>
@@ -543,11 +393,11 @@
             </a>
             
             
-            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=4 title="python">PYTHON<span class="button_tally">4</span>
+            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=5 title="python">PYTHON<span class="button_tally">5</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=2 title="regex">REGEX<span class="button_tally">2</span>
             </a>
             
             
@@ -590,9 +440,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
