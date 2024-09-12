@@ -4,13 +4,12 @@
   lang="zh-cn"
   data-figures=""
   
-    class="home"
+    class="page"
   
   
   >
   <head>
-	<meta name="generator" content="Hugo 0.131.0">
-<title>-GDN&#39;s Blog-</title>
+<title>Python 中函数的参数（未完成）  &lt;&lt;  -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -23,30 +22,26 @@ src='https://plausible.io/js/plausible.js'>
 
 
 
-  
 <meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="en" />
-
-<meta property="og:type" content="website">
-<meta name="description" content="jack_gdn&#39;s blog" />
+<meta property="og:type" content="article">
+<meta name="description" content="必选参数 初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。
+1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="" />
+<meta name="twitter:title" content="Python 中函数的参数（未完成）" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/" />
-<meta property="og:title" content="" />
-<meta property="og:description" content="jack_gdn&#39;s blog" />
+<meta property="og:url" content="https://jackgdn.github.io/post/args-and-kwargs-in-python/" />
+<meta property="og:title" content="Python 中函数的参数（未完成）" />
+<meta property="og:description" content="必选参数 初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。
+1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
-  <meta name="keywords" content="jack_gdn" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/">
-<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/index.xml" title="-GDN's Blog-" />
-<link rel="alternate" type="application/json" href="https://jackgdn.github.io/index.json" title="-GDN's Blog-" />
+<link rel="canonical" href="https://jackgdn.github.io/post/args-and-kwargs-in-python/">
 
 
 
@@ -90,7 +85,7 @@ src='https://plausible.io/js/plausible.js'>
       
         
 
-  <div class="nav_parent nav_active">
+  <div class="nav_parent">
     <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
@@ -140,21 +135,10 @@ src='https://plausible.io/js/plausible.js'>
 </header>
 
     <main>
-
   
-
-
-
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/args-and-kwargs-in-python/" title="Python 中函数的参数（未完成）">Python 中函数的参数（未完成）</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Python 中函数的参数（未完成）</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -180,473 +164,224 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>学习 Python 声明函数时的参数，分为必选参数、默认参数、可变参数和关键字参数。</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/args-and-kwargs-in-python/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#必选参数">必选参数</a></li>
+    <li><a href="#默认参数">默认参数</a></li>
+  </ul>
+</nav>
       </div>
-    </div>
-  </li>
+    
+    <div class="post_body"><h2 id="必选参数">必选参数</h2>
+<p>初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">,</span> <span class="mi">1919810</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"># output: 114514 1919810</span>
+</span></span></code></pre></div><p>函数定义中要求传入两个参数，那么在调用时就必须传入两个参数，如果出入过多或者过少参数均会报错。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="s2">output:
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="s2">Traceback (most recent call last):
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="s2">  File &#34;/home/jackgdn/python-script/test.py&#34;, line 4, in &lt;module&gt;
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="s2">    foo(114514)
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="s2">TypeError: foo() missing 1 required positional argument: &#39;bParam&#39;
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><em>传入过少参数</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">,</span> <span class="mi">1919810</span><span class="p">,</span> <span class="s2">&#34;Hello, World!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="s2">Traceback (most recent call last):
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="s2">  File &#34;/home/jackgdn/python-script/test.py&#34;, line 4, in &lt;module&gt;
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="s2">    foo(114514, 1919810, &#34;Hello, world!&#34;)
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="s2">TypeError: foo() takes 2 positional arguments but 3 were given
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><em>传入过多参数</em></p>
+<h2 id="默认参数">默认参数</h2>
+<p>在定义函数时给出默认值的参数，被称为默认参数。如果在调用函数时传入了默认参数，则默认参数被覆盖为传入的值；若没有传入，则默认参数为默认值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="o">=</span><span class="mi">1919810</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"># output: 114514 1919810</span>
+</span></span></code></pre></div><p><em>不传入参数，函数使用默认参数</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="o">=</span><span class="mi">1919810</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">aParam</span><span class="p">,</span> <span class="n">bParam</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">,</span> <span class="s2">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"># output: 114514 Hello, world!</span>
+</span></span></code></pre></div><style type="text/css">
+     
+    .notice {
+        --title-color: #fff;
+        --title-background-color: #6be;
+        --content-color: #444;
+        --content-background-color: #e7f2fa;
+    }
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/regex-pt-1/" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-08-10</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/regex/' title="RegEx" class="post_tag button button_translucent">RegEx
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/regex-pt-1/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
+    .notice.info {
+        --title-background-color: #fb7;
+        --content-background-color: #fec;
+    }
 
-    </a>
-  </div>
-  </span>
-  </div>
+    .notice.tip {
+        --title-background-color: #5a5;
+        --content-background-color: #efe;
+    }
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
+    .notice.warning {
+        --title-background-color: #c33;
+        --content-background-color: #fee;
+    }
+
+     
+    @media (prefers-color-scheme:dark) {
+        .notice {
+            --title-color: #fff;
+            --title-background-color: #069;
+            --content-color: #ddd;
+            --content-background-color: #023;
+        }
+
+        .notice.info {
+            --title-background-color: #a50;
+            --content-background-color: #420;
+        }
+
+        .notice.tip {
+            --title-background-color: #363;
+            --content-background-color: #121;
+        }
+
+        .notice.warning {
+            --title-background-color: #800;
+            --content-background-color: #400;
+        }
+    }
+
+    body.dark .notice {
+        --title-color: #fff;
+        --title-background-color: #069;
+        --content-color: #ddd;
+        --content-background-color: #023;
+    }
+
+    body.dark .notice.info {
+        --title-background-color: #a50;
+        --content-background-color: #420;
+    }
+
+    body.dark .notice.tip {
+        --title-background-color: #363;
+        --content-background-color: #121;
+    }
+
+    body.dark .notice.warning {
+        --title-background-color: #800;
+        --content-background-color: #400;
+    }
+
+     
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--content-color);
+        background: var(--content-background-color);
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+     
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background-color);
+    }
+
+     
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px;
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative;
+    }
+</style><div class="notice info" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
             
-          
-            <p>学习正则表达式的编写</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/regex-pt-1/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
+        </span>重要</p><p>当默认参数为可变对象时，该对象会在函数的多次调用之间公用。</p></div>
+
+<p>对于上面这个问题，我们不妨举一个例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[]):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="k">return</span> <span class="n">values</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">append_to</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">append_to</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># output: </span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># [10]</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># [10, 20]</span>
+</span></span></code></pre></div><p>在这段代码中，<code>values</code> 作为默认参数，默认为一个空列表。当这一函数被多次调用时，上一次得到的函数结果被保留，导致下一次调用函数时，得到的不是我们想要的结果。</p>
+<p>如果想要修复这个 bug，可以将代码改写为下面的形式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">append_to</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">return</span> <span class="n">values</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">append_to</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">append_to</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># [10]</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># [20]</span>
+</span></span></code></pre></div>
     </div>
-  </li>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/log-2024-08-06/" title="日志-2024-08-06">日志-2024-08-06</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-08-06</span>
-    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' title="日志" class="post_tag button button_translucent">日志
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/log-2024-08-06/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
 
-    </a>
-  </div>
-  </span>
-  </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/log-2024-08-06/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" title="Python 课程设计项目报告">Python 课程设计项目报告</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-06-25</span>
-    <span class="post_time"> · 19 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/nat/" title="远程控制一台在内网中的设备">远程控制一台在内网中的设备</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-06-15</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/linux/' title="Linux" class="post_tag button button_translucent">Linux
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/nat/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>在不使用内网穿透的前提下，远程控制一台内网环境下的树莓派拍照并将图像发送到个人计算机。</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/nat/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/mitm-attack/" title="记一次 ARP 欺骗 &#43; DNS 劫持攻击的尝试">记一次 ARP 欺骗 + DNS 劫持攻击的尝试</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-04-21</span>
-    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/penetration/' title="Penetration" class="post_tag button button_translucent">Penetration
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/mitm-attack/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>使用 Ettercap 对内网中的设备进行 ARP poisoning 与 DNS spoofing。</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/mitm-attack/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/" title="逆向相关算法脚本（暂时停更）">逆向相关算法脚本（暂时停更）</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-30</span>
-    <span class="post_time"> · 13 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/c&#43;&#43;/' title="C&#43;&#43;" class="post_tag button button_translucent">C&#43;&#43;
-        </a><a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>与逆向相关的编码、加解密、信息摘要算法脚本库（未完成，已停更）</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-14</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' title="线性代数" class="post_tag button button_translucent">线性代数
-        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' title="数学" class="post_tag button button_translucent">数学
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="近期解题 2024.3.14">近期解题 2024.3.14</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-14</span>
-    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/crypto/' title="Crypto" class="post_tag button button_translucent">Crypto
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>近期解题</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/pearl2024/" title="PearlCTF 2024 WP">PearlCTF 2024 WP</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-10</span>
-    <span class="post_time"> · 5 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/misc/' title="Misc" class="post_tag button button_translucent">Misc
-        </a><a href='https://jackgdn.github.io/tags/forensics/' title="Forensics" class="post_tag button button_translucent">Forensics
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/pearl2024/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>贡献分数 908/1807</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/pearl2024/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-      <li>
-    <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-      </li>
-    </ul>
-  </div>
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope=''>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -900,9 +635,8 @@ src='https://plausible.io/js/plausible.js'>
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>

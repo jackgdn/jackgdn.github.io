@@ -6,7 +6,23 @@
     <description>Recent content in Python on -GDN&#39;s Blog-</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 中函数的参数（未完成）</title>
+      <link>https://jackgdn.github.io/post/args-and-kwargs-in-python/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/args-and-kwargs-in-python/</guid>
+      <description>
+        
+          
+            学习 Python 声明函数时的参数，分为必选参数、默认参数、可变参数和关键字参数。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Python 课程设计项目报告</title>
       <link>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
