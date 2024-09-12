@@ -317,7 +317,7 @@ src='https://plausible.io/js/plausible.js'>
 </ul>
 <p>捕获组用 <code>()</code> 表示，括号中的内容为一组。在一个正则表达式中的捕获组，按照上括号 <code>(</code> 的顺序进行编号，对于嵌套捕获组同样适用。例如在表达式 <code>((\d+) plus )\d+</code> 中，捕获组 <code>((\d+) plus )</code> 的编号为 1，而 <code>\d+</code> 这一捕获组的编号为 2。</p>
 <p>在正则表达式中，<code>\</code> 后直接加一个数字 n 相当于“复制”了第 n 个捕获组，从而允许表达式匹配相同的内容。例如，对于表达式 <code>(\w{3}) plus \1</code> 就可以匹配 &quot;one plus one&quot;，&quot;two plus two&quot;，但是<strong>无法</strong>匹配 &quot;one plus two&quot;。</p>
-<p>如果不想让某个捕获组获得编号，可以在 <code>(</code> 后加入 <code>?:</code>，这样捕获组就会成为非捕获组，非捕获组不会获得编号。例如对于 &quot;one plus one, two puls two&quot; 这个字符串中除去 <code>, </code> 之外的内容，可以使用 <code>((\w{3}) plus \2)</code> 匹配，也可以使用 <code>(?:(\w{3}) plus \1)</code> 匹配。</p>
+<p>如果不想让某个捕获组获得编号，可以在 <code>(</code> 后加入 <code>?:</code>，这样捕获组就会成为非捕获组，非捕获组不会获得编号。例如对于 &quot;one plus one, two plus two&quot; 这个字符串中除去 <code>, </code> 之外的内容，可以使用 <code>((\w{3}) plus \2)</code> 匹配，也可以使用 <code>(?:(\w{3}) plus \1)</code> 匹配。</p>
 <ul>
 <li>零宽断言</li>
 </ul>
