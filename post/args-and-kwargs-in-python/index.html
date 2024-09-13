@@ -9,7 +9,7 @@
   
   >
   <head>
-<title>Python 中函数的参数（未完成）  &lt;&lt;  -GDN&#39;s Blog-</title>
+<title>Python 中函数的参数  &lt;&lt;  -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -29,10 +29,10 @@ src='https://plausible.io/js/plausible.js'>
 1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Python 中函数的参数（未完成）" />
+<meta name="twitter:title" content="Python 中函数的参数" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/args-and-kwargs-in-python/" />
-<meta property="og:title" content="Python 中函数的参数（未完成）" />
+<meta property="og:title" content="Python 中函数的参数" />
 <meta property="og:description" content="必选参数 初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。
 1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
@@ -138,7 +138,7 @@ src='https://plausible.io/js/plausible.js'>
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Python 中函数的参数（未完成）</h1>
+    <h1 class="post_title">Python 中函数的参数</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -147,7 +147,7 @@ src='https://plausible.io/js/plausible.js'>
 </span>
     <span class="post_date">
       2024-09-12</span>
-    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
+    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
         </a>
     </span>
     <span class="page_only">&nbsp;·
@@ -170,6 +170,8 @@ src='https://plausible.io/js/plausible.js'>
   <ul>
     <li><a href="#必选参数">必选参数</a></li>
     <li><a href="#默认参数">默认参数</a></li>
+    <li><a href="#可变参数">可变参数</a></li>
+    <li><a href="#关键字参数">关键字参数</a></li>
   </ul>
 </nav>
       </div>
@@ -368,6 +370,43 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># output:</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># [10]</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># [20]</span>
+</span></span></code></pre></div><h2 id="可变参数">可变参数</h2>
+<p>可变参数在声明函数时一般写作 <code>*args</code>，可变参数的数量时可变的，可以是任意多个（包括 0 个）。可变参数中的所有参数都会存储到一个元组中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">114514</span><span class="p">,</span> <span class="mi">1919810</span><span class="p">,</span> <span class="s2">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># 114514</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># (1919810, &#39;Hello, world!&#39;)</span>
+</span></span></code></pre></div><div class="notice info" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            
+        </span>重要</p><p>函数声明时，若可变参数的数量多于一个，程序会抛出 <code>SyntaxError</code>。</p></div>
+
+<p>这也很好理解。因为函数会将多个传入的参数存储到一个元组中（如果可变参数数量为 0，则存储到一个空元组中），如果一个函数定义了多个可变参数，则无法区分存入的多个参数应当存入哪一个可变参数</p>
+<h2 id="关键字参数">关键字参数</h2>
+<p>关键字参数在声明函数中一般写作 <code>**kwargs</code>，在调用函数时，以键值对的格式传入参数，随后键值对会存储为字典格式。和可变参数一样，如果传入的关键字参数数量为 0，则字典为空字典。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">param</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">foo</span><span class="p">(</span><span class="mi">141892</span><span class="p">,</span> <span class="mi">1919810</span><span class="p">,</span> <span class="s2">&#34;Hello, world!&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;jack_gdn&#39;</span><span class="p">,</span> <span class="n">university</span><span class="o">=</span><span class="s1">&#39;NEFU&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="s2">output: 
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="s2">&lt;class &#39;int&#39;&gt; &lt;class &#39;tuple&#39;&gt; &lt;class &#39;dict&#39;&gt;
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s2">141892
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="s2">(1919810, &#39;Hello, world!&#39;)
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s2">{&#39;name&#39;: &#39;jack_gdn&#39;, &#39;university&#39;: &#39;NEFU&#39;}
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
 </span></span></code></pre></div>
     </div>
 
@@ -408,7 +447,7 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/args-and-kwargs-in-python/" class="nav-link" title="Python 中函数的参数（未完成）">Python 中函数的参数（未完成）</a>
+        <a href="https://jackgdn.github.io/post/args-and-kwargs-in-python/" class="nav-link" title="Python 中函数的参数">Python 中函数的参数</a>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
