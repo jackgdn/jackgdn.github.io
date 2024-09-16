@@ -24,6 +24,22 @@
     </item>
     
     <item>
+      <title>正则表达式学习记录（二）——正则表达式在 Python 中的运用</title>
+      <link>https://jackgdn.github.io/post/pegex-pt-2/</link>
+      <pubDate>Wed, 14 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/pegex-pt-2/</guid>
+      <description>
+        
+          
+            学习 Python re 模块
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Python 课程设计项目报告</title>
       <link>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
