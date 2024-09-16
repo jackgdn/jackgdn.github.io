@@ -4,10 +4,12 @@
   lang="zh-cn"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<title>JavaScript | -GDN&#39;s Blog-</title>
+<title>正则表达式学习记录（二）——正则表达式在 Python 中的运用  &lt;-  -GDN&#39;s Blog-</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,22 +19,21 @@
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用 学习 Python re 模块" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="JavaScript" />
+<meta name="twitter:title" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用" />
 <meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
-<meta property="og:url" content="http://localhost:1313/tags/javascript/" />
-<meta property="og:title" content="JavaScript" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="http://localhost:1313/post/player/" />
+<meta property="og:title" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用" />
+<meta property="og:description" content="正则表达式学习记录（二）——正则表达式在 Python 中的运用 学习 Python re 模块" />
 <meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
 <link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
 
-<link rel="canonical" href="http://localhost:1313/tags/javascript/">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/javascript/index.xml" title="-GDN's Blog-" />
+<link rel="canonical" href="http://localhost:1313/post/player/">
 
 
 
@@ -48,7 +49,7 @@
 
   </head>
   <body
-    data-code="13"
+    data-code="33"
     data-lines="true"
     id="documentTop"
     data-lang="zh-cn"
@@ -101,6 +102,14 @@
 </a>
 
 <div class='follow'>
+    
+  <a href="mailto:1pk0@proton.me">
+    <svg class="icon">
+  <title>mail</title>
+  <use xlink:href="#mail"></use>
+</svg>
+
+  </a>
   <a href="https://github.com/jackgdn/">
     <svg class="icon">
   <title>github</title>
@@ -126,19 +135,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="http://localhost:1313/post/regex-pt-1/" title="正则表达式学习记录（上）">正则表达式学习记录（上）</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">正则表达式学习记录（二）——正则表达式在 Python 中的运用</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -146,16 +146,15 @@
 </svg>
 </span>
     <span class="post_date">
-      2024-08-10</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/regex/' title="RegEx" class="post_tag button button_translucent">RegEx
+      2024-08-14</span>
+    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/regex/' title="RegEx" class="post_tag button button_translucent">RegEx
         </a><a href='http://localhost:1313/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a><a href='http://localhost:1313/tags/javascript/' title="JavaScript" class="post_tag button button_translucent">JavaScript
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="http://localhost:1313/post/regex-pt-1/" title="Copy Link" class="link link_yank">
+    <a href="http://localhost:1313/post/player/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -166,31 +165,280 @@
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>学习正则表达式的编写</p>
-          
-          <br>
-          <a href="http://localhost:1313/post/regex-pt-1/" title="阅读更多" class="excerpt_more button">阅读更多</a>
+    <div class="post_body"><div class="contain">
+    <div class="container">
+        <div class="music-player">
+            <div class="cover">
+                <img src="https://mariongrandvincent.github.io/HTML-Personal-website/img-codePen/kygo.png" alt="">   
+            </div>
+            <div class="titre">
+                <h3>Kygo</h3>
+                <h1>Stole the show</h1>
+            </div>
+            <div class="lecteur">
+                <audio style="width: 100%;" class="fc-media">
+                    <source
+                        src="https://mariongrandvincent.github.io/HTML-Personal-website/img-codePen/kygo-stole-the-show.mp3"
+                        type="audio/mp3" />
+                </audio>
+            </div>
         </div>
-      </div>
     </div>
-  </li>
+</div>
+<style>
+    .container {
+        display: block;
+        width: 100%;
+        height: 750px;
+        margin: auto;
+        overflow: hidden;
+        background-image: url("https://mariongrandvincent.github.io/HTML-Personal-website/img-codePen/bg-music-player.jpg");
+        background-repeat: repeat;
+        background-size: cover;
+    }
+    .music-player {
+        display: block;
+        position: relative;
+        width: 400px;
+        height: 570px;
+        margin: auto;
+        margin-top: 6%;
+        border-radius: 0 0 10px 10px;
+        background: transparent linear-gradient(to bottom, rgba(10, 11, 31, 0.9) 50%, rgb(10, 11, 31) 70%) repeat scroll 0 0;
+        box-shadow: 1px 10px 20px 5px #222;
+    }
+    .cover {
+        float: left;
+        width: 100%;
+        height: 66%;
+    }
+    .cover img {
+        display: block;
+        position: absolute;
+        top: 8%;
+        left: 14%;
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+    .titre {
+        float: left;
+        width: 100%;
+    }
+    .lecteur {
+        width: 100%;
+        display: block;
+        height: auto;
+        position: relative;
+        float: left;
+    }
+    .mejs__button>button:focus {
+        outline: 0px dotted #999;
+    }
+    .mejs__container {
+        position: relative;
+        background-color: transparent;
+        min-width: auto !important;
+    }
+    .mejs__controls {
+        padding: 0 10%;
+        background: transparent !important;
+        display: block;
+        position: relative;
+    }
+    .mejs__controls div {
+        display: block;
+        float: left;
+        position: relative;
+    }
+    .mejs__controls .mejs__playpause-button {
+        position: absolute !important;
+        right: 8%;
+        bottom: 95%;
+        width: 40px;
+    }
+    .mejs__controls .mejs__playpause-button button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        font-family: FontAwesome;
+        font-size: 23px;
+        color: #5bbb95;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+    }
+    .mejs__controls .mejs__play button:before {
+        content: "\f04b";
+    }
+    .mejs__controls .mejs__pause button:before {
+        content: "\f04c";
+    }
+    .mejs__controls .mejs__volume-button button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        font-family: FontAwesome;
+        font-size: 20px;
+        color: #5bbb95;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+    }
+    .mejs__controls .mejs__mute button:before {
+        content: "\f028";
+    }
+    .mejs__controls .mejs__unmute button:before {
+        content: "\f026";
+    }
+    .mejs__controls .mejs__time {
+        width: 100%;
+        margin-top: 7%;
+        margin-bottom: 3%;
+        color: #fff;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+        min-width: 100%;
+    }
+    .mejs__controls .mejs__time span {
+        font-size: 15px;
+    }
+    .mejs__controls span.mejs__duration {
+        float: right;
+        text-align: right;
+        color: #ccc;
+    }
+    .mejs__controls span.mejs__currenttime {
+        font-weight: 700;
+        float: left;
+    }
+    .mejs__controls .mejs__time-rail {
+        width: 100%;
+        margin: 0;
+    }
+    .mejs__controls .mejs__time-rail span {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    .mejs__controls .mejs__time-rail .mejs__time-loaded {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    .mejs__controls .mejs__time-rail .mejs__time-float {
+        display: none;
+        top: -40px;
+        width: 40px;
+        height: 25px;
+        margin-left: 0px;
+        text-align: center;
+        font-size: 10px;
+        background: #fff;
+        border: 0;
+    }
+    .mejs__controls .mejs__time-rail .mejs__time-float-current {
+        display: block;
+        position: relative;
+        top: 0;
+        margin: 0;
+        line-height: 26px;
+        color: #100d28;
+    }
+    .mejs__controls .mejs__time-rail .mejs__time-float-corner {
+        top: auto;
+        bottom: -9px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-top: 6px solid #fff;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+    }
+    .mejs__controls .mejs__time-rail .mejs__time-current {
+        background: #5BBB95 none repeat scroll 0 0;
+    }
+    .mejs__controls .mejs__time-handle {
+        display: none;
+    }
+    .mejs__controls .mejs__volume-button {
+        position: relative;
+        position: absolute !important;
+        top: 70px;
+        right: 25%;
+        width: 40px;
+        height: 40px;
+    }
+    .mejs__controls .mejs__horizontal-volume-slider {
+        display: block;
+        position: absolute !important;
+        position: relative;
+        top: 70px;
+        right: 10%;
+        width: 60px;
+        height: 4px;
+        margin-top: 18px;
+        border-radius: 50px;
+        line-height: 11px;
+    }
+    .mejs__controls .mejs__horizontal-volume-slider .mejs__horizontal-volume-total,
+    .mejs__controls .mejs__horizontal-volume-slider .mejs__horizontal-volume-current {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .mejs__controls .mejs__horizontal-volume-slider .mejs__horizontal-volume-current {
+        background: #fff;
+    }
+</style>
+<script>var audio = {
+        init: function () {
+            var $that = this;
+            $(function () {
+                $that.components.media();
+            });
+        },
+        components: {
+            media: function (target) {
+                var media = $('audio.fc-media', (target !== undefined) ? target : 'body');
+                if (media.length) {
+                    media.mediaelementplayer({
+                        audioHeight: 40,
+                        features: ['playpause', 'current', 'duration', 'progress', 'volume', 'tracks', 'fullscreen'],
+                        alwaysShowControls: true,
+                        timeAndDurationSeparator: '<span></span>',
+                        iPadUseNativeControls: true,
+                        iPhoneUseNativeControls: true,
+                        AndroidUseNativeControls: true
+                    });
+                }
+            },
+        },
+    };
+    audio.init();
+</script>
+    </div>
 
-      <li>
-      </li>
-    </ul>
-  </div>
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -217,7 +465,16 @@
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="http://localhost:1313/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（上）">正则表达式学习记录（上）</a>
+        <a href="http://localhost:1313/post/log-2024-09-16/" class="nav-link" title="日志-2024-09-16">日志-2024-09-16</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/args-and-kwargs-in-python/" class="nav-link" title="Python 中函数的参数">Python 中函数的参数</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/player/" class="nav-link" title="正则表达式学习记录（二）——正则表达式在 Python 中的运用">正则表达式学习记录（二）——正则表达式在 Python 中的运用</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
       </li>
       <li>
         <a href="http://localhost:1313/post/log-2024-08-06/" class="nav-link" title="日志-2024-08-06">日志-2024-08-06</a>
@@ -231,27 +488,23 @@
       <li>
         <a href="http://localhost:1313/post/mitm-attack/" class="nav-link" title="记一次 ARP 欺骗 &#43; DNS 劫持攻击的尝试">记一次 ARP 欺骗 + DNS 劫持攻击的尝试</a>
       </li>
-      <li>
-        <a href="http://localhost:1313/post/%E8%84%9A%E6%9C%AC%E5%BA%93/" class="nav-link" title="逆向相关算法脚本（暂时停更）">逆向相关算法脚本（暂时停更）</a>
-      </li>
-      <li>
-        <a href="http://localhost:1313/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
-      </li>
-      <li>
-        <a href="http://localhost:1313/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" class="nav-link" title="近期解题 2024.3.14">近期解题 2024.3.14</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
+        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+          学习记录
+          <span class="button_tally">5</span>
+        </a>
+        
         <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
-          学习记录
-          <span class="button_tally">3</span>
+        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">2</span>
         </a>
         
         <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
@@ -274,11 +527,6 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
-          日志
-          <span class="button_tally">1</span>
-        </a>
-        
         <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
           渗透
           <span class="button_tally">1</span>
@@ -292,7 +540,7 @@
       <nav class="tags_nav">
         <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
@@ -303,6 +551,16 @@
         <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">3</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/regex/' class="post_tag button button_translucent" title="regex">
+          REGEX
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">2</span>
         </a>
         
         <a href='http://localhost:1313/tags//' class="post_tag button button_translucent" title=" ">
@@ -330,11 +588,6 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='http://localhost:1313/tags/javascript/' class="post_tag button button_translucent" title="javascript">
-          JAVASCRIPT
-          <span class="button_tally">1</span>
-        </a>
-        
         <a href='http://localhost:1313/tags/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
           <span class="button_tally">1</span>
@@ -347,11 +600,6 @@
         
         <a href='http://localhost:1313/tags/penetration/' class="post_tag button button_translucent" title="penetration">
           PENETRATION
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/pwn/' class="post_tag button button_translucent" title="pwn">
-          PWN
           <span class="button_tally">1</span>
         </a>
         
@@ -381,10 +629,6 @@
             </a>
             
             
-            <a href='http://localhost:1313/tags/javascript/' class=" post_tag button button_translucent" data-position=1 title="javascript">JAVASCRIPT<span class="button_tally">1</span>
-            </a>
-            
-            
             <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=1 title="linux">LINUX<span class="button_tally">1</span>
             </a>
             
@@ -401,11 +645,11 @@
             </a>
             
             
-            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=5 title="python">PYTHON<span class="button_tally">5</span>
+            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=6 title="python">PYTHON<span class="button_tally">6</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=2 title="regex">REGEX<span class="button_tally">2</span>
             </a>
             
             
@@ -425,7 +669,7 @@
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=1 title="日志">日志<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=2 title="日志">日志<span class="button_tally">2</span>
             </a>
             
             
@@ -448,9 +692,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
