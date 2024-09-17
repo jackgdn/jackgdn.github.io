@@ -65,6 +65,16 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/log-2024-09-16/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/post/log-2024-09-16/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/post/log-2024-09-16/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/tags/python/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
