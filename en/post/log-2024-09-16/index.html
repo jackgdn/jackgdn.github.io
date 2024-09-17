@@ -182,9 +182,12 @@ src='https://plausible.io/js/plausible.js'>
 
 
 
+
+
 <div class="player" id="a">
     <div class="imgBx">
         <img src="http://p1.music.126.net/1yMEfakS6S6wOU0ypvXg9g==/109951165698662473.jpg">
+        <button class="play-btn"><i class="fas fa-play"></i></button>
     </div>
     <div class="text-content">
         <a href="https://music.163.com/#/song?id=1818064296" class="button mt-1" target="_blank" rel="noopener noreferrer">Bury the Light - Victor Borba</a>
@@ -192,7 +195,6 @@ src='https://plausible.io/js/plausible.js'>
     <audio class="audio-player">
         <source src="http://music.163.com/song/media/outer/url?id=1818064296.mp3" type="audio/mpeg">
     </audio>
-    <button class="play-btn"><i class="fas fa-play"></i></button>
 </div>
 
 <style>
@@ -201,7 +203,6 @@ src='https://plausible.io/js/plausible.js'>
         padding: 0;
         box-sizing: border-box;
     }
-
     .player {
         width: 300px;
         background: #0077B8;
@@ -212,34 +213,29 @@ src='https://plausible.io/js/plausible.js'>
         position: relative;
         text-align: center;
     }
-
+    .imgBx {
+        position: relative;
+    }
     .imgBx img {
         width: 100%;
         height: auto;
         border: solid;
         border-radius: 1.5rem;
     }
-
     .text-content {
         margin: 3px 0;
         padding: 0.5rem 1.5rem;
-
     }
-
     .text-content a {
         color: #ffffff;
-
         font-size: 16px;
-
         text-decoration: none;
     }
-
     .audio-player {
         display: none;
     }
-
     .play-btn {
-        background: #0077b8;
+        background: rgb(0, 119, 184);
         border: none;
         border-radius: 50%;
         width: 50px;
@@ -250,12 +246,12 @@ src='https://plausible.io/js/plausible.js'>
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 1;
+         
     }
-
     .play-btn:hover {
-        background: #003553;
+        background: rgb(0, 53, 83);
     }
-
     .play-btn i {
         color: #fff;
     }
@@ -269,14 +265,14 @@ src='https://plausible.io/js/plausible.js'>
         playButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                playButton.innerHTML = '<i class="fas fa-pause"></i>'; 
+                playButton.innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 audioPlayer.pause();
-                playButton.innerHTML = '<i class="fas fa-play"></i>'; 
+                playButton.innerHTML = '<i class="fas fa-play"></i>';
             }
         });
         audioPlayer.addEventListener('ended', () => {
-            playButton.innerHTML = '<i class="fas fa-play"></i>'; 
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
         });
     })();
 </script>
@@ -286,9 +282,12 @@ src='https://plausible.io/js/plausible.js'>
 
 
 
+
+
 <div class="player" id="b">
     <div class="imgBx">
         <img src="https://p1.music.126.net/yv37strm19CrEvAm7BkWmA==/109951169414778859.jpg">
+        <button class="play-btn"><i class="fas fa-play"></i></button>
     </div>
     <div class="text-content">
         <a href="https://music.163.com/#/song?id=1353163404" class="button mt-1" target="_blank" rel="noopener noreferrer">Devil Trigger - Ali Edwards</a>
@@ -296,7 +295,6 @@ src='https://plausible.io/js/plausible.js'>
     <audio class="audio-player">
         <source src="http://music.163.com/song/media/outer/url?id=1353163404.mp3" type="audio/mpeg">
     </audio>
-    <button class="play-btn"><i class="fas fa-play"></i></button>
 </div>
 
 <style>
@@ -305,7 +303,6 @@ src='https://plausible.io/js/plausible.js'>
         padding: 0;
         box-sizing: border-box;
     }
-
     .player {
         width: 300px;
         background: #0077B8;
@@ -316,34 +313,29 @@ src='https://plausible.io/js/plausible.js'>
         position: relative;
         text-align: center;
     }
-
+    .imgBx {
+        position: relative;
+    }
     .imgBx img {
         width: 100%;
         height: auto;
         border: solid;
         border-radius: 1.5rem;
     }
-
     .text-content {
         margin: 3px 0;
         padding: 0.5rem 1.5rem;
-
     }
-
     .text-content a {
         color: #ffffff;
-
         font-size: 16px;
-
         text-decoration: none;
     }
-
     .audio-player {
         display: none;
     }
-
     .play-btn {
-        background: #0077b8;
+        background: rgb(0, 119, 184);
         border: none;
         border-radius: 50%;
         width: 50px;
@@ -354,12 +346,12 @@ src='https://plausible.io/js/plausible.js'>
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 1;
+         
     }
-
     .play-btn:hover {
-        background: #003553;
+        background: rgb(0, 53, 83);
     }
-
     .play-btn i {
         color: #fff;
     }
@@ -373,14 +365,14 @@ src='https://plausible.io/js/plausible.js'>
         playButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                playButton.innerHTML = '<i class="fas fa-pause"></i>'; 
+                playButton.innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 audioPlayer.pause();
-                playButton.innerHTML = '<i class="fas fa-play"></i>'; 
+                playButton.innerHTML = '<i class="fas fa-play"></i>';
             }
         });
         audioPlayer.addEventListener('ended', () => {
-            playButton.innerHTML = '<i class="fas fa-play"></i>'; 
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
         });
     })();
 </script>
