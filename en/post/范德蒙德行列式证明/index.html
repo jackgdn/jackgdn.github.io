@@ -179,13 +179,13 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
 <p>$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) $$</p>
 <p>The proof is as follows：</p>
 <p>Starting at line $n$, subtract $x_1$ times the previous line from the subsequent line in the determinant to obtain the following equation:</p>
-<p>$$ \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix}\\ \ \\ \ \\ = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} $$</p>
+<p>$$ \begin{align*} \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix}\\ \ \\ \ \\ = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \end{align*} $$</p>
 <p>Expanding the resulting determinant by the $1$th line.</p>
-<p>$$ \begin{vmatrix} x_2-x_1 &amp; x_3-x_1 &amp; \cdots &amp; x_n-x_1 \\ x_2(x_2-x_1) &amp; x_3(x_3-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2}(x_2-x_1) &amp; x_3^{n-2}(x_3-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \\ \ \\ \ \\ = (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} \end{vmatrix} $$</p>
+<p>$$ \begin{align*} &amp;\begin{vmatrix} x_2-x_1 &amp; x_3-x_1 &amp; \cdots &amp; x_n-x_1 \\ x_2(x_2-x_1) &amp; x_3(x_3-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2}(x_2-x_1) &amp; x_3^{n-2}(x_3-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \\ \ \\ \ \\ &amp;= (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} \end{vmatrix} \end{align*} $$</p>
 <p>At this point the right end of the equation is a Vandermonde matrix of order $n-1$, which can be written as</p>
 <p>$$ (x_3-x_2)(x_4-x_2) \cdots (x_n-x_2) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_3 &amp; x_4 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_3^{n-3} &amp; x_4^{n-3} &amp; \cdots &amp; x_3^{n-3} \end{vmatrix} $$</p>
 <p>According to mathematical induction, the Vandermonde matrix can be written:</p>
-<p>$$ (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1)(x_3-x_2)(x_4-x_2) \cdots (x_n-x_{n-1}) \\ \ \\ \ \\ = \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) $$</p>
+<p>$$ \begin{align*} &amp;(x_2-x_1)(x_3-x_1) \cdots (x_n-x_1)(x_3-x_2)(x_4-x_2) \cdots (x_n-x_{n-1}) \\ \ \\ \ \\ &amp;= \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) \end{align*} $$</p>
 <p>Q.E.D.</p>
 
     </div>
@@ -384,7 +384,7 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
               {left: '\\[', right: '\\]', display: true}
           ],
           
-          throwOnError : false
+          throwOnError : true
         });
     });
 </script>
