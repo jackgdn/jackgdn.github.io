@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Mathematics on -GDN&#39;s Blog-</title>
+    <link>http://localhost:1313/tags/linear-mathematics/</link>
+    <description>Recent content in Linear Mathematics on -GDN&#39;s Blog-</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/linear-mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>beginctf 解题记录 - 真是一场酣畅淋漓的坐牢啊</title>
+      <link>http://localhost:1313/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

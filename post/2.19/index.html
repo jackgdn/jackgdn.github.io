@@ -1,0 +1,1294 @@
+
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  data-figures=""
+  
+    class="page"
+  
+  
+  >
+  <head>
+<title>2.19 解题记录  &lt;-  -GDN&#39;s Blog-</title>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async defer data-domain="jackgdn.github.io"
+src='https://plausible.io/js/plausible.js'>
+</script>
+
+
+
+<meta property="og:locale" content="zh-cn" />
+
+<meta property="og:type" content="article">
+<meta name="description" content="CSGO 一个 Go 编写的程序，不过似乎没法调试（一调试就会卡住），尝试不使用调试器运行，然后 attach 到进程上去，这样才能动调。
+先静态分析。
+在 main_main() 函数 75 行处，fmt_Fscanf() 读取我们输入的内容；79-103 行对输入内容进行操作。104-125 行判断输入内容是否正确 …" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="2.19 解题记录" />
+<meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
+<meta property="og:url" content="https://jackgdn.github.io/post/2.19/" />
+<meta property="og:title" content="2.19 解题记录" />
+<meta property="og:description" content="CSGO 一个 Go 编写的程序，不过似乎没法调试（一调试就会卡住），尝试不使用调试器运行，然后 attach 到进程上去，这样才能动调。
+先静态分析。
+在 main_main() 函数 75 行处，fmt_Fscanf() 读取我们输入的内容；79-103 行对输入内容进行操作。104-125 行判断输入内容是否正确 …" />
+<meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
+<link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
+
+<link rel="canonical" href="https://jackgdn.github.io/post/2.19/">
+
+
+
+<link rel="preload" href="https://jackgdn.github.io/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity = "sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" as="style" crossorigin="anonymous">
+
+
+
+<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" as="script" integrity=
+"sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity="sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" crossorigin="anonymous">
+
+  </head>
+  <body
+    data-code="33"
+    data-lines="true"
+    id="documentTop"
+    data-lang="zh-cn"
+  >
+
+<header class="nav_header" >
+  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="-GDN&#39;s Blog-">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="-GDN&#39;s Blog-">
+  <div class="nav_close">
+    <div><svg class="icon">
+  <title>open-menu</title>
+  <use xlink:href="#open-menu"></use>
+</svg>
+<svg class="icon">
+  <title>closeme</title>
+  <use xlink:href="#closeme"></use>
+</svg>
+</div>
+  </div>
+</a>
+
+    <div class='nav_body nav_body_right'>
+      
+      
+      
+        
+
+  <div class="nav_parent">
+    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
+  </div>
+  <div class="nav_parent">
+    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
+  </div>
+  <div class="nav_parent">
+    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
+  </div>
+      
+      <div class="nav_parent">
+        <a href="#" class="nav_item">🌐</a>
+        <div class="nav_sub">
+          <span class="nav_child"></span>
+          
+          <a href="https://jackgdn.github.io/" class="nav_child nav_item">简体中文</a>
+          
+          <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
+          
+        </div>
+      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="-GDN&#39;s Blog-">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="-GDN&#39;s Blog-">
+</a>
+
+<div class='follow'>
+    
+  <a href="mailto:1pk0@proton.me">
+    <svg class="icon">
+  <title>mail</title>
+  <use xlink:href="#mail"></use>
+</svg>
+
+  </a>
+  <a href="https://github.com/jackgdn/">
+    <svg class="icon">
+  <title>github</title>
+  <use xlink:href="#github"></use>
+</svg>
+
+  </a>
+  <a href="https://discordapp.com/users/1197744806026280980">
+    <svg class="icon">
+  <title>discord</title>
+  <use xlink:href="#discord"></use>
+</svg>
+
+  </a>
+<div class="color_mode">
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+</div>
+
+    </div>
+  </nav>
+</header>
+
+    <main>
+  
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">2.19 解题记录</h1>
+  <div class="post_meta">
+    <span><svg class="icon">
+  <title>calendar</title>
+  <use xlink:href="#calendar"></use>
+</svg>
+</span>
+    <span class="post_date">
+      2024-02-19</span>
+    <span class="post_time"> · 5 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+        </a><a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
+        </a>
+    </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="https://jackgdn.github.io/post/2.19/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
+  </div>
+
+    <div class="post_body"><p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="成功出线！"
+      
+        class="image_figure image_internal image_processed"
+        width="2179"
+        height="566"
+        src="/post/2.19/0.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<h1 id="csgo">CSGO</h1>
+<p>一个 Go 编写的程序，不过似乎没法调试（一调试就会卡住），尝试不使用调试器运行，然后 attach 到进程上去，这样才能动调。</p>
+<p>先静态分析。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-1.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>在 <code>main_main()</code> 函数 75 行处，<code>fmt_Fscanf()</code> 读取我们输入的内容；79-103 行对输入内容进行操作。104-125 行判断输入内容是否正确并给出答复。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-2.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-3.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>如上图，值得注意的是，在第 88 行处出现 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'，疑似是 Base64 编码。</p>
+<p>现在在进入判断前的语句处打断点调试，发现如下字符串：</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-4.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-5.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>'kx8skC4EXSgqkuQ5kQI4XAIEmCgqnuX/mR8EiB45mCoqjfU6oicqk/HsTi/='</p>
+<p>看来这里使用的是 Base64 无疑了。不过这一串怎么看怎么不像正常编码编码出来的 flag。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-6.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>尝试后也确实是这样。众所周知，正常 Base64 编码的 'fla' 三个字符是 'Zmxh'，这四个字符在编码表中的相对位置分别是 13、11、-16，而此编码前四个字符的相对位置也分别是 13、11、-16，因此我们大胆猜测换过的编码表只是将原先的编码表循环位移，根据偏移量知道换过的编码表为 'LMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ABCDEFGHIJK='</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-7.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<h6 id="flagy0u_f1nd_m3_you_r34lly_know_about_go"><em>flag{y0u_f1nd_m3_you_r34lly_know_aBout_gO!!}</em></h6>
+<h1 id="ezvm">ezvm</h1>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-9.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-10.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-11.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>程序相当简洁。程序读取输入的 34 个字节并存储到 <code>program</code> 中。<code>fetch()</code> 函数读取 <code>program</code> 中的操作码，<code>eval()</code> 函数则会根据操作码执行程序。虚拟机的核心，也就是虚拟机执行部分的伪代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">switch</span> <span class="p">(</span> <span class="n">a1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="o">++</span><span class="n">dword_404024</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="o">++</span><span class="n">dword_408030</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">program</span><span class="p">[</span><span class="n">dword_408030</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">program</span><span class="p">[</span><span class="o">++</span><span class="n">dword_408030</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">v3</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">v12</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v3</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">v4</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">v11</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v4</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="o">++</span><span class="n">dword_404024</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">v11</span> <span class="o">+</span> <span class="n">v12</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">  <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">v2</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v2</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">running</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;done&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">  <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">program</span><span class="p">[</span><span class="o">++</span><span class="n">dword_408030</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">v5</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">v10</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v5</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="n">v9</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v6</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="o">++</span><span class="n">dword_404024</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">v10</span> <span class="o">^</span> <span class="n">v9</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">  <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">dword_404024</span><span class="p">]</span> <span class="o">=</span> <span class="n">program</span><span class="p">[</span><span class="o">++</span><span class="n">dword_408030</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="n">v7</span> <span class="o">=</span> <span class="n">dword_404024</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="n">v8</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">v7</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">v8</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v8</span> <span class="o">!=</span> <span class="n">stack</span><span class="p">[</span><span class="n">dword_404024</span><span class="p">]</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">      <span class="nf">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">  <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这里又使用 <code>stack</code> 模拟栈操作。为了方便后面表述，我们称高地址为栈顶，低地址为栈底。</p>
+<p>虚拟机中一共定义六种操作码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作码</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0x00</td>
+<td style="text-align:center">将 <code>program</code> 中该操作码后的一个值压入栈顶</td>
+</tr>
+<tr>
+<td style="text-align:center">0x01</td>
+<td style="text-align:center">将栈顶的两个值相加，存储到其中较低的地址</td>
+</tr>
+<tr>
+<td style="text-align:center">0x02</td>
+<td style="text-align:center">栈顶指针向低地址移动。虽然栈以外的值没有被丢弃，但是也不会再被使用了，因此该题中“栈顶”是以栈指针确定的</td>
+</tr>
+<tr>
+<td style="text-align:center">0x03</td>
+<td style="text-align:center">结束运行，并给出完成运行的提示，也就是我们想要的提示</td>
+</tr>
+<tr>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">对栈顶的两个值做异或操作，存储到其中较低的地址</td>
+</tr>
+<tr>
+<td style="text-align:center">0x05</td>
+<td style="text-align:center">比较栈顶两个值是否相等，如果相等则继续运行，如果不相等则退出</td>
+</tr>
+</tbody>
+</table>
+<p>下面开始分析操作码，即 <code>program</code> 中的数据。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-14.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>导出 <code>program</code> 中的操作码并且略加整理（例如经过调试后知道栈中只保留一个字节，故 07E8h 只保留 0xE8；）后，操作码如下所示：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="ln"> 1</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">00 66 00 6C 00 61 00 67
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">00 66 00 6C 
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">01 E8 04 03 05 66 
+</span></span><span class="line"><span class="ln">12</span><span class="cl">02 01 E8 04 03 05 56 
+</span></span><span class="line"><span class="ln">13</span><span class="cl">02 01 E8 04 03 05 5D 
+</span></span><span class="line"><span class="ln">14</span><span class="cl">02 01 E8 04 03 05 44 
+</span></span><span class="line"><span class="ln">15</span><span class="cl">02 01 E8 04 03 05 4F 
+</span></span><span class="line"><span class="ln">16</span><span class="cl">02 01 E8 04 03 05 55 
+</span></span><span class="line"><span class="ln">17</span><span class="cl">02 01 E8 04 03 05 1F 
+</span></span><span class="line"><span class="ln">18</span><span class="cl">02 01 E8 04 03 05 5F 
+</span></span><span class="line"><span class="ln">19</span><span class="cl">02 01 E8 04 03 05 58 
+</span></span><span class="line"><span class="ln">20</span><span class="cl">02 01 E8 04 03 05 39 
+</span></span><span class="line"><span class="ln">21</span><span class="cl">02 01 E8 04 03 05 4E 
+</span></span><span class="line"><span class="ln">22</span><span class="cl">02 01 E8 04 03 05 4F 
+</span></span><span class="line"><span class="ln">23</span><span class="cl">02 01 E8 04 03 05 55 
+</span></span><span class="line"><span class="ln">24</span><span class="cl">02 01 E8 04 03 05 3E 
+</span></span><span class="line"><span class="ln">25</span><span class="cl">02 01 E8 04 03 05 44 
+</span></span><span class="line"><span class="ln">26</span><span class="cl">02 01 E8 04 03 05 5E 
+</span></span><span class="line"><span class="ln">27</span><span class="cl">02 01 E8 04 03 05 54 
+</span></span><span class="line"><span class="ln">28</span><span class="cl">02 01 E8 04 03 05 62 
+</span></span><span class="line"><span class="ln">29</span><span class="cl">02 01 E8 04 03 05 44 
+</span></span><span class="line"><span class="ln">30</span><span class="cl">02 01 E8 04 03 05 18 
+</span></span><span class="line"><span class="ln">31</span><span class="cl">02 01 E8 04 03 05 50 
+</span></span><span class="line"><span class="ln">32</span><span class="cl">02 01 E8 04 03 05 1A 
+</span></span><span class="line"><span class="ln">33</span><span class="cl">02 01 E8 04 03 05 57 
+</span></span><span class="line"><span class="ln">34</span><span class="cl">02 01 E8 04 03 05 44 
+</span></span><span class="line"><span class="ln">35</span><span class="cl">02 01 E8 04 03 05 58 
+</span></span><span class="line"><span class="ln">36</span><span class="cl">02 01 E8 04 03 05 50 
+</span></span><span class="line"><span class="ln">37</span><span class="cl">02 01 E8 04 03 05 1B 
+</span></span><span class="line"><span class="ln">38</span><span class="cl">02 01 E8 04 03 05 54 
+</span></span><span class="line"><span class="ln">39</span><span class="cl">02 01 E8 04 03 05 57 
+</span></span><span class="line"><span class="ln">40</span><span class="cl">02 01 E8 04 03 05 60 
+</span></span><span class="line"><span class="ln">41</span><span class="cl">02 01 E8 04 03 05 4C 
+</span></span><span class="line"><span class="ln">42</span><span class="cl">02 01 E8 04 03 05 4A 
+</span></span><span class="line"><span class="ln">43</span><span class="cl">02 01 E8 04 03 05 57 
+</span></span><span class="line"><span class="ln">44</span><span class="cl">02 01 E8 04 03 05 4D 
+</span></span><span class="line"><span class="ln">45</span><span class="cl">02 01 02 03 
+</span></span></code></pre></div><p>经过格式化的处理，可以大体看出程序分为两部分：</p>
+<p>第一部分存储入栈指令以及我们输入的数据（在此次调试中。我输入的是 'flagflagflagflagflagflagflagflagfl'），程序依次将我们输入的字符压入栈。在静态分析中，这一部分在未经初始化时全部由 0 填充。</p>
+<p>程序的第二部分对全部 34 个字符做了相同的操作并进行判定，使用代码表示就是 <code>((input + 0xE8) % 0x100) ^ 3 == dest</code>。其中，<code>input</code> 是我们输入的字符，<code>dest</code> 是上面每一行的最后一个操作码，对 0x100 取模的原因依然是 <code>stack</code> 中仅能保留一个字节。上述过程在动态调试中可以非常清晰地展现出来。此外，除了第一个字符，程序在对后续每一个字符进行操作的时候都有一个栈顶指针向低地址移动的过程，即字符串是从后向前处理的，因此我们在恢复字符串的过程中也要倒序处理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x56</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x58</span><span class="p">,</span> <span class="mh">0x39</span><span class="p">,</span> <span class="mh">0x4E</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x5E</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x58</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x60</span><span class="p">,</span> <span class="mh">0x4C</span><span class="p">,</span> <span class="mh">0x4A</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x4D</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">i</span> <span class="o">^</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mh">0x100</span> <span class="o">-</span> <span class="mh">0xE8</span><span class="p">),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h6 id="flaglo0ks_l1k3_you_underst4nd_vm"><em>flag{lo0ks_l1k3_you_UndeRst4nd_vm}</em></h6>
+<h1 id="maze">maze</h1>
+<p>程序是用 Python 编写的，先拆包。反编译得到的 <code>.pyc</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">maze</span> <span class="kn">import</span> <span class="n">run</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">run</span><span class="p">()</span>
+</span></span></code></pre></div><p>程序的主要逻辑不在这一段 Python 代码里，而是在 <code>maze.run()</code> 方法中。而先前在 ELF 文件中拆出来的恰好有一个 maze.so，因此对这个动态链接库展开分析。</p>
+<p>先将它作为模块导入 Python 看一看里面有什么东西：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;./maze.so&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kn">import</span> <span class="nn">maze</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">maze</span><span class="p">)</span>
+</span></span></code></pre></div><p>根据这些可以得到</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="ln">1</span><span class="cl">DATA
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    EqdU3uQNCi= [18, 17, 15, 0, 27, 31, 10, 19, 14, 21, 25, 22, 6, 3, 30, 8, 24, 5, 7, 4, 13, 29, 9, 26, 1, 2, 28, 16, 20, 32, 12, 23, 11]
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    UJ9mxXxeoS= &#39;IyMgIyMgIyMgIyMgIyMgIyMgIyMKIyMgIyMgIyMgXl4gIyMgXl4gIyMKIyMgIyMgIyMgLi4gIyMgSVogIyMgIyMgIyMgIyMKIyMgJVIgLi4gJUQgIyMgJUQgLi4gLi4gJUwgIyMKIyMgPj4gIyMgLi4gIyMgRUEgKiogUFAgJVUgIyMKIyMgJVUgSUEgVEEgIyMgRUIgKiogUFAgJVUgIyMKIyMgJVUgSUIgVEIgIyMgRUMgKiogUFAgJVUgIyMKIyMgJVUgSUMgVEMgIyMgRUQgKiogUFAgJVUgIyMKIyMgJVUgSUQgVEQgIyMgRUUgKiogUFAgJVUgIyMKIyMgJVUgSUUgVEUgIyMgRUYgKiogUFAgJVUgIyMKIyMgJVUgSUYgVEYgIyMgJVIgKiogSVogJVUgIyMKIyMgJVUgSUcgJUwgIyMgIyMgIyMgIyMgIyMgIyMKIyMgIyMgIyMgIyMgIyMgIyMKClBQIC0+ICs9MQpNTSAtPiAtPTEKSVogLT4gPTAKRUEgLT4gSUYgPT0wIFRIRU4gJVIgRUxTRSAlRApFQiAtPiBJRiA9PTEgVEhFTiAlUiBFTFNFICVECkVDIC0+IElGID09MiBUSEVOICVSIEVMU0UgJUQKRUQgLT4gSUYgPT0zIFRIRU4gJVIgRUxTRSAlRApFRSAtPiBJRiA9PTQgVEhFTiAlUiBFTFNFICVECkVGIC0+IElGID09NSBUSEVOICVSIEVMU0UgJUQKVEEgLT4gSUYgKiogVEhFTiAlTCBFTFNFICVECklBIC0+ID03MgpUQiAtPiBJRiAqKiBUSEVOICVMIEVMU0UgJUQKSUIgLT4gPTczClRDIC0+IElGICoqIFRIRU4gJUwgRUxTRSAlRApJQyAtPiA9ODQKVEQgLT4gSUYgKiogVEhFTiAlTCBFTFNFICVECklEIC0+ID04MApURSAtPiBJRiAqKiBUSEVOICVMIEVMU0UgJUQKSUUgLT4gPTY3ClRGIC0+IElGICoqIFRIRU4gJUwgRUxTRSAlRApJRiAtPiA9ODQKSUcgLT4gPTcwCkxUIC0+IElGID09NiBUSEVOICVEIEVMU0UgJUwK&#39;
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    c2VjcmV0= [7, 47, 60, 28, 39, 11, 23, 5, 49, 49, 26, 11, 63, 4, 9, 2, 25, 61, 36, 112, 25, 15, 62, 25, 3, 16, 102, 38, 14, 7, 37, 4, 40]
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    regexes= {&#39;wall&#39;: &#39;##|``&#39;, &#39;path&#39;: &#39;\\.\\.&#39;, &#39;splitter&#39;: &#39;&lt;&gt;&#39;, &#39;pause&#39;: &#39;[0-9]{2}&#39;, &#39;start&#39;: &#39;\\^\\^&#39;, &#39;hole&#39;: &#39;\\(\\)&#39;, &#39;out&#39;: &#39;&gt;&gt;&#39;, &#39;in&#39;: &#39;&lt;&lt;&#39;, &#39;one-use&#39;: &#39;--&#39;, &#39;direction&#39;: &#39;%[LRUDNlrudn]&#39;, &#39;signal&#39;: &#39;(?&lt;=\\*)[\\*A-Za-z0-9]&#39;, &#39;function&#39;: &#39;[A-Za-z][A-Za-z0-9]&#39;}
+</span></span></code></pre></div><p>在 IDA 中直接搜索 'run'，可以得到 <code>maze.run()</code> 方法的伪代码。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-15.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>在这个函数里，发现调用了 <code>_pyx_mstate_global_static.__pyx_n_s_c29sdmU</code> 进行加密。'c29sdmU' 使用 Base64 解码是 solve。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-16.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>随后查找 <code>c29sdmU</code>。在 <code>_pyx_pw_4maze_3c29sdmU()</code> 函数中进行了加密操作。同时找到 maze.mazeLang 作为 maze 语言的解释器：</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-18.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>在这道题中的 <a href="https://esolangs.org/wiki/Maze">Maze</a>，是一种编程语言：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">##,##,##
+</span></span><span class="line"><span class="ln">2</span><span class="cl">##,^^,## //Car Starts
+</span></span><span class="line"><span class="ln">3</span><span class="cl">##,AA,## //Do AA to Car
+</span></span><span class="line"><span class="ln">4</span><span class="cl">##,&gt;&gt;,## //Print Car
+</span></span><span class="line"><span class="ln">5</span><span class="cl">##,(),## //Destroy Car
+</span></span><span class="line"><span class="ln">6</span><span class="cl">##,##,##
+</span></span><span class="line"><span class="ln">7</span><span class="cl">
+</span></span><span class="line"><span class="ln">8</span><span class="cl">AA-&gt; =&#34;Hello World!&#34;
+</span></span></code></pre></div><p>而我们最开始 <code>help()</code> 中得到的 <code>UJ9mxXxeoS</code>，就是 Base64 编码后的 mazeLang。现在根据已知的信息写出一下脚本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;./maze.so&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="nn">maze</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">maze</span><span class="o">.</span><span class="n">aW5pdF9zZWNyZXQ</span><span class="p">()</span>  <span class="c1"># 初始化</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">maze</span><span class="o">.</span><span class="n">TWF6ZUxhbmc</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">maze</span><span class="o">.</span><span class="n">UJ9mxXxeoS</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>  <span class="c1"># 解码 maze 代码</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">flag</span> <span class="o">+=</span> <span class="n">c</span><span class="o">.</span><span class="n">cnVuX3RpbGxfb3V0cHV0</span><span class="p">()</span> <span class="o">^</span> <span class="n">maze</span><span class="o">.</span><span class="n">c2VjcmV0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># 执行 maze 代码并且还原明文</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span></code></pre></div><h6 id="flagyou_re_mst3r_of_mazelan6"><em>flag{yOu_@re_m@sT3r_OF_mAZElaN6}</em></h6>
+<h1 id="孩子们我回来了">孩子们，我回来了</h1>
+<p>程序使用了 Base64 编码，不过显然是换过表的。动调程序的时候程序会抛出异常，根本看不到换表的过程</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="2560"
+        height="1600"
+        src="/post/2.19/image-13.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>不过程序还是给我们留下了破绽。不管我们输入什么内容，程序都会输出我们输入内容的编码和正确的编码。</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_internal image_processed"
+        width="1734"
+        height="957"
+        src="/post/2.19/image-12.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>既然只要编码相同原字符串就相同，那我们可以尝试单字节爆破。仅展示爆破最后一个字符的脚本（当然我们都知道最后一个字符是啥）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">known</span> <span class="o">=</span> <span class="s2">&#34;flag{s3e_y0u_4ga1in?you_did_1t!!&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">128</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="n">known</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&#34;孩子们，我回来了.exe&#34;</span><span class="p">],</span> <span class="n">stdin</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">flag</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">out</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">44</span><span class="p">]</span> <span class="o">==</span> <span class="n">out</span><span class="p">[</span><span class="o">-</span><span class="mi">67</span><span class="p">:</span><span class="o">-</span><span class="mi">23</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span></code></pre></div><p>前面字符爆破的方式差不多，只是由于经过 Base64 编码的文本原文和编码是不等长的，所以有时会出现多个字符都满足条件的情况，这时需要调整匹配字符串长度以及根据语义分析来缩小范围。</p>
+<h6 id="flags3e_y0u_4ga1inyou_did_1t"><em>flag{s3e_y0u_4ga1in?you_did_1t!!}</em></h6>
+
+    </div>
+
+
+
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    <br>
+    
+  
+  <div class="search">
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
+    <label for="find" class="search_label"><svg class="icon">
+  <title>search</title>
+  <use xlink:href="#search"></use>
+</svg>
+
+    </label>
+    
+    <div class="search_results results"></div>
+  </div>
+
+        <h2>jack_gdn</h2>
+      <div class="author_bio">
+        东北林业大学在读本科生，学习计算机科学与技术专业。
+      </div>
+      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
+
+    
+      <div class="sidebardisclaimer">
+        <h2 class="mt-4">注意</h2>
+        不同语言版本的文章在内容上可能会有差异。
+      </div>
+    
+    
+    <h2 class="mt-4">最新文章</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="https://jackgdn.github.io/post/1.2-%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2/" class="nav-link" title="1.2 数制及其转换">1.2 数制及其转换</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/1.1-%E6%A6%82%E8%BF%B0/" class="nav-link" title="1.1 概述">1.1 概述</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/log-2024-09-18/" class="nav-link" title="日志-2024-09-18">日志-2024-09-18</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/log-2024-09-16/" class="nav-link" title="日志-2024-09-16">日志-2024-09-16</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/args-and-kwargs-in-python/" class="nav-link" title="Python 中函数的参数">Python 中函数的参数</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/log-2024-08-06/" class="nav-link" title="日志-2024-08-06">日志-2024-08-06</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" class="nav-link" title="Python 课程设计项目报告">Python 课程设计项目报告</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
+      <nav class="tags_nav">
+        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+          学习记录
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E7%AC%94%E8%AE%B0/' class="post_tag button button_translucent" title="数字逻辑笔记">
+          数字逻辑笔记
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+          逆向
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+          数学
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+          渗透
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
+      <nav class="tags_nav">
+        <a href='https://jackgdn.github.io/series/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class="post_tag button button_translucent" title="数字逻辑">
+          数字逻辑
+          <span class="button_tally">2</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
+      <nav class="tags_nav">
+        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+          REVERSE
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/crypto/' class="post_tag button button_translucent" title="crypto">
+          CRYPTO
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/forensics/' class="post_tag button button_translucent" title="forensics">
+          FORENSICS
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
+          MISC
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class="post_tag button button_translucent" title="数字逻辑">
+          数字逻辑
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags//' class="post_tag button button_translucent" title=" ">
+           
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/c%23/' class="post_tag button button_translucent" title="c#">
+          C#
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/penetration/' class="post_tag button button_translucent" title="penetration">
+          PENETRATION
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+        <br>
+        <div class="post_tags_toggle button">所有标签</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='https://jackgdn.github.io/tags//' class=" post_tag button button_translucent" data-position=1 title=" "> <span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=1 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=1 title="linux">LINUX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=2 title="misc">MISC<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=1 title="pwn">PWN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=5 title="python">PYTHON<span class="button_tally">5</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=7 title="reverse">REVERSE<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=5 title="wp">WP<span class="button_tally">5</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=3 title="日志">日志<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class=" post_tag button button_translucent" data-position=2 title="数字逻辑">数字逻辑<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 212" id="gitlab">
+    <path d="M12.3 74.7h54L43.3 3c-1-3.6-6.4-3.6-7.6 0L12.3 74.8z" />
+    <path d="M12.3 74.7L.5 111c-1 3.2 0 6.8 3 8.8l101.6 74-92.5-119z"/>
+    <path d="M105 193.7l-38.6-119h-54l92.7 119z"/>
+    <path d="M105 193.7l38.7-119H66.4l38.7 119z"/>
+    <path d="M105 193.7l38.7-119H198l-93 119z"/>
+    <path d="M198 74.7l11.6 36.2c1 3 0 6.6-3 8.6l-101.5 74 93-119z"/>
+    <path d="M198 74.7h-54.3L167 3c1.2-3.6 6.4-3.6 7.6 0L198 74.8z"/>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="to-top">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id=youtube>
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="xing">
+    <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 55" id="discord">
+    <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 18" id="mastodon">
+    <path
+    fill="#ffffff"
+    d="m 15.054695,9.8859583 c -0.22611,1.1632697 -2.02517,2.4363497 -4.09138,2.6830797 -1.0774504,0.12856 -2.1382704,0.24673 -3.2694704,0.19484 -1.84996,-0.0848 -3.30971,-0.44157 -3.30971,-0.44157 0,0.1801 0.0111,0.35157 0.0333,0.51194 0.24051,1.82571 1.81034,1.93508 3.29737,1.98607 1.50088,0.0514 2.8373104,-0.37004 2.8373104,-0.37004 l 0.0617,1.35686 c 0,0 -1.0498104,0.56374 -2.9199404,0.66742 -1.03124,0.0567 -2.3117,-0.0259 -3.80308,-0.42069 -3.23454998,-0.85613 -3.79081998,-4.304 -3.87592998,-7.8024197 -0.026,-1.03871 -0.01,-2.01815 -0.01,-2.83732 0,-3.57732 2.34385998,-4.62587996 2.34385998,-4.62587996 1.18184,-0.54277 3.20976,-0.77101 5.318,-0.7882499985409 h 0.0518 C 9.8267646,0.01719834 11.856025,0.24547834 13.037775,0.78824834 c 0,0 2.34377,1.04855996 2.34377,4.62587996 0,0 0.0294,2.63937 -0.32687,4.47183"/>
+ <path
+    fill="#000000"
+    d="m 12.616925,5.6916583 v 4.3315297 h -1.71607 V 5.8189683 c 0,-0.88624 -0.37289,-1.33607 -1.1187604,-1.33607 -0.82467,0 -1.23799,0.53361 -1.23799,1.58875 v 2.30122 h -1.70594 v -2.30122 c 0,-1.05514 -0.4134,-1.58875 -1.23808,-1.58875 -0.74587,0 -1.11876,0.44983 -1.11876,1.33607 v 4.2042197 h -1.71607 V 5.6916583 c 0,-0.88527 0.22541,-1.58876 0.67817,-2.10922 0.46689,-0.52047 1.07833,-0.78727 1.83735,-0.78727 0.87816,0 1.54317,0.33752 1.98288,1.01267 l 0.42744,0.71655 0.42753,-0.71655 c 0.43961,-0.67515 1.10463,-1.01267 1.9828704,-1.01267 0.75893,0 1.37037,0.2668 1.83735,0.78727 0.45268,0.52046 0.67808,1.22395 0.67808,2.10922"/>
+  </symbol>
+</svg>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : true
+        });
+    });
+</script>
+<footer class="footer">
+  <div class="footer_inner wrap pale">
+    <img src='https://jackgdn.github.io/icons/G.png' class="icon icon_2 transparent" alt="-GDN&#39;s Blog-">
+    <p>版权所有&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;-GDN&#39;S BLOG-. 保留一切权利</p><a class="to_top" href="#documentTop">
+  <svg class="icon">
+  <title>to-top</title>
+  <use xlink:href="#to-top"></use>
+</svg>
+
+</a>
+
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
+
+  <script src="https://jackgdn.github.io/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
+
+  </body>
+</html>
