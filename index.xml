@@ -327,29 +327,5 @@
       </description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240113/%E4%B8%8D%E7%9F%A5%E9%81%93%E7%AC%AC%E5%87%A0%E5%91%A8%E7%9A%84%E5%91%A8%E6%8A%A5%E4%BA%86/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240113/%E4%B8%8D%E7%9F%A5%E9%81%93%E7%AC%AC%E5%87%A0%E5%91%A8%E7%9A%84%E5%91%A8%E6%8A%A5%E4%BA%86/</guid>
-      <description>
-        
-          
-            擂台赛 - 123456789 题目源代码如下
-1from secret import flag 2data = input(&amp;#39;&amp;gt; &amp;#39;) 3assert len(data) &amp;lt;= 9 and all(i not in &amp;#39;123456789&amp;#39; for i in data) and int(data) == 123456789 4print(flag) 看上去不是很麻烦。题目会在远程服务器上运行，secret 模块及其中的 flag 常量都存储在远程服务器上。 如果我们输入的 data 能够满足这个 assert 中的条件，flag 就会自己跳出来。
-条件如下：
-data 的长度小于等于 9
-data 中不含 “123456789” 中的任意一个字符
-data 转化为整型后与 123456789 相等
-似乎条件 2、3 矛盾了，两个条件不可以同时实现。但是真的如此吗？
-Unicode 编码归一化 文字处理软件在实现统一码字符串的搜索和排序时，须考虑到等价性的存在。如果没有此特性的话，用户在搜索时将无法找到在视觉上无法区分的字形。
-通俗来讲，例如说在 Unicode 中合字 ﬃ (U+FB03) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。
-          
-          
-        
-      </description>
-    </item>
-    
   </channel>
 </rss>
