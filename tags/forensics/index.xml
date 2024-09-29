@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Forensics on -GDN&#39;s Blog-</title>
+    <title>Forensics on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/forensics/</link>
-    <description>Recent content in Forensics on -GDN&#39;s Blog-</description>
+    <description>Recent content in Forensics on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />

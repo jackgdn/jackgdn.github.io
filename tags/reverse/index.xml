@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reverse on -GDN&#39;s Blog-</title>
+    <title>Reverse on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/reverse/</link>
-    <description>Recent content in Reverse on -GDN&#39;s Blog-</description>
+    <description>Recent content in Reverse on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 30 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/reverse/index.xml" rel="self" type="application/rss+xml" />
@@ -56,38 +56,6 @@
     </item>
     
     <item>
-      <title>NSSCTF Round#18 WP</title>
-      <link>https://jackgdn.github.io/post/nss18/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackgdn.github.io/post/nss18/</guid>
-      <description>
-        
-          
-            贡献分数 1157/1989
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>修改 Overcooked! 2 存档</title>
-      <link>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</guid>
-      <description>
-        
-          
-            《胡闹厨房 2》对游戏存档加密，使用逆向手段找到加解密算法后，对游戏存档进行解密、修改并且重新加密。
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
       <title>2.19 解题记录</title>
       <link>https://jackgdn.github.io/post/2.19/</link>
       <pubDate>Mon, 19 Feb 2024 00:00:00 +0000</pubDate>
@@ -104,6 +72,38 @@
     </item>
     
     <item>
+      <title>NSSCTF Round#18 WP</title>
+      <link>https://jackgdn.github.io/post/nss18/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/nss18/</guid>
+      <description>
+        
+          
+            贡献分数 1157/1989
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>修改 Overcooked! 2 存档</title>
+      <link>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</link>
+      <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</guid>
+      <description>
+        
+          
+            《胡闹厨房 2》对游戏存档加密，使用逆向手段找到加解密算法后，对游戏存档进行解密、修改并且重新加密。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>BeginCTF 解题记录</title>
       <link>https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
@@ -113,6 +113,54 @@
         
           
             真实一场酣畅淋漓的坐牢啊！
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>近期解题 2024.2.16</title>
+      <link>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240126/</link>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240126/</guid>
+      <description>
+        
+          
+            近期解题
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>近期解题 2024.1.13</title>
+      <link>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/</guid>
+      <description>
+        
+          
+            近期解题
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>近期解题 2023.12.26</title>
+      <link>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20231226/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20231226/</guid>
+      <description>
+        
+          
+             
           
           
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on -GDN&#39;s Blog-</title>
+    <title>Categories on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/</link>
-    <description>Recent content in Categories on -GDN&#39;s Blog-</description>
+    <description>Recent content in Categories on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 21 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,0 +1,2590 @@
+
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  data-figures=""
+  
+    class="page"
+  
+  
+  >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>近期解题 2024.1.13  |  &lt;jack-gdn/&gt;</title>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<meta property="og:locale" content="zh-cn" />
+
+<meta property="og:type" content="article">
+<meta name="description" content="2024.1.4-2024.1.13 NEFU::CTF 反静态分析-1 反编译出 main() 函数如下：
+敏锐察觉到 v9 数组的四个元素，疑似为 TEA 加密算法的 key。进入 sub_411523() -&gt; sub_415100()，果然是一个 TEA 加密。
+在 main() …" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="近期解题 2024.1.13" />
+<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
+<meta property="og:url" content="http://localhost:1313/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" />
+<meta property="og:title" content="近期解题 2024.1.13" />
+<meta property="og:description" content="2024.1.4-2024.1.13 NEFU::CTF 反静态分析-1 反编译出 main() 函数如下：
+敏锐察觉到 v9 数组的四个元素，疑似为 TEA 加密算法的 key。进入 sub_411523() -&gt; sub_415100()，果然是一个 TEA 加密。
+在 main() …" />
+<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+<link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
+
+<link rel="canonical" href="http://localhost:1313/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">
+
+
+
+<link rel="preload" href="http://localhost:1313/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity = "sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" as="style" crossorigin="anonymous">
+
+
+
+<link rel="preload" href="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" as="script" integrity=
+"sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity="sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" crossorigin="anonymous">
+
+
+
+  </head>
+  <body
+    data-code="33"
+    data-lines="true"
+    id="documentTop"
+    data-lang="zh-cn"
+  >
+
+<header class="nav_header" >
+  <nav class="nav"><a href='http://localhost:1313/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+  <div class="nav_close">
+    <div><svg class="icon">
+  <title>open-menu</title>
+  <use xlink:href="#open-menu"></use>
+</svg>
+<svg class="icon">
+  <title>closeme</title>
+  <use xlink:href="#closeme"></use>
+</svg>
+</div>
+  </div>
+</a>
+
+    <div class='nav_body nav_body_right'>
+      
+      
+      
+        
+
+  <div class="nav_parent">
+    <a href="http://localhost:1313/" class="nav_item" title="主页">主页 </a>
+  </div>
+  <div class="nav_parent">
+    <a href="http://localhost:1313/about/" class="nav_item" title="关于">关于 </a>
+  </div>
+  <div class="nav_parent">
+    <a href="http://localhost:1313/links/" class="nav_item" title="链接">链接 </a>
+  </div>
+      
+      <div class="nav_parent">
+        <a href="#" class="nav_item">🌐</a>
+        <div class="nav_sub">
+          <span class="nav_child"></span>
+          
+          <a href="http://localhost:1313/" class="nav_child nav_item">简体中文</a>
+          
+          <a href="http://localhost:1313/en/" class="nav_child nav_item">English</a>
+          
+        </div>
+      </div><a href='http://localhost:1313/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+</a>
+
+<div class='follow'>
+    
+  <a href="mailto:1pk0@proton.me">
+    <svg class="icon">
+  <title>mail</title>
+  <use xlink:href="#mail"></use>
+</svg>
+
+  </a>
+  <a href="https://github.com/jackgdn/">
+    <svg class="icon">
+  <title>github</title>
+  <use xlink:href="#github"></use>
+</svg>
+
+  </a>
+  <a href="https://discordapp.com/users/1197744806026280980">
+    <svg class="icon">
+  <title>discord</title>
+  <use xlink:href="#discord"></use>
+</svg>
+
+  </a>
+<div class="color_mode">
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+</div>
+
+    </div>
+  </nav>
+</header>
+
+    <main>
+  
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">近期解题 2024.1.13</h1>
+  <div class="post_meta">
+    <span><svg class="icon">
+  <title>calendar</title>
+  <use xlink:href="#calendar"></use>
+</svg>
+</span>
+    <span class="post_date">
+      2024-01-13</span>
+    <span class="post_time"> · 12 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
+        </a><a href='http://localhost:1313/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+        </a>
+    </span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    复制链接:
+    <a href="http://localhost:1313/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
+  </div>
+  </span>
+  </div>
+
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#nefuctf">NEFU::CTF</a>
+      <ul>
+        <li><a href="#反静态分析-1">反静态分析-1</a></li>
+        <li><a href="#花指令">花指令</a></li>
+      </ul>
+    </li>
+    <li><a href="#攻防世界">攻防世界</a>
+      <ul>
+        <li><a href="#riskv-and-reward">riskv-and-reward</a></li>
+        <li><a href="#梅津美治郎">梅津美治郎</a></li>
+        <li><a href="#babyarm">babyarm</a></li>
+        <li><a href="#misc---ext3">MISC - ext3</a></li>
+      </ul>
+    </li>
+    <li><a href="#buuctf">BUUCTF</a>
+      <ul>
+        <li><a href="#misc---面具下的-flag">MISC - 面具下的 flag</a></li>
+      </ul>
+    </li>
+    <li><a href="#nssctf">NSSCTF</a>
+      <ul>
+        <li><a href="#test-your-debugger">test your Debugger</a></li>
+        <li><a href="#pwn---nc_pwnre">pwn - nc_pwnre</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+    <div class="post_body"><h6 id="_202414-2024113_"><em>2024.1.4-2024.1.13</em></h6>
+<h2 id="nefuctf">NEFU::CTF</h2>
+<h3 id="反静态分析-1">反静态分析-1</h3>
+<p>反编译出 <code>main()</code> 函数如下：</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-1.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>敏锐察觉到 <code>v9</code> 数组的四个元素，疑似为 TEA 加密算法的 key。进入 <code>sub_411523() -&gt; sub_415100()</code>，果然是一个 TEA 加密。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-2.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>在 <code>main()</code> 函数中调用的 <code>sub_411523()</code> 有两个参数，第二个参数 <code>v9</code> 是 key，第一个参数 <code>&amp;v7</code> 为 <code>v7</code> 数组。在变量声明的部分 <code>int v7; // [esp+1D8h] [ebp-40h] BYREF</code> 和 <code>int v8; // [esp+1DCh] [ebp-3Ch]</code> 可以看出 <code>v7</code> 与 <code>v8</code> 的地址相邻，实际上可以看作是一个数组。</p>
+<p>写一个 TEA 解密的脚本，需要知道 <code>v4</code>（即 sum）的值是多少。通过打断点动态调试找到 <code>v4</code> 的值 <code>0xC6EF3720</code>。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-3.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>上脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="kt">int</span> <span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">18</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">120</span> <span class="p">};</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mh">0x60FCDEF7</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mh">0x236DBEC</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mh">0xC6EF3720</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">void</span> <span class="nf">tea</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="n">num2</span> <span class="o">-=</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">))</span> <span class="o">^</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">num1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">num1</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">		<span class="n">num1</span> <span class="o">-=</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">))</span> <span class="o">^</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="o">*</span><span class="n">key</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">num2</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">		<span class="n">sum</span> <span class="o">+=</span> <span class="mh">0x61C88647</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">num2</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="n">tea</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-4.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>得到结果为 3 和 4，这与伪代码 <code>main()</code> 函数中 <code>v8 = 4;</code> 一致。运行程序，输入 3，确实进入了下一步骤。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-5.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>下一个关键函数是 <code>sub_411302()</code>，不过这里面出现了一些问题</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-6.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>TAB 过去，发现是花指令……吗？</p>
+<p>经过一些调试，我发现这里其实是一段自修改代码（SMC, Self Modifying Code），尽管现在看起来是一坨，但是运行起来后就不是这样了。打断点、调试、重新分析、中止调试。这样，我们就得到了正确的代码片段。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-9.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-10.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>不戳不戳</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-11.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>这个函数看上去像是一个 RC4 加密，密码为 &quot;you_are_master&quot;，待解密的数据为 <code>v17</code>。</p>
+<p>上脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="kt">int</span> <span class="n">S</span><span class="p">[</span><span class="mi">256</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">string</span> <span class="n">K</span> <span class="o">=</span> <span class="s">&#34;you_are_master&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kt">char</span> <span class="n">D</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">klen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">		<span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">klen</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="kt">void</span> <span class="nf">exc</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">	<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">		<span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">		<span class="n">temp</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">		<span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">		<span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="kt">void</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">int</span> <span class="n">dlen</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">	<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="n">dlen</span><span class="p">;</span> <span class="n">h</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">		<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">		<span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">		<span class="n">temp</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">		<span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">		<span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">		<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">		<span class="n">D</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">^=</span> <span class="n">S</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">	<span class="kt">int</span> <span class="n">klen</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">dlen</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x94</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xAE</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xF2</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xC0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x57</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xC2</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xE0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x9A</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x45</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x37</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x50</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xF5</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xA0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x5E</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xCB</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">68</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x2C</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x16</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x28</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x29</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">72</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xFE</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x33</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x46</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xE</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x57</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">78</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x82</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">79</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x22</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">80</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">28</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x52</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">81</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x26</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">82</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x2B</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">83</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x6E</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">84</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xE4</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">85</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x82</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">86</span><span class="cl">	<span class="n">D</span><span class="p">[</span><span class="mi">34</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x24</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">87</span><span class="cl">	<span class="n">init</span><span class="p">(</span><span class="n">klen</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">88</span><span class="cl">	<span class="n">exc</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">89</span><span class="cl">	<span class="n">encrypt</span><span class="p">(</span><span class="n">dlen</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">90</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dlen</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">91</span><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="ln">92</span><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="kt">char</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">93</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">94</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><em><strong>HDCTF{y0u_ar3_rc4_t3a_smc_m4ster!!}</strong></em></p>
+<p>通过这道题，还有以下几点需要记录：</p>
+<ul>
+<li>FindCrypt 插件在它该识别出 RC4 算法时没有将其识别出来。因此熟练运用瞪眼法的能力还挺必要的。</li>
+<li>就我检索到的资料来说，SMC 出现时应该有一些特征，例如使用 <code>VirtualProtect()</code> 函数（Windows 系统）以及 <code>mprotect()</code> 函数（Linux 系统）来获取修改内存的权限。然而在这一道题里并没有出现这样的特征。</li>
+</ul>
+<h3 id="花指令">花指令</h3>
+<p><em>题目附件叫做<code>虽然他送了我玫瑰花!.exe</code>。虽然题目名称叫做“花指令”，但是似乎并没有什么花指令出现。</em></p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-12.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>一打开反汇编界面，<code>main()</code> 函数这里竟然是红的，框出来创建函数。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-13.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>代码非常易于理解。输入内容的长度为 29，在 <code>funcs_40117E</code> 的函数列表循环操作输入的字符，最后与 <code>v9</code> 中的数据相同。然而 <code>v9</code> 只有 16 个字节，而需要判断的有 29 个字符。不出意外，<code>v9</code>、<code>v10</code>、<code>v11</code>、<code>v12</code> 和 <code>v13</code> 的地址连续，都看作是 <code>v9</code> 数组。</p>
+<p>函数列表里的五个函数也很简单：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">sub_401080</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">return</span> <span class="n">a1</span> <span class="o">^</span> <span class="mh">0x19</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">sub_401090</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="k">return</span> <span class="n">a1</span> <span class="o">+</span> <span class="mi">18</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">sub_4010A0</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="k">return</span> <span class="n">a1</span> <span class="o">-</span> <span class="mi">16</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">sub_4010B0</span><span class="p">(</span><span class="kt">char</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">  <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">a1</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">sub_4010C0</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  <span class="k">return</span> <span class="n">a1</span> <span class="o">^</span> <span class="p">(</span><span class="n">a1</span> <span class="o">^</span> <span class="o">~</span><span class="n">a1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x80</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>脚本如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span> <span class="o">=</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0xCE</span><span class="p">,</span> <span class="mh">0xFB</span><span class="p">,</span> <span class="mh">0x4E</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0xDF</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0x26</span><span class="p">,</span> <span class="mh">0xCA</span><span class="p">,</span> <span class="mh">0xE1</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x86</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">,</span> <span class="mh">0xCC</span><span class="p">,</span> <span class="mh">0xF5</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0xD8</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">,</span> <span class="mh">0x6E</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0xFA</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data0</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">func0</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">^</span> <span class="mh">0x19</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">func1</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="mi">18</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">func2</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">func3</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">func4</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="mh">0x80</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">29</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="k">switch</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">        <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">            <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func0</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">            <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func1</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">            <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func2</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">            <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func3</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">            <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func4</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">        <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">data0</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong><em>flag{Wh4t</em>@<em>6eaut1fu1</em>$lower}</strong>_</p>
+<p>做题的时候出了一些问题。我最开始在脚本中写入密文时，顺序是 <code>6C E1 ... EF FA</code>，这样符合反编译的代码，但是运行脚本后会输出乱码。因此需要通过动态调试，我才能在内存中找到正确的顺序，即 <code>7F 7E ... 62 FA</code>。</p>
+<h2 id="攻防世界">攻防世界</h2>
+<h3 id="riskv-and-reward">riskv-and-reward</h3>
+<p>题目附件拖到 DIE 里，程序使用了 RISC-V 架构</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-14.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>因此拖进 IDA 里的时候，应该手动选一个 RISC 架构</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-15.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>汇编指令看不了一点，F5 也罢工了，唯一有用的是找到了一个字符串，而且没有显示交叉引用。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-16.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>这个字符串里有上下花括号，应该是一个乱序的 flag，怀疑是栅栏密码。不过栅栏密码遍历解密之后没有找到什么有用的信息，遂放弃，转用 Ghidra 分析。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-17.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>在 Ghidra 里找到这一字符串，其中显示了引用它的函数 <code>FUN_0001232c()</code>，并且可以将该函数反编译。伪代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">undefined8</span> <span class="nf">FUN_0001232c</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="kt">int</span> <span class="n">aiStack_d8</span> <span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="n">undefined</span> <span class="n">auStack_58</span> <span class="p">[</span><span class="mi">68</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  <span class="kt">int</span> <span class="n">local_14</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="nf">FUN_00012524</span><span class="p">(</span><span class="n">auStack_58</span><span class="p">,</span><span class="o">&amp;</span><span class="n">DAT_00011040</span><span class="p">,</span><span class="mh">0x40</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="nf">FUN_00012524</span><span class="p">(</span><span class="n">aiStack_d8</span><span class="p">,</span><span class="o">&amp;</span><span class="n">DAT_00011080</span><span class="p">,</span><span class="mh">0x80</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="n">local_14</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">local_14</span> <span class="o">&lt;</span> <span class="mh">0x20</span><span class="p">;</span> <span class="n">local_14</span> <span class="o">=</span> <span class="n">local_14</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="nf">FUN_00012724</span><span class="p">(</span><span class="n">auStack_58</span><span class="p">[</span><span class="n">aiStack_d8</span><span class="p">[</span><span class="n">local_14</span><span class="p">]]);</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="nf">FUN_00012724</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>根据以下几点：</p>
+<ul>
+<li>0x40 与 0x80 恰好分别是 <code>DAT_00011040</code> 与 <code>DAT_00011080</code> 的大小</li>
+<li><code>DAT_00011080</code> 中每隔三个 0x00 会出现一个字节的有效数据，而 <code>aiStack_d8</code> 的类型为 <code>int</code></li>
+<li><code>FUN_00012724(auStack_58[aiStack_d8[local_14]])</code> 中下标嵌套下标，似乎是在查表，那么 <code>DAT_00011040</code> 是乱序的 flag</li>
+<li>根据变量名来看 <code>auStack_58</code> 与 <code>aiStack_d8</code> 的距离恰好是 0x80</li>
+</ul>
+<p>我们不妨猜测，<code>FUN_00012524()</code> 函数是 <code>memcpy()</code> 函数，<code>FUN_00012724()</code>，<code>DAT_00011040</code> 中存储的是乱序 flag，<code>DAT_00011080</code> 中存储的是 flag 中每个字符的顺序。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-18.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>上脚本试试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x28</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">,</span> <span class="mh">0x2F</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x25</span><span class="p">,</span> <span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0x29</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x13</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x3A</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">string</span> <span class="o">=</span> <span class="s2">&#34;tjb3csFt0rrutrh_wiv5__fi}k_1ih`{xIcrhsoyBmyw1CyT3rvxStT_jq40_zrq&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em><strong>BITSCTF{s0m3_r1sc5_4r3_w0rth_1t}</strong></em></p>
+<h3 id="梅津美治郎">梅津美治郎</h3>
+<p>一道动调题，题目名字和描述都好怪，而且和题目内容没什么关系。</p>
+<hr>
+<p>先解释几个函数</p>
+<h4 id="getmodulehandlea"><code>GetModuleHandleA()</code></h4>
+<p>语法如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">HMODULE</span> <span class="nf">GetModuleHandleA</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="p">[</span><span class="n">in</span><span class="p">,</span> <span class="n">optional</span><span class="p">]</span> <span class="n">LPCSTR</span> <span class="n">lpModuleName</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">);</span>
+</span></span></code></pre></div><p>参数 <code>[in, optional] LPCSTR lpModuleName</code> 是待加载的模块名称，函数返回值是指定模块的句柄。</p>
+<h4 id="getprocadress"><code>GetProcAdress()</code></h4>
+<p>语法如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">FARPROC</span> <span class="nf">GetProcAddress</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="p">[</span><span class="n">in</span><span class="p">]</span> <span class="n">HMODULE</span> <span class="n">hModule</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="p">[</span><span class="n">in</span><span class="p">]</span> <span class="n">LPCSTR</span>  <span class="n">lpProcName</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">);</span>
+</span></span></code></pre></div><p>参数 <code>[in] hModule</code> 是包含函数或变量的句柄，<code>[in] lpProcName</code> 是函数或变量名，函数返回值为函数或变量的地址。</p>
+<hr>
+<p>看程序</p>
+<p>程序没有加壳，直接进 IDA。程序前面放了一堆数，后面是程序的核心。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-39.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p><code>Str2</code> 似乎似乎就是明文，<code>strcmp(Str1, Str2)</code> 里是检测第一次输入的内容，直接输入 &quot;r0b0RUlez!&quot; 就可以过第一层判断。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-40.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>第二层判断在函数 <code>sub_40157F() -&gt; sub_401547()</code> 内</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-41.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-42.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>即将第二层密码与 <code>dword_40AD98</code> 里的内容异或 2 作比较。需要打断点动调才能看到 <code>dword_40AD98</code> 里的内容。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-43.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>异或之后得到第二段密码，拼起来就是 flag
+_<strong>flag{r0b0RUlez!<em>w3lld0ne}</em></strong></p>
+<p>这道题的诡异之处在于，程序并没有按照代码里写的顺序执行，而且程序几乎所有在运行期间输出的字符串都是在程序运行的过程中计算生成的，而非一开始就存储在数据里。不知道程序运行到哪里，对于一道需要动态调试的题目来说，确实有一定迷惑性。</p>
+<h3 id="babyarm">babyarm</h3>
+<p><strong>TNND！flag 错误，官方 WP 错误！！！</strong></p>
+<p>这道题的程序使用了 ARM 架构汇编，我配置 QEMU 模拟器调试程序未果。故纯静态分析得到 flag。此外，我能找到的 IDA 8.3 都只支持 x64/x86 反编译器。遂使用 IDA 7.7。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-45.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-46.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>一上来就爆红，先强制分析，手动去花指令。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-47.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-48.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>下面都是类似的操作，随后重新分析。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-49.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>不难看出，左侧出现了 <code>main()</code> 函数。F5 一键反编译后不难看出，输入的 flag 被切成两部分进行判断。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// bad sp value at call has been detected, the output may be wrong!
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">a2</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">a3</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">v3</span><span class="p">;</span> <span class="c1">// r2
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// r4
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// r3
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span>  <span class="n">_DWORD</span> <span class="n">v8</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// [sp+8h] [bp-78h]
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v9</span><span class="p">;</span> <span class="c1">// [sp+14h] [bp-6Ch]
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span>  <span class="n">_DWORD</span> <span class="n">v10</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// [sp+18h] [bp-68h]
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v11</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span> <span class="c1">// [sp+24h] [bp-5Ch] BYREF
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span>  <span class="n">_DWORD</span> <span class="n">v12</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// [sp+30h] [bp-50h] BYREF
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span>  <span class="n">_DWORD</span> <span class="n">v13</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// [sp+38h] [bp-48h]
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="p">(</span><span class="kr">__fastcall</span> <span class="o">*</span><span class="n">v14</span><span class="p">)(</span><span class="n">_DWORD</span><span class="p">,</span> <span class="n">_DWORD</span><span class="p">);</span> <span class="c1">// [sp+44h] [bp-3Ch]
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v15</span><span class="p">;</span> <span class="c1">// [sp+48h] [bp-38h]
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v16</span><span class="p">;</span> <span class="c1">// [sp+4Ch] [bp-34h]
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v17</span><span class="p">;</span> <span class="c1">// [sp+50h] [bp-30h]
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">v18</span><span class="p">;</span> <span class="c1">// [sp+54h] [bp-2Ch]
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">v19</span><span class="p">;</span> <span class="c1">// [sp+58h] [bp-28h]
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">fd</span><span class="p">;</span> <span class="c1">// [sp+5Ch] [bp-24h]
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">addr</span><span class="p">;</span> <span class="c1">// [sp+60h] [bp-20h]
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v22</span><span class="p">;</span> <span class="c1">// [sp+64h] [bp-1Ch]
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [sp+68h] [bp-18h]
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v24</span><span class="p">;</span> <span class="c1">// [sp+6Ch] [bp-14h]
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">dest</span><span class="p">;</span> <span class="c1">// [sp+70h] [bp-10h]
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v26</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span> <span class="c1">// [sp+74h] [bp-Ch] BYREF
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="nf">memset</span><span class="p">(</span><span class="n">v11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">v11</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  <span class="n">v12</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">  <span class="n">v12</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  <span class="n">v13</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  <span class="o">*</span><span class="p">(</span><span class="n">v13</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">  <span class="n">fd</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">&#34;/dev/zero&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">  <span class="n">addr</span> <span class="o">=</span> <span class="nf">mmap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x1000u</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">  <span class="n">v19</span> <span class="o">=</span> <span class="n">addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">  <span class="n">dest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">  <span class="nf">memcpy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="mh">0xC0u</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">  <span class="nf">sub_10684</span><span class="p">(</span><span class="n">addr</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">  <span class="n">v18</span> <span class="o">=</span> <span class="n">addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">  <span class="n">v16</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">+</span> <span class="mi">64</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">  <span class="n">v17</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">+</span> <span class="mi">128</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">  <span class="n">v15</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">+</span> <span class="mi">128</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">  <span class="n">v24</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">  <span class="n">v10</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">+</span> <span class="mi">64</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">  <span class="n">v10</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">+</span> <span class="mi">128</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">  <span class="n">v8</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x4FFED263</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">  <span class="n">v8</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x3F00D9B9</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">  <span class="n">v8</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x504380A0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">  <span class="n">v9</span> <span class="o">=</span> <span class="mh">0x55</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">    <span class="n">v14</span> <span class="o">=</span> <span class="n">v10</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">    <span class="n">v4</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">v8</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">!=</span> <span class="nf">v14</span><span class="p">(</span><span class="n">v11</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">byte_2103C</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">      <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Operation failed!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">  <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Check next section&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">  <span class="n">v13</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">  <span class="k">while</span> <span class="p">(</span> <span class="n">v22</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="n">v22</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">v22</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">      <span class="n">v6</span> <span class="o">=</span> <span class="o">-</span><span class="n">v6</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl">    <span class="p">(</span><span class="o">*&amp;</span><span class="n">v26</span><span class="p">[</span><span class="mi">4</span> <span class="o">*</span> <span class="n">v6</span> <span class="o">-</span> <span class="mi">116</span><span class="p">])(</span><span class="o">&amp;</span><span class="n">byte_2104C</span><span class="p">[</span><span class="mi">6</span> <span class="o">*</span> <span class="n">v22</span><span class="o">++</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">68</span><span class="cl">  <span class="k">if</span> <span class="p">(</span> <span class="nf">sub_10770</span><span class="p">(</span><span class="n">byte_2104C</span><span class="p">,</span> <span class="n">v12</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">    <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;you find the whole flag!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">    <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;what a pity!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">72</span><span class="cl">  <span class="nf">munmap</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="mh">0x1000u</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>第一部分的 <code>v14</code> 是一个函数指针，由三个函数循环对我们输入内容的前 13 位及已知的 <code>byte_2103C</code> 中的数据进行操作，并与 已知的 <code>v4</code> 进行比对。IDA 在分析这段代码时的表现很差。有函数 <code>*sub_105D4()</code> 包含在 <code>init_array</code> 中（在 IDA View-A 中可见），先于 <code>main()</code> 函数执行。该函数对 <code>byte_21088</code> 进行操作，<code>byte_21088</code> 大小为 0xBF。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">void</span> <span class="o">*</span><span class="nf">sub_105D4</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="kt">void</span> <span class="o">*</span><span class="n">result</span><span class="p">;</span> <span class="c1">// r0
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">dest</span><span class="p">[</span><span class="mi">192</span><span class="p">];</span> <span class="c1">// [sp+4h] [bp-C8h] BYREF
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [sp+C4h] [bp-8h]
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="n">result</span> <span class="o">=</span> <span class="nf">memcpy</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">unk_10D28</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dest</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mh">0xBF</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">byte_21088</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>有 <code>sub_10684()</code> 对 <code>v1</code> 中的数据进行操作，<code>v1</code> 大小同样是 0xBF，不妨猜测此数据块与函数 <code>*sub_105D4()</code> 中的 <code>byte_21088</code> 是指向的同一段数据。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="nf">sub_10684</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="kt">int</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// r0
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v1</span><span class="p">;</span> <span class="c1">// [sp+4h] [bp-18h]
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v2</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span> <span class="c1">// [sp+Ch] [bp-10h] BYREF
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [sp+14h] [bp-8h]
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="n">result</span> <span class="o">=</span> <span class="o">*</span><span class="s">&#34;SECRET&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="nf">strcpy</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="s">&#34;SECRET&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mh">0xBF</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">v2</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">6</span><span class="p">]</span> <span class="o">^</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>下面为 <code>byte_21088</code> 中数据，由 <code>main()</code> 函数中 <code>mmap()</code> 函数猜测，这一段为 SMC。这一段数据长度也刚好为 0xBF，因此上述两个函数是 SMC 函数。由于不能动态调式，我们用 IDA Python 脚本修改这段数据，并重新分析。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-51.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">cipher_start</span> <span class="o">=</span> <span class="mh">0x10D28</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">opcode_start</span> <span class="o">=</span> <span class="mh">0x21088</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">cipher</span> <span class="o">=</span> <span class="s2">&#34;SECRET&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">cip</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">idc</span><span class="o">.</span><span class="n">get_wide_byte</span><span class="p">(</span><span class="n">cipher_start</span> <span class="o">+</span> <span class="n">addr</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="n">val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">idc</span><span class="o">.</span><span class="n">get_wide_byte</span><span class="p">(</span><span class="n">opcode_start</span> <span class="o">+</span> <span class="n">addr</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="n">new_val</span> <span class="o">=</span> <span class="n">cip</span> <span class="o">^</span> <span class="n">val</span> <span class="o">^</span> <span class="nb">ord</span><span class="p">(</span><span class="n">cipher</span><span class="p">[</span><span class="n">addr</span> <span class="o">%</span> <span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl">    <span class="n">ida_bytes</span><span class="o">.</span><span class="n">patch_byte</span><span class="p">(</span><span class="n">opcode_start</span> <span class="o">+</span> <span class="n">addr</span><span class="p">,</span> <span class="n">new_val</span><span class="p">)</span>
+</span></span></code></pre></div><p>这样我们就获得了 <code>sub_21088()</code>、<code>sub_120C8</code>、<code>sub_21108()</code> 三个函数，与 <code>main()</code> 函数中 <code>v18 = addr, v16 = addr + 64, v17 = addr + 128;</code> 中的地址偏移量相对应，也正好是 <code>v14</code> 中的三个函数。此时可以解出 flag 前半段。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span> <span class="mh">0x9F</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0xC2</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x9B</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0xC3</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0xF6</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">cip</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x63</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0xA0</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em><em>*flag{welcome</em>*</em>_</p>
+<p>后半段 flag 的判断是通过 <code>sub_10770()</code> 函数实现的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">sub_10770</span><span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="n">_DWORD</span> <span class="n">v4</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// [sp+Ch] [bp-20h]
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [sp+18h] [bp-14h]
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [sp+1Ch] [bp-10h]
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v7</span><span class="p">;</span> <span class="c1">// [sp+20h] [bp-Ch]
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v8</span><span class="p">;</span> <span class="c1">// [sp+24h] [bp-8h]
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="n">v8</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="n">v4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x41203E53</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="n">v4</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xB242C1E</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="n">v4</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x52372836</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="n">v5</span> <span class="o">=</span> <span class="mh">0xE</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="n">a2</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">^=</span> <span class="o">*</span><span class="p">(</span><span class="n">v4</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">switch</span> <span class="p">(</span> <span class="o">*</span><span class="p">(</span><span class="n">a2</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">      <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="o">--</span><span class="n">v8</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">      <span class="k">case</span> <span class="sc">&#39;d&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="o">++</span><span class="n">v8</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">      <span class="k">case</span> <span class="sc">&#39;s&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="o">++</span><span class="n">v7</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">      <span class="k">case</span> <span class="sc">&#39;w&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="o">--</span><span class="n">v7</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">      <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="o">*</span><span class="p">(</span><span class="n">a1</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">v7</span> <span class="o">+</span> <span class="n">v8</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;*&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">      <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Boom!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>似乎是一个迷宫，通过 WASD 控制位移，但是是异或处理过后成为 WASD。传入这个函数的另一个参数 <code>byte_2104C</code> 似乎真的像一个迷宫。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-52.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>不过这个迷宫不大对劲。在 <code>main()</code> 函数里调用 <code>sub_10770()</code> 前先有 <code>(*&amp;v26[4 * v6 - 116])(&amp;byte_2104C[6 * v22++]);</code>。而 <code>(*&amp;v26[4 * v6 - 116])</code> 指向的函数似乎找不到。不过好在这道题里出现的函数相当少，我们不妨一个一个找找看。最后发现 <code>sub_104FC()</code> 与 <code>sub_10568()</code> 函数中 <code>i &lt;= 5</code> 的循环跳出条件与 <code>main()</code> 中 <code>v22 &lt;= 5</code> 竟然出奇地相似。故猜测这两个函数对迷宫进行初始化。不妨靠这个找出初始化后的迷宫，经过尝试，使用下面的脚本可以大体改成组成迷宫的字符串。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">start</span> <span class="o">=</span> <span class="mh">0x2104C</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">end</span> <span class="o">=</span> <span class="mh">0x21088</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">idc</span><span class="o">.</span><span class="n">get_wide_byte</span><span class="p">(</span><span class="n">addr</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="nb">chr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span> <span class="ow">or</span> <span class="n">data</span> <span class="o">==</span> <span class="mh">0x88</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="n">new_data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">new_data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">^</span> <span class="mh">0x10</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">ida_bytes</span><span class="o">.</span><span class="n">patch_byte</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">new_data</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-53.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>这只是一个猜测，作出这样猜测的依据是 <code>sub_10770()</code> 函数中 <code>*(a1 + 6 * v7 + v8) == '*'</code> 的判断。据此也能判断出这一由 60 个字符绘制出的迷宫一共有 6 列 10 行。通过以下代码打印出可能的迷宫：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">maze</span> <span class="o">=</span> <span class="s2">&#34;*******   E**P***** *****P*****    *****P***** *****D*******&#34;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">maze</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">:</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">10</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="s1">  output:
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="s1">  ******
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="s1">  *   E*
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="s1">  *P****
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="s1">  * ****
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s1">  *P****
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="s1">  *    *
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s1">  ****P*
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="s1">  **** *
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="s1">  ****D*
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="s1">  ******
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>另外根据 <code>v8 = 4;</code> 可以知道，迷宫的七点在某行第四列。经过尝试，迷宫起点为 E 点，终点为 D 点。经过的路径为 aaassssdddsss，而这是经过异或后的结果。写出脚本解出第二部分 flag。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">path</span> <span class="o">=</span> <span class="s2">&#34;aaassssdddsss&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">crypt</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x53</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x41</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">^</span> <span class="n">crypt</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong><em>2_A2m_WoRLD!}</em></strong></p>
+<p>完整脚本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span> <span class="mh">0x9F</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0xC2</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x9B</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0xC3</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0xF6</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">cip</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x63</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0xA0</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="n">cip</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0x7F</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># part 1</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">path</span> <span class="o">=</span> <span class="s2">&#34;aaassssdddsss&#34;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="n">crypt</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x53</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x41</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">^</span> <span class="n">crypt</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c1"># part 2</span>
+</span></span></code></pre></div><p><em><strong>flag{welcome_2_A2m_WoRLD!}</strong></em></p>
+<h3 id="misc---ext3">MISC - ext3</h3>
+<p>题目附件是一块磁盘的数据（有好多 00 ），有头绪但不多。我强行在 010 Editor 里找可能的关键字，找到了一个文件 flag.txt 的路径 <code>~root/Desktop/file/O7avZhikgKgbF/flag.txt</code>，最后通过尝试“Zmxh”关键字得到 Base64 编码后的 flag，ZmxhZ3tzYWpiY2lienNrampjbmJoc2J2Y2pianN6Y3N6Ymt6an0=
+。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-20.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-19.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>解码后得到
+<em><strong>flag{sajbcibzskjjcnbhsbvcjbjszcszbkzj}</strong></em></p>
+<p>然而这道题正确的解法不应该是这样的。如果出题人没有使用 Base64 编码，或者使用了套娃加密的方式，那我就难以用这个方法得到 flag 了。</p>
+<p>这是一个 Linux 下的 ext3 格式磁盘，而且是把整坨数据都存储进去了。我妄图将其后缀改为 <code>.iso</code>，<code>.img</code>，<code>.rar</code>，但是在我打开文件的时候系统又会提醒我文件已经损坏。</p>
+<p>怎么办呢？既然这块磁盘适配 Linux 文件系统，为什么我不将它挂载到 Linux 里呢？这叫做原汤化原食。把磁盘拖进 Kali Linux，使用命令 <code>sudo mount '/home/jackgdn/Desktop/f1fc23f5c743425d9e0073887c846d23' /mnt</code> 可以将磁盘挂载到 <code>/mnt</code> 文件夹下。根据刚才在 010 Editor 里找到的路径，可以轻松得到 Base64 编码后的 flag。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-22.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-21.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>做完题后卸载磁盘，使用 <code>sudo umount /mnt</code> 命令。</p>
+<h2 id="buuctf">BUUCTF</h2>
+<h3 id="misc---面具下的-flag">MISC - 面具下的 flag</h3>
+<p>题目附件是一张图片。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/mianju.jpg"
+      
+      
+    />
+
+    </picture>
+</figure>
+
+mianju.jpg</p>
+<p>这张图片里大概率是藏了什么东西。我们不妨用 binwalk 找找图片里的“好东西”。在 Linux 里使用 <code>binwalk -e '/home/jackgdn/Desktop/temp files/mianju.jpg'</code> 命令，binwalk 就自动分离出了两个文件，74DFE.zip 与 flag.vmdk。其中 74DFE.zip 解压出的文件就是 flag.vmdk。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-23.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>这一步也可以用另一种方法来完成。众所周知，<code>.jpg</code> 格式文件的文件尾是 <code>FF D9</code>,在文件尾后的内容都不会被读取为图像的一部分。因此我们不妨使用 010 Editor 里找到这一文件尾，而后面又刚好是 PK 文件头。从这里到最下面 <code>50 4B 05 06</code> 的 <code>.zip</code> 文件尾部分，都是压缩文件部分。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-24.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-25.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>把前面多余部分删除，剩余部分保存为 mianju.zip</p>
+<p>哦？竟然有加密。大概率是伪加密吧。还是用 010 Editor，将压缩源文件目录区域的 <code>09 00</code> 改为 <code>00 00</code>，密码就会消失。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-27.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-29.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>拿到了一个虚拟磁盘文件。先试试头铁的办法：直接搜。这次运气不错，找到了一个 Ook!</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-30.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>但是这个 Ook! 似乎是损坏的。往下搜索，发现还有一坨 Ook!</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-31.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>不错，但是这里只有个半个 flag：</p>
+<p><strong><em>_i5_funny!}</em></strong></p>
+<p>根据刚才搜索到的内容，我们不妨假设前一半 flag 的后缀也是 <code>.txt</code>，因此搜索 &quot;t x t&quot; 即 <code>74 00 78 00 74</code>。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-32.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>似乎是 brainfuck：</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-33.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>但是实际上这一段也是损坏的，正确的 brainfuck 也是在下面的位置。可以借出来第一段 flag。随后就可以拼成一整个 flag。</p>
+<p><em><strong>flag{N7F5_AD5_i5_funny!}</strong></em></p>
+<p>这一步还有另一个思路，即像攻防世界里 ext3 这道题一样直接将磁盘挂载到操作系统内。使用 ImDisk 工具挂载虚拟磁盘。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-35.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>可惜，即使挂载到操作系统，<code>/key_part_one/NUL</code> 文件依然是不可打开的，<code>/key_part_two/</code> 下只有一个 where_is_flag_part_two.txt。先在 DiskGenius 里打开虚拟磁盘，可以查看前半段 flag 的内容。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-36.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>根据前半段 flag 的提示可以知道，后半段 flag 没有出现是因为 ADS 隐写。使用 lads 找隐写的文件流并打开，就是第二段 flag。此外，alternatestreamview 工具也可以查看 ADS 隐写的文件路径。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-37.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+ lads</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-44.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+ alternatestreamview</p>
+<p>赵师傅也提供了一种方法，将虚拟磁盘文件的后缀改为 <code>.7z</code>，并放到 Linux 系统中解压，同样可以得到完整的文件。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-34.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>ADS 文件隐写是在微软的 NTFS 格式的文件系统内使用的，而 Linux 使用 ext4 文件系统，因此在 Linux 里 ADS 隐写的文件就直接出现了；9982 师傅推测，NUL 文件之所以不能打开是因为 NTFS 头损坏，并不影响文件在 Linux 系统里被读取。</p>
+<h2 id="nssctf">NSSCTF</h2>
+<h3 id="test-your-debugger">test your Debugger</h3>
+<p>若至签到题。不管你输入什么，程序都会把 flag 算出来，直接打断点看内存就可以。它甚至贴心地告诉你，在这里打断点，生怕我拿不到 flag。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-56.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/image-57.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p><em><strong>NSSCTF{44d52a77-92ea-413e-98c4-ff5846fd387d}</strong></em></p>
+<h3 id="pwn---nc_pwnre">pwn - nc_pwnre</h3>
+<p>我的评价是：挂 pwn 头卖 re 肉。</p>
+<p><code>nc</code> 连接到环境，出现了一段汇编：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">pwn? re?no no no,this is just an easy nc-test.
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">loc_40116D: 
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">mov     eax, [ebp+i]
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">add     eax, 1
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">mov     [ebp+i], eax
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">loc_401176:  
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">mov     ecx, [ebp+Str]
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">push    ecx
+</span></span><span class="line"><span class="ln">10</span><span class="cl">call    _strlen
+</span></span><span class="line"><span class="ln">11</span><span class="cl">add     esp, 4
+</span></span><span class="line"><span class="ln">12</span><span class="cl">cmp     [ebp+i], eax
+</span></span><span class="line"><span class="ln">13</span><span class="cl">jge     short loc_40119D	
+</span></span><span class="line"><span class="ln">14</span><span class="cl">mov     edx, [ebp+Str]
+</span></span><span class="line"><span class="ln">15</span><span class="cl">add     edx, [ebp+i]
+</span></span><span class="line"><span class="ln">16</span><span class="cl">movsx   eax, byte ptr [edx]
+</span></span><span class="line"><span class="ln">17</span><span class="cl">xor     eax, 10h
+</span></span><span class="line"><span class="ln">18</span><span class="cl">mov     ecx, [ebp+Str]
+</span></span><span class="line"><span class="ln">19</span><span class="cl">add     ecx, [ebp+i]
+</span></span><span class="line"><span class="ln">20</span><span class="cl">mov     [ecx], al
+</span></span><span class="line"><span class="ln">21</span><span class="cl">jmp     short loc_40116D
+</span></span><span class="line"><span class="ln">22</span><span class="cl">maybe the result is talking about xor?
+</span></span><span class="line"><span class="ln">23</span><span class="cl">My result:
+</span></span><span class="line"><span class="ln">24</span><span class="cl">0x44,0x7c,0x5e,0x44,0x41,0x21,0x42,0x57,0x75,0x21,0x74,0x56,0x44,0x57,0x5d,0x67,0x44,0x46,0x29,0x45,0x5d,0x56,0x29,0x67,0x46,0x22,0x25,0x76,0x74,0x6a,0x52,0x69,0x5d,0x47,0x41,0x78,0x76,0x41,0x2d,0x2d
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">your answer?
+</span></span></code></pre></div><p>汇编逻辑简单，将字符串中的某一个字符存入 <code>eax</code> 寄存器后再做一次 <code>xor eax, 10h</code> 操作，随后对下一个字符做相同操作。我只能说，把逆向题出道远程服务器里它也是逆向题。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x7c</span><span class="p">,</span><span class="mh">0x5e</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x41</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x42</span><span class="p">,</span><span class="mh">0x57</span><span class="p">,</span><span class="mh">0x75</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span><span class="mh">0x74</span><span class="p">,</span><span class="mh">0x56</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x57</span><span class="p">,</span><span class="mh">0x5d</span><span class="p">,</span><span class="mh">0x67</span><span class="p">,</span><span class="mh">0x44</span><span class="p">,</span><span class="mh">0x46</span><span class="p">,</span><span class="mh">0x29</span><span class="p">,</span><span class="mh">0x45</span><span class="p">,</span><span class="mh">0x5d</span><span class="p">,</span><span class="mh">0x56</span><span class="p">,</span><span class="mh">0x29</span><span class="p">,</span><span class="mh">0x67</span><span class="p">,</span><span class="mh">0x46</span><span class="p">,</span><span class="mh">0x22</span><span class="p">,</span><span class="mh">0x25</span><span class="p">,</span><span class="mh">0x76</span><span class="p">,</span><span class="mh">0x74</span><span class="p">,</span><span class="mh">0x6a</span><span class="p">,</span><span class="mh">0x52</span><span class="p">,</span><span class="mh">0x69</span><span class="p">,</span><span class="mh">0x5d</span><span class="p">,</span><span class="mh">0x47</span><span class="p">,</span><span class="mh">0x41</span><span class="p">,</span><span class="mh">0x78</span><span class="p">,</span><span class="mh">0x76</span><span class="p">,</span><span class="mh">0x41</span><span class="p">,</span><span class="mh">0x2d</span><span class="p">,</span><span class="mh">0x2d</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span> <span class="o">^</span> <span class="mh">0x10</span><span class="p">),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>得到一串 Base64：TlNTQ1RGe1dFTGMwTV9UMF9wV25fdzByMWQhfQ==，解码之后是 NSSCTF{WELc0M_T0_pWn_w0r1d!}。不过这不是最终 flag，需要把它填到终端里，然后获得远程主机的权限。</p>
+<p>
+      
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Alt text"
+      
+        class="image_figure image_internal image_unprocessed"
+        src="/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/%E8%BF%91%E6%9C%9F%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/a4f06b7ee682817df56046e3e4fdc190.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p><em><strong>NSSCTF{7f840e08-33c7-44a3-8c01-d4a34362de59}</strong></em></p>
+
+    </div>
+
+
+
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    <br>
+    
+  
+  <div class="search">
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
+    <label for="find" class="search_label"><svg class="icon">
+  <title>search</title>
+  <use xlink:href="#search"></use>
+</svg>
+
+    </label>
+    
+    <div class="search_results results"></div>
+  </div>
+
+        <h2>jack_gdn</h2>
+      <div class="author_bio">
+        东北林业大学在读本科生，学习计算机科学与技术专业。
+      </div>
+      <a href='http://localhost:1313/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
+
+    
+      <div class="sidebardisclaimer">
+        <h2 class="mt-4">注意</h2>
+        不同语言版本的文章在内容上可能会有差异。
+      </div>
+    
+    
+    <h2 class="mt-4">最新文章</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="http://localhost:1313/post/2.2-%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86%E5%92%8C%E8%A7%84%E5%88%99/" class="nav-link" title="2.2 逻辑代数的基本定理和规则">2.2 逻辑代数的基本定理和规则</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/2.1-%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="nav-link" title="2.1 逻辑代数的基本概念">2.1 逻辑代数的基本概念</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/1.2-%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2/" class="nav-link" title="1.2 数制及其转换">1.2 数制及其转换</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/1.1-%E6%A6%82%E8%BF%B0/" class="nav-link" title="1.1 概述">1.1 概述</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/log-2024-09-18/" class="nav-link" title="日志-2024-09-18">日志-2024-09-18</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/log-2024-09-16/" class="nav-link" title="日志-2024-09-16">日志-2024-09-16</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/args-and-kwargs-in-python/" class="nav-link" title="Python 中函数的参数">Python 中函数的参数</a>
+      </li>
+      <li>
+        <a href="http://localhost:1313/post/regex-pt-1/" class="nav-link" title="正则表达式学习记录（一）——正则表达式的编写">正则表达式学习记录（一）——正则表达式的编写</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
+      <nav class="tags_nav">
+        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+          学习记录
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E7%AC%94%E8%AE%B0/' class="post_tag button button_translucent" title="数字逻辑笔记">
+          数字逻辑笔记
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+          逆向
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+          数学
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+          渗透
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
+      <nav class="tags_nav">
+        <a href='http://localhost:1313/series/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class="post_tag button button_translucent" title="数字逻辑">
+          数字逻辑
+          <span class="button_tally">4</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
+      <nav class="tags_nav">
+        <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+          REVERSE
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
+          WP
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class="post_tag button button_translucent" title="数字逻辑">
+          数字逻辑
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+          日志
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/crypto/' class="post_tag button button_translucent" title="crypto">
+          CRYPTO
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/forensics/' class="post_tag button button_translucent" title="forensics">
+          FORENSICS
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/misc/' class="post_tag button button_translucent" title="misc">
+          MISC
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/c%23/' class="post_tag button button_translucent" title="c#">
+          C#
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/penetration/' class="post_tag button button_translucent" title="penetration">
+          PENETRATION
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/pwn/' class="post_tag button button_translucent" title="pwn">
+          PWN
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+        <br>
+        <div class="post_tags_toggle button">所有标签</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='http://localhost:1313/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=1 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=1 title="linux">LINUX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/misc/' class=" post_tag button button_translucent" data-position=2 title="misc">MISC<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/pwn/' class=" post_tag button button_translucent" data-position=1 title="pwn">PWN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=5 title="python">PYTHON<span class="button_tally">5</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/reverse/' class=" post_tag button button_translucent" data-position=9 title="reverse">REVERSE<span class="button_tally">9</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/wp/' class=" post_tag button button_translucent" data-position=7 title="wp">WP<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=3 title="日志">日志<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/' class=" post_tag button button_translucent" data-position=4 title="数字逻辑">数字逻辑<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 212" id="gitlab">
+    <path d="M12.3 74.7h54L43.3 3c-1-3.6-6.4-3.6-7.6 0L12.3 74.8z" />
+    <path d="M12.3 74.7L.5 111c-1 3.2 0 6.8 3 8.8l101.6 74-92.5-119z"/>
+    <path d="M105 193.7l-38.6-119h-54l92.7 119z"/>
+    <path d="M105 193.7l38.7-119H66.4l38.7 119z"/>
+    <path d="M105 193.7l38.7-119H198l-93 119z"/>
+    <path d="M198 74.7l11.6 36.2c1 3 0 6.6-3 8.6l-101.5 74 93-119z"/>
+    <path d="M198 74.7h-54.3L167 3c1.2-3.6 6.4-3.6 7.6 0L198 74.8z"/>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="to-top">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id=youtube>
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="xing">
+    <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 55" id="discord">
+    <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 18" id="mastodon">
+    <path
+    fill="#ffffff"
+    d="m 15.054695,9.8859583 c -0.22611,1.1632697 -2.02517,2.4363497 -4.09138,2.6830797 -1.0774504,0.12856 -2.1382704,0.24673 -3.2694704,0.19484 -1.84996,-0.0848 -3.30971,-0.44157 -3.30971,-0.44157 0,0.1801 0.0111,0.35157 0.0333,0.51194 0.24051,1.82571 1.81034,1.93508 3.29737,1.98607 1.50088,0.0514 2.8373104,-0.37004 2.8373104,-0.37004 l 0.0617,1.35686 c 0,0 -1.0498104,0.56374 -2.9199404,0.66742 -1.03124,0.0567 -2.3117,-0.0259 -3.80308,-0.42069 -3.23454998,-0.85613 -3.79081998,-4.304 -3.87592998,-7.8024197 -0.026,-1.03871 -0.01,-2.01815 -0.01,-2.83732 0,-3.57732 2.34385998,-4.62587996 2.34385998,-4.62587996 1.18184,-0.54277 3.20976,-0.77101 5.318,-0.7882499985409 h 0.0518 C 9.8267646,0.01719834 11.856025,0.24547834 13.037775,0.78824834 c 0,0 2.34377,1.04855996 2.34377,4.62587996 0,0 0.0294,2.63937 -0.32687,4.47183"/>
+ <path
+    fill="#000000"
+    d="m 12.616925,5.6916583 v 4.3315297 h -1.71607 V 5.8189683 c 0,-0.88624 -0.37289,-1.33607 -1.1187604,-1.33607 -0.82467,0 -1.23799,0.53361 -1.23799,1.58875 v 2.30122 h -1.70594 v -2.30122 c 0,-1.05514 -0.4134,-1.58875 -1.23808,-1.58875 -0.74587,0 -1.11876,0.44983 -1.11876,1.33607 v 4.2042197 h -1.71607 V 5.6916583 c 0,-0.88527 0.22541,-1.58876 0.67817,-2.10922 0.46689,-0.52047 1.07833,-0.78727 1.83735,-0.78727 0.87816,0 1.54317,0.33752 1.98288,1.01267 l 0.42744,0.71655 0.42753,-0.71655 c 0.43961,-0.67515 1.10463,-1.01267 1.9828704,-1.01267 0.75893,0 1.37037,0.2668 1.83735,0.78727 0.45268,0.52046 0.67808,1.22395 0.67808,2.10922"/>
+  </symbol>
+</svg>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : true
+        });
+    });
+</script>
+<footer class="footer">
+  <div class="footer_inner wrap pale">
+    <img src='http://localhost:1313/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
+    <p>版权所有&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利</p><a class="to_top" href="#documentTop">
+  <svg class="icon">
+  <title>to-top</title>
+  <use xlink:href="#to-top"></use>
+</svg>
+
+</a>
+
+  </div>
+</footer>
+
+<script type="text/javascript" src="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" integrity="sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous"></script>
+
+  <script src="http://localhost:1313/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
+
+  </body>
+</html>
