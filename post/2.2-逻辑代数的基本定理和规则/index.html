@@ -210,7 +210,7 @@ $$</li>
 <ul>
 <li>代入规则：在任何一个含有变量A的逻辑等式，如果将所有出现A的位置都用同一个逻辑函数 F 代替，则等式依然成立。
 $$
-A(B+C)=AB+AC\overset{C=(D+E)}{\Rightarrow}A[B+(D+E)]=AB+A(D+E)
+A(B+C)=AB+AC\overset{C=(D+E)}{\Longrightarrow}A[B+(D+E)]=AB+A(D+E)
 $$</li>
 <li>反演规则：将逻辑函数 F 的表达式中的和或互换，0-1互换，原变量变成反变量，并且保持原函数运算顺序不变，则等式依然成立。
 $$
@@ -227,15 +227,13 @@ $$
 <hr>
 <p>复合逻辑</p>
 <ol>
-<li>与非逻辑</li>
+<li>与非逻辑
+$$
+F=\overline{ABC\cdots}
+$$</li>
 </ol>
 <ul>
-<li>
-<p>与非门</p>
-</li>
-<li>
-<p>使用与非逻辑可以实现三种基本逻辑：</p>
-</li>
+<li>使用与非逻辑可以实现三种基本逻辑：</li>
 </ul>
 <table>
 <thead>
@@ -266,7 +264,6 @@ F=\overline{A+B+C+\cdots}
 $$</li>
 </ol>
 <ul>
-<li>或非门</li>
 <li>使用或非逻辑可以实现三中基本逻辑：</li>
 </ul>
 <table>
@@ -291,7 +288,7 @@ $$</li>
 </tr>
 </tbody>
 </table>
-<ol>
+<ol start="3">
 <li>
 <p>与或非逻辑（至少四变量）
 $$
@@ -306,7 +303,6 @@ $$</p>
 </li>
 </ol>
 <ul>
-<li>异或门</li>
 <li>结论：
 <blockquote>
 <ol>
@@ -317,14 +313,11 @@ $$</p>
 </li>
 </ul>
 <ol>
-<li>同或逻辑：相同为 1，不同为 0</li>
-</ol>
-<ul>
-<li>同或门
+<li>同或逻辑：相同为 1，不同为 0
 $$
 F=A\odot B=\overline{A}\cdot\overline{B}+A\cdot B
 $$</li>
-</ul>
+</ol>
 <p><strong>同或逻辑与异或逻辑既互为相反，又互为对偶。</strong>
 $$
 A\odot B=\overline{A\oplus B}
