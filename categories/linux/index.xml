@@ -6,7 +6,23 @@
     <description>Recent content in Linux on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>终端播放视频</title>
+      <link>https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/</guid>
+      <description>
+        
+          
+            在终端中看《米奇妙妙屋》
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>远程控制一台在内网中的设备</title>
       <link>https://jackgdn.github.io/post/nat/</link>
