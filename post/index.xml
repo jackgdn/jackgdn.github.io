@@ -6,7 +6,23 @@
     <description>Recent content in Posts on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 一句话代码技巧（二）</title>
+      <link>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
+      <description>
+        
+          
+            使用 Python 中几个常用的内置函数：sum()、map()、zip()、enumerate()、next()、filter()、any() 和 all() 操作可迭代对象以简化代码。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Python 一句话代码技巧（一）</title>
       <link>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
