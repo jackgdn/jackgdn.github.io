@@ -6,7 +6,23 @@
     <description>Recent content on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 02 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 一句话代码技巧（三）</title>
+      <link>https://jackgdn.github.io/post/python-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
+      <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/python-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
+      <description>
+        
+          
+            使用 Python 中几个常用的内置函数：sum()、map()、zip()、enumerate()、next()、filter()、any() 和 all() 操作可迭代对象以简化代码。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>超星学习通自动化完成任务点（GUI 版）项目介绍</title>
       <link>https://jackgdn.github.io/post/chaoxing-gui/</link>
