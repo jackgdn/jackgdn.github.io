@@ -159,7 +159,7 @@ lambda 定义的匿名函数中 …" />
 </span>
     <span class="post_date">
       2024-11-16</span>
-    <span class="post_time"> · 8 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
+    <span class="post_time"> · 9 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
         </a>
     </span>
     <span class="page_only">&nbsp;·
@@ -614,7 +614,73 @@ output:
 </span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="c1"># output:</span>
 </span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="c1"># 5</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="c1"># -1</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>我们不妨再尝试将等号去掉：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nb">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="o">*</span><span class="nb">list</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            <span class="k">lambda</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">                <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">                        <span class="s2">&#34;binary_search&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">                            <span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                                <span class="n">binary_search</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">                                    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">                                        <span class="s2">&#34;my_while&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">                                            <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">                                            <span class="k">if</span> <span class="n">min_index</span> <span class="o">&gt;</span> <span class="n">max_index</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                                            <span class="k">else</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                                                <span class="p">(</span><span class="n">min_index</span> <span class="o">+</span> <span class="n">max_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                                                <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                                                    <span class="p">(</span><span class="n">min_index</span> <span class="o">+</span> <span class="n">max_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                                                <span class="p">]</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                                                <span class="k">else</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                                                    <span class="n">binary_search</span><span class="o">.</span><span class="n">my_while</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                                                        <span class="p">(</span><span class="n">min_index</span> <span class="o">+</span> <span class="n">max_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">                                                        <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                                                        <span class="n">max_index</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                                                        <span class="n">numbers</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                                                        <span class="n">value</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                                                    <span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                                                    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">                                                        <span class="p">(</span><span class="n">min_index</span> <span class="o">+</span> <span class="n">max_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">                                                    <span class="p">]</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">                                                    <span class="o">&lt;</span> <span class="n">value</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">                                                    <span class="k">else</span> <span class="n">binary_search</span><span class="o">.</span><span class="n">my_while</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">                                                        <span class="n">min_index</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">                                                        <span class="p">(</span><span class="n">min_index</span> <span class="o">+</span> <span class="n">max_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">                                                        <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">                                                        <span class="n">numbers</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">                                                        <span class="n">value</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">                                                    <span class="p">)</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">                                                <span class="p">)</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">                                            <span class="p">)</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">                                        <span class="p">)</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">                                    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">                                <span class="p">)</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">                            <span class="p">),</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">                            <span class="n">binary_search</span><span class="o">.</span><span class="n">my_while</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">                        <span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">                <span class="p">),</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">                <span class="n">binary_search</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">            <span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">        <span class="p">)(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">        <span class="k">for</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">            <span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">69</span><span class="p">],</span> <span class="mi">69</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">            <span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">93</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">    <span class="o">**</span><span class="p">{</span><span class="s2">&#34;sep&#34;</span><span class="p">:</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">
+</span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="c1"># output:</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="c1"># 5</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="c1"># -1</span>
+</span></span></code></pre></div><ul>
+<li>之所以在 <code>binary_search()</code> 函数内不使用 <code>locals().update()</code>，而是使用 <code>binary_search.__dict__.update()</code> 创建 <code>my_while</code> 函数，是因为 <code>locals()</code> 具有<strong>不可修改性</strong>，即在任何情况下， <code>locals().update()</code> 都是无效的。</li>
+<li>在 <code>my_while</code> 函数中，使用 <code>binary_search.my_while()</code> 来调用函数是因为在使用 <code>binary_search.__dict__.update()</code> 创建 <code>my_while</code> 函数时，<code>my_while</code> 被定义为了 <code>binary_search</code> 这个函数对象的一个属性/方法。</li>
+</ul>
+
     </div>
 
 	<h2 class="post_related">相关系列文章</h2>
