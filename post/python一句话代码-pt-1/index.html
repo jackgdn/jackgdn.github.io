@@ -717,17 +717,17 @@ src='https://plausible.io/js/plausible.js'>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">13</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">33</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is bigger.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is greater.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> is bigger.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> is greater.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;They are equal.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">
-</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># output: 33 is higher.</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># output: 33 is greater.</span>
 </span></span></code></pre></div><p>这段代码则可以改写成</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is bigger.&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> is bigger.&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;They are equal.&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is greater.&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> is greater.&#34;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;They are equal.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl">
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># output: 33 is higher.</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># output: 33 is greater.</span>
 </span></span></code></pre></div><h2 id="推导式-for">推导式 <code>for</code></h2>
 <p>Python 中的推导式分为列表推导式、字典推导式、集合推导式和生成器表达式（亦称作元组推导式），他们的语法类似，最大的区别就是生成不同的对象。这四种推导式分别生成列表、字典、集合和生成器对象。</p>
 <p>列表推导式基本语法为：</p>
@@ -774,7 +774,7 @@ src='https://plausible.io/js/plausible.js'>
 	<h2 class="post_related">相关系列文章</h2>
 	<ul>
 	  
-	      <li><a href="https://jackgdn.github.io/post/python-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a></li>
+	      <li><a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/" class="nav-link" title="Python 一句话代码技巧（二）">Python 一句话代码技巧（二）</a></li>
 	  
@@ -822,7 +822,7 @@ src='https://plausible.io/js/plausible.js'>
       <ul>
         
         <li>
-          <a href="https://jackgdn.github.io/post/python-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+          <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
         </li>
         
         <li>
@@ -838,7 +838,7 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/python-%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+        <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
@@ -1054,6 +1054,10 @@ src='https://plausible.io/js/plausible.js'>
             
             
             <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=3 title="日志">日志<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
             </a>
             
             

@@ -4,12 +4,10 @@
   lang="zh-cn"
   data-figures=""
   
-    class="page"
-  
   
   >
   <head>
-<title>远程控制一台在内网中的设备  |  &lt;jack-gdn/&gt;</title>
+<title>沙箱逃逸  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,21 +23,22 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查 …" />
+<meta name="description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="远程控制一台在内网中的设备" />
+<meta name="twitter:title" content="沙箱逃逸" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/post/nat/" />
-<meta property="og:title" content="远程控制一台在内网中的设备" />
-<meta property="og:description" content="前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查 …" />
+<meta property="og:url" content="https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/" />
+<meta property="og:title" content="沙箱逃逸" />
+<meta property="og:description" content="" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/post/nat/">
+<link rel="canonical" href="https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/">
+<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/index.xml" title="<jack-gdn/>" />
 
 
 
@@ -143,10 +142,19 @@ src='https://plausible.io/js/plausible.js'>
 </header>
 
     <main>
-  
+
+
+
 <div class="grid-inverse wrap content">
-  <article class="post_content">
-    <h1 class="post_title">远程控制一台在内网中的设备</h1>
+  <div>
+    <ul class="posts" id="posts">
+        <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
+        <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+      </h3>
+      
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -154,14 +162,15 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2024-06-15</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/linux/' title="Linux" class="post_tag button button_translucent">Linux
+      2024-11-16</span>
+    <span class="post_time"> · 9 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
+        </a><a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' title="沙箱逃逸" class="post_tag button button_translucent">沙箱逃逸
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/nat/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -172,83 +181,31 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-      <div class="post_toc">
-        <h2>文章目录</h2>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#拍照旋转上传">拍照、旋转、上传</a></li>
-    <li><a href="#利用-systemd-自动执行">利用 <code>systemd</code> 自动执行</a></li>
-    <li><a href="#配置服务器接受图片">配置服务器接受图片</a></li>
-    <li><a href="#传输到个人计算机上浏览图片">传输到个人计算机上浏览图片</a></li>
-  </ul>
-</nav>
-      </div>
-    
-    <div class="post_body"><p>前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 <code>fswebcam</code> 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我想在宿舍里连接树莓派则需要每天交 1 元钱网费。</p>
-<h2 id="拍照旋转上传">拍照、旋转、上传</h2>
-<p>wanqian 师傅出于安全性的考虑，不希望我使用内网穿透控制树莓派拍照。所以，我只能让树莓派与我的云服务器单线联系。因此我想到让树莓派检测云服务器上的某个端口是否开放，若开放则自动执行拍照上传等一系列命令，所以有了下面一个脚本（路径为 <code>/home/gdn/gwc/agwc.sh</code>。下文为便于叙述，树莓派用 R 表示，云服务器用 S 表示，个人计算机用 PC 表示）:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span><span class="nv">CONN</span><span class="o">=</span><span class="s1">&#39;nc -zv IP_S 8963&#39;</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">while</span> <span class="nb">true</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">do</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="k">if</span> <span class="nv">$CONN</span> <span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">                <span class="nv">time</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&#34;%Y-%m-%d_%H-%M-%S&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">                fswebcam --no-banner -r 1920x1080 /home/gdn/gwc/fagwc/<span class="nv">$time</span>.jpg
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">                convert /home/gdn/gwc/fagwc/<span class="nv">$time</span>.jpg -rotate <span class="m">180</span> /home/gdn/gwc/fagwc/<span class="nv">$time</span>.jpg
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                nc -v IP_S <span class="m">8965</span> &lt; /home/gdn/gwc/fagwc/<span class="nv">$time</span>.jpg
-</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">fi</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">        sleep <span class="m">10</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">done</span>
-</span></span></code></pre></div><p>该脚本在 R 上运行，每隔十秒钟就会检测一次 S 的 8963 端口是否开放，如果开放，则使用 <code>fswebcam</code> 命令拍照，使用 <code>convert</code> 命令（在 ImageMagisk 工具集中）旋转图片并将图片使用 netcat 传输到 S 的 8965 端口上去。由于 netcat 连接特性，开放两个端口是必需的。另外，<code>#!</code> 的shebang 不能缺失，因为如果我们想将它写入 <code>.service</code> 文件自动运行，shebang 可以告诉计算机执行该脚本的解释器是什么。</p>
-<h2 id="利用-systemd-自动执行">利用 <code>systemd</code> 自动执行</h2>
-<p>下面的服务文件（路径为 <code>/etc/systemd/system/agwc.service</code>）用于自动执行该脚本：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">Description</span><span class="o">=</span>Autonomous Gideon-watching Client
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">After</span><span class="o">=</span>NetworkManager.service
-</span></span><span class="line"><span class="ln">4</span><span class="cl">
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/home/gdn/gwc/agwc.sh
-</span></span><span class="line"><span class="ln">7</span><span class="cl">
-</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
-</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</span></span></code></pre></div><p>有了这个脚本，前面的 agwc.sh 就会在开机后自动运行。只需执行 <code>sudo systemctl daemon-reload</code> 与 <code>sudo systemctl enable agwc.service</code>，在下次树莓派开机时，这个服务就可以自动运行了。</p>
-<h2 id="配置服务器接受图片">配置服务器接受图片</h2>
-<p>下面需要配置服务端，需要让 S 能在我需要的时候开放端口，接收图片然后关闭端口。下面这一脚本的路径为 <code>/home/USER_S/gdnwatch.sh</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">sudo firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>8963/tcp --permanent
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">sudo firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>8965/tcp --permanent
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">sudo firewall-cmd --reload
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">time</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&#34;%Y-%m-%d_%H-%M-%S&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">nc -vl <span class="m">8963</span> <span class="p">&amp;</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">nc -vl <span class="m">8965</span> &gt; ~/pictures/<span class="nv">$time</span>.jpg <span class="p">&amp;</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">sleep <span class="m">10</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">ps aux <span class="p">|</span> grep <span class="s1">&#39;nc -vl 8963&#39;</span> <span class="p">|</span> grep -v grep <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> xargs <span class="nb">kill</span> -9
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">ps aux <span class="p">|</span> grep <span class="s1">&#39;nc -vl 8965&#39;</span> <span class="p">|</span> grep -v grep <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> xargs <span class="nb">kill</span> -9
-</span></span><span class="line"><span class="ln">10</span><span class="cl">sudo firewall-cmd --zone<span class="o">=</span>public --remove-port<span class="o">=</span>8963/tcp --permanent
-</span></span><span class="line"><span class="ln">11</span><span class="cl">sudo firewall-cmd --zone<span class="o">=</span>public --remove-port<span class="o">=</span>8965/tcp --permanent
-</span></span><span class="line"><span class="ln">12</span><span class="cl">sudo firewall-cmd --reload
-</span></span><span class="line"><span class="ln">13</span><span class="cl">find ./pictures/ -size -1b -exec rm <span class="o">{}</span> <span class="se">\;</span>
-</span></span></code></pre></div><p>这一脚本在 S 上运行。脚本首先将 8963 与 8965 端口打开并监听这两个端口并等待十秒，这两个端口分别用于标志和接受文件。接收到文件后，脚本会将两个 netcat 进程关闭以便于下次能够继续使用 netcat 监听这两个端口。再然后，关闭 8963 与 8965 两个端口。在某些情况下（例如 R 没有开机），S 接收不到任何信息并创建一个空文件，这时就需要将文件大小小于 1B 的图片删除。</p>
-<h2 id="传输到个人计算机上浏览图片">传输到个人计算机上浏览图片</h2>
-<p>进行到这一步，只剩下最后一个问题没有解决，就是浏览图片。S 上没有远程桌面，我不能在 S 上查看这些图片，我只能再将图片传输到 PC 上查看。因此，我们在 PC 上创建下面这个脚本（<code>get-pictures.cmd</code>，在 Linux 系统上将后缀改为 <code>.sh</code> 同样可以运行）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ssh USER_S@IP_S <span class="s2">&#34;bash ~/gdnwatch.sh&#34;</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl">sftp USER_S@IP_S:pictures/* C:<span class="se">\U</span>sers<span class="se">\j</span>ack_gdn<span class="se">\P</span>ictures<span class="se">\R</span>aspberry-Pi<span class="se">\p</span>ictures<span class="se">\
-</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="se"></span>ssh USER_S@IP_S <span class="s2">&#34;find ~/pictures/ -name &#39;*.*&#39; -exec rm {} \;&#34;</span>
-</span></span></code></pre></div><p>这个脚本控制 S 运行 <code>gdnwatch.sh</code>  脚本，随后自动将图片传输回 PC，并且删除 S 上的图片缓存以节省存储空间。</p>
-<p>至此，我只需要在 PC 上运行 <code>get-pictures.cmd</code> 脚本就可以坐等图片传输回 PC 了。当然，既然使用了 SSH 与 SFTP，那么 <code>ssh-genkey -t rsa</code> 与 <code>ssh-copy-id</code> 实现免密码登录必不可少。上面这种远程拍照方式会使 S 每月额外消耗大约 170M 流量。</p>
-
     </div>
+      <div class="excerpt_footer">
+        <div class="pale">
+            
+          
+            <p>利用匿名函数、海象运算符、动态创建类、名称重整机制等高级技巧，使一句话代码实现各种有趣的功能。</p>
+          
+          <br>
+          <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" title="阅读更多" class="excerpt_more button">阅读更多</a>
+        </div>
+      </div>
+    </div>
+  </li>
 
-
-
-
-  </article>
+      <li>
+      </li>
+    </ul>
+  </div>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='tags'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -517,8 +474,9 @@ src='https://plausible.io/js/plausible.js'>
   </section>
 </aside>
 
-  
 </div>
+
+
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
