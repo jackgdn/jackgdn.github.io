@@ -6,7 +6,23 @@
     <description>Recent content in Posts on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust 学习记录</title>
+      <link>https://jackgdn.github.io/post/rust/</link>
+      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/rust/</guid>
+      <description>
+        
+          
+            Rust 语言入门
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>

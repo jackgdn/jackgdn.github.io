@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -40,6 +40,31 @@
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/post/"
                 />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/rust/</loc>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/categories/rust/</loc>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/rust/</loc>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/</loc>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2024-11-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/python/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
@@ -66,23 +91,7 @@
                 href="https://jackgdn.github.io/series/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/tags/"
-                />
-  </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/chaoxing-gui/</loc>
