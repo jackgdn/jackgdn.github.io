@@ -6,17 +6,17 @@
     <description>Recent content in Posts on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Rust 学习记录</title>
+      <title>Rust 练习（一）</title>
       <link>https://jackgdn.github.io/post/rust/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://jackgdn.github.io/post/rust/</guid>
       <description>
         
           
-            Rust 语言入门
+            Rust 练习
           
           
         

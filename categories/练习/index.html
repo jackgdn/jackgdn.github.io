@@ -4,12 +4,10 @@
   lang="zh-cn"
   data-figures=""
   
-    class="page"
-  
   
   >
   <head>
-<title>范德蒙德行列式证明  |  &lt;jack-gdn/&gt;</title>
+<title>练习  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -24,26 +22,23 @@ src='https://plausible.io/js/plausible.js'>
 
 <meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="en" />
-
 <meta property="og:type" content="article">
-<meta name="description" content="范德蒙德行列式：
-$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; …" />
+<meta name="description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="范德蒙德行列式证明" />
+<meta name="twitter:title" content="练习" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" />
-<meta property="og:title" content="范德蒙德行列式证明" />
-<meta property="og:description" content="范德蒙德行列式：
-$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; …" />
+<meta property="og:url" content="https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/" />
+<meta property="og:title" content="练习" />
+<meta property="og:description" content="" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/">
+<link rel="canonical" href="https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/">
+<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/index.xml" title="<jack-gdn/>" />
 
 
 
@@ -147,10 +142,19 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
 </header>
 
     <main>
-  
+
+
+
 <div class="grid-inverse wrap content">
-  <article class="post_content">
-    <h1 class="post_title">范德蒙德行列式证明</h1>
+  <div>
+    <ul class="posts" id="posts">
+        <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
+        <a href="https://jackgdn.github.io/post/rust/" title="Rust 练习（一）">Rust 练习（一）</a>
+      </h3>
+      
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -158,15 +162,14 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
 </svg>
 </span>
     <span class="post_date">
-      2024-03-14</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' title="线性代数" class="post_tag button button_translucent">线性代数
-        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' title="数学" class="post_tag button button_translucent">数学
+      2024-11-27</span>
+    <span class="post_time"> · 5 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/rust/' title="Rust" class="post_tag button button_translucent">Rust
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/rust/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -177,42 +180,31 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
   </span>
   </div>
 
-    <div class="post_body"><p>范德蒙德行列式：</p>
-<p>$$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) $$</p>
-<p>证明如下：</p>
-<p>从第 $n$ 行开始，将行列式中的后一行减去前一行的 $x_1$ 倍，得到下式：</p>
-<p>$$ \begin{align*} \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix}\\ \ \\ \ \\ = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; x_2-x_1 &amp; \cdots &amp; x_n-x_1 \\ 0 &amp; x_2(x_2-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; x_2^{n-2}(x_2-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \end{align*} $$</p>
-<p>将得到的行列式按第 $1$ 行展开，得到</p>
-<p>$$ \begin{align*} &amp;\begin{vmatrix} x_2-x_1 &amp; x_3-x_1 &amp; \cdots &amp; x_n-x_1 \\ x_2(x_2-x_1) &amp; x_3(x_3-x_1) &amp; \cdots &amp; x_n(x_n-x_1) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2}(x_2-x_1) &amp; x_3^{n-2}(x_3-x_1) &amp; \cdots &amp; x_n^{n-2}(x_n-x_1) \end{vmatrix} \\ \ \\ \ \\ &amp;= (x_2-x_1)(x_3-x_1) \cdots (x_n-x_1) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} \end{vmatrix} \end{align*} $$</p>
-<p>此时该式右端为一个 $n-1$ 阶的范德蒙德行列式，可以写成：</p>
-<p>$$ (x_3-x_2)(x_4-x_2) \cdots (x_n-x_2) \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_3 &amp; x_4 &amp; \cdots &amp; x_n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_3^{n-3} &amp; x_4^{n-3} &amp; \cdots &amp; x_3^{n-3} \end{vmatrix} $$</p>
-<p>根据数学归纳法，可以把范德蒙德行列式写作：</p>
-<p>$$ \begin{align*} &amp;(x_2-x_1)(x_3-x_1) \cdots (x_n-x_1)(x_3-x_2)(x_4-x_2) \cdots (x_n-x_{n-1}) \\ \ \\ \ \\ &amp;= \prod_{n \ge i &gt; j \ge 1}(x_i-x_j) \end{align*} $$</p>
-<p>证毕。</p>
-
     </div>
+      <div class="excerpt_footer">
+        <div class="pale">
+            
+          
+            <p>Rust 练习</p>
+          
+          <br>
+          <a href="https://jackgdn.github.io/post/rust/" title="阅读更多" class="excerpt_more button">阅读更多</a>
+        </div>
+      </div>
+    </div>
+  </li>
 
-
-<div class="post_i18n">
-  <h3 class="mb-0">翻译:</h3>
-  <nav class="tags_nav">
-    
-      <a href="https://jackgdn.github.io/en/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="post_tag button button_translucent">English</a> 
-      
-    
-    </nav>
-</div>
-
-
-
-  </article>
+      <li>
+      </li>
+    </ul>
+  </div>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='categories'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -495,8 +487,9 @@ $$ \begin{vmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &
   </section>
 </aside>
 
-  
 </div>
+
+
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
