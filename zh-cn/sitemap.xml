@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -42,16 +42,35 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/rust/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/rust/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/rust2/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/rust/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/series/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,7 +83,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/</loc>
-    <lastmod>2024-11-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/python/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
@@ -77,19 +96,6 @@
   </url><url>
     <loc>https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/</loc>
-    <lastmod>2024-11-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/series/"
-                />
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
