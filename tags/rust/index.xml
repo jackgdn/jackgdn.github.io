@@ -6,13 +6,13 @@
     <description>Recent content in Rust on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Rust 练习（二）</title>
-      <link>https://jackgdn.github.io/post/rust2/</link>
-      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+      <title>Rust 练习（三）</title>
+      <link>https://jackgdn.github.io/post/rust3/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/rust2/</guid>
+      <guid>https://jackgdn.github.io/post/rust3/</guid>
       <description>
         
           
@@ -24,11 +24,11 @@
     </item>
     
     <item>
-      <title>Rust 练习（三）</title>
-      <link>https://jackgdn.github.io/post/rust3/</link>
+      <title>Rust 练习（二）</title>
+      <link>https://jackgdn.github.io/post/rust2/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/rust3/</guid>
+      <guid>https://jackgdn.github.io/post/rust2/</guid>
       <description>
         
           
