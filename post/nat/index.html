@@ -202,15 +202,15 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div><p>该脚本在 R 上运行，每隔十秒钟就会检测一次 S 的 8963 端口是否开放，如果开放，则使用 <code>fswebcam</code> 命令拍照，使用 <code>convert</code> 命令（在 ImageMagisk 工具集中）旋转图片并将图片使用 netcat 传输到 S 的 8965 端口上去。由于 netcat 连接特性，开放两个端口是必需的。另外，<code>#!</code> 的shebang 不能缺失，因为如果我们想将它写入 <code>.service</code> 文件自动运行，shebang 可以告诉计算机执行该脚本的解释器是什么。</p>
 <h2 id="利用-systemd-自动执行">利用 <code>systemd</code> 自动执行</h2>
 <p>下面的服务文件（路径为 <code>/etc/systemd/system/agwc.service</code>）用于自动执行该脚本：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">Description</span><span class="o">=</span>Autonomous Gideon-watching Client
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">After</span><span class="o">=</span>NetworkManager.service
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Autonomous Gideon-watching Client</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">NetworkManager.service</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/home/gdn/gwc/agwc.sh
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/home/gdn/gwc/agwc.sh</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl">
-</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
-</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>有了这个脚本，前面的 agwc.sh 就会在开机后自动运行。只需执行 <code>sudo systemctl daemon-reload</code> 与 <code>sudo systemctl enable agwc.service</code>，在下次树莓派开机时，这个服务就可以自动运行了。</p>
 <h2 id="配置服务器接受图片">配置服务器接受图片</h2>
 <p>下面需要配置服务端，需要让 S 能在我需要的时候开放端口，接收图片然后关闭端口。下面这一脚本的路径为 <code>/home/USER_S/gdnwatch.sh</code></p>
@@ -275,6 +275,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A01/" class="nav-link" title="Java 练习（一）">Java 练习（一）</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/rust3/" class="nav-link" title="Rust 练习（三）">Rust 练习（三）</a>
       </li>
       <li>
@@ -295,9 +298,6 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/" class="nav-link" title="Python 一句话代码技巧（一）">Python 一句话代码技巧（一）</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
@@ -317,6 +317,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">6</span>
         </a>
         
+        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+          练习
+          <span class="button_tally">4</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
@@ -324,11 +329,6 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
-          练习
           <span class="button_tally">3</span>
         </a>
         
@@ -340,6 +340,11 @@ src='https://plausible.io/js/plausible.js'>
         <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
           逆向
           <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
+          JAVA
+          <span class="button_tally">1</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
@@ -366,6 +371,11 @@ src='https://plausible.io/js/plausible.js'>
         <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
           <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+          JAVA 练习
+          <span class="button_tally">1</span>
         </a>
         
         
@@ -434,8 +444,8 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/penetration/' class="post_tag button button_translucent" title="penetration">
-          PENETRATION
+        <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
+          JAVA
           <span class="button_tally">1</span>
         </a>
         
@@ -458,6 +468,10 @@ src='https://plausible.io/js/plausible.js'>
             
             
             <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=1 title="java">JAVA<span class="button_tally">1</span>
             </a>
             
             
