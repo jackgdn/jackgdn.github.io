@@ -1033,7 +1033,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w"> </span><span class="c1">// 此题开始使用 Maven 构建</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.gson.Gson</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.gson.Gson</span><span class="p">;</span><span class="w"> </span><span class="c1">// 使用 gson 解析 json</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
@@ -1237,6 +1237,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A04/" class="nav-link" title="Java 练习（四）">Java 练习（四）</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A03/" class="nav-link" title="Java 练习（三）">Java 练习（三）</a>
       </li>
       <li>
@@ -1257,9 +1260,6 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
@@ -1274,19 +1274,19 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
+        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+          练习
+          <span class="button_tally">7</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
-          练习
-          <span class="button_tally">6</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
           JAVA
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
@@ -1327,7 +1327,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
           JAVA 练习
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
@@ -1363,7 +1363,7 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
@@ -1433,7 +1433,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=3 title="java">JAVA<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=4 title="java">JAVA<span class="button_tally">4</span>
             </a>
             
             
