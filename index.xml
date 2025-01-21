@@ -6,7 +6,39 @@
     <description>Recent content on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 练习（七）</title>
+      <link>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A07/</link>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A07/</guid>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>背包问题——完全背包问题</title>
+      <link>https://jackgdn.github.io/post/knapsackproblem-2/</link>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/knapsackproblem-2/</guid>
+      <description>
+        
+          
+            背包问题——完全背包问题
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Java 练习（六）</title>
       <link>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A06/</link>
@@ -41,10 +73,10 @@
     
     <item>
       <title>背包问题——01背包问题</title>
-      <link>https://jackgdn.github.io/post/knapsackproblem/</link>
+      <link>https://jackgdn.github.io/post/knapsackproblem-1/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/knapsackproblem/</guid>
+      <guid>https://jackgdn.github.io/post/knapsackproblem-1/</guid>
       <description>
         
           
