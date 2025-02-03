@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>渗透 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/categories/%E6%B8%97%E9%80%8F/</link>
+    <link>https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/</link>
     <description>Recent content in 渗透 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记一次 ARP 欺骗 &#43; DNS 劫持攻击的尝试</title>
-      <link>http://localhost:1313/post/mitm-attack/</link>
+      <link>https://jackgdn.github.io/post/mitm-attack/</link>
       <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/mitm-attack/</guid>
+      <guid>https://jackgdn.github.io/post/mitm-attack/</guid>
       <description>
         
           

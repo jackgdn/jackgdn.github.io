@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2025 寒假算法练习 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
+    <link>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
     <description>Recent content in 2025 寒假算法练习 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>搜索练习</title>
-      <link>http://localhost:1313/post/searching/</link>
+      <link>https://jackgdn.github.io/post/searching/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/searching/</guid>
+      <guid>https://jackgdn.github.io/post/searching/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 3</title>
-      <link>http://localhost:1313/post/lanqiao-week3/</link>
+      <link>https://jackgdn.github.io/post/lanqiao-week3/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/lanqiao-week3/</guid>
+      <guid>https://jackgdn.github.io/post/lanqiao-week3/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 2</title>
-      <link>http://localhost:1313/post/lanqiao-week2/</link>
+      <link>https://jackgdn.github.io/post/lanqiao-week2/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/lanqiao-week2/</guid>
+      <guid>https://jackgdn.github.io/post/lanqiao-week2/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 1</title>
-      <link>http://localhost:1313/post/lanqiao-week1/</link>
+      <link>https://jackgdn.github.io/post/lanqiao-week1/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/lanqiao-week1/</guid>
+      <guid>https://jackgdn.github.io/post/lanqiao-week1/</guid>
       <description>
         
           
