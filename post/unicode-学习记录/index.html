@@ -8,18 +8,12 @@
   
   
   >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <title>Unicode 学习记录  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-<script async defer data-domain="jackgdn.github.io"
-src='https://plausible.io/js/plausible.js'>
-</script>
-
 
 
 <meta property="og:locale" content="zh-cn" />
@@ -30,30 +24,30 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Unicode 学习记录" />
-<meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
+<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
+<meta property="og:url" content="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
 <meta property="og:title" content="Unicode 学习记录" />
 <meta property="og:description" content="前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。
 NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中， …" />
-<meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
+<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
-<link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+<link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-
-
-
-<link rel="preload" href="https://jackgdn.github.io/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity = "sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" as="style" crossorigin="anonymous">
+<link rel="canonical" href="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" as="script" integrity=
-"sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
+<link rel="preload" href="http://localhost:1313/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity = "sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" as="style" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity="sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" crossorigin="anonymous">
+
+<link rel="preload" href="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" as="script" integrity=
+"sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity="sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" crossorigin="anonymous">
 
 
 
@@ -66,8 +60,8 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
-  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+  <nav class="nav"><a href='http://localhost:1313/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -88,13 +82,13 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
         
 
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
+    <a href="http://localhost:1313/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
+    <a href="http://localhost:1313/about/" class="nav_item" title="关于">关于 </a>
   </div>
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
+    <a href="http://localhost:1313/links/" class="nav_item" title="链接">链接 </a>
   </div>
       
       <div class="nav_parent">
@@ -102,13 +96,13 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
         <div class="nav_sub">
           <span class="nav_child"></span>
           
-          <a href="https://jackgdn.github.io/" class="nav_child nav_item">简体中文</a>
+          <a href="http://localhost:1313/" class="nav_child nav_item">简体中文</a>
           
-          <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
+          <a href="http://localhost:1313/en/" class="nav_child nav_item">English</a>
           
         </div>
-      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
-  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+      </div><a href='http://localhost:1313/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
 </a>
 
 <div class='follow'>
@@ -157,15 +151,15 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </span>
     <span class="post_date">
       2024-03-06</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/python/' title="Python" class="post_tag button button_translucent">Python
-        </a><a href='https://jackgdn.github.io/tags/unicode/' title="Unicode" class="post_tag button button_translucent">Unicode
-        </a><a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' title="编码" class="post_tag button button_translucent">编码
+    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/python/' title="Python" class="post_tag button button_translucent">Python
+        </a><a href='http://localhost:1313/tags/unicode/' title="Unicode" class="post_tag button button_translucent">Unicode
+        </a><a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' title="编码" class="post_tag button button_translucent">编码
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
+    <a href="http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -710,7 +704,7 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
       <div class="author_bio">
         东北林业大学在读本科生，学习计算机科学与技术专业。
       </div>
-      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
+      <a href='http://localhost:1313/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
 
     
       <div class="sidebardisclaimer">
@@ -722,89 +716,89 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
+        <a href="http://localhost:1313/post/searching/" class="nav-link" title="搜索练习">搜索练习</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
+        <a href="http://localhost:1313/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/knapsackproblem-3/" class="nav-link" title="背包问题——多重背包问题">背包问题——多重背包问题</a>
+        <a href="http://localhost:1313/post/knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week2/" class="nav-link" title="2025寒假算法练习——Week 2">2025寒假算法练习——Week 2</a>
+        <a href="http://localhost:1313/post/knapsackproblem-3/" class="nav-link" title="背包问题——多重背包问题">背包问题——多重背包问题</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a>
+        <a href="http://localhost:1313/post/lanqiao-week2/" class="nav-link" title="2025寒假算法练习——Week 2">2025寒假算法练习——Week 2</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/knapsackproblem-2/" class="nav-link" title="背包问题——完全背包问题">背包问题——完全背包问题</a>
+        <a href="http://localhost:1313/post/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a>
+        <a href="http://localhost:1313/post/knapsackproblem-2/" class="nav-link" title="背包问题——完全背包问题">背包问题——完全背包问题</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week1/" class="nav-link" title="2025寒假算法练习——Week 1">2025寒假算法练习——Week 1</a>
+        <a href="http://localhost:1313/post/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+        <a href='http://localhost:1313/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
+        <a href='http://localhost:1313/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+          算法
+          <span class="button_tally">8</span>
+        </a>
+        
+        <a href='http://localhost:1313/categories/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
           学习记录
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
-          算法
-          <span class="button_tally">7</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
+        <a href='http://localhost:1313/categories/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='http://localhost:1313/categories/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
+        <a href='http://localhost:1313/categories/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+        <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
           逆向
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
           数学
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+        <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
           渗透
           <span class="button_tally">1</span>
         </a>
@@ -815,27 +809,27 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+        <a href='http://localhost:1313/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
           JAVA 练习
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
+        <a href='http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
+          2025 寒假算法练习
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
-          2025 寒假算法练习
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
+        <a href='http://localhost:1313/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
+        <a href='http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
           <span class="button_tally">3</span>
         </a>
@@ -846,67 +840,67 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
+        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">11</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+        <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">10</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
+        <a href='http://localhost:1313/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">9</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
+        <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+        <a href='http://localhost:1313/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
           C&#43;&#43;
           <span class="button_tally">5</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+        <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+          算法
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
           背包问题
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
+        <a href='http://localhost:1313/tags/misc/' class="post_tag button button_translucent" title="misc">
           MISC
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='http://localhost:1313/tags/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
-          算法
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/crypto/' class="post_tag button button_translucent" title="crypto">
+        <a href='http://localhost:1313/tags/crypto/' class="post_tag button button_translucent" title="crypto">
           CRYPTO
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/forensics/' class="post_tag button button_translucent" title="forensics">
+        <a href='http://localhost:1313/tags/forensics/' class="post_tag button button_translucent" title="forensics">
           FORENSICS
           <span class="button_tally">2</span>
         </a>
@@ -917,111 +911,119 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/bfs/' class=" post_tag button button_translucent" data-position=1 title="bfs">BFS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=5 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">5</span>
+            <a href='http://localhost:1313/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=5 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=9 title="java">JAVA<span class="button_tally">9</span>
+            <a href='http://localhost:1313/tags/dfs/' class=" post_tag button button_translucent" data-position=1 title="dfs">DFS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/java/' class=" post_tag button button_translucent" data-position=9 title="java">JAVA<span class="button_tally">9</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=11 title="python">PYTHON<span class="button_tally">11</span>
+            <a href='http://localhost:1313/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
+            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=11 title="python">PYTHON<span class="button_tally">11</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
+            <a href='http://localhost:1313/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='http://localhost:1313/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=3 title="日志">日志<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/' class=" post_tag button button_translucent" data-position=1 title="深度优先搜索">深度优先搜索<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=3 title="日志">日志<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=3 title="算法">算法<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/' class=" post_tag button button_translucent" data-position=1 title="深度优先搜索">深度优先搜索<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=4 title="算法">算法<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -1135,8 +1137,9 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='https://jackgdn.github.io/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
-    <p>版权所有&nbsp;2024-&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利</p><a class="to_top" href="#documentTop">
+    <img src='http://localhost:1313/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
+    <p>版权所有&nbsp;2024 -&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利.<br/>
+    除特别声明外, 本博客内所有文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议发布。转载请注明出处。</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>
   <use xlink:href="#to-top"></use>
@@ -1147,9 +1150,9 @@ NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方�
   </div>
 </footer>
 
-<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" integrity="sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous"></script>
 
-  <script src="https://jackgdn.github.io/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
+  <script src="http://localhost:1313/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
 
   </body>
 </html>
