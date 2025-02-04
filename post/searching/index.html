@@ -25,20 +25,16 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="[NOIP2001 普及组] 求先序排列 题目描述 给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。
-输入格式 共两行，均为大写字母组成的字符串，表示一棵二叉树的中序与后序排列。
-输出格式 共一行一个字符串，表示一棵二叉树的先序。
-样例 #1  …" />
+<meta name="description" content="深度优先搜索适合用于查找路径、解决组合问题，缺点是递归调用的时间复杂度高。 广度有限搜索适合用于找最短路径，缺点是空间复杂度高。 [NOIP2001 普及组] 求先序排列 题目描述 给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。
+输入格式 共 …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="搜索练习" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/searching/" />
 <meta property="og:title" content="搜索练习" />
-<meta property="og:description" content="[NOIP2001 普及组] 求先序排列 题目描述 给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。
-输入格式 共两行，均为大写字母组成的字符串，表示一棵二叉树的中序与后序排列。
-输出格式 共一行一个字符串，表示一棵二叉树的先序。
-样例 #1  …" />
+<meta property="og:description" content="深度优先搜索适合用于查找路径、解决组合问题，缺点是递归调用的时间复杂度高。 广度有限搜索适合用于找最短路径，缺点是空间复杂度高。 [NOIP2001 普及组] 求先序排列 题目描述 给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。
+输入格式 共 …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -160,8 +156,8 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2025-02-03</span>
-    <span class="post_time"> · 19 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+      2025-02-04</span>
+    <span class="post_time"> · 27 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
         </a><a href='https://jackgdn.github.io/tags/dfs/' title="dfs" class="post_tag button button_translucent">dfs
         </a><a href='https://jackgdn.github.io/tags/bfs/' title="bfs" class="post_tag button button_translucent">bfs
         </a>
@@ -202,9 +198,9 @@ src='https://plausible.io/js/plausible.js'>
         <li><a href="#输出格式-1">输出格式</a></li>
         <li><a href="#样例-1-1">样例 #1</a></li>
         <li><a href="#提示-1">提示</a></li>
+        <li><a href="#题解-1">题解</a></li>
       </ul>
     </li>
-    <li><a href="#题解-1">题解</a></li>
     <li><a href="#noip2002-普及组-选数">[NOIP2002 普及组] 选数</a>
       <ul>
         <li><a href="#题目描述-2">题目描述</a></li>
@@ -297,11 +293,61 @@ src='https://plausible.io/js/plausible.js'>
         <li><a href="#题解-9">题解</a></li>
       </ul>
     </li>
+    <li><a href="#奇怪的电梯">奇怪的电梯</a>
+      <ul>
+        <li><a href="#题目背景-1">题目背景</a></li>
+        <li><a href="#题目描述-11">题目描述</a></li>
+        <li><a href="#输入格式-11">输入格式</a></li>
+        <li><a href="#输出格式-11">输出格式</a></li>
+        <li><a href="#样例-1-11">样例 #1</a></li>
+        <li><a href="#提示-10">提示</a></li>
+        <li><a href="#题解-10">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#usaco08feb-meteor-shower-s">[USACO08FEB] Meteor Shower S</a>
+      <ul>
+        <li><a href="#题面翻译-1">题面翻译</a></li>
+        <li><a href="#题目描述-12">题目描述</a></li>
+        <li><a href="#输入格式-12">输入格式</a></li>
+        <li><a href="#输出格式-12">输出格式</a></li>
+        <li><a href="#题目描述-13">题目描述</a></li>
+        <li><a href="#输入格式-13">输入格式</a></li>
+        <li><a href="#输出格式-13">输出格式</a></li>
+        <li><a href="#样例-1-12">样例 #1</a></li>
+        <li><a href="#题解-11">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#noip-2000-提高组-单词接龙">[NOIP 2000 提高组] 单词接龙</a>
+      <ul>
+        <li><a href="#题目背景-2">题目背景</a></li>
+        <li><a href="#题目描述-14">题目描述</a></li>
+        <li><a href="#输入格式-14">输入格式</a></li>
+        <li><a href="#输出格式-14">输出格式</a></li>
+        <li><a href="#样例-1-13">样例 #1</a></li>
+        <li><a href="#提示-11">提示</a></li>
+        <li><a href="#题解-12">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#usaco11open-corn-maze-s">[USACO11OPEN] Corn Maze S</a>
+      <ul>
+        <li><a href="#题面翻译-2">题面翻译</a></li>
+        <li><a href="#题目描述-15">题目描述</a></li>
+        <li><a href="#输入格式-15">输入格式</a></li>
+        <li><a href="#输出格式-15">输出格式</a></li>
+        <li><a href="#样例-1-14">样例 #1</a></li>
+        <li><a href="#提示-12">提示</a></li>
+        <li><a href="#题解-13">题解</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
     
-    <div class="post_body"><h2 id="noip2001-普及组-求先序排列">[NOIP2001 普及组] 求先序排列</h2>
+    <div class="post_body"><ul>
+<li>深度优先搜索适合用于查找路径、解决组合问题，缺点是递归调用的时间复杂度高。</li>
+<li>广度有限搜索适合用于找最短路径，缺点是空间复杂度高。</li>
+</ul>
+<h2 id="noip2001-普及组-求先序排列">[NOIP2001 普及组] 求先序排列</h2>
 <h3 id="题目描述">题目描述</h3>
 <p>给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。</p>
 <h3 id="输入格式">输入格式</h3>
@@ -399,7 +445,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div><h3 id="提示-1">提示</h3>
 <p>$1\leq s_1,s_2,s_3,s_4\leq 20$。</p>
 <p>$1\leq A_1,A_2,\ldots,A_{s_1},B_1,B_2,\ldots,B_{s_2},C_1,C_2,\ldots,C_{s_3},D_1,D_2,\ldots,D_{s_4}\leq60$。</p>
-<h2 id="题解-1">题解</h2>
+<h3 id="题解-1">题解</h3>
 <p>暴搜把每一道题分别放到左右脑之后，总时间最短的情况：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
@@ -1287,6 +1333,350 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">47</span><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="ln">48</span><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="奇怪的电梯">奇怪的电梯</h2>
+<h3 id="题目背景-1">题目背景</h3>
+<p>感谢 @<a href="https://www.luogu.com.cn/user/101694">yummy</a> 提供的一些数据。</p>
+<h3 id="题目描述-11">题目描述</h3>
+<p>呵呵，有一天我做了一个梦，梦见了一种很奇怪的电梯。大楼的每一层楼都可以停电梯，而且第 $i$ 层楼（$1 \le i \le N$）上有一个数字 $K_i$（$0 \le K_i \le N$）。电梯只有四个按钮：开，关，上，下。上下的层数等于当前楼层上的那个数字。当然，如果不能满足要求，相应的按钮就会失灵。例如： $3, 3, 1, 2, 5$ 代表了 $K_i$（$K_1=3$，$K_2=3$，……），从 $1$ 楼开始。在 $1$ 楼，按“上”可以到 $4$ 楼，按“下”是不起作用的，因为没有 $-2$ 楼。那么，从 $A$ 楼到 $B$ 楼至少要按几次按钮呢？</p>
+<h3 id="输入格式-11">输入格式</h3>
+<p>共二行。</p>
+<p>第一行为三个用空格隔开的正整数，表示 $N, A, B$（$1 \le N \le 200$，$1 \le A, B \le N$）。</p>
+<p>第二行为 $N$ 个用空格隔开的非负整数，表示 $K_i$。</p>
+<h3 id="输出格式-11">输出格式</h3>
+<p>一行，即最少按键次数，若无法到达，则输出 <code>-1</code>。</p>
+<h3 id="样例-1-11">样例 #1</h3>
+<h4 id="样例输入-1-11">样例输入 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">5 1 5
+</span></span><span class="line"><span class="ln">2</span><span class="cl">3 3 1 2 5
+</span></span></code></pre></div><h4 id="样例输出-1-11">样例输出 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">3
+</span></span></code></pre></div><h3 id="提示-10">提示</h3>
+<p>对于 $100 %$ 的数据，$1 \le N \le 200$，$1 \le A, B \le N$，$0 \le K_i \le N$。</p>
+<p>本题共 $16$ 个测试点，前 $15$ 个每个测试点 $6$ 分，最后一个测试点 $10$ 分。</p>
+<h3 id="题解-10">题解</h3>
+<p>这道题和上一道题几乎一模一样，最容易想到的办法是使用广搜找出最短路径。然而这道题给了些极限数据，使用广搜会 MLE，用一般的深搜会超时，所以不得不用深搜记忆化搜索和剪枝来解决。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">A</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">B</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">K</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span> <span class="p">:</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">N</span><span class="p">]))</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">memo</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nd">@lru_cache</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="n">B</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="k">return</span> <span class="n">depth</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">if</span> <span class="n">K</span><span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&#34;inf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="k">if</span> <span class="n">current</span> <span class="ow">in</span> <span class="n">memo</span> <span class="ow">and</span> <span class="n">memo</span><span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">depth</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&#34;inf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">memo</span><span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="n">min_depth</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&#34;inf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">up</span> <span class="o">=</span> <span class="n">current</span> <span class="o">+</span> <span class="n">K</span><span class="p">[</span><span class="n">current</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">up</span> <span class="o">&lt;=</span> <span class="n">N</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">up</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">up</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">up</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">            <span class="n">min_depth</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_depth</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">up</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">        <span class="n">down</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="n">K</span><span class="p">[</span><span class="n">current</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">down</span> <span class="o">&lt;=</span> <span class="n">N</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">down</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">down</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">down</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">            <span class="n">min_depth</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_depth</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">down</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">
+</span></span><span class="line"><span class="ln">43</span><span class="cl">        <span class="k">return</span> <span class="n">min_depth</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="n">visited</span><span class="p">[</span><span class="n">A</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">result</span> <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&#34;inf&#34;</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">
+</span></span><span class="line"><span class="ln">49</span><span class="cl">
+</span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="usaco08feb-meteor-shower-s">[USACO08FEB] Meteor Shower S</h2>
+<h3 id="题面翻译-1">题面翻译</h3>
+<h3 id="题目描述-12">题目描述</h3>
+<p>贝茜听说一场特别的流星雨即将到来：这些流星会撞向地球，并摧毁它们所撞击的任何东西。她为自己的安全感到焦虑，发誓要找到一个安全的地方（一个永远不会被流星摧毁的地方）。</p>
+<p>如果将牧场放入一个直角坐标系中，贝茜现在的位置是原点，并且，贝茜不能踏上一块被流星砸过的土地。</p>
+<p>根据预报，一共有 $M$ 颗流星 $(1\leq M\leq 50,000)$ 会坠落在农场上，其中第 $i$ 颗流星会在时刻 $T_i$（$0 \leq T _ i \leq 1000$）砸在坐标为 $(X_i,Y_i)(0\leq X_i\leq 300$，$0\leq Y_i\leq 300)$ 的格子里。流星的力量会将它所在的格子，以及周围 $4$ 个相邻的格子都化为焦土，当然贝茜也无法再在这些格子上行走。</p>
+<p>贝茜在时刻 $0$ 开始行动，她只能在会在横纵坐标 $X,Y\ge 0$ 的区域中，平行于坐标轴行动，每 $1$ 个时刻中，她能移动到相邻的（一般是 $4$ 个）格子中的任意一个，当然目标格子要没有被烧焦才行。如果一个格子在时刻 $t$ 被流星撞击或烧焦，那么贝茜只能在 $t$ 之前的时刻在这个格子里出现。 贝茜一开始在 $(0,0)$。</p>
+<p>请你计算一下，贝茜最少需要多少时间才能到达一个安全的格子。如果不可能到达输出 $−1$。</p>
+<h3 id="输入格式-12">输入格式</h3>
+<p>共 $M+1$ 行，第 $1$ 行输入一个整数 $M$，接下来的 $M$ 行每行输入三个整数分别为 $X_i, Y_i, T_i$。</p>
+<h3 id="输出格式-12">输出格式</h3>
+<p>贝茜到达安全地点所需的最短时间，如果不可能，则为 $-1$。</p>
+<h3 id="题目描述-13">题目描述</h3>
+<p>Bessie hears that an extraordinary meteor shower is coming; reports say that these meteors will crash into earth and destroy anything they hit. Anxious for her safety, she vows to find her way to a safe location (one that is never destroyed by a meteor) . She is currently grazing at the origin in the coordinate plane and wants to move to a new, safer location while avoiding being destroyed by meteors along her way.</p>
+<p>The reports say that M meteors (1 ≤ M ≤ 50,000) will strike, with meteor i will striking point (Xi, Yi) (0 ≤ Xi ≤ 300; 0 ≤ Yi ≤ 300) at time Ti (0 ≤ Ti  ≤ 1,000). Each meteor destroys the point that it strikes and also the four rectilinearly adjacent lattice points.</p>
+<p>Bessie leaves the origin at time 0 and can travel in the first quadrant and parallel to the axes at the rate of one distance unit per second to any of the (often 4) adjacent rectilinear points that are not yet destroyed by a meteor. She cannot be located on a point at any time greater than or equal to the time it is destroyed).</p>
+<p>Determine the minimum time it takes Bessie to get to a safe place.</p>
+<h3 id="输入格式-13">输入格式</h3>
+<p>* Line 1: A single integer: M</p>
+<p>* Lines 2..M+1: Line i+1 contains three space-separated integers: Xi, Yi, and Ti</p>
+<h3 id="输出格式-13">输出格式</h3>
+<p>* Line 1: The minimum time it takes Bessie to get to a safe place or -1 if it is impossible.</p>
+<h3 id="样例-1-12">样例 #1</h3>
+<h4 id="样例输入-1-12">样例输入 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">4
+</span></span><span class="line"><span class="ln">2</span><span class="cl">0 0 2
+</span></span><span class="line"><span class="ln">3</span><span class="cl">2 1 2
+</span></span><span class="line"><span class="ln">4</span><span class="cl">1 1 2
+</span></span><span class="line"><span class="ln">5</span><span class="cl">0 3 5
+</span></span></code></pre></div><h4 id="样例输出-1-12">样例输出 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">5
+</span></span></code></pre></div><h3 id="题解-11">题解</h3>
+<p>创建 <code>meteor</code> 数组用于保存每一个点无法通行的时间，<code>field</code> 数组用于保存到达每一点的最短时间。只有当节点没有走过而且还没有被摧毁时才可以通行。依然使用深搜找出最短路径。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">directions</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">int</span> <span class="n">meteor</span><span class="p">[</span><span class="mi">305</span><span class="p">][</span><span class="mi">305</span><span class="p">],</span> <span class="n">field</span><span class="p">[</span><span class="mi">305</span><span class="p">][</span><span class="mi">305</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">ti</span><span class="p">,</span> <span class="n">nxi</span><span class="p">,</span> <span class="n">nyi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">305</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">305</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">			<span class="n">meteor</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">xi</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">yi</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ti</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">		<span class="n">meteor</span><span class="p">[</span><span class="n">xi</span><span class="p">][</span><span class="n">yi</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">meteor</span><span class="p">[</span><span class="n">xi</span><span class="p">][</span><span class="n">yi</span><span class="p">],</span> <span class="n">ti</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">			<span class="n">nxi</span> <span class="o">=</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">directions</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">			<span class="n">nyi</span> <span class="o">=</span> <span class="n">yi</span> <span class="o">+</span> <span class="n">directions</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">nxi</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nyi</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">				<span class="n">meteor</span><span class="p">[</span><span class="n">nxi</span><span class="p">][</span><span class="n">nyi</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">meteor</span><span class="p">[</span><span class="n">nxi</span><span class="p">][</span><span class="n">nyi</span><span class="p">],</span> <span class="n">ti</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">
+</span></span><span class="line"><span class="ln">35</span><span class="cl">	<span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">	<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">	<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">		<span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">		<span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">		<span class="n">y</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">		<span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">
+</span></span><span class="line"><span class="ln">45</span><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">meteor</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="n">INF</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">field</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">			<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">
+</span></span><span class="line"><span class="ln">50</span><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">			<span class="n">nx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">directions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">			<span class="n">ny</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">directions</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">nx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ny</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">field</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">meteor</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">field</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">				<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">nx</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">				<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">ny</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">				<span class="n">field</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">
+</span></span><span class="line"><span class="ln">61</span><span class="cl">	<span class="n">puts</span><span class="p">(</span><span class="s">&#34;-1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>至少在 C++ 中，避免向 <code>queue</code> 中存储过多数据可以<strong>极大</strong>降低程序运行所花费的时间和空间。最开始我尝试将经过某一点时的坐标和时间同时存入队列，导致部分测试点 MLE 或 TLE。后来单独使用二维数组存储时间，将每组存入队列的数据从三个减少到两个才可以 AC。</p>
+<h2 id="noip-2000-提高组-单词接龙">[NOIP 2000 提高组] 单词接龙</h2>
+<h3 id="题目背景-2">题目背景</h3>
+<p>注意：本题为上古 NOIP 原题，不保证存在靠谱的做法能通过该数据范围下的所有数据。</p>
+<p>本题为搜索题，本题不接受 hack 数据。<a href="https://www.luogu.com.cn/paste/isdgwj5l">关于此类题目的详细内容</a></p>
+<p>NOIP2000 提高组 T3</p>
+<h3 id="题目描述-14">题目描述</h3>
+<p>单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如 <code>beast</code> 和 <code>astonish</code>，如果接成一条龙则变为 <code>beastonish</code>，另外相邻的两部分不能存在包含关系，例如 <code>at</code> 和 <code>atide</code> 间不能相连。</p>
+<h3 id="输入格式-14">输入格式</h3>
+<p>输入的第一行为一个单独的整数 $n$ 表示单词数，以下 $n$ 行每行有一个单词，输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。</p>
+<h3 id="输出格式-14">输出格式</h3>
+<p>只需输出以此字母开头的最长的“龙”的长度。</p>
+<h3 id="样例-1-13">样例 #1</h3>
+<h4 id="样例输入-1-13">样例输入 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">5
+</span></span><span class="line"><span class="ln">2</span><span class="cl">at
+</span></span><span class="line"><span class="ln">3</span><span class="cl">touch
+</span></span><span class="line"><span class="ln">4</span><span class="cl">cheat
+</span></span><span class="line"><span class="ln">5</span><span class="cl">choose
+</span></span><span class="line"><span class="ln">6</span><span class="cl">tact
+</span></span><span class="line"><span class="ln">7</span><span class="cl">a
+</span></span></code></pre></div><h4 id="样例输出-1-13">样例输出 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">23
+</span></span></code></pre></div><h3 id="提示-11">提示</h3>
+<p>样例解释：连成的“龙”为 <code>atoucheatactactouchoose</code>。</p>
+<p>$n \le 20$。</p>
+<h3 id="题解-12">题解</h3>
+<p>数据很水，只要把各种限制条件和特判加上，这样乱写也能 AC。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">rest</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="n">rest</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">start</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">ln</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">result</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">if</span> <span class="n">ln</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">rest</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cur</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                    <span class="n">rest</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                    <span class="n">nxt</span> <span class="o">=</span> <span class="n">w</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                    <span class="n">dfs</span><span class="p">(</span><span class="n">nxt</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nxt</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                    <span class="n">rest</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">rest</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                <span class="k">if</span> <span class="n">rest</span><span class="p">[</span><span class="n">w</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                    <span class="n">rest</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">ln</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))):</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                        <span class="k">if</span> <span class="n">cur</span><span class="p">[</span><span class="n">ln</span> <span class="o">-</span> <span class="n">i</span> <span class="p">:]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[:</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                            <span class="n">nxt</span> <span class="o">=</span> <span class="n">cur</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">                            <span class="n">dfs</span><span class="p">(</span><span class="n">nxt</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nxt</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">                    <span class="n">rest</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="n">dfs</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl">
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="usaco11open-corn-maze-s">[USACO11OPEN] Corn Maze S</h2>
+<h3 id="题面翻译-2">题面翻译</h3>
+<p>奶牛们去一个 $N\times M$ 玉米迷宫，$2 \leq N \leq 300,2 \leq M \leq300$。</p>
+<p>迷宫里有一些传送装置，可以将奶牛从一点到另一点进行瞬间转移。这些装置可以双向使用。</p>
+<p>如果一头奶牛处在这个装置的起点或者终点，这头奶牛就必须使用这个装置，奶牛在传送过后不会立刻进行第二次传送，即不会卡在传送装置的起点和终点之间来回传送。</p>
+<p>玉米迷宫除了唯一的一个出口都被玉米包围。</p>
+<p>迷宫中的每个元素都由以下项目中的一项组成：</p>
+<ol>
+<li>玉米，<code>#</code> 表示，这些格子是不可以通过的。</li>
+<li>草地，<code>.</code> 表示，可以简单的通过。</li>
+<li>传送装置，每一对大写字母 $\tt{A}$ 到 $\tt{Z}$ 表示。</li>
+<li>出口，<code>=</code> 表示。</li>
+<li>起点， <code>@</code> 表示</li>
+</ol>
+<p>奶牛能在一格草地上可能存在的四个相邻的格子移动，花费 $1$ 个单位时间。从装置的一个结点到另一个结点不花时间。</p>
+<h3 id="题目描述-15">题目描述</h3>
+<p>This past fall, Farmer John took the cows to visit a corn maze. But this wasn't just any corn maze: it featured several gravity-powered teleporter slides, which cause cows to teleport instantly from one point in the maze to another. The slides work in both directions: a cow can slide from the slide's start to the end instantly, or from the end to the start. If a cow steps on a space that hosts either end of a slide, she must use the slide.</p>
+<p>The outside of the corn maze is entirely corn except for a single exit.</p>
+<p>The maze can be represented by an N x M (2 &lt;= N &lt;= 300; 2 &lt;= M &lt;= 300) grid. Each grid element contains one of these items:</p>
+<p>* Corn (corn grid elements are impassable)</p>
+<p>* Grass (easy to pass through!)</p>
+<p>* A slide endpoint (which will transport a cow to the other endpoint)</p>
+<p>* The exit</p>
+<p>A cow can only move from one space to the next if they are adjacent and neither contains corn. Each grassy space has four potential neighbors to which a cow can travel. It takes 1 unit of time to move from a grassy space to an adjacent space; it takes 0 units of time to move from one slide endpoint to the other.</p>
+<p>Corn-filled spaces are denoted with an octothorpe (#). Grassy spaces are denoted with a period (.). Pairs of slide endpoints are denoted with the same uppercase letter (A-Z), and no two different slides have endpoints denoted with the same letter. The exit is denoted with the equals sign (=).</p>
+<p>Bessie got lost. She knows where she is on the grid, and marked her current grassy space with the 'at' symbol (@). What is the minimum time she needs to move to the exit space?</p>
+<h3 id="输入格式-15">输入格式</h3>
+<p>第一行：两个用空格隔开的整数 $N$ 和 $M$。</p>
+<p>第 $2\sim N+1$ 行：第 $i+1$ 行描述了迷宫中的第 $i$ 行的情况（共有$M$个字符，每个字符中间没有空格）。</p>
+<h3 id="输出格式-15">输出格式</h3>
+<p>一个整数，表示起点到出口所需的最短时间。</p>
+<h3 id="样例-1-14">样例 #1</h3>
+<h4 id="样例输入-1-14">样例输入 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">5 6
+</span></span><span class="line"><span class="ln">2</span><span class="cl">###=##
+</span></span><span class="line"><span class="ln">3</span><span class="cl">#.W.##
+</span></span><span class="line"><span class="ln">4</span><span class="cl">#.####
+</span></span><span class="line"><span class="ln">5</span><span class="cl">#.@W##
+</span></span><span class="line"><span class="ln">6</span><span class="cl">######
+</span></span></code></pre></div><h4 id="样例输出-1-14">样例输出 #1</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">3
+</span></span></code></pre></div><h3 id="提示-12">提示</h3>
+<p>例如以下矩阵，$N=5,M=6$。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="ln">1</span><span class="cl">###=##
+</span></span><span class="line"><span class="ln">2</span><span class="cl">#.W.##
+</span></span><span class="line"><span class="ln">3</span><span class="cl">#.####
+</span></span><span class="line"><span class="ln">4</span><span class="cl">#.@W##
+</span></span><span class="line"><span class="ln">5</span><span class="cl">######
+</span></span></code></pre></div><p>唯一的一个装置的结点用大写字母 $\tt{W}$ 表示。</p>
+<p>最优方案为：先向右走到装置的结点，花费一个单位时间，再到装置的另一个结点上，花费 $0$ 个单位时间，然后再向右走一个，再向上走一个，到达出口处，总共花费了 $3$ 个单位时间。</p>
+<h3 id="题解-13">题解</h3>
+<p>这道题本质上还是一个广搜走迷宫的问题，只是加了传送门需要特判。传送门可以传送过去，也可以传送回来，而且一对传送门可以重复使用。例如下面这种情况：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">####=#
+</span></span><span class="line"><span class="ln">2</span><span class="cl">#....#
+</span></span><span class="line"><span class="ln">3</span><span class="cl">#.####
+</span></span><span class="line"><span class="ln">4</span><span class="cl">#.#A.#
+</span></span><span class="line"><span class="ln">5</span><span class="cl">#.####
+</span></span><span class="line"><span class="ln">6</span><span class="cl">#.A.@#
+</span></span><span class="line"><span class="ln">7</span><span class="cl">######
+</span></span></code></pre></div><p>因为传送本身不计算步数，所以穿过传送门时增加的步数应该记在出口传送门上，这样防止反复穿越传送门时错误地计算步数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">portal</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">maze</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">maze</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="n">start</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="n">p</span> <span class="o">=</span> <span class="n">portal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">list</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                <span class="n">portal</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span> <span class="o">=</span> <span class="n">start</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">visited</span><span class="p">[</span><span class="n">sx</span><span class="p">][</span><span class="n">sy</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="n">directions</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">            <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">            <span class="k">if</span> <span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;=&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">visited</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">                <span class="k">return</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">            <span class="k">elif</span> <span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span> <span class="ow">and</span> <span class="n">visited</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">                <span class="n">visited</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="n">visited</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">            <span class="k">elif</span> <span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">                <span class="k">if</span> <span class="n">portal</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">                    <span class="n">px</span><span class="p">,</span> <span class="n">py</span> <span class="o">=</span> <span class="n">portal</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">                    <span class="n">px</span><span class="p">,</span> <span class="n">py</span> <span class="o">=</span> <span class="n">portal</span><span class="p">[</span><span class="n">maze</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">
+</span></span><span class="line"><span class="ln">43</span><span class="cl">                <span class="k">if</span> <span class="n">visited</span><span class="p">[</span><span class="n">px</span><span class="p">][</span><span class="n">py</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">                    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">                    <span class="n">visited</span><span class="p">[</span><span class="n">px</span><span class="p">][</span><span class="n">py</span><span class="p">]</span> <span class="o">=</span> <span class="n">visited</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">
+</span></span><span class="line"><span class="ln">47</span><span class="cl">
+</span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">    <span class="n">main</span><span class="p">()</span>
 </span></span></code></pre></div>
     </div>
 
@@ -1295,11 +1685,13 @@ src='https://plausible.io/js/plausible.js'>
 	  
 	      <li><a href="https://jackgdn.github.io/post/searching/" class="nav-link" title="搜索练习">搜索练习</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a></li>
+	      <li><a href="https://jackgdn.github.io/post/knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/lanqiao-week2/" class="nav-link" title="2025寒假算法练习——Week 2">2025寒假算法练习——Week 2</a></li>
+	      <li><a href="https://jackgdn.github.io/post/knapsackproblem-3/" class="nav-link" title="背包问题——多重背包问题">背包问题——多重背包问题</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/lanqiao-week1/" class="nav-link" title="2025寒假算法练习——Week 1">2025寒假算法练习——Week 1</a></li>
+	      <li><a href="https://jackgdn.github.io/post/knapsackproblem-2/" class="nav-link" title="背包问题——完全背包问题">背包问题——完全背包问题</a></li>
+	  
+	      <li><a href="https://jackgdn.github.io/post/knapsackproblem-1/" class="nav-link" title="背包问题——01背包问题">背包问题——01背包问题</a></li>
 	  
 	</ul>
 
@@ -1347,15 +1739,19 @@ src='https://plausible.io/js/plausible.js'>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
+          <a href="https://jackgdn.github.io/post/knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/lanqiao-week2/" class="nav-link" title="2025寒假算法练习——Week 2">2025寒假算法练习——Week 2</a>
+          <a href="https://jackgdn.github.io/post/knapsackproblem-3/" class="nav-link" title="背包问题——多重背包问题">背包问题——多重背包问题</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/lanqiao-week1/" class="nav-link" title="2025寒假算法练习——Week 1">2025寒假算法练习——Week 1</a>
+          <a href="https://jackgdn.github.io/post/knapsackproblem-2/" class="nav-link" title="背包问题——完全背包问题">背包问题——完全背包问题</a>
+        </li>
+        
+        <li>
+          <a href="https://jackgdn.github.io/post/knapsackproblem-1/" class="nav-link" title="背包问题——01背包问题">背包问题——01背包问题</a>
         </li>
         
       </ul>
@@ -1461,14 +1857,14 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
-          2025 寒假算法练习
-          <span class="button_tally">4</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">4</span>
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
+          2025 寒假算法练习
+          <span class="button_tally">3</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">

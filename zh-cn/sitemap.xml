@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,14 +15,11 @@
                 href="https://jackgdn.github.io/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://jackgdn.github.io/tags/bfs/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -35,10 +32,10 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/dfs/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -51,7 +48,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/series/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,7 +61,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -77,16 +74,22 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/searching/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
+    <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/lanqiao-week3/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
@@ -104,9 +107,6 @@
     <lastmod>2025-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/knapsackproblem-4/</loc>
-    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/knapsackproblem-3/</loc>
