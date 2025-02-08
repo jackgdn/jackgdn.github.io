@@ -185,6 +185,11 @@ src='https://plausible.io/js/plausible.js'>
     <li><a href="#92-递归实现指数型枚举httpswwwacwingcomproblemcontentdescription94"><a href="https://www.acwing.com/problem/content/description/94/">92. 递归实现指数型枚举</a></a></li>
     <li><a href="#94-递归实现排列型枚举httpswwwacwingcomproblemcontentdescription96"><a href="https://www.acwing.com/problem/content/description/96/">94. 递归实现排列型枚举</a></a></li>
     <li><a href="#717-简单斐波那契httpswwwacwingcomproblemcontentdescription719"><a href="https://www.acwing.com/problem/content/description/719/">717. 简单斐波那契</a></a></li>
+    <li><a href="#95-费解的开关httpswwwacwingcomproblemcontentdescription97"><a href="https://www.acwing.com/problem/content/description/97/">95. 费解的开关</a></a></li>
+    <li><a href="#93-递归实现组合型枚举httpswwwacwingcomproblemcontentdescription95"><a href="https://www.acwing.com/problem/content/description/95/">93. 递归实现组合型枚举</a></a></li>
+    <li><a href="#1209-带分数httpswwwacwingcomproblemcontentdescription1211"><a href="https://www.acwing.com/problem/content/description/1211/">1209. 带分数</a></a></li>
+    <li><a href="#116-飞行员兄弟httpswwwacwingcomproblemcontentdescription118"><a href="https://www.acwing.com/problem/content/description/118/">116. 飞行员兄弟</a></a></li>
+    <li><a href="#1208-翻硬币httpswwwacwingcomproblemcontent1210"><a href="https://www.acwing.com/problem/content/1210/">1208. 翻硬币</a></a></li>
   </ul>
 </nav>
       </div>
@@ -252,7 +257,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">
 </span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">fib</span><span class="p">)))</span>
-</span></span></code></pre></div><p><a href="https://www.acwing.com/problem/content/description/97/">95. 费解的开关</a></p>
+</span></span></code></pre></div><h2 id="95-费解的开关httpswwwacwingcomproblemcontentdescription97"><a href="https://www.acwing.com/problem/content/description/97/">95. 费解的开关</a></h2>
 <p>这道题有点难住我了，最开始尝试广搜结果超时，深搜也超时，所以看了题解。题解中用的是模拟+递推的思想。<br/>
 第一行的五个开关按与不按一共有 $2^5$ 种情况，对于每一种情况，都假设第一行开关的状态已经确定，如果此时要改变第一行灯的状态，则去按第二行的开关；当通过按第二行的开关将第一行的灯都打开后，第二行开关的状态已经确定，如果还需要更改第二行的灯的状态则去第三行……依此类推，直到第四行灯都打开而第五行开关状态确定时，检测第五行的灯是否全亮以及步数是否超过限制即可。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -292,7 +297,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-</span></span></code></pre></div><p><a href="https://www.acwing.com/problem/content/description/95/">93. 递归实现组合型枚举</a></p>
+</span></span></code></pre></div><h2 id="93-递归实现组合型枚举httpswwwacwingcomproblemcontentdescription95"><a href="https://www.acwing.com/problem/content/description/95/">93. 递归实现组合型枚举</a></h2>
 <p>搜索与回溯解法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
@@ -316,7 +321,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">comb</span> <span class="o">=</span> <span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comb</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">c</span><span class="p">)))</span>
-</span></span></code></pre></div><p><a href="https://www.acwing.com/problem/content/description/1211/">1209. 带分数</a></p>
+</span></span></code></pre></div><h2 id="1209-带分数httpswwwacwingcomproblemcontentdescription1211"><a href="https://www.acwing.com/problem/content/description/1211/">1209. 带分数</a></h2>
 <p>这道题大致的思路就是枚举 $a\space b\space c$ 的值，然后验证方程 $n=a+\frac bc$ 是否成立。对于这个题可以做如下优化：根据方程知道 $a&lt;n$，所以枚举 $a$ 时，只需在位数小于等于 $n$ 的数字中枚举，且只有 $a&lt;n$ 时才继续枚举另外两个变量；对原方程作变换后得到 $b=c\cdot(n-a)$，这样可以通过枚举 $a\space c$ 计算出 $b$，然后判断 $b$ 是否是由剩下的数字组合而成，而不需要再去枚举 $b$ 的值。</p>
 <p>使用 Python 解决问题时，为了方便，使用 <code>itertools</code> 中的 <code>combinations</code> 与 <code>permutations</code> 函数。在枚举 $a\space c$ 时，首先确定位数，随后用 <code>permutations</code> 函数筛选出指定位数的各种组合，最后使用 <code>combinations</code> 函数生成对应的全排列，将每一种排列连接成数即是要枚举的数。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span><span class="p">,</span> <span class="n">combinations</span>
@@ -358,7 +363,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">37</span><span class="cl">
 </span></span><span class="line"><span class="ln">38</span><span class="cl">
 </span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-</span></span></code></pre></div><p><a href="https://www.acwing.com/problem/content/description/118/">116. 飞行员兄弟</a></p>
+</span></span></code></pre></div><h2 id="116-飞行员兄弟httpswwwacwingcomproblemcontentdescription118"><a href="https://www.acwing.com/problem/content/description/118/">116. 飞行员兄弟</a></h2>
 <p>题目类似于费解的开关，想不到递推或者递归的写法，但是用广搜可以 AC。<br/>
 因为最优解中肯定没有重复使用的开关，而且解与路径无关，因此给 16 个开关按照 0-15 编号，当一个开关被操作后，下一次操作只能在这个编号大于这个开关的开关中完成。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
@@ -401,7 +406,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">38</span><span class="cl">        <span class="n">new_step</span> <span class="o">=</span> <span class="n">step</span><span class="p">[:]</span>
 </span></span><span class="line"><span class="ln">39</span><span class="cl">        <span class="n">new_step</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">curr_x</span><span class="p">,</span> <span class="n">curr_y</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_field</span><span class="p">,</span> <span class="n">new_step</span><span class="p">))</span>
-</span></span></code></pre></div><p><a href="https://www.acwing.com/problem/content/1210/">1208. 翻硬币</a></p>
+</span></span></code></pre></div><h2 id="1208-翻硬币httpswwwacwingcomproblemcontent1210"><a href="https://www.acwing.com/problem/content/1210/">1208. 翻硬币</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">toggle</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;o&#34;</span><span class="p">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="s2">&#34;*&#34;</span><span class="p">:</span> <span class="s2">&#34;o&#34;</span><span class="p">}</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">init</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
