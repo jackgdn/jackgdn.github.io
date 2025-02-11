@@ -8,11 +8,27 @@
     <language>zh-cn</language>
     <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>二分查找练习</title>
+      <title>二分查找与前缀和练习</title>
       <link>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/</guid>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>贪心策略练习</title>
+      <link>https://jackgdn.github.io/post/algo-greedy/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-greedy/</guid>
       <description>
         
           

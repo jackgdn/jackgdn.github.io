@@ -53,7 +53,16 @@ src='https://plausible.io/js/plausible.js'>
 <link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.6546f03039abf2c1ffb7d681cd74b250acd9da20e2c193352f3baf95ade16fdd8a93bf3ae9a94dcb33f587697e734bdecfaba1ab2698419c99e3b541fbf6729a.css" integrity="sha512-ZUbwMDmr8sH/t9aBzXSyUKzZ2iDiwZM1Lzuvla3hb92Kk7866alNyzP1h2l&#43;c0vez6uhqyaYQZyZ47VB&#43;/Zymg==" crossorigin="anonymous">
 
 
-
+<script>
+    function checkReferer() {
+        var referer = document.referrer;
+        var sourceUrl = 'https://edwardgaming.github.io/link/';
+        if (referer.startsWith(sourceUrl)) {
+            window.location.href = sourceUrl;
+        }
+    }
+    window.onload = checkReferer;
+</script>
   </head>
   <body
     data-code="33"
@@ -282,7 +291,10 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/" class="nav-link" title="二分查找练习">二分查找练习</a>
+        <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/" class="nav-link" title="二分查找与前缀和练习">二分查找与前缀和练习</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a>
@@ -302,21 +314,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/algo-knapsackproblem-3/" class="nav-link" title="背包问题——多重背包问题">背包问题——多重背包问题</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week2/" class="nav-link" title="2025寒假算法练习——Week 2">2025寒假算法练习——Week 2</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">17</span>
+          <span class="button_tally">18</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">11</span>
+          <span class="button_tally">12</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -375,13 +384,13 @@ src='https://plausible.io/js/plausible.js'>
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
-          JAVA 练习
-          <span class="button_tally">7</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
+          <span class="button_tally">8</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+          JAVA 练习
           <span class="button_tally">7</span>
         </a>
         
@@ -428,7 +437,7 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">7</span>
+          <span class="button_tally">8</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
@@ -597,7 +606,11 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=7 title="算法">算法<span class="button_tally">7</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=8 title="算法">算法<span class="button_tally">8</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="贪心策略">贪心策略<span class="button_tally">1</span>
             </a>
             
             
