@@ -15,6 +15,12 @@
                 href="https://jackgdn.github.io/"
                 />
   </url><url>
+    <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/lanqiao-week5/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -108,9 +114,6 @@
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
-    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/lanqiao-week4/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
@@ -249,9 +252,29 @@
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/tags/%E6%97%A5%E5%BF%97/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/categories/%E6%97%A5%E5%BF%97/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/post/log-2024-09-18/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
@@ -398,6 +421,19 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/2.19/</loc>
     <lastmod>2024-02-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/log-2025-02-19/</loc>
+    <lastmod>2024-02-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/post/log-2025-02-19/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/post/log-2025-02-19/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/post/nss18/</loc>
     <lastmod>2024-02-14T00:00:00+00:00</lastmod>
