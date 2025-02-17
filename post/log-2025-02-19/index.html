@@ -298,123 +298,7 @@ src='https://plausible.io/js/plausible.js'>
         });
     })();
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-
-
-
-
-
-<div class="player" id="b">
-    <div class="imgBx">
-        <img src="https://p1.music.126.net/8riFbGqi8a2l8caE44U8QQ==/109951168592265427.jpg">
-        <button class="play-btn"><i class="fas fa-play"></i></button>
-    </div>
-    <div class="text-content">
-        <a href="https://music.163.com/#/song?id=35804601" class="button mt-1" target="_blank" rel="noopener noreferrer">My Shot - Hamilton (Original Broadway Cast Recording)</a>
-    </div>
-    <audio class="audio-player">
-        <source src="https://c1029.dmpdmp.com/64708eae35121eddc6841c7cfad21db2/67b0bd9c/2024/01/15/d687ebedafbb55e714778a3746a1328a.mp3?fn=My%20Shot-Original%20Broadway%20Cast%20Of%20Hamilton%2CLin-Manuel%20Miranda%2CDaveed%20Diggs%2COkieriete%20Onaodowan%2CLesli.mp3" type="audio/mpeg">
-    </audio>
 </div>
-
-<style>
-    .player * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    .player {
-        width: 300px;
-        background-color: rgba(0, 119, 184, 0.15);
-        padding: 20px 14px 8px 14px;
-        border: none;
-        border-radius: 1.5rem;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0.25rem 1rem;
-        position: relative;
-        text-align: center;
-    }
-    .imgBx {
-        position: relative;
-    }
-    .imgBx img {
-        width: 100%;
-        height: auto;
-        border: solid;
-        border-radius: 1.5rem;
-    }
-    .text-content {
-        margin: 3px 0;
-        padding: 0.5rem 1.5rem;
-    }
-    .text-content a {
-        color: #ffffff;
-        font-size: 16px;
-        text-decoration: none;
-    }
-    .audio-player {
-        display: none;
-    }
-    .play-btn {
-        background: rgb(0, 119, 184);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-    .play-btn:hover {
-        background: rgb(0, 53, 83);
-    }
-    .play-btn i {
-        color: #fff;
-    }
-</style>
-
-<script>
-    (function () {
-        const playerId = "b";
-        const audioPlayer = document.querySelector(`#${playerId} .audio-player`);
-        const playButton = document.querySelector(`#${playerId} .play-btn`);
-        playButton.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playButton.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                audioPlayer.pause();
-                playButton.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        });
-        audioPlayer.addEventListener('ended', () => {
-            playButton.innerHTML = '<i class="fas fa-play"></i>';
-        });
-    })();
-</script>
-</div>
-<style>
-    .row {
-        display: flex;
-        justify-content: space-between;
-        width: 75%;
-        margin: 0 auto
-    }
-    @media (max-width: 1265px) {
-        .row {
-            flex-direction: column;
-            align-items: center;
-        }
-        .row > div {
-            margin-bottom: 40px;
-        }
-    }
-</style>
 <br>
 <br>
     </div>
@@ -466,6 +350,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
       </li>
       <li>
@@ -486,21 +373,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">23</span>
+          <span class="button_tally">24</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -561,7 +445,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">8</span>
+          <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
@@ -592,7 +476,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
@@ -610,6 +494,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">8</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">7</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
@@ -617,21 +506,16 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
-          <span class="button_tally">6</span>
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+          背包问题
           <span class="button_tally">5</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
-          背包问题
           <span class="button_tally">4</span>
         </a>
         
@@ -677,7 +561,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=5 title="dfs">DFS<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=7 title="dfs">DFS<span class="button_tally">7</span>
             </a>
             
             
@@ -733,7 +617,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=5 title="背包问题">背包问题<span class="button_tally">5</span>
             </a>
             
             
@@ -749,7 +633,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=7 title="动态规划">动态规划<span class="button_tally">7</span>
             </a>
             
             
@@ -777,7 +661,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="数论">数论<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
             </a>
             
             
@@ -785,7 +669,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=13 title="算法">算法<span class="button_tally">13</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=14 title="算法">算法<span class="button_tally">14</span>
             </a>
             
             

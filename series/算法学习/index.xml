@@ -6,7 +6,23 @@
     <description>Recent content in 算法学习 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数学与动态规划练习</title>
+      <link>https://jackgdn.github.io/post/algo-math&#43;dp/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-math&#43;dp/</guid>
+      <description>
+        
+          
+            数学与动态规划练习
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>贪心策略练习</title>
       <link>https://jackgdn.github.io/post/algo-greedy/</link>

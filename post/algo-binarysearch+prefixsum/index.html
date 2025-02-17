@@ -25,18 +25,18 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="题目来自 AcWing 789. 数的范围 这道题做法很多。
+<meta name="description" content="题目来自 AcWing 789. 数的范围 | 原题链接 这道题做法很多。
 使用双指针将每一段的信息存储到字典中：
-1n, q = map(int, input().strip().split(&#34; &#34;)) 2nums = tuple(map(int, input().strip().split(&#34; …" />
+1n, q = map(int, input().strip().split(&#34; &#34;)) 2nums = tuple(map(int, …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="二分查找与前缀和练习" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/" />
 <meta property="og:title" content="二分查找与前缀和练习" />
-<meta property="og:description" content="题目来自 AcWing 789. 数的范围 这道题做法很多。
+<meta property="og:description" content="题目来自 AcWing 789. 数的范围 | 原题链接 这道题做法很多。
 使用双指针将每一段的信息存储到字典中：
-1n, q = map(int, input().strip().split(&#34; &#34;)) 2nums = tuple(map(int, input().strip().split(&#34; …" />
+1n, q = map(int, input().strip().split(&#34; &#34;)) 2nums = tuple(map(int, …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -182,22 +182,22 @@ src='https://plausible.io/js/plausible.js'>
         <h2>文章目录</h2>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#789-数的范围httpswwwacwingcomproblemcontentdescription791"><a href="https://www.acwing.com/problem/content/description/791/">789. 数的范围</a></a></li>
-    <li><a href="#790-数的三次方根httpswwwacwingcomproblemcontentdescription792"><a href="https://www.acwing.com/problem/content/description/792/">790. 数的三次方根</a></a></li>
-    <li><a href="#795-前缀和httpswwwacwingcomproblemcontentdescription797"><a href="https://www.acwing.com/problem/content/description/797/">795. 前缀和</a></a></li>
-    <li><a href="#796-子矩阵的和httpswwwacwingcomproblemcontentdescription798"><a href="https://www.acwing.com/problem/content/description/798/">796. 子矩阵的和</a></a></li>
-    <li><a href="#730-机器人跳跃问题httpswwwacwingcomproblemcontentdescription732"><a href="https://www.acwing.com/problem/content/description/732/">730. 机器人跳跃问题</a></a></li>
-    <li><a href="#1221-四平方和httpswwwacwingcomproblemcontentdescription1223"><a href="https://www.acwing.com/problem/content/description/1223/">1221. 四平方和</a></a></li>
-    <li><a href="#1227-分巧克力httpswwwacwingcomproblemcontent1229"><a href="https://www.acwing.com/problem/content/1229/">1227. 分巧克力</a></a></li>
-    <li><a href="#99-激光炸弹httpswwwacwingcomproblemcontentdescription101"><a href="https://www.acwing.com/problem/content/description/101/">99. 激光炸弹</a></a></li>
-    <li><a href="#1230-k倍区间httpswwwacwingcomproblemcontent1232"><a href="https://www.acwing.com/problem/content/1232/">1230. K倍区间</a></a></li>
+    <li><a href="#789-数的范围--原题链接httpswwwacwingcomproblemcontentdescription791">789. 数的范围 | <a href="https://www.acwing.com/problem/content/description/791/">原题链接</a></a></li>
+    <li><a href="#790-数的三次方根--原题链接httpswwwacwingcomproblemcontentdescription792">790. 数的三次方根 | <a href="https://www.acwing.com/problem/content/description/792/">原题链接</a></a></li>
+    <li><a href="#795-前缀和--原题链接httpswwwacwingcomproblemcontentdescription797">795. 前缀和 | <a href="https://www.acwing.com/problem/content/description/797/">原题链接</a></a></li>
+    <li><a href="#796-子矩阵的和--原题链接httpswwwacwingcomproblemcontentdescription798">796. 子矩阵的和 | <a href="https://www.acwing.com/problem/content/description/798/">原题链接</a></a></li>
+    <li><a href="#730-机器人跳跃问题--原题链接httpswwwacwingcomproblemcontentdescription732">730. 机器人跳跃问题 | <a href="https://www.acwing.com/problem/content/description/732/">原题链接</a></a></li>
+    <li><a href="#1221-四平方和--原题链接httpswwwacwingcomproblemcontentdescription1223">1221. 四平方和 | <a href="https://www.acwing.com/problem/content/description/1223/">原题链接</a></a></li>
+    <li><a href="#1227-分巧克力--原题链接httpswwwacwingcomproblemcontent1229">1227. 分巧克力 | <a href="https://www.acwing.com/problem/content/1229/">原题链接</a></a></li>
+    <li><a href="#99-激光炸弹--原题链接httpswwwacwingcomproblemcontentdescription101">99. 激光炸弹 | <a href="https://www.acwing.com/problem/content/description/101/">原题链接</a></a></li>
+    <li><a href="#1230-k倍区间--原题链接httpswwwacwingcomproblemcontent1232">1230. K倍区间 | <a href="https://www.acwing.com/problem/content/1232/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
     
     <div class="post_body"><h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
 <hr>
-<h2 id="789-数的范围httpswwwacwingcomproblemcontentdescription791"><a href="https://www.acwing.com/problem/content/description/791/">789. 数的范围</a></h2>
+<h2 id="789-数的范围--原题链接httpswwwacwingcomproblemcontentdescription791">789. 数的范围 | <a href="https://www.acwing.com/problem/content/description/791/">原题链接</a></h2>
 <p>这道题做法很多。</p>
 <p>使用双指针将每一段的信息存储到字典中：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
@@ -250,7 +250,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">L</span>
 </span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </span></span></code></pre></div><p>注意当查找段首和段尾时，左右指针的变换规则不同。</p>
-<h2 id="790-数的三次方根httpswwwacwingcomproblemcontentdescription792"><a href="https://www.acwing.com/problem/content/description/792/">790. 数的三次方根</a></h2>
+<h2 id="790-数的三次方根--原题链接httpswwwacwingcomproblemcontentdescription792">790. 数的三次方根 | <a href="https://www.acwing.com/problem/content/description/792/">原题链接</a></h2>
 <p>暴力解法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -278,7 +278,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">mid</span> <span class="o">-</span> <span class="mf">1e-7</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>二分查找的速度比硬算快，但是最后要减去 1e-7 才能 AC，原理不清楚，可能与 Python 保留精度的机制有关。</p>
 <p>另外，无论是 f-string，<code>format</code> 函数还是 <code>round</code> 函数，其保留精度都是通过四舍五入完成的，f-string 与 <code>format</code> 函数会保留末位 0 而 <code>round</code> 函数不会。</p>
-<h2 id="795-前缀和httpswwwacwingcomproblemcontentdescription797"><a href="https://www.acwing.com/problem/content/description/797/">795. 前缀和</a></h2>
+<h2 id="795-前缀和--原题链接httpswwwacwingcomproblemcontentdescription797">795. 前缀和 | <a href="https://www.acwing.com/problem/content/description/797/">原题链接</a></h2>
 <p>利用前缀和解决即可</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -290,7 +290,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">pref</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">-</span> <span class="n">pref</span><span class="p">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-</span></span></code></pre></div><h2 id="796-子矩阵的和httpswwwacwingcomproblemcontentdescription798"><a href="https://www.acwing.com/problem/content/description/798/">796. 子矩阵的和</a></h2>
+</span></span></code></pre></div><h2 id="796-子矩阵的和--原题链接httpswwwacwingcomproblemcontentdescription798">796. 子矩阵的和 | <a href="https://www.acwing.com/problem/content/description/798/">原题链接</a></h2>
 <p>前缀和二维版。利用容斥原理，使用已知的前缀和来计算当前前缀和，即 <code>pref[i][j] = pref[i][j - 1] + matrix[i][j] + pref[i - 1][j] - pref[i - 1][j - 1]</code>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
@@ -306,7 +306,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">pref</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">-</span> <span class="n">pref</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">-</span> <span class="n">pref</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pref</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-</span></span></code></pre></div><h2 id="730-机器人跳跃问题httpswwwacwingcomproblemcontentdescription732"><a href="https://www.acwing.com/problem/content/description/732/">730. 机器人跳跃问题</a></h2>
+</span></span></code></pre></div><h2 id="730-机器人跳跃问题--原题链接httpswwwacwingcomproblemcontentdescription732">730. 机器人跳跃问题 | <a href="https://www.acwing.com/problem/content/description/732/">原题链接</a></h2>
 <p>这道题可以使用二分查找解决。当机器人的初始能量与最高塔高相同时，机器人保证能通过。因此在这个范围内查找机器人能够通过与不能通过的分界点。使用二分查找可以将时间复杂度从 O(n) 降低至 O(logn)。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -340,7 +340,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">L</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">31</span><span class="cl">
 </span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="1221-四平方和httpswwwacwingcomproblemcontentdescription1223"><a href="https://www.acwing.com/problem/content/description/1223/">1221. 四平方和</a></h2>
+</span></span></code></pre></div><h2 id="1221-四平方和--原题链接httpswwwacwingcomproblemcontentdescription1223">1221. 四平方和 | <a href="https://www.acwing.com/problem/content/description/1223/">原题链接</a></h2>
 <p>逐层遍历四个数肯定是要超时的，因此需要想其他办法解决。观察等式 $n=a^2+b^2+c^2+d^2$，可以将四个自变量两两分组，得到 $n-(c^2+d^2)=a^2+b^2$。只需要从 0 开始遍历 c 与 d，随后将所有可能的 $c^2+d^2$ 的值存储起来，然后在存储的值中查找是否有满足条件的平方和即可。这个思路相当于在遍历 c 与 d 时，同时遍历了 a 与 b 可能的结果，因此将时间复杂度从 O(n⁴) 降低到 O(n²)。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">sqrtn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -362,7 +362,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)))</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="n">exit</span><span class="p">()</span>
 </span></span></code></pre></div><p>至于为什么 <code>record</code> 中只存储使 c d 满足 $c^2+d^2=m,m\leq n$ 的第一组数，是因为第一次出现这样的 c d 时，其联合主键一定是字典序最小的。另外根据 Python3 中字典键顺序为插入顺序的特性，<code>record</code> 中键的顺序又是其值（即 a b 或 c d 组成的有序数对）作为联合主键的字典序，因此在最后遍历字典时，能够保证 $c\geq a,d\geq b$。</p>
-<h2 id="1227-分巧克力httpswwwacwingcomproblemcontent1229"><a href="https://www.acwing.com/problem/content/1229/">1227. 分巧克力</a></h2>
+<h2 id="1227-分巧克力--原题链接httpswwwacwingcomproblemcontent1229">1227. 分巧克力 | <a href="https://www.acwing.com/problem/content/1229/">原题链接</a></h2>
 <p>还是使用二分查找来解决，这道题属于查找左侧段的右边界。这道题的坑在于，并不是每一块巧克力都会被切开分出去，所以 R 的初始值应该是所有边长的最大值而非最小值。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">chocolates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -391,7 +391,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">R</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">26</span><span class="cl">
 </span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="99-激光炸弹httpswwwacwingcomproblemcontentdescription101"><a href="https://www.acwing.com/problem/content/description/101/">99. 激光炸弹</a></h2>
+</span></span></code></pre></div><h2 id="99-激光炸弹--原题链接httpswwwacwingcomproblemcontentdescription101">99. 激光炸弹 | <a href="https://www.acwing.com/problem/content/description/101/">原题链接</a></h2>
 <p>二维前缀和。注意一枚炸弹的半径可能能够将全部目标摧毁，所以要依据 x y r 的关系分情况讨论。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#define _CRT_SECURE_NO_WARNINGS
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
@@ -472,7 +472,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">30</span><span class="cl">            <span class="n">max_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_w</span><span class="p">,</span> <span class="n">targets</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
 </span></span><span class="line"><span class="ln">31</span><span class="cl">
 </span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">max_w</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="1230-k倍区间httpswwwacwingcomproblemcontent1232"><a href="https://www.acwing.com/problem/content/1232/">1230. K倍区间</a></h2>
+</span></span></code></pre></div><h2 id="1230-k倍区间--原题链接httpswwwacwingcomproblemcontent1232">1230. K倍区间 | <a href="https://www.acwing.com/problem/content/1232/">原题链接</a></h2>
 <p>依然使用前缀和解决。题目要求在前缀和数组中找出所有差能够整除 k 的数对的数量，如果使用两层循环，则一定会超时，因此使用数学方法优化。假设存在两数 $i,j,(i&lt;j)$ 使得 $(j-i)\space mod\space k=0$，变换后得到 $i\equiv j\space (mod\space k)$。因此可以创建一个字典用于存储同余类，然后遍历字典得到所有组合。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">pref</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -495,6 +495,8 @@ src='https://plausible.io/js/plausible.js'>
 
 	<h2 class="post_related">相关系列文章</h2>
 	<ul>
+	  
+	      <li><a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a></li>
 	  
@@ -554,6 +556,10 @@ src='https://plausible.io/js/plausible.js'>
       <ul>
         
         <li>
+          <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+        </li>
+        
+        <li>
           <a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
         </li>
         
@@ -590,6 +596,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
       </li>
       <li>
@@ -610,21 +619,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">23</span>
+          <span class="button_tally">24</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -685,7 +691,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">8</span>
+          <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
@@ -716,7 +722,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
@@ -734,6 +740,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">8</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">7</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
@@ -741,21 +752,16 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
-          <span class="button_tally">6</span>
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+          背包问题
           <span class="button_tally">5</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
-          背包问题
           <span class="button_tally">4</span>
         </a>
         
@@ -801,7 +807,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=5 title="dfs">DFS<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=7 title="dfs">DFS<span class="button_tally">7</span>
             </a>
             
             
@@ -857,7 +863,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=5 title="背包问题">背包问题<span class="button_tally">5</span>
             </a>
             
             
@@ -873,7 +879,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=7 title="动态规划">动态规划<span class="button_tally">7</span>
             </a>
             
             
@@ -901,7 +907,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="数论">数论<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
             </a>
             
             
@@ -909,7 +915,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=13 title="算法">算法<span class="button_tally">13</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=14 title="算法">算法<span class="button_tally">14</span>
             </a>
             
             

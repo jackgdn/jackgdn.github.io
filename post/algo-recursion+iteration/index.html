@@ -25,16 +25,16 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="题目来自 AcWing 92. 递归实现指数型枚举 使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。
-1n = int(input()) 2nums = list(range(1, n &#43; 1)) 3 4def dfs(current, nums): 5 if len(nums) == 0: 6 …" />
+<meta name="description" content="题目来自 AcWing 92. 递归实现指数型枚举 | 原题链接 使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。
+1n = int(input()) 2nums = list(range(1, n &#43; 1)) 3 4def dfs(current, nums): 5 if len(nums) == 0: …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="递归与递推练习" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/algo-recursion&#43;iteration/" />
 <meta property="og:title" content="递归与递推练习" />
-<meta property="og:description" content="题目来自 AcWing 92. 递归实现指数型枚举 使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。
-1n = int(input()) 2nums = list(range(1, n &#43; 1)) 3 4def dfs(current, nums): 5 if len(nums) == 0: 6 …" />
+<meta property="og:description" content="题目来自 AcWing 92. 递归实现指数型枚举 | 原题链接 使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。
+1n = int(input()) 2nums = list(range(1, n &#43; 1)) 3 4def dfs(current, nums): 5 if len(nums) == 0: …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -182,21 +182,21 @@ src='https://plausible.io/js/plausible.js'>
         <h2>文章目录</h2>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#92-递归实现指数型枚举httpswwwacwingcomproblemcontentdescription94"><a href="https://www.acwing.com/problem/content/description/94/">92. 递归实现指数型枚举</a></a></li>
-    <li><a href="#94-递归实现排列型枚举httpswwwacwingcomproblemcontentdescription96"><a href="https://www.acwing.com/problem/content/description/96/">94. 递归实现排列型枚举</a></a></li>
-    <li><a href="#717-简单斐波那契httpswwwacwingcomproblemcontentdescription719"><a href="https://www.acwing.com/problem/content/description/719/">717. 简单斐波那契</a></a></li>
-    <li><a href="#95-费解的开关httpswwwacwingcomproblemcontentdescription97"><a href="https://www.acwing.com/problem/content/description/97/">95. 费解的开关</a></a></li>
-    <li><a href="#93-递归实现组合型枚举httpswwwacwingcomproblemcontentdescription95"><a href="https://www.acwing.com/problem/content/description/95/">93. 递归实现组合型枚举</a></a></li>
-    <li><a href="#1209-带分数httpswwwacwingcomproblemcontentdescription1211"><a href="https://www.acwing.com/problem/content/description/1211/">1209. 带分数</a></a></li>
-    <li><a href="#116-飞行员兄弟httpswwwacwingcomproblemcontentdescription118"><a href="https://www.acwing.com/problem/content/description/118/">116. 飞行员兄弟</a></a></li>
-    <li><a href="#1208-翻硬币httpswwwacwingcomproblemcontent1210"><a href="https://www.acwing.com/problem/content/1210/">1208. 翻硬币</a></a></li>
+    <li><a href="#92-递归实现指数型枚举--原题链接httpswwwacwingcomproblemcontentdescription94">92. 递归实现指数型枚举 | <a href="https://www.acwing.com/problem/content/description/94/">原题链接</a></a></li>
+    <li><a href="#94-递归实现排列型枚举--原题链接httpswwwacwingcomproblemcontentdescription96">94. 递归实现排列型枚举 | <a href="https://www.acwing.com/problem/content/description/96/">原题链接</a></a></li>
+    <li><a href="#717-简单斐波那契--原题链接httpswwwacwingcomproblemcontentdescription719">717. 简单斐波那契 | <a href="https://www.acwing.com/problem/content/description/719/">原题链接</a></a></li>
+    <li><a href="#95-费解的开关--原题链接httpswwwacwingcomproblemcontentdescription97">95. 费解的开关 | <a href="https://www.acwing.com/problem/content/description/97/">原题链接</a></a></li>
+    <li><a href="#93-递归实现组合型枚举--原题链接httpswwwacwingcomproblemcontentdescription95">93. 递归实现组合型枚举 | <a href="https://www.acwing.com/problem/content/description/95/">原题链接</a></a></li>
+    <li><a href="#1209-带分数--原题链接httpswwwacwingcomproblemcontentdescription1211">1209. 带分数 | <a href="https://www.acwing.com/problem/content/description/1211/">原题链接</a></a></li>
+    <li><a href="#116-飞行员兄弟--原题链接httpswwwacwingcomproblemcontentdescription118">116. 飞行员兄弟 | <a href="https://www.acwing.com/problem/content/description/118/">原题链接</a></a></li>
+    <li><a href="#1208-翻硬币--原题链接httpswwwacwingcomproblemcontent1210">1208. 翻硬币 | <a href="https://www.acwing.com/problem/content/1210/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
     
     <div class="post_body"><h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
 <hr>
-<h2 id="92-递归实现指数型枚举httpswwwacwingcomproblemcontentdescription94"><a href="https://www.acwing.com/problem/content/description/94/">92. 递归实现指数型枚举</a></h2>
+<h2 id="92-递归实现指数型枚举--原题链接httpswwwacwingcomproblemcontentdescription94">92. 递归实现指数型枚举 | <a href="https://www.acwing.com/problem/content/description/94/">原题链接</a></h2>
 <p>使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
@@ -210,7 +210,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">dfs</span><span class="p">(</span><span class="n">current</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])],</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">dfs</span><span class="p">(</span><span class="nb">list</span><span class="p">(),</span> <span class="n">nums</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="94-递归实现排列型枚举httpswwwacwingcomproblemcontentdescription96"><a href="https://www.acwing.com/problem/content/description/96/">94. 递归实现排列型枚举</a></h2>
+</span></span></code></pre></div><h2 id="94-递归实现排列型枚举--原题链接httpswwwacwingcomproblemcontentdescription96">94. 递归实现排列型枚举 | <a href="https://www.acwing.com/problem/content/description/96/">原题链接</a></h2>
 <p>全排列，一般做法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span>
@@ -239,7 +239,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">perm</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">perm</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span> <span class="n">perm</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="n">perm</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="717-简单斐波那契httpswwwacwingcomproblemcontentdescription719"><a href="https://www.acwing.com/problem/content/description/719/">717. 简单斐波那契</a></h2>
+</span></span></code></pre></div><h2 id="717-简单斐波那契--原题链接httpswwwacwingcomproblemcontentdescription719">717. 简单斐波那契 | <a href="https://www.acwing.com/problem/content/description/719/">原题链接</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -257,7 +257,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">
 </span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">fib</span><span class="p">)))</span>
-</span></span></code></pre></div><h2 id="95-费解的开关httpswwwacwingcomproblemcontentdescription97"><a href="https://www.acwing.com/problem/content/description/97/">95. 费解的开关</a></h2>
+</span></span></code></pre></div><h2 id="95-费解的开关--原题链接httpswwwacwingcomproblemcontentdescription97">95. 费解的开关 | <a href="https://www.acwing.com/problem/content/description/97/">原题链接</a></h2>
 <p>这道题有点难住我了，最开始尝试广搜结果超时，深搜也超时，所以看了题解。题解中用的是模拟+递推的思想。<br/>
 第一行的五个开关按与不按一共有 $2^5$ 种情况，对于每一种情况，都假设第一行开关的状态已经确定，如果此时要改变第一行灯的状态，则去按第二行的开关；当通过按第二行的开关将第一行的灯都打开后，第二行开关的状态已经确定，如果还需要更改第二行的灯的状态则去第三行……依此类推，直到第四行灯都打开而第五行开关状态确定时，检测第五行的灯是否全亮以及步数是否超过限制即可。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -297,7 +297,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-</span></span></code></pre></div><h2 id="93-递归实现组合型枚举httpswwwacwingcomproblemcontentdescription95"><a href="https://www.acwing.com/problem/content/description/95/">93. 递归实现组合型枚举</a></h2>
+</span></span></code></pre></div><h2 id="93-递归实现组合型枚举--原题链接httpswwwacwingcomproblemcontentdescription95">93. 递归实现组合型枚举 | <a href="https://www.acwing.com/problem/content/description/95/">原题链接</a></h2>
 <p>搜索与回溯解法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
@@ -321,7 +321,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">comb</span> <span class="o">=</span> <span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comb</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">c</span><span class="p">)))</span>
-</span></span></code></pre></div><h2 id="1209-带分数httpswwwacwingcomproblemcontentdescription1211"><a href="https://www.acwing.com/problem/content/description/1211/">1209. 带分数</a></h2>
+</span></span></code></pre></div><h2 id="1209-带分数--原题链接httpswwwacwingcomproblemcontentdescription1211">1209. 带分数 | <a href="https://www.acwing.com/problem/content/description/1211/">原题链接</a></h2>
 <p>这道题大致的思路就是枚举 $a\space b\space c$ 的值，然后验证方程 $n=a+\frac bc$ 是否成立。对于这个题可以做如下优化：根据方程知道 $a&lt;n$，所以枚举 $a$ 时，只需在位数小于等于 $n$ 的数字中枚举，且只有 $a&lt;n$ 时才继续枚举另外两个变量；对原方程作变换后得到 $b=c\cdot(n-a)$，这样可以通过枚举 $a\space c$ 计算出 $b$，然后判断 $b$ 是否是由剩下的数字组合而成，而不需要再去枚举 $b$ 的值。</p>
 <p>使用 Python 解决问题时，为了方便，使用 <code>itertools</code> 中的 <code>combinations</code> 与 <code>permutations</code> 函数。在枚举 $a\space c$ 时，首先确定位数，随后用 <code>permutations</code> 函数筛选出指定位数的各种组合，最后使用 <code>combinations</code> 函数生成对应的全排列，将每一种排列连接成数即是要枚举的数。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span><span class="p">,</span> <span class="n">combinations</span>
@@ -363,7 +363,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">37</span><span class="cl">
 </span></span><span class="line"><span class="ln">38</span><span class="cl">
 </span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="116-飞行员兄弟httpswwwacwingcomproblemcontentdescription118"><a href="https://www.acwing.com/problem/content/description/118/">116. 飞行员兄弟</a></h2>
+</span></span></code></pre></div><h2 id="116-飞行员兄弟--原题链接httpswwwacwingcomproblemcontentdescription118">116. 飞行员兄弟 | <a href="https://www.acwing.com/problem/content/description/118/">原题链接</a></h2>
 <p>题目类似于费解的开关，想不到递推或者递归的写法，但是用广搜可以 AC。<br/>
 因为最优解中肯定没有重复使用的开关，而且解与路径无关，因此给 16 个开关按照 0-15 编号，当一个开关被操作后，下一次操作只能在这个编号大于这个开关的开关中完成。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
@@ -406,7 +406,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">38</span><span class="cl">        <span class="n">new_step</span> <span class="o">=</span> <span class="n">step</span><span class="p">[:]</span>
 </span></span><span class="line"><span class="ln">39</span><span class="cl">        <span class="n">new_step</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">curr_x</span><span class="p">,</span> <span class="n">curr_y</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_field</span><span class="p">,</span> <span class="n">new_step</span><span class="p">))</span>
-</span></span></code></pre></div><h2 id="1208-翻硬币httpswwwacwingcomproblemcontent1210"><a href="https://www.acwing.com/problem/content/1210/">1208. 翻硬币</a></h2>
+</span></span></code></pre></div><h2 id="1208-翻硬币--原题链接httpswwwacwingcomproblemcontent1210">1208. 翻硬币 | <a href="https://www.acwing.com/problem/content/1210/">原题链接</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">toggle</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;o&#34;</span><span class="p">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="s2">&#34;*&#34;</span><span class="p">:</span> <span class="s2">&#34;o&#34;</span><span class="p">}</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">init</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
@@ -431,6 +431,8 @@ src='https://plausible.io/js/plausible.js'>
 
 	<h2 class="post_related">相关系列文章</h2>
 	<ul>
+	  
+	      <li><a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a></li>
 	  
@@ -490,6 +492,10 @@ src='https://plausible.io/js/plausible.js'>
       <ul>
         
         <li>
+          <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+        </li>
+        
+        <li>
           <a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
         </li>
         
@@ -526,6 +532,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
       </li>
       <li>
@@ -546,21 +555,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">23</span>
+          <span class="button_tally">24</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -621,7 +627,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">8</span>
+          <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
@@ -652,7 +658,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
@@ -670,6 +676,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">8</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">7</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
@@ -677,21 +688,16 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
-          <span class="button_tally">6</span>
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+          背包问题
           <span class="button_tally">5</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
-          背包问题
           <span class="button_tally">4</span>
         </a>
         
@@ -737,7 +743,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=5 title="dfs">DFS<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=7 title="dfs">DFS<span class="button_tally">7</span>
             </a>
             
             
@@ -793,7 +799,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=5 title="背包问题">背包问题<span class="button_tally">5</span>
             </a>
             
             
@@ -809,7 +815,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=7 title="动态规划">动态规划<span class="button_tally">7</span>
             </a>
             
             
@@ -837,7 +843,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="数论">数论<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
             </a>
             
             
@@ -845,7 +851,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=13 title="算法">算法<span class="button_tally">13</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=14 title="算法">算法<span class="button_tally">14</span>
             </a>
             
             

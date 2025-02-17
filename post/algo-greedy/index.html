@@ -26,8 +26,8 @@ src='https://plausible.io/js/plausible.js'>
 
 <meta property="og:type" content="article">
 <meta name="description" content="题目来自 AcWing 贪心更像是一种策略和思想，而不是某一种特定的算法。
-1055. 股票买卖 II 这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。
-1n = int(input()) 2nums = tuple(map(int, input().split(&#34; …" />
+1055. 股票买卖 II | 原题链接 这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。
+1n = int(input()) 2nums = tuple(map(int, …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="贪心策略练习" />
@@ -35,8 +35,8 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:url" content="https://jackgdn.github.io/post/algo-greedy/" />
 <meta property="og:title" content="贪心策略练习" />
 <meta property="og:description" content="题目来自 AcWing 贪心更像是一种策略和思想，而不是某一种特定的算法。
-1055. 股票买卖 II 这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。
-1n = int(input()) 2nums = tuple(map(int, input().split(&#34; …" />
+1055. 股票买卖 II | 原题链接 这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。
+1n = int(input()) 2nums = tuple(map(int, …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -181,13 +181,13 @@ src='https://plausible.io/js/plausible.js'>
         <h2>文章目录</h2>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#1055-股票买卖-iihttpswwwacwingcomproblemcontent1057"><a href="https://www.acwing.com/problem/content/1057/">1055. 股票买卖 II</a></a></li>
-    <li><a href="#104-货仓选址httpswwwacwingcomproblemcontent106"><a href="https://www.acwing.com/problem/content/106/">104. 货仓选址</a></a></li>
-    <li><a href="#112-雷达设备httpswwwacwingcomproblemcontentdescription114"><a href="https://www.acwing.com/problem/content/description/114/">112. 雷达设备</a></a></li>
-    <li><a href="#1235-付账问题httpswwwacwingcomproblemcontentdescription1237"><a href="https://www.acwing.com/problem/content/description/1237/">1235. 付账问题</a></a></li>
-    <li><a href="#1239-乘积最大httpswwwacwingcomproblemcontent1241"><a href="https://www.acwing.com/problem/content/1241/">1239. 乘积最大</a></a></li>
-    <li><a href="#1247-后缀表达式httpswwwacwingcomproblemcontent1249"><a href="https://www.acwing.com/problem/content/1249/">1247. 后缀表达式</a></a></li>
-    <li><a href="#1248-灵能传输httpswwwacwingcomproblemcontent1250"><a href="https://www.acwing.com/problem/content/1250/">1248. 灵能传输</a></a></li>
+    <li><a href="#1055-股票买卖-ii--原题链接httpswwwacwingcomproblemcontent1057">1055. 股票买卖 II | <a href="https://www.acwing.com/problem/content/1057/">原题链接</a></a></li>
+    <li><a href="#104-货仓选址--原题链接httpswwwacwingcomproblemcontent106">104. 货仓选址 | <a href="https://www.acwing.com/problem/content/106/">原题链接</a></a></li>
+    <li><a href="#112-雷达设备--原题链接httpswwwacwingcomproblemcontentdescription114">112. 雷达设备 | <a href="https://www.acwing.com/problem/content/description/114/">原题链接</a></a></li>
+    <li><a href="#1235-付账问题--原题链接httpswwwacwingcomproblemcontentdescription1237">1235. 付账问题 | <a href="https://www.acwing.com/problem/content/description/1237/">原题链接</a></a></li>
+    <li><a href="#1239-乘积最大--原题链接httpswwwacwingcomproblemcontent1241">1239. 乘积最大 | <a href="https://www.acwing.com/problem/content/1241/">原题链接</a></a></li>
+    <li><a href="#1247-后缀表达式--原题链接httpswwwacwingcomproblemcontent1249">1247. 后缀表达式 | <a href="https://www.acwing.com/problem/content/1249/">原题链接</a></a></li>
+    <li><a href="#1248-灵能传输--原题链接httpswwwacwingcomproblemcontent1250">1248. 灵能传输 | <a href="https://www.acwing.com/problem/content/1250/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
@@ -195,7 +195,7 @@ src='https://plausible.io/js/plausible.js'>
     <div class="post_body"><h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
 <p>贪心更像是一种策略和思想，而不是某一种特定的算法。</p>
 <hr>
-<h2 id="1055-股票买卖-iihttpswwwacwingcomproblemcontent1057"><a href="https://www.acwing.com/problem/content/1057/">1055. 股票买卖 II</a></h2>
+<h2 id="1055-股票买卖-ii--原题链接httpswwwacwingcomproblemcontent1057">1055. 股票买卖 II | <a href="https://www.acwing.com/problem/content/1057/">原题链接</a></h2>
 <p>这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -206,7 +206,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">7</span><span class="cl">        <span class="n">profit</span> <span class="o">+=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">profit</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="104-货仓选址httpswwwacwingcomproblemcontent106"><a href="https://www.acwing.com/problem/content/106/">104. 货仓选址</a></h2>
+</span></span></code></pre></div><h2 id="104-货仓选址--原题链接httpswwwacwingcomproblemcontent106">104. 货仓选址 | <a href="https://www.acwing.com/problem/content/106/">原题链接</a></h2>
 <p>货仓的在数轴上的位置一定在最小值和最大值之间，以确保总距离最近。当只有两个商店时，只要货仓的位置在两个商店中间，则总距离一定最小且相等；如果再增加两个商店，当货仓的位置位于所有商店的中间时，总距离依然最小且相等……再假设商店 $A_1,A_2,\cdots A_n$ 的位置升序排列，则货仓的位置一定在编号最中间的商店。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -231,7 +231,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">distance</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">pos</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">22</span><span class="cl">
 </span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="112-雷达设备httpswwwacwingcomproblemcontentdescription114"><a href="https://www.acwing.com/problem/content/description/114/">112. 雷达设备</a></h2>
+</span></span></code></pre></div><h2 id="112-雷达设备--原题链接httpswwwacwingcomproblemcontentdescription114">112. 雷达设备 | <a href="https://www.acwing.com/problem/content/description/114/">原题链接</a></h2>
 <p>首先以小岛为圆心，在岸上画出可以监测到小岛的区间。此时题目转换成在数轴上给出 n 个区间，最少点多少个点能够使每个区间中至少有一个点。</p>
 <p>以每个区间的右端点为 key 排序，然后选定第一个区间的右端点，依次检测每个区间的左端点是否在这个点的左侧。如果是则说明这两个区间可以共享一个点，否则则以新的一个区间的右端点作为基准点继续检测。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
@@ -252,7 +252,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">current</span> <span class="o">=</span> <span class="n">islands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="1235-付账问题httpswwwacwingcomproblemcontentdescription1237"><a href="https://www.acwing.com/problem/content/description/1237/">1235. 付账问题</a></h2>
+</span></span></code></pre></div><h2 id="1235-付账问题--原题链接httpswwwacwingcomproblemcontentdescription1237">1235. 付账问题 | <a href="https://www.acwing.com/problem/content/description/1237/">原题链接</a></h2>
 <p>当标标准差尽可能小的时候，每个人付的钱都应该尽量贴近平均值。如果有人带的钱少于平均值，那么就让他把自己带的钱都花掉，然后剩下的人继续平摊。一直重复这个过程即可标准差最小。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -289,7 +289,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">std_dev</span><span class="p">(</span><span class="n">paid</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>这段代码是正确的但是没有 AC，又是浮点数存储格式的问题。输出 <code>292984721.9100</code>；标准答案 <code>292984721.9099</code>。</p>
-<h2 id="1239-乘积最大httpswwwacwingcomproblemcontent1241"><a href="https://www.acwing.com/problem/content/1241/">1239. 乘积最大</a></h2>
+<h2 id="1239-乘积最大--原题链接httpswwwacwingcomproblemcontent1241">1239. 乘积最大 | <a href="https://www.acwing.com/problem/content/1241/">原题链接</a></h2>
 <p>首先，深搜是绝对会超时的。</p>
 <p>做以下几个特判：</p>
 <ul>
@@ -361,7 +361,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">56</span><span class="cl">    <span class="n">k</span> <span class="o">-=</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="ln">57</span><span class="cl">
 </span></span><span class="line"><span class="ln">58</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
-</span></span></code></pre></div><h2 id="1247-后缀表达式httpswwwacwingcomproblemcontent1249"><a href="https://www.acwing.com/problem/content/1249/">1247. 后缀表达式</a></h2>
+</span></span></code></pre></div><h2 id="1247-后缀表达式--原题链接httpswwwacwingcomproblemcontent1249">1247. 后缀表达式 | <a href="https://www.acwing.com/problem/content/1249/">原题链接</a></h2>
 <p>这道题的关键点在于后缀表达式。因为题目使用后缀表达式，结果就不是简单让最大的 n + 1 个数的和减去最小的 m 个数的和。例如使用 <code>-1 -2 -3 4 + - -</code> 能组成的结果最大的后缀表达式是 <code>4 -3 -2 + - -1 -</code>，转化为中缀表达式为 <code>4-(-3+(-2))-1=10</code>，而非 <code>4+(-3)-(-2)-(-1)=4</code>。因为使用后缀表达式，我们可以将其转化为 $a_1+a_2+\cdots-(a_k+a_{k+1}-a_{k+2}-\cdots)$。当减号的数量不为 0 时，我们可以通过将减号放进括号里来实现加法，将加号放进括号里来实现减法。通过此方法，当减号的数量不为 0 时，实际上可用的减号数量为 [1, m + n]。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)))</span>
@@ -382,7 +382,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-</span></span></code></pre></div><h2 id="1248-灵能传输httpswwwacwingcomproblemcontent1250"><a href="https://www.acwing.com/problem/content/1250/">1248. 灵能传输</a></h2>
+</span></span></code></pre></div><h2 id="1248-灵能传输--原题链接httpswwwacwingcomproblemcontent1250">1248. 灵能传输 | <a href="https://www.acwing.com/problem/content/1250/">原题链接</a></h2>
 <p>好难的题 QAQ</p>
 <p>这道题的第一步是计算这一个数列的前缀和。令前缀和序列为 $s$，则当一次灵能传输在位置 $i$ 发生时，有 $a'<em>{i-1}=a</em>{i-1}+a{i},\space a'<em>i=-a_i,\space a'</em>{i+1}=a_i+a_{i+1}$，对于前缀和 $s$ 来讲则有 $s'<em>{i-1}=s</em>{i-1}+a_i=s_i,\space s'<em>i=s'</em>{i-1}+a'<em>i=s</em>{i-1},\space s'<em>{i+1}=s'<em>i+a'</em>{i+1}=s</em>{i+1}$。观察可发现，进行一次灵能传输实际上是交换前缀和数列中两个元素的位置。而题目要求的 $max^n_{i=1}|a_i|$ 可以表示为 $max^n_{i=1}|s_i-s_{i-1}|$。所以题目的实际意思是对 $s$ 做排序，使这种排序中 $max^n_{i=1}|s_i-s_{i-1}|$ 的值最小。</p>
 <p>然而坑就在这个地方。因为对数列 $a$ 的首尾元素直接做灵能传输操作为非法，所以 $s$ 中的首尾元素的位置是无法改变的。因此需要寻找的排序方法要在首尾元素不变的情况下满足要求。这个过程在这篇<a href="https://www.acwing.com/solution/content/10886/">题解</a>中有详细解释。</p>
@@ -440,6 +440,8 @@ src='https://plausible.io/js/plausible.js'>
 
 	<h2 class="post_related">相关系列文章</h2>
 	<ul>
+	  
+	      <li><a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a></li>
 	  
@@ -499,6 +501,10 @@ src='https://plausible.io/js/plausible.js'>
       <ul>
         
         <li>
+          <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+        </li>
+        
+        <li>
           <a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
         </li>
         
@@ -535,6 +541,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
       </li>
       <li>
@@ -555,21 +564,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题——多维背包问题">背包问题——多维背包问题</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">23</span>
+          <span class="button_tally">24</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -630,7 +636,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">8</span>
+          <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
@@ -661,7 +667,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
@@ -679,6 +685,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">8</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">7</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
@@ -686,21 +697,16 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
-          <span class="button_tally">6</span>
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+          背包问题
           <span class="button_tally">5</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
-          背包问题
           <span class="button_tally">4</span>
         </a>
         
@@ -746,7 +752,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=5 title="dfs">DFS<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=7 title="dfs">DFS<span class="button_tally">7</span>
             </a>
             
             
@@ -802,7 +808,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=5 title="背包问题">背包问题<span class="button_tally">5</span>
             </a>
             
             
@@ -818,7 +824,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=7 title="动态规划">动态规划<span class="button_tally">7</span>
             </a>
             
             
@@ -846,7 +852,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="数论">数论<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
             </a>
             
             
@@ -854,7 +860,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=13 title="算法">算法<span class="button_tally">13</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=14 title="算法">算法<span class="button_tally">14</span>
             </a>
             
             
