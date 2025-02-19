@@ -274,21 +274,20 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">avg</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">n</span>
 </span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">avg</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">:]))</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="n">paid</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">avg</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="n">s</span> <span class="o">-=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">:])</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">paid</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="n">s</span> <span class="o">-=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">n</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">
-</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">paid</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">
-</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">std_dev</span><span class="p">(</span><span class="n">paid</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="n">paid</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">avg</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="n">s</span> <span class="o">-=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">:])</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="n">paid</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">s</span> <span class="o">-=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="n">n</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">std_dev</span><span class="p">(</span><span class="n">paid</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>这段代码是正确的但是没有 AC，又是浮点数存储格式的问题。输出 <code>292984721.9100</code>；标准答案 <code>292984721.9099</code>。</p>
+<hr>
+<p>2.18 更新：看到 7 天前提交的工单已处理就又试了试，现在这段代码可以 AC。</p>
 <h2 id="1239-乘积最大--原题链接httpswwwacwingcomproblemcontent1241">1239. 乘积最大 | <a href="https://www.acwing.com/problem/content/1241/">原题链接</a></h2>
 <p>首先，深搜是绝对会超时的。</p>
 <p>做以下几个特判：</p>
@@ -541,6 +540,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/log-2025-02-19/" class="nav-link" title="日志-2025-02-19">日志-2025-02-19</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
       </li>
       <li>
@@ -560,9 +562,6 @@ src='https://plausible.io/js/plausible.js'>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a>
-      </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
       </li>
     </ul>
     <div>
