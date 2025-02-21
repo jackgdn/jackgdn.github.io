@@ -291,7 +291,7 @@ $1\le m \le 20000$<br/>
 对于每名玩家 $a_i \ge 0$，$\sum\limits_{i=1}^n a_i \le m$</p>
 <h3 id="题解-1">题解</h3>
 <p>如果不是在题单中刷到这道题，我还真不一定能想到这道题要用分组背包模型解决。</p>
-<p>题目中的己方士兵人数是背包上限，每一座城都是一组，同一组里不同物品的重量是其他玩家放置的兵力乘二加一，而获得的价值是城堡编号 $i$ 乘上战败玩家的数量 $k$。因此可以将每座城堡中的兵力按照从小到大排序，小 C 在第 $i$ 座城堡每打赢一次，他就能够获得 $i$ 分，打赢前 $k$ 名玩家就能获得 $i\times k$ 分。因此可以知道状态转移方程为 <code>dp[j] = max(dp[j], dp[j - groups[i][k] * 2 - 1] + i * k)</code>。其中 <code>groups[i][k]</code> 表示防守第 $i$ 个城堡，按照兵力从小到大排序为 $k$ 的玩家的兵力。</p>
+<p>题目中的己方士兵人数是背包上限，每一座城都是一组，同一组里不同物品的重量是其他玩家放置的兵力乘二加一，而获得的价值是城堡编号 $i$ 乘上战败玩家的数量 $k$。因此可以将每座城堡中的兵力按照从小到大排序，小 C 在第 $i$ 座城堡每打赢一次，他就能够获得 $i$ 分，打赢前 $k$ 名玩家就能获得 $i\times k$ 分。因此可以知道状态转移方程为 <code>dp[j] = max(dp[j], dp[j - groups[i][k] * 2 - 1] + i * k)</code>。其中 <code>groups[i][k]</code> 表示防守第 $i$ 个城堡，按照兵力从小到大排序为 $k$ 的玩家的兵力，即一组物品中的第 $k$ 个物品。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">groups</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -323,28 +323,28 @@ $1\le m \le 20000$<br/>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">20005</span><span class="p">];</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">groups</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">groups</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">
-</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl">		<span class="n">sort</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">sort</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">23</span><span class="cl">
-</span></span><span class="line"><span class="ln">24</span><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">					<span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">i</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">				<span class="p">}</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">			<span class="p">}</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">                    <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">33</span><span class="cl">
-</span></span><span class="line"><span class="ln">34</span><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]);</span>
 </span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
     </div>
@@ -488,6 +488,9 @@ $1\le m \le 20000$<br/>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/lanqiao-week6/" class="nav-link" title="2025寒假算法练习——Week 6">2025寒假算法练习——Week 6</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题——分组背包问题">背包问题——分组背包问题</a>
       </li>
       <li>
@@ -508,16 +511,13 @@ $1\le m \le 20000$<br/>
       <li>
         <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/" class="nav-link" title="二分查找与前缀和练习">二分查找与前缀和练习</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">26</span>
+          <span class="button_tally">27</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
@@ -570,6 +570,11 @@ $1\le m \le 20000$<br/>
           <span class="button_tally">1</span>
         </a>
         
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+          数据结构
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
           渗透
           <span class="button_tally">1</span>
@@ -593,7 +598,7 @@ $1\le m \le 20000$<br/>
         
         <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
           2025 寒假算法练习
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
@@ -799,6 +804,10 @@ $1\le m \le 20000$<br/>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=1 title="数据结构">数据结构<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
             </a>
             
@@ -828,6 +837,10 @@ $1\le m \le 20000$<br/>
             
             
             <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=1 title="栈">栈<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
