@@ -8,6 +8,38 @@
     <language>zh-cn</language>
     <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>背包问题——分组背包问题</title>
+      <link>https://jackgdn.github.io/post/algo-knapsackproblem-5/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-knapsackproblem-5/</guid>
+      <description>
+        
+          
+            背包问题——分组背包问题
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>动态规划练习</title>
+      <link>https://jackgdn.github.io/post/algo-dp-1/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-dp-1/</guid>
+      <description>
+        
+          
+            动态规划练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>日志-2025-02-19</title>
       <link>https://jackgdn.github.io/post/log-2025-02-19/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
