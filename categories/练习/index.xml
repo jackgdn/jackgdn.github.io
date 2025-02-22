@@ -6,7 +6,23 @@
     <description>Recent content in 练习 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025寒假算法练习——Week 7</title>
+      <link>https://jackgdn.github.io/post/lanqiao-week7/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/lanqiao-week7/</guid>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>2025寒假算法练习——Week 6</title>
       <link>https://jackgdn.github.io/post/lanqiao-week6/</link>
@@ -24,7 +40,7 @@
     </item>
     
     <item>
-      <title>背包问题——分组背包问题</title>
+      <title>背包问题练习——分组背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-5/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
@@ -32,7 +48,7 @@
       <description>
         
           
-            背包问题——分组背包问题
+            背包问题练习——分组背包问题
           
           
         
@@ -184,7 +200,7 @@
     </item>
     
     <item>
-      <title>背包问题——多维背包问题</title>
+      <title>背包问题练习——多维背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-4/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -192,7 +208,7 @@
       <description>
         
           
-            背包问题——多维背包问题
+            背包问题练习——多维背包问题
           
           
         
@@ -200,7 +216,7 @@
     </item>
     
     <item>
-      <title>背包问题——多重背包问题</title>
+      <title>背包问题练习——多重背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-3/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -208,7 +224,7 @@
       <description>
         
           
-            背包问题——多重背包问题
+            背包问题练习——多重背包问题
           
           
         
@@ -248,7 +264,7 @@
     </item>
     
     <item>
-      <title>背包问题——完全背包问题</title>
+      <title>背包问题练习——完全背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-2/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -256,7 +272,7 @@
       <description>
         
           
-            背包问题——完全背包问题
+            背包问题练习——完全背包问题
           
           
         
@@ -296,7 +312,7 @@
     </item>
     
     <item>
-      <title>背包问题——01背包问题</title>
+      <title>背包问题练习——01背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-1/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -304,7 +320,7 @@
       <description>
         
           
-            背包问题——01背包问题
+            背包问题练习——01背包问题
           
           
         
