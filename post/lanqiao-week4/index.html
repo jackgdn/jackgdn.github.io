@@ -157,9 +157,11 @@ Input 输入数据有多组，每组2个正整数a,b(2&lt;a,b&lt;1000) …" />
 </span>
     <span class="post_date">
       2025-02-06</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+    <span class="post_time"> · 8 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
         </a><a href='https://jackgdn.github.io/tags/dfs/' title="dfs" class="post_tag button button_translucent">dfs
         </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' title="数论" class="post_tag button button_translucent">数论
+        </a><a href='https://jackgdn.github.io/tags/gcd/' title="gcd" class="post_tag button button_translucent">gcd
+        </a><a href='https://jackgdn.github.io/tags/lcm/' title="lcm" class="post_tag button button_translucent">lcm
         </a>
     </span>
     <span class="page_only">&nbsp;·
@@ -185,6 +187,7 @@ Input 输入数据有多组，每组2个正整数a,b(2&lt;a,b&lt;1000) …" />
     <li><a href="#problem-764--多个数的最大公约数">Problem 764 | 多个数的最大公约数</a></li>
     <li><a href="#problem-765--多个数的最小公倍数">Problem 765 | 多个数的最小公倍数</a></li>
     <li><a href="#problem-1411--lcmgcd">Problem 1411 | LCM&amp;GCD</a></li>
+    <li><a href="#problem-1221--人见人爱gcd">Problem 1221 | 人见人爱gcd</a></li>
     <li><a href="#problem-1669--高木同学的因子">Problem 1669 | 高木同学的因子</a></li>
     <li><a href="#problem-601--快速幂取模">Problem 601 | 快速幂取模</a></li>
     <li><a href="#problem-1666--库特的数学题">Problem 1666 | 库特的数学题</a></li>
@@ -627,7 +630,66 @@ Input 输入数据有多组，每组2个正整数a,b(2&lt;a,b&lt;1000) …" />
 </span></span><span class="line"><span class="ln">90</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">91</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">92</span><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 id="problem-1669--高木同学的因子">Problem 1669 | 高木同学的因子</h2>
+</span></span></code></pre></div><h2 id="problem-1221--人见人爱gcd">Problem 1221 | 人见人爱gcd</h2>
+<ul>
+<li>Description</li>
+</ul>
+<p>x+y=a,lcm(x,y)=b;已知a和b求解x^2+y^2</p>
+<ul>
+<li>Input</li>
+</ul>
+<p>多组数据输入。<br/>
+第一行一个t表示a,b数对的数量。<br/>
+接下来t行2个数表示a,b<br/>
+T&lt;=100000<br/>
+a,b&lt;10^9;</p>
+<ul>
+<li>Output</li>
+</ul>
+<p>每组样例输出t行每行一个数表示x^2+y^2;</p>
+<ul>
+<li>Sample Input</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">2
+</span></span><span class="line"><span class="ln">2</span><span class="cl">6 4
+</span></span><span class="line"><span class="ln">3</span><span class="cl">6 3
+</span></span></code></pre></div><ul>
+<li>Sample Output</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">20
+</span></span><span class="line"><span class="ln">2</span><span class="cl">18
+</span></span></code></pre></div><ul>
+<li>Hint</li>
+</ul>
+<p>此题中b不保证非零</p>
+<p>如果要遍历 x 和 y 会 TLE，因此选用数学方法解决。</p>
+<p>$x^2+y^2=(x+y)^2-2xy$，而 $xy=GCD(x,y)\cdot LCM(x,y)$，代入得 $x^2+y^2=a^2-2b\cdot GCD(x,y)$。</p>
+<p>令 $GCD(x,y)=k,x=pk,y=qk$ 且 $p$ 与 $q$ 互质，代入得 $a=(p+q)k,b=pqk$。</p>
+<p>根据上式可得 $GCD(a,b)=GCD((p+q)k,pqk)=k=GCD(a,b)$，即 $GCD(x,y)=GCD(a,b)$。因此 $x^2+y^2=a^2-2b\cdot GCD(a,b)$。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp">#define LL long long
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">LL</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">LL</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">	<span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">	<span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">			<span class="n">k</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这道题最大的坑是多组输入外还有多组输入（最开始没有意识到，然后老是 WA），所以不得不用 <code>while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n)</code> 来判断是否 EOF。</p>
+<h2 id="problem-1669--高木同学的因子">Problem 1669 | 高木同学的因子</h2>
 <ul>
 <li>Description</li>
 </ul>
@@ -1166,7 +1228,15 @@ Input 输入数据有多组，每组2个正整数a,b(2&lt;a,b&lt;1000) …" />
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/gcd/' class=" post_tag button button_translucent" data-position=1 title="gcd">GCD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
             </a>
             
             
