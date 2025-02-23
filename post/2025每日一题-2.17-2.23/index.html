@@ -8,44 +8,50 @@
   
   
   >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<title>2025 春季每日一题 2.17-2.23  |  &lt;jack-gdn/&gt;</title>
+  <head>
+<title>每日一题 2.17-2.23  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+<script async defer data-domain="jackgdn.github.io"
+src='https://plausible.io/js/plausible.js'>
+</script>
+
+
+
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="题目来自 AcWing AcWing 6122. 农夫约翰的奶酪块 最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ 时，可以填充 …" />
+<meta name="description" content="题目来自 AcWing AcWing 6122. 农夫约翰的奶酪块 | 原题链接 最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="2025 春季每日一题 2.17-2.23" />
-<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
-<meta property="og:url" content="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" />
-<meta property="og:title" content="2025 春季每日一题 2.17-2.23" />
-<meta property="og:description" content="题目来自 AcWing AcWing 6122. 农夫约翰的奶酪块 最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ 时，可以填充 …" />
-<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
+<meta name="twitter:title" content="每日一题 2.17-2.23" />
+<meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
+<meta property="og:url" content="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" />
+<meta property="og:title" content="每日一题 2.17-2.23" />
+<meta property="og:description" content="题目来自 AcWing AcWing 6122. 农夫约翰的奶酪块 | 原题链接 最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ …" />
+<meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
-<link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
+<link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/">
-
-
-
-<link rel="preload" href="http://localhost:1313/css/styles.cc968124b54c3c859da3843a09ad03b81f6b0a69fc39f451cc92b92152dbd0bf38f2ead7b27c88220922ab03b574169057c9e6d1ddc6c3a7fab3f359a042eee9.css" integrity = "sha512-zJaBJLVMPIWdo4Q6Ca0DuB9rCmn8OfRRzJK5IVLb0L848urXsnyIIgkiqwO1dBaQV8nm0d3Gw6f6s/NZoELu6Q==" as="style" crossorigin="anonymous">
+<link rel="canonical" href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/">
 
 
 
-<link rel="preload" href="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" as="script" integrity=
-"sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.b4a28824ef3029edb3c95b4bbe6d0200d09556988e8463ad912b421650c12a4702d22eb369341ebe4d247b957cbdde9dfdffd215681f4e3daffdbfffaeb4cb48.css" integrity = "sha512-tKKIJO8wKe2zyVtLvm0CANCVVpiOhGOtkStCFlDBKkcC0i6zaTQevk0ke5V8vd6d/f/SFWgfTj2v/b//rrTLSA==" as="style" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.cc968124b54c3c859da3843a09ad03b81f6b0a69fc39f451cc92b92152dbd0bf38f2ead7b27c88220922ab03b574169057c9e6d1ddc6c3a7fab3f359a042eee9.css" integrity="sha512-zJaBJLVMPIWdo4Q6Ca0DuB9rCmn8OfRRzJK5IVLb0L848urXsnyIIgkiqwO1dBaQV8nm0d3Gw6f6s/NZoELu6Q==" crossorigin="anonymous">
+
+<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" as="script" integrity=
+"sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.b4a28824ef3029edb3c95b4bbe6d0200d09556988e8463ad912b421650c12a4702d22eb369341ebe4d247b957cbdde9dfdffd215681f4e3daffdbfffaeb4cb48.css" integrity="sha512-tKKIJO8wKe2zyVtLvm0CANCVVpiOhGOtkStCFlDBKkcC0i6zaTQevk0ke5V8vd6d/f/SFWgfTj2v/b//rrTLSA==" crossorigin="anonymous">
 
 
 
@@ -58,8 +64,8 @@
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='http://localhost:1313/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
-  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -80,13 +86,13 @@
         
 
   <div class="nav_parent">
-    <a href="http://localhost:1313/" class="nav_item" title="主页">主页 </a>
+    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
-    <a href="http://localhost:1313/about/" class="nav_item" title="关于">关于 </a>
+    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
   </div>
   <div class="nav_parent">
-    <a href="http://localhost:1313/links/" class="nav_item" title="链接">链接 </a>
+    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
   </div>
       
       <div class="nav_parent">
@@ -94,13 +100,13 @@
         <div class="nav_sub">
           <span class="nav_child"></span>
           
-          <a href="http://localhost:1313/" class="nav_child nav_item">简体中文</a>
+          <a href="https://jackgdn.github.io/" class="nav_child nav_item">简体中文</a>
           
-          <a href="http://localhost:1313/en/" class="nav_child nav_item">English</a>
+          <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
           
         </div>
-      </div><a href='http://localhost:1313/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
-  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
 </a>
 
 <div class='follow'>
@@ -140,7 +146,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">2025 春季每日一题 2.17-2.23</h1>
+    <h1 class="post_title">每日一题 2.17-2.23</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -148,14 +154,16 @@
 </svg>
 </span>
     <span class="post_date">
-      2025-02-04</span>
-    <span class="post_time"> · 1 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+      2025-02-23</span>
+    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+        </a><a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' title="枚举" class="post_tag button button_translucent">枚举
+        </a><a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' title="前缀和" class="post_tag button button_translucent">前缀和
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -170,14 +178,18 @@
         <h2>文章目录</h2>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#acwing-6122-农夫约翰的奶酪块httpswwwacwingcomproblemcontent6125"><a href="https://www.acwing.com/problem/content/6125/">AcWing 6122. 农夫约翰的奶酪块</a></a></li>
+    <li><a href="#acwing-6122-农夫约翰的奶酪块--原题链接httpswwwacwingcomproblemcontent6125">AcWing 6122. 农夫约翰的奶酪块 | <a href="https://www.acwing.com/problem/content/6125/">原题链接</a></a></li>
+    <li><a href="#6123-哞叫时间--原题链接httpswwwacwingcomproblemcontentdescription6126">6123. 哞叫时间 | <a href="https://www.acwing.com/problem/content/description/6126/">原题链接</a></a></li>
+    <li><a href="#6118-蛋糕游戏--原题链接httpswwwacwingcomproblemcontent6121">6118. 蛋糕游戏 | <a href="https://www.acwing.com/problem/content/6121/">原题链接</a></a></li>
+    <li><a href="#6134-哞叫时间ii--原题链接httpswwwacwingcomproblemcontent6137">6134. 哞叫时间II | <a href="https://www.acwing.com/problem/content/6137/">原题链接</a></a></li>
+    <li><a href="#6135-奶牛体检--原题链接httpswwwacwingcomproblemcontentdescription6138">6135. 奶牛体检 | <a href="https://www.acwing.com/problem/content/description/6138/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
     
     <div class="post_body"><h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
 <hr>
-<h2 id="acwing-6122-农夫约翰的奶酪块httpswwwacwingcomproblemcontent6125"><a href="https://www.acwing.com/problem/content/6125/">AcWing 6122. 农夫约翰的奶酪块</a></h2>
+<h2 id="acwing-6122-农夫约翰的奶酪块--原题链接httpswwwacwingcomproblemcontent6125">AcWing 6122. 农夫约翰的奶酪块 | <a href="https://www.acwing.com/problem/content/6125/">原题链接</a></h2>
 <p>最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ 时，可以填充的砖块方案数 $+1$。</p>
 <p>这样看来，能否填充砖块实际上只与 $x=N$ 或 $y=N$ 或 $z=N$ 处的前缀和有关，因此做出优化：用三个二维数组分别表示三个维度的前缀和，或者说对应位置的剩余方块数量，例如 <code>yz_projection[0][1]</code> 就表示 $y=0,\space z=1$ 区域中剩余方块数量。当一个区域中剩余方块数为 0 时，可以填充的砖块方案数 $+1$。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))</span>
@@ -202,13 +214,242 @@
 </span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">21</span><span class="cl">
 </span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="6123-哞叫时间--原题链接httpswwwacwingcomproblemcontentdescription6126">6123. 哞叫时间 | <a href="https://www.acwing.com/problem/content/description/6126/">原题链接</a></h2>
+<p>这道题的要求是匹配 <code>abb</code> 形式且出现过至少 $f$ 次的字符串。但是题目的变数就在于原字符串中允许有一个字符的变化，在变化后能够满足要求的子串也会被统计。</p>
+<p>首先最容易想到的就是暴力枚举。将原字符串中的每一个字符串按照字母表的顺序遍历一遍，然后再遍历新字符串查找 <code>abb</code> 字符串。这样做的时间复杂度是 $O(n\cdot15^n)$，题目给出的 $n$ 上限为 20000，这种做法肯定会超时。</p>
+<p>将字符串中每一个位置都用全部字母试一遍显然不靠谱，因此可以换一种思路。在第一遍遍历原字符串时，分别记录满足 <code>abb</code> <code>?bb</code> <code>a?b</code> <code>ab?</code> 格式字串的数量；对于可能有字符变化的子串，同时记录其待修改位置的字符。当遍历完时，足够数量的 <code>abb</code> 格式字串可以直接添加到结果中，随后处理可能有字符变化的字串时，如果某种字符刚好出现了 $f-1$ 次，那么说明其有可能是目标子串。这时需要将字串代回原字符串判断：将原字符串中对应的 <code>abb</code> 子串挖掉，如果剩余部分还可以出现 <code>?bb</code> 或 <code>a?b</code> 或 <code>ab?</code> 子串，则其为目标子串。代码实现如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">chars</span> <span class="o">=</span> <span class="s2">&#34;abcdefghijklmnopqrstuvwxyz&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">moo</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">visited</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">abb</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">count</span> <span class="o">=</span> <span class="n">abb</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="n">abb</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">count</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">_bb</span><span class="p">,</span> <span class="n">a_b</span><span class="p">,</span> <span class="n">ab_</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(),</span> <span class="nb">dict</span><span class="p">(),</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">_bb</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="nb">list</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="n">_bb</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pos</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">a_b</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="n">a_b</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pos</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">ab_</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">ab_</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pos</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="n">_bb</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">mat</span> <span class="o">=</span> <span class="n">_bb</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">pat</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">            <span class="n">w</span> <span class="o">=</span> <span class="n">ch</span> <span class="o">+</span> <span class="n">pat</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">            <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">            <span class="n">s_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">                <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">                    <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">                <span class="k">if</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">                    <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">                    <span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="n">a_b</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">    <span class="n">mat</span> <span class="o">=</span> <span class="n">a_b</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">    <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">pat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">f</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">        <span class="n">w</span> <span class="o">=</span> <span class="n">pat</span> <span class="o">+</span> <span class="n">pat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">        <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">        <span class="n">s_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">                <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">            <span class="k">if</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">                <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl">                <span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl">
+</span></span><span class="line"><span class="ln">67</span><span class="cl"><span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="n">ab_</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">68</span><span class="cl">    <span class="n">mat</span> <span class="o">=</span> <span class="n">ab_</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">    <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">pat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">f</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl">        <span class="n">w</span> <span class="o">=</span> <span class="n">pat</span> <span class="o">+</span> <span class="n">pat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">        <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">72</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">        <span class="n">s_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">                <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">78</span><span class="cl">            <span class="k">if</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">79</span><span class="cl">                <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">80</span><span class="cl">                <span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">81</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">82</span><span class="cl">
+</span></span><span class="line"><span class="ln">83</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">moo</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">84</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">moo</span><span class="p">)),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>这段代码可以 AC，但是感觉思路有些绕。可以通过两层循环构造 <code>abb</code> 子串，而不是在原字符串中遍历得到。直接构造的时间复杂度为 $O(25\times26\times n)$，同样能够接受。当 $f&gt;1$ 时，两层循环同样也不需要遍历全部 $26$ 个字母，因为被改变的原字符和目标字符都一定存在于原字符串中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">if</span> <span class="n">f</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">chars</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">chars</span> <span class="o">=</span> <span class="s2">&#34;abcdefghijklmnopqrstuvwxyz&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">moo</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">for</span> <span class="n">cj</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">if</span> <span class="n">ci</span> <span class="o">==</span> <span class="n">cj</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">w</span> <span class="o">=</span> <span class="n">ci</span> <span class="o">+</span> <span class="n">cj</span> <span class="o">+</span> <span class="n">cj</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;=</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;=</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="k">elif</span> <span class="n">cnt</span> <span class="o">&lt;</span> <span class="n">f</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">            <span class="n">s_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">                <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">                    <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">                <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">                    <span class="p">(</span><span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">                    <span class="ow">or</span> <span class="p">(</span><span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">                    <span class="ow">or</span> <span class="p">(</span><span class="n">s_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34; &#34;</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s_</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">                <span class="p">):</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">                    <span class="n">moo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">
+</span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">moo</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">moo</span><span class="p">)),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="6118-蛋糕游戏--原题链接httpswwwacwingcomproblemcontent6121">6118. 蛋糕游戏 | <a href="https://www.acwing.com/problem/content/6121/">原题链接</a></h2>
+<p>我们称吃两边的奶牛为 A，吃中间的奶牛为 B。题目要求两头牛都走最优策略，那么最优策略是什么呢？对于先手 B 而言，其最优策略是保证自己合成的蛋糕不被 A 吃掉，所以每次都合成最中间的蛋糕；而对于 A 而言，只要 B 只合成最中间的蛋糕，那么他肯定吃不到合成的大蛋糕，所以他最好是吃当下能吃到的最大蛋糕（贪心）。不难看出，B 只要合并最中间的两个蛋糕就行，而 A 要考虑的就多了。找规律发现，A 可以吃 $\frac{n}{2}-1$ 个蛋糕，B 可以吃 $\frac{n}{2}+1$ 个蛋糕。A 要想吃掉最多的蛋糕，就是要让前 $i$ 个蛋糕和最后 $j$ 个蛋糕的和最大，且 $i+j=\frac{n}{2}-1$。A 吃尽可能多，就只能委屈 B 吃尽可能少，因此问题可以转换成找中间连续 $\frac{n}{2}+1$ 个数和的最小值，故利用前缀和来解决。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">while</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">cakes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">prefix_sum</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="n">prefix_sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix_sum</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cakes</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">Bessie</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&#34;inf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">Bessie</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">Bessie</span><span class="p">,</span> <span class="n">prefix_sum</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefix_sum</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">Elsie</span> <span class="o">=</span> <span class="n">prefix_sum</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Bessie</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">Bessie</span><span class="p">,</span> <span class="n">Elsie</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">t</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span></code></pre></div><h2 id="6134-哞叫时间ii--原题链接httpswwwacwingcomproblemcontent6137">6134. 哞叫时间II | <a href="https://www.acwing.com/problem/content/6137/">原题链接</a></h2>
+<p>这道题目的要求是在字符串中找到形如“abb”的字串，当然字串可以不连续。数据范围在 $10^6$，枚举三个字符的时间复杂度为 $O(n^3)$ 肯定会超时，而按照数据范围，最终设计出的算法时间复杂度应为 $O(n)$。我们不妨从暴力枚举开始一步步优化。</p>
+<p>首先不难发现，最后两个字符相同。最外层循环确定最后一个字符时，如果还要从头开始遍历数组以确定第二个字符的位置，那么时间开销太大，并且重复而不必要。不难想到，一个简单快捷的方法就是将每一个字符的位置存储到字典中，这样可以节约一部分查找字符的时间。</p>
+<p>此时还面临另一个问题：确定好最后两个 b 时，如何不重不漏地找到 a。例如对于 <code>122122</code> 这一序列，满足条件的 <code>122</code> 总共出现了 7 次，但是总计只有一种满足“abb”格式的字串。一种常见消除重复项的方法是使用集合。如果使用集合，算法仍然会有 $O(n^2k)$ 的时间复杂度，$k$ 为出现最多字符的次数。然而对于这道题来说，只考虑某一字符出现的最后两次最作为重复的 b 显然是更优选择，再考虑这一字符倒数第二次出现前共有多少不重复的字符，同时单独用一个数组记录在位置 i 时共有多少个不重复的字符。这些不重复的字符就是对于确定的 b，所有 abb 的个数。当然，如果某一个 b 出现了不只两次，还要在前面的统计中减去它自身。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">num_pos</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">diff_cnt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">num_pos</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_pos</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">diff_cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">diff_cnt</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="n">diff_cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">diff_cnt</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">num_pos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_pos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">num_pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="k">if</span> <span class="n">pos</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="n">count</span> <span class="o">+=</span> <span class="n">diff_cnt</span><span class="p">[</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_pos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">num_pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="n">diff_cnt</span><span class="p">[</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</span></span></code></pre></div><p>对于这些设计低时间复杂度算法的题目，可以从暴力枚举入手，找到暴力做法中重复且无用的操作，然后空间换时间降低时间复杂度。</p>
+<h2 id="6135-奶牛体检--原题链接httpswwwacwingcomproblemcontentdescription6138">6135. 奶牛体检 | <a href="https://www.acwing.com/problem/content/description/6138/">原题链接</a></h2>
+<p>这道题还是与序列有关的问题。题目给出一个数字序列，允许翻转一次其中一段连续子序列，记录新的序列与原序列有多少重合。最普通最暴力的做法是定义两个指针分别代表 l 和 r，从左到右遍历 l 与 r，将 l r 中间的部分翻转得到一个新的子序列，最后遍历新序列并于目标序列做比较。这种做法的时间复杂度为 $O(n^3)$。</p>
+<p>最容易想到的优化是，在得到新的序列后，没有必要将新序列整体重新遍历，而是只用遍历改变了的部分（即 l r 之间）即可。通过创建前缀和数组，可以轻松获取l 到 r 区间内原序列与目标序列相同段的数量。用初始值减去这一数量再加上新序列这一段与目标序列相同的数量就是要求的数量。这样做的时间复杂度是 $O(\frac{n^3}{6})$，还是比较高。</p>
+<p>降低算法时间复杂度的方法是找到算法中重复执行或者无效执行的部分。对于上面这种算法来讲，例如当 $l=3,r=4$ 时，区间 $[3,4]$ 会被翻转一次；当 $l=2,r=5$ 时，区间 $[3,4]$ 还会被翻转一次；当 $l=1,r=6$ 时，区间 $[3,4]$ 又会被翻转，而每次翻转同一区间得到的结果总是相同，所以这就是算法中重复计算的部分。优化的思路是，使用从中间向两侧的方式遍历 l r 指针，每次只翻转并且比较指针指向的两个元素，翻转后不还原，下一轮翻转的结果直接通过当前翻转的结果计算。</p>
+<p>到这里算法就大体成型了。让一个中间指针遍历整个数组，然后 l r 指针从中间指针出发向两端移动。需要注意子序列长度为奇数与偶数的情况要分别讨论。实际操作时不需要真的翻转序列，只用计算两端的元素互换后多了少了哪些元素。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">original</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">expected</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">base</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">base</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">changed</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">while</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="n">count</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="n">changed</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                <span class="n">changed</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                <span class="n">changed</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">            <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                <span class="n">changed</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">            <span class="n">count</span><span class="p">[</span><span class="n">base</span> <span class="o">+</span> <span class="n">changed</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">l</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">changed</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="k">while</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">            <span class="n">changed</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">            <span class="n">changed</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">        <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">            <span class="n">changed</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">expected</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">            <span class="n">changed</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">        <span class="n">count</span><span class="p">[</span><span class="n">base</span> <span class="o">+</span> <span class="n">changed</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">        <span class="n">l</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">        <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">
+</span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span></span></code></pre></div>
     </div>
 
 	<h2 class="post_related">相关系列文章</h2>
 	<ul>
 	  
-	      <li><a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="2025 春季每日一题 2.17-2.23">2025 春季每日一题 2.17-2.23</a></li>
+	      <li><a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a></li>
 	  
 	</ul>
 
@@ -238,7 +479,7 @@
       <div class="author_bio">
         东北林业大学在读本科生，学习计算机科学与技术专业。
       </div>
-      <a href='http://localhost:1313/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
+      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
 
     
       <div class="sidebardisclaimer">
@@ -252,97 +493,126 @@
       <ul>
         
         <li>
-          <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="2025 春季每日一题 2.17-2.23">2025 春季每日一题 2.17-2.23</a>
+          <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a>
         </li>
         
       </ul>
     
+    <h2 class="mt-4">精选文章</h2>
+    <ul>
+      <li>
+        <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/2.19/" class="nav-link" title="2.19 解题记录">2.19 解题记录</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" class="nav-link" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="nav-link" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
+      </li>
+    </ul>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="http://localhost:1313/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
+        <a href="https://jackgdn.github.io/post/lanqiao-week7/" class="nav-link" title="2025寒假算法练习——Week 7">2025寒假算法练习——Week 7</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum/" class="nav-link" title="二分查找与前缀和练习">二分查找与前缀和练习</a>
+        <a href="https://jackgdn.github.io/post/lanqiao-week6/" class="nav-link" title="2025寒假算法练习——Week 6">2025寒假算法练习——Week 6</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a>
+        <a href="https://jackgdn.github.io/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习——分组背包问题">背包问题练习——分组背包问题</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/lanqiao-week4/" class="nav-link" title="2025寒假算法练习——Week 4">2025寒假算法练习——Week 4</a>
+        <a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="2025 春季每日一题 2.17-2.23">2025 春季每日一题 2.17-2.23</a>
+        <a href="https://jackgdn.github.io/post/log-2025-02-19/" class="nav-link" title="日志-2025-02-19">日志-2025-02-19</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a>
+        <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/lanqiao-week3/" class="nav-link" title="2025寒假算法练习——Week 3">2025寒假算法练习——Week 3</a>
+        <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">20</span>
+          <span class="button_tally">29</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+        <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">14</span>
+          <span class="button_tally">17</span>
         </a>
         
-        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/categories/java/' class="post_tag button button_translucent" title="java">
+        <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
           学习记录
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/categories/python/' class="post_tag button button_translucent" title="python">
+        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">6</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">4</span>
         </a>
         
-        <a href='http://localhost:1313/categories/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/categories/linux/' class="post_tag button button_translucent" title="linux">
+        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
           <span class="button_tally">2</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+          数据结构
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
           逆向
           <span class="button_tally">2</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
           数学
           <span class="button_tally">1</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+        <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
           渗透
           <span class="button_tally">1</span>
         </a>
@@ -353,33 +623,33 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
+        <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">8</span>
+          <span class="button_tally">11</span>
         </a>
         
-        <a href='http://localhost:1313/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
+          2025 寒假算法练习
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
           JAVA 练习
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
-          2025 寒假算法练习
-          <span class="button_tally">5</span>
-        </a>
-        
-        <a href='http://localhost:1313/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
+        <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
+        <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/series/%E7%AE%97%E6%B3%95%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="算法每日一题">
-          算法每日一题
+        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
+          每日一题
           <span class="button_tally">1</span>
         </a>
         
@@ -389,68 +659,68 @@
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
-          PYTHON
-          <span class="button_tally">11</span>
+        <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+          算法
+          <span class="button_tally">17</span>
         </a>
         
-        <a href='http://localhost:1313/tags/java/' class="post_tag button button_translucent" title="java">
-          JAVA
-          <span class="button_tally">10</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">10</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
-          算法
-          <span class="button_tally">10</span>
+        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">9</span>
         </a>
         
-        <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
+          动态规划
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">8</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
-          C&#43;&#43;
-          <span class="button_tally">6</span>
+        <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
+          JAVA
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
-          动态规划
-          <span class="button_tally">6</span>
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+          背包问题
+          <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">4</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
-          背包问题
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/misc/' class="post_tag button button_translucent" title="misc">
+        <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
           MISC
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/tags/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='https://jackgdn.github.io/tags/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/tags/bfs/' class="post_tag button button_translucent" title="bfs">
+        <a href='https://jackgdn.github.io/tags/bfs/' class="post_tag button button_translucent" title="bfs">
           BFS
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
           <span class="button_tally">2</span>
         </a>
         
@@ -460,139 +730,171 @@
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='http://localhost:1313/tags/bfs/' class=" post_tag button button_translucent" data-position=2 title="bfs">BFS<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/bfs/' class=" post_tag button button_translucent" data-position=2 title="bfs">BFS<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=6 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=2 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/dfs/' class=" post_tag button button_translucent" data-position=4 title="dfs">DFS<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=8 title="dfs">DFS<span class="button_tally">8</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/java/' class=" post_tag button button_translucent" data-position=10 title="java">JAVA<span class="button_tally">10</span>
+            <a href='https://jackgdn.github.io/tags/gcd/' class=" post_tag button button_translucent" data-position=1 title="gcd">GCD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=11 title="python">PYTHON<span class="button_tally">11</span>
+            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
+            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=9 title="python">PYTHON<span class="button_tally">9</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
+            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=4 title="背包问题">背包问题<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=1 title="递归">递归<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=7 title="背包问题">背包问题<span class="button_tally">7</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=6 title="动态规划">动态规划<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=2 title="递归">递归<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=1 title="二分查找">二分查找<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=9 title="动态规划">动态规划<span class="button_tally">9</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=1 title="前缀和">前缀和<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="队列">队列<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=4 title="日志">日志<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=1 title="二分查找">二分查找<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="数论">数论<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=2 title="枚举">枚举<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=2 title="前缀和">前缀和<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=10 title="算法">算法<span class="button_tally">10</span>
+            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=4 title="日志">日志<span class="button_tally">4</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=2 title="贪心策略">贪心策略<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=2 title="数据结构">数据结构<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="数论">数论<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=17 title="算法">算法<span class="button_tally">17</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="拓扑排序">拓扑排序<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=2 title="贪心策略">贪心策略<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/' class=" post_tag button button_translucent" data-position=1 title="图论">图论<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=1 title="栈">栈<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -706,7 +1008,7 @@
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='http://localhost:1313/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
+    <img src='https://jackgdn.github.io/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
     <p>版权所有&nbsp;2024 -&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利.<br/>
     除特别声明外, 本博客内所有文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可协议发布。转载请注明出处。</p><a class="to_top" href="#documentTop">
   <svg class="icon">
@@ -719,9 +1021,9 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" integrity="sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
 
-  <script src="http://localhost:1313/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
+  <script src="https://jackgdn.github.io/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
 <script>
     function checkReferer() {
         var referer = document.referrer;
