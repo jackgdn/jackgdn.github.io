@@ -392,9 +392,9 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div><p>对于这些设计低时间复杂度算法的题目，可以从暴力枚举入手，找到暴力做法中重复且无用的操作，然后空间换时间降低时间复杂度。</p>
 <h2 id="6135-奶牛体检--原题链接httpswwwacwingcomproblemcontentdescription6138">6135. 奶牛体检 | <a href="https://www.acwing.com/problem/content/description/6138/">原题链接</a></h2>
 <p>这道题还是与序列有关的问题。题目给出一个数字序列，允许翻转一次其中一段连续子序列，记录新的序列与原序列有多少重合。最普通最暴力的做法是定义两个指针分别代表 l 和 r，从左到右遍历 l 与 r，将 l r 中间的部分翻转得到一个新的子序列，最后遍历新序列并于目标序列做比较。这种做法的时间复杂度为 $O(n^3)$。</p>
-<p>最容易想到的优化是，在得到新的序列后，没有必要将新序列整体重新遍历，而是只用遍历改变了的部分（即 l r 之间）即可。通过创建前缀和数组，可以轻松获取l 到 r 区间内原序列与目标序列相同段的数量。用初始值减去这一数量再加上新序列这一段与目标序列相同的数量就是要求的数量。这样做的时间复杂度是 $O(\frac{n^3}{6})$，还是比较高。</p>
+<p>最容易想到的优化是，在得到新的序列后，没有必要将新序列整体重新遍历，而是只用遍历改变了的部分（即 l r 之间）即可。通过创建前缀和数组，可以轻松获取l 到 r 区间内原序列与目标序列相同段的数量。用初始值减去这一数量再加上新序列这一段与目标序列相同的数量就是要求的数量。不过这样做的时间复杂度还是 $O(n^3)$。</p>
 <p>降低算法时间复杂度的方法是找到算法中重复执行或者无效执行的部分。对于上面这种算法来讲，例如当 $l=3,r=4$ 时，区间 $[3,4]$ 会被翻转一次；当 $l=2,r=5$ 时，区间 $[3,4]$ 还会被翻转一次；当 $l=1,r=6$ 时，区间 $[3,4]$ 又会被翻转，而每次翻转同一区间得到的结果总是相同，所以这就是算法中重复计算的部分。优化的思路是，使用从中间向两侧的方式遍历 l r 指针，每次只翻转并且比较指针指向的两个元素，翻转后不还原，下一轮翻转的结果直接通过当前翻转的结果计算。</p>
-<p>到这里算法就大体成型了。让一个中间指针遍历整个数组，然后 l r 指针从中间指针出发向两端移动。需要注意子序列长度为奇数与偶数的情况要分别讨论。实际操作时不需要真的翻转序列，只用计算两端的元素互换后多了少了哪些元素。</p>
+<p>到这里算法就大体成型了。让一个中间指针遍历整个数组，然后 l r 指针从中间指针出发向两端移动。需要注意子序列长度为奇数与偶数的情况要分别讨论。实际操作时不需要真的翻转序列，只用计算两端的元素互换后多了少了哪些元素。这样时间复杂度为 $O(n^2)$</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
@@ -525,6 +525,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/lanqiao-week8/" class="nav-link" title="2025寒假算法练习——Week 8">2025寒假算法练习——Week 8</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a>
       </li>
       <li>
@@ -545,21 +548,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/lanqiao-week5/" class="nav-link" title="2025寒假算法练习——Week 5">2025寒假算法练习——Week 5</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">29</span>
+          <span class="button_tally">30</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">17</span>
+          <span class="button_tally">18</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -630,7 +630,7 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
           2025 寒假算法练习
-          <span class="button_tally">7</span>
+          <span class="button_tally">8</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
@@ -661,12 +661,17 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">17</span>
+          <span class="button_tally">18</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">10</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+          DFS
+          <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
@@ -677,11 +682,6 @@ src='https://plausible.io/js/plausible.js'>
         <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
           <span class="button_tally">9</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
-          <span class="button_tally">8</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
@@ -704,6 +704,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">4</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/bfs/' class="post_tag button button_translucent" title="bfs">
+          BFS
+          <span class="button_tally">3</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/misc/' class="post_tag button button_translucent" title="misc">
           MISC
           <span class="button_tally">3</span>
@@ -712,11 +717,6 @@ src='https://plausible.io/js/plausible.js'>
         <a href='https://jackgdn.github.io/tags/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/bfs/' class="post_tag button button_translucent" title="bfs">
-          BFS
-          <span class="button_tally">2</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
@@ -730,7 +730,7 @@ src='https://plausible.io/js/plausible.js'>
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='https://jackgdn.github.io/tags/bfs/' class=" post_tag button button_translucent" data-position=2 title="bfs">BFS<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/bfs/' class=" post_tag button button_translucent" data-position=3 title="bfs">BFS<span class="button_tally">3</span>
             </a>
             
             
@@ -746,7 +746,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=8 title="dfs">DFS<span class="button_tally">8</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=9 title="dfs">DFS<span class="button_tally">9</span>
             </a>
             
             
@@ -870,7 +870,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=17 title="算法">算法<span class="button_tally">17</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=18 title="算法">算法<span class="button_tally">18</span>
             </a>
             
             
@@ -1023,7 +1023,7 @@ src='https://plausible.io/js/plausible.js'>
 
 <script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
 
-  <script src="https://jackgdn.github.io/js/search.min.73cb82d8f274395dd220d6594053cd3d3d8ac8c97d874b5142a60b9744f3704d765551e0ade104d5803c66b731f5a7a00ac2cff33c8c9090ff8100169a3e2574.js"></script>
+  <script src="https://jackgdn.github.io/js/search.min.3b86f120a43abeeb2418c60805cce6e08a0b5a475e948e9ec71cba472622b61bb784e3b3c8d3c83e99fbafcae74f1e27b9888bd6f4bd1764de7e5394ceaca15a.js"></script>
 <script>
     function checkReferer() {
         var referer = document.referrer;
