@@ -159,7 +159,7 @@ Input 包括多个数据集合。每个数 …" />
 </span>
     <span class="post_date">
       2025-02-24</span>
-    <span class="post_time"> · 7 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+    <span class="post_time"> · 8 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
         </a><a href='https://jackgdn.github.io/tags/bfs/' title="bfs" class="post_tag button button_translucent">bfs
         </a><a href='https://jackgdn.github.io/tags/dfs/' title="dfs" class="post_tag button button_translucent">dfs
         </a>
@@ -278,7 +278,37 @@ Input 包括多个数据集合。每个数 …" />
 </span></span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><h2 id="problem-558--迷宫寻路-搜索">Problem 558 | 迷宫寻路-搜索</h2>
-<p>这道题用深搜和广搜都能解。</p>
+<ul>
+<li>Description</li>
+</ul>
+<p>AC小公主很喜欢设计迷宫，她设计的迷宫只有两个口，一个入口，一个出口。但小公主有时候很调皮，她会让挑战者走不出迷宫。现在给你AC小公主的迷宫请你判断挑战者能否成功从出口走出迷宫，迷宫包证边界为障碍物，只有两个不同的入口。<br/>
+“#”代表障碍物，“*”代表可走的路。</p>
+<ul>
+<li>Input</li>
+</ul>
+<p>输入有多组，每组输入两个正整数n，m（ 2 &lt; n &lt; m &lt; 1000）。<br>
+接下来n行，每行有m个字符。</p>
+<ul>
+<li>Output</li>
+</ul>
+<p>每组测试实例，若挑战者能走出迷宫输出”YES”，否则输出“NO”。</p>
+<ul>
+<li>Sample Input</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">3 3
+</span></span><span class="line"><span class="ln">2</span><span class="cl">#*#
+</span></span><span class="line"><span class="ln">3</span><span class="cl">#*#
+</span></span><span class="line"><span class="ln">4</span><span class="cl">#*#
+</span></span><span class="line"><span class="ln">5</span><span class="cl">3 3
+</span></span><span class="line"><span class="ln">6</span><span class="cl">#*#
+</span></span><span class="line"><span class="ln">7</span><span class="cl">###
+</span></span><span class="line"><span class="ln">8</span><span class="cl">#*#
+</span></span></code></pre></div><ul>
+<li>Sample Output</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">YES
+</span></span><span class="line"><span class="ln">2</span><span class="cl">NO
+</span></span></code></pre></div><p>这道题用深搜和广搜都能解。</p>
 <p>广搜写法：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span><span class="w">
