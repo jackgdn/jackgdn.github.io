@@ -191,6 +191,7 @@ src='https://plausible.io/js/plausible.js'>
     <li><a href="#1229-日期问题--原题链接httpswwwacwingcomproblemcontent1231">1229. 日期问题 | <a href="https://www.acwing.com/problem/content/1231/">原题链接</a></a></li>
     <li><a href="#1231-航班时间--原题链接httpswwwacwingcomproblemcontent1233">1231. 航班时间 | <a href="https://www.acwing.com/problem/content/1233/">原题链接</a></a></li>
     <li><a href="#1241-外卖店优先级--原题链接httpswwwacwingcomproblemcontentdescription1243">1241. 外卖店优先级 | <a href="https://www.acwing.com/problem/content/description/1243/">原题链接</a></a></li>
+    <li><a href="#788-逆序对的数量--原题链接httpswwwacwingcomproblemcontentdescription790">788. 逆序对的数量 | <a href="https://www.acwing.com/problem/content/description/790/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
@@ -692,7 +693,7 @@ src='https://plausible.io/js/plausible.js'>
 </li>
 </ul>
 <h2 id="1241-外卖店优先级--原题链接httpswwwacwingcomproblemcontentdescription1243">1241. 外卖店优先级 | <a href="https://www.acwing.com/problem/content/description/1243/">原题链接</a></h2>
-<p>有个测试点总是 TLE 死活过不了，我已经尽力优化了。也许用 C++ 可以解决但是我没精力重新写代码了。</p>
+<p>最后一个测试点总是 TLE 死活过不了，我已经在尽力优化了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">
@@ -736,6 +737,39 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">41</span><span class="cl">            <span class="n">prior</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="ln">42</span><span class="cl">
 </span></span><span class="line"><span class="ln">43</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">prior</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+</span></span></code></pre></div><h2 id="788-逆序对的数量--原题链接httpswwwacwingcomproblemcontentdescription790">788. 逆序对的数量 | <a href="https://www.acwing.com/problem/content/description/790/">原题链接</a></h2>
+<p>解法是<a href="https://jackgdn.github.io/post/algo-enumeration+simulation+sorting/#787-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F--%E5%8E%9F%E9%A2%98%E9%93%BE%E6%8E%A5httpswwwacwingcomproblemcontent789">归并排序</a>的变体。至于为什么能够转化为归并排序，详细解释在<a href="https://zhuanlan.zhihu.com/p/166127615">这里</a>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">return</span> <span class="n">nums</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">left</span><span class="p">,</span> <span class="n">left_count</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">right</span><span class="p">,</span> <span class="n">right_count</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">tmp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="n">count</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="n">tmp</span> <span class="o">+=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="n">tmp</span> <span class="o">+=</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">return</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">count</span> <span class="o">+</span> <span class="n">left_count</span> <span class="o">+</span> <span class="n">right_count</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">merge_sort</span><span class="p">(</span><span class="n">nums</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 </span></span></code></pre></div>
     </div>
 
