@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树状数组 on &lt;jack-gdn/&gt;</title>
+    <link>https://jackgdn.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+    <description>Recent content in 树状数组 on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树状数组、线段树与差分练习</title>
+      <link>https://jackgdn.github.io/post/algo-segmenttree/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-segmenttree/</guid>
+      <description>
+        
+          
+            树状数组、线段树与差分练习
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
