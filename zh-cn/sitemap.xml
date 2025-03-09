@@ -73,6 +73,9 @@
     <loc>https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -92,6 +95,9 @@
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/</loc>
@@ -125,9 +131,6 @@
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</loc>
-    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/</loc>
@@ -166,13 +169,13 @@
     <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week8/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week8/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</loc>
     <lastmod>2025-02-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week7/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week7/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E9%80%92%E5%BD%92/</loc>
@@ -181,7 +184,7 @@
     <loc>https://jackgdn.github.io/tags/%E9%98%9F%E5%88%97/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week6/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week6/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</loc>
@@ -224,13 +227,13 @@
     <loc>https://jackgdn.github.io/post/algo-math&#43;dp/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week5/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week5/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/algo-greedy/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/</loc>
+    <loc>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/</loc>
     <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</loc>
@@ -239,7 +242,7 @@
     <loc>https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week4/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week4/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/gcd/</loc>
@@ -251,7 +254,7 @@
     <loc>https://jackgdn.github.io/post/algo-searching/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week3/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week3/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/algo-knapsackproblem-4/</loc>
@@ -260,7 +263,7 @@
     <loc>https://jackgdn.github.io/post/algo-knapsackproblem-3/</loc>
     <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week2/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week2/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/</loc>
@@ -284,7 +287,7 @@
     <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A06/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/lanqiao-week1/</loc>
+    <loc>https://jackgdn.github.io/post/2025winter-week1/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/</loc>

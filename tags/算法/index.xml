@@ -8,6 +8,22 @@
     <language>zh-cn</language>
     <lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>二分查找与前缀和练习（二）</title>
+      <link>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/</guid>
+      <description>
+        
+          
+            二分查找与前缀和练习（二）
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>每日一题 3.3-3.9</title>
       <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
@@ -89,10 +105,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 8</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week8/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week8/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week8/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week8/</guid>
       <description>
         
           
@@ -120,7 +136,7 @@
     </item>
     
     <item>
-      <title>背包问题练习——分组背包问题</title>
+      <title>背包问题练习（五）——分组背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-5/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
@@ -128,7 +144,7 @@
       <description>
         
           
-            背包问题练习——分组背包问题
+            背包问题练习（五）——分组背包问题
           
           
         
@@ -169,10 +185,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 5</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week5/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week5/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week5/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week5/</guid>
       <description>
         
           
@@ -200,15 +216,15 @@
     </item>
     
     <item>
-      <title>二分查找与前缀和练习</title>
-      <link>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/</link>
+      <title>二分查找与前缀和练习（一）</title>
+      <link>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum/</guid>
+      <guid>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/</guid>
       <description>
         
           
-            二分查找与前缀和练习
+            二分查找与前缀和练习（一）
           
           
         
@@ -233,10 +249,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 4</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week4/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week4/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week4/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week4/</guid>
       <description>
         
           
@@ -265,10 +281,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 3</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week3/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week3/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week3/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week3/</guid>
       <description>
         
           
@@ -280,7 +296,7 @@
     </item>
     
     <item>
-      <title>背包问题练习——多维背包问题</title>
+      <title>背包问题练习（四）——多维背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-4/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -288,7 +304,7 @@
       <description>
         
           
-            背包问题练习——多维背包问题
+            背包问题练习（四）——多维背包问题
           
           
         
@@ -296,7 +312,7 @@
     </item>
     
     <item>
-      <title>背包问题练习——多重背包问题</title>
+      <title>背包问题练习（三）——多重背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-3/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -304,7 +320,7 @@
       <description>
         
           
-            背包问题练习——多重背包问题
+            背包问题练习（三）——多重背包问题
           
           
         
@@ -313,10 +329,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 2</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week2/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week2/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week2/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week2/</guid>
       <description>
         
           
@@ -328,7 +344,7 @@
     </item>
     
     <item>
-      <title>背包问题练习——完全背包问题</title>
+      <title>背包问题练习（二）——完全背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-2/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -336,7 +352,7 @@
       <description>
         
           
-            背包问题练习——完全背包问题
+            背包问题练习（二）——完全背包问题
           
           
         
@@ -345,10 +361,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 1</title>
-      <link>https://jackgdn.github.io/post/lanqiao-week1/</link>
+      <link>https://jackgdn.github.io/post/2025winter-week1/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/lanqiao-week1/</guid>
+      <guid>https://jackgdn.github.io/post/2025winter-week1/</guid>
       <description>
         
           
@@ -360,7 +376,7 @@
     </item>
     
     <item>
-      <title>背包问题练习——01背包问题</title>
+      <title>背包问题练习（一）——01背包问题</title>
       <link>https://jackgdn.github.io/post/algo-knapsackproblem-1/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       
@@ -368,7 +384,7 @@
       <description>
         
           
-            背包问题练习——01背包问题
+            背包问题练习（一）——01背包问题
           
           
         
