@@ -663,17 +663,17 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">query</span><span class="p">(</span><span class="n">tree_prefix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="n">tree_prefix</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">tree_prefix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000005</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">25</span><span class="cl">
-</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">tree_postfix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1000005</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">tree_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1000005</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">tree_postfix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">tree_postfix</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">tree_postfix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000005</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">tree_suffix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">tree_suffix</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">tree_suffix</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000005</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">30</span><span class="cl">
 </span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="1228-油漆面积--原题链接httpswwwacwingcomproblemcontent1230">1228. 油漆面积 | <a href="https://www.acwing.com/problem/content/1230/">原题链接</a></h2>
-<p>这道题目要求多个矩形面积并，使用到的方法是<a href="https://blog.csdn.net/Zz_0913/article/details/135128515">扫描线法</a>，而扫描线需要用到线段树数据结构，因此需要用扫描线的题几乎都很难，而这道题属于扫描线模板题目。</p>
+<p>这道题目要求多个矩形面积并，使用到的方法是<a href="https://blog.csdn.net/Zz_0913/article/details/135128515">扫描线法</a>，而扫描线需要用到线段树数据结构，因此需要用扫描线的题几乎都很难，这道题属于扫描线模板题目。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">total_ordering</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">
@@ -993,11 +993,11 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">72</span><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">73</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">74</span><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>因为 $A\time B\time C\leq 10^6$，如果将每一个维度都开 $10^6$ 就会爆内存，因此用一个 <code>get</code> 函数做三维到一维的压缩，这样只用开一个 $10^6$ 的一维数组就可以。因为需要保留一些“余量”，因此实际操作的时候开一个 $10^7$ 的数组。</p>
+</span></span></code></pre></div><p>因为 $A\times B\times C\leq 10^6$，如果将每一个维度都开 $10^6$ 就会爆内存，因此用一个 <code>get</code> 函数做三维到一维的压缩，这样只用开一个 $10^6$ 的一维数组就可以。因为需要保留一些“余量”，因此实际操作的时候开一个 $10^7$ 的数组。</p>
 
     </div>
 
-	<h2 class="post_related">相关系列文章</h2>
+	<h2 class="post_related">系列文章</h2>
 	<ul>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a></li>
@@ -1068,7 +1068,7 @@ src='https://plausible.io/js/plausible.js'>
     
     
       
-	    <h2 class="mt-4">相关系列文章</h2>
+	    <h2 class="mt-4">系列文章</h2>
       <ul>
         
         <li>
@@ -1160,6 +1160,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/" class="nav-link" title="每日一题 3.10-3.16">每日一题 3.10-3.16</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
       </li>
       <li>
@@ -1180,21 +1183,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/2025winter-week8/" class="nav-link" title="2025寒假算法练习——Week 8">2025寒假算法练习——Week 8</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">36</span>
+          <span class="button_tally">37</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">24</span>
+          <span class="button_tally">25</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -1273,6 +1273,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
+        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
+          每日一题
+          <span class="button_tally">4</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
@@ -1280,11 +1285,6 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
-          每日一题
           <span class="button_tally">3</span>
         </a>
         
@@ -1296,7 +1296,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">24</span>
+          <span class="button_tally">25</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
@@ -1339,18 +1339,18 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
-          二分查找
-          <span class="button_tally">5</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class="post_tag button button_translucent" title="前缀和">
           前缀和
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class="post_tag button button_translucent" title="枚举">
           枚举
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
+          二分查找
           <span class="button_tally">5</span>
         </a>
         
@@ -1497,7 +1497,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=5 title="枚举">枚举<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=6 title="枚举">枚举<span class="button_tally">6</span>
             </a>
             
             
@@ -1505,7 +1505,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=5 title="前缀和">前缀和<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=6 title="前缀和">前缀和<span class="button_tally">6</span>
             </a>
             
             
@@ -1545,7 +1545,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=24 title="算法">算法<span class="button_tally">24</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=25 title="算法">算法<span class="button_tally">25</span>
             </a>
             
             

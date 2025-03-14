@@ -336,7 +336,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">        <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </span></span></code></pre></div><ul>
-<li>方法二：置换群</li>
+<li>方法二：置换环 时间复杂度 $O(n)$</li>
 </ul>
 <p>在数列 $a$ 中创建从 $a_i$ 指向 $i$ 的边，因为每一个点的出度为 1，入度也为 1，所以这些点最终能形成若干个环。在环内交换元素时，在最理想情况下一定能保证有一个数回到对应位置，这一节点形成自环，环的总数增加 1。因此用目标状态下环的数量（$n$ 个自环）减去最初状态下环的数量（也包括自环）即为需要交换的最小次数。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
@@ -718,7 +718,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div>
     </div>
 
-	<h2 class="post_related">相关系列文章</h2>
+	<h2 class="post_related">系列文章</h2>
 	<ul>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a></li>
@@ -789,7 +789,7 @@ src='https://plausible.io/js/plausible.js'>
     
     
       
-	    <h2 class="mt-4">相关系列文章</h2>
+	    <h2 class="mt-4">系列文章</h2>
       <ul>
         
         <li>
@@ -881,6 +881,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/" class="nav-link" title="每日一题 3.10-3.16">每日一题 3.10-3.16</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
       </li>
       <li>
@@ -901,21 +904,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/2025winter-week8/" class="nav-link" title="2025寒假算法练习——Week 8">2025寒假算法练习——Week 8</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/" class="nav-link" title="每日一题 2.17-2.23">每日一题 2.17-2.23</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">36</span>
+          <span class="button_tally">37</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">24</span>
+          <span class="button_tally">25</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -994,6 +994,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
+        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
+          每日一题
+          <span class="button_tally">4</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
@@ -1001,11 +1006,6 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
-          <span class="button_tally">3</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
-          每日一题
           <span class="button_tally">3</span>
         </a>
         
@@ -1017,7 +1017,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">24</span>
+          <span class="button_tally">25</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
@@ -1060,18 +1060,18 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
-          二分查找
-          <span class="button_tally">5</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class="post_tag button button_translucent" title="前缀和">
           前缀和
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class="post_tag button button_translucent" title="枚举">
           枚举
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
+          二分查找
           <span class="button_tally">5</span>
         </a>
         
@@ -1218,7 +1218,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=5 title="枚举">枚举<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=6 title="枚举">枚举<span class="button_tally">6</span>
             </a>
             
             
@@ -1226,7 +1226,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=5 title="前缀和">前缀和<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=6 title="前缀和">前缀和<span class="button_tally">6</span>
             </a>
             
             
@@ -1266,7 +1266,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=24 title="算法">算法<span class="button_tally">24</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=25 title="算法">算法<span class="button_tally">25</span>
             </a>
             
             
