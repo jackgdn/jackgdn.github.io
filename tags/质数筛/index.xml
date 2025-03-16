@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>质数筛 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/</link>
+    <link>https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/</link>
     <description>Recent content in 质数筛 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数论类题目练习</title>
-      <link>http://localhost:1313/post/algo-numbertheory/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <link>https://jackgdn.github.io/post/algo-numbertheory/</link>
+      <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/algo-numbertheory/</guid>
+      <guid>https://jackgdn.github.io/post/algo-numbertheory/</guid>
       <description>
         
           
-            true
+            数论类题目练习
           
           
         

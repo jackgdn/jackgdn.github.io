@@ -8,7 +8,7 @@
   
   
   >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
 <title>数论类题目练习  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
@@ -16,38 +16,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+<script async defer data-domain="jackgdn.github.io"
+src='https://plausible.io/js/plausible.js'>
+</script>
+
+
+
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="题目来自 AcWing 1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。
-1n = int(input()) 2nums = list(map(int, …" />
+<meta name="description" content="前几天光往医院跑，没大抽出时间做题。
+题目来自 AcWing 重要
+对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1&#43;1)(a_2&#43;1)\cdots(a_k&#43;1)$，$N$ …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="数论类题目练习" />
-<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
-<meta property="og:url" content="http://localhost:1313/post/algo-numbertheory/" />
+<meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
+<meta property="og:url" content="https://jackgdn.github.io/post/algo-numbertheory/" />
 <meta property="og:title" content="数论类题目练习" />
-<meta property="og:description" content="题目来自 AcWing 1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。
-1n = int(input()) 2nums = list(map(int, …" />
-<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
+<meta property="og:description" content="前几天光往医院跑，没大抽出时间做题。
+题目来自 AcWing 重要
+对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1&#43;1)(a_2&#43;1)\cdots(a_k&#43;1)$，$N$ …" />
+<meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
-<link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
+<link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="http://localhost:1313/post/algo-numbertheory/">
-
-
-
-<link rel="preload" href="http://localhost:1313/css/styles.47cde7aded5f5bb08c7489599c84e3013bad094dbd5dd7a0d628068c3d02edc4595fb6e945220ce279591c5196e5aecb64cdfe581a75655cdc2c42ab770aa52a.css" integrity = "sha512-R83nre1fW7CMdIlZnITjATutCU29Xdeg1igGjD0C7cRZX7bpRSIM4nlZHFGW5a7LZM3&#43;WBp1ZVzcLEKrdwqlKg==" as="style" crossorigin="anonymous">
+<link rel="canonical" href="https://jackgdn.github.io/post/algo-numbertheory/">
 
 
 
-<link rel="preload" href="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" as="script" integrity=
-"sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous">
+<link rel="preload" href="https://jackgdn.github.io/css/styles.47cde7aded5f5bb08c7489599c84e3013bad094dbd5dd7a0d628068c3d02edc4595fb6e945220ce279591c5196e5aecb64cdfe581a75655cdc2c42ab770aa52a.css" integrity = "sha512-R83nre1fW7CMdIlZnITjATutCU29Xdeg1igGjD0C7cRZX7bpRSIM4nlZHFGW5a7LZM3&#43;WBp1ZVzcLEKrdwqlKg==" as="style" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.47cde7aded5f5bb08c7489599c84e3013bad094dbd5dd7a0d628068c3d02edc4595fb6e945220ce279591c5196e5aecb64cdfe581a75655cdc2c42ab770aa52a.css" integrity="sha512-R83nre1fW7CMdIlZnITjATutCU29Xdeg1igGjD0C7cRZX7bpRSIM4nlZHFGW5a7LZM3&#43;WBp1ZVzcLEKrdwqlKg==" crossorigin="anonymous">
+
+<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" as="script" integrity=
+"sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.47cde7aded5f5bb08c7489599c84e3013bad094dbd5dd7a0d628068c3d02edc4595fb6e945220ce279591c5196e5aecb64cdfe581a75655cdc2c42ab770aa52a.css" integrity="sha512-R83nre1fW7CMdIlZnITjATutCU29Xdeg1igGjD0C7cRZX7bpRSIM4nlZHFGW5a7LZM3&#43;WBp1ZVzcLEKrdwqlKg==" crossorigin="anonymous">
 
 
 
@@ -60,8 +68,8 @@
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='http://localhost:1313/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
-  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -82,13 +90,13 @@
         
 
   <div class="nav_parent">
-    <a href="http://localhost:1313/" class="nav_item" title="主页">主页 </a>
+    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
-    <a href="http://localhost:1313/about/" class="nav_item" title="关于">关于 </a>
+    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
   </div>
   <div class="nav_parent">
-    <a href="http://localhost:1313/links/" class="nav_item" title="链接">链接 </a>
+    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
   </div>
       
       <div class="nav_parent">
@@ -96,13 +104,13 @@
         <div class="nav_sub">
           <span class="nav_child"></span>
           
-          <a href="http://localhost:1313/" class="nav_child nav_item">简体中文</a>
+          <a href="https://jackgdn.github.io/" class="nav_child nav_item">简体中文</a>
           
-          <a href="http://localhost:1313/en/" class="nav_child nav_item">English</a>
+          <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
           
         </div>
-      </div><a href='http://localhost:1313/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
-  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
+  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
 </a>
 
 <div class='follow'>
@@ -150,18 +158,23 @@
 </svg>
 </span>
     <span class="post_date">
-      2025-03-13</span>
-    <span class="post_time"> · 2 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
-        </a><a href='http://localhost:1313/tags/%E6%95%B0%E8%AE%BA/' title="数论" class="post_tag button button_translucent">数论
-        </a><a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' title="贪心策略" class="post_tag button button_translucent">贪心策略
-        </a><a href='http://localhost:1313/tags/gcd/' title="gcd" class="post_tag button button_translucent">gcd
-        </a><a href='http://localhost:1313/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' title="质数筛" class="post_tag button button_translucent">质数筛
+      2025-03-16</span>
+    <span class="post_time"> · 6 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' title="数据结构" class="post_tag button button_translucent">数据结构
+        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' title="数学" class="post_tag button button_translucent">数学
+        </a><a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' title="数论" class="post_tag button button_translucent">数论
+        </a><a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' title="贪心策略" class="post_tag button button_translucent">贪心策略
+        </a><a href='https://jackgdn.github.io/tags/gcd/' title="gcd" class="post_tag button button_translucent">gcd
+        </a><a href='https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' title="质数筛" class="post_tag button button_translucent">质数筛
+        </a><a href='https://jackgdn.github.io/tags/dfs/' title="dfs" class="post_tag button button_translucent">dfs
+        </a><a href='https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/' title="扩展 gcd" class="post_tag button button_translucent">扩展 gcd
+        </a><a href='https://jackgdn.github.io/tags/%E6%A0%88/' title="栈" class="post_tag button button_translucent">栈
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="http://localhost:1313/post/algo-numbertheory/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/algo-numbertheory/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -178,11 +191,137 @@
   <ul>
     <li><a href="#1246-等差数列--原题链接httpswwwacwingcomproblemcontent1248">1246. 等差数列 | <a href="https://www.acwing.com/problem/content/1248/">原题链接</a></a></li>
     <li><a href="#1295-x的因子链--原题链接httpswwwacwingcomproblemcontent1297">1295. X的因子链 | <a href="https://www.acwing.com/problem/content/1297/">原题链接</a></a></li>
+    <li><a href="#1296-聪明的燕姿--原题链接httpswwwacwingcomproblemcontentdescription1298">1296. 聪明的燕姿 | <a href="https://www.acwing.com/problem/content/description/1298/">原题链接</a></a></li>
+    <li><a href="#1299-五指山--原题链接httpswwwacwingcomproblemcontent1301">1299. 五指山 | <a href="https://www.acwing.com/problem/content/1301/">原题链接</a></a></li>
+    <li><a href="#1223-最大比例--原题链接httpswwwacwingcomproblemcontent1225">1223. 最大比例 | <a href="https://www.acwing.com/problem/content/1225/">原题链接</a></a></li>
+    <li><a href="#1301-c-循环--原题链接httpswwwacwingcomproblemcontent1303">1301. C 循环 | <a href="https://www.acwing.com/problem/content/1303/">原题链接</a></a></li>
+    <li><a href="#1225-正则问题--原题链接httpswwwacwingcomproblemcontent1227">1225. 正则问题 | <a href="https://www.acwing.com/problem/content/1227/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
     
-    <div class="post_body"><h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
+    <div class="post_body"><p>前几天光往医院跑，没大抽出时间做题。</p>
+<h1 id="题目来自-acwinghttpswwwacwingcomproblem">题目来自 <a href="https://www.acwing.com/problem/">AcWing</a></h1>
+<style type="text/css">
+     
+    .notice {
+        --title-color: #fff;
+        --title-background-color: #6be;
+        --content-color: #444;
+        --content-background-color: #e7f2fa;
+    }
+
+    .notice.info {
+        --title-background-color: #fb7;
+        --content-background-color: #fec;
+    }
+
+    .notice.tip {
+        --title-background-color: #5a5;
+        --content-background-color: #efe;
+    }
+
+    .notice.warning {
+        --title-background-color: #c33;
+        --content-background-color: #fee;
+    }
+
+     
+    @media (prefers-color-scheme:dark) {
+        .notice {
+            --title-color: #fff;
+            --title-background-color: #069;
+            --content-color: #ddd;
+            --content-background-color: #023;
+        }
+
+        .notice.info {
+            --title-background-color: #a50;
+            --content-background-color: #420;
+        }
+
+        .notice.tip {
+            --title-background-color: #363;
+            --content-background-color: #121;
+        }
+
+        .notice.warning {
+            --title-background-color: #800;
+            --content-background-color: #400;
+        }
+    }
+
+    body.dark .notice {
+        --title-color: #fff;
+        --title-background-color: #069;
+        --content-color: #ddd;
+        --content-background-color: #023;
+    }
+
+    body.dark .notice.info {
+        --title-background-color: #a50;
+        --content-background-color: #420;
+    }
+
+    body.dark .notice.tip {
+        --title-background-color: #363;
+        --content-background-color: #121;
+    }
+
+    body.dark .notice.warning {
+        --title-background-color: #800;
+        --content-background-color: #400;
+    }
+
+     
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--content-color);
+        background: var(--content-background-color);
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+     
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background-color);
+    }
+
+     
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px;
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative;
+    }
+</style><div class="notice info" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            
+        </span>重要</p><p>对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。</p></div>
+
 <hr>
 <h2 id="1246-等差数列--原题链接httpswwwacwingcomproblemcontent1248">1246. 等差数列 | <a href="https://www.acwing.com/problem/content/1248/">原题链接</a></h2>
 <p>给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。</p>
@@ -253,43 +392,249 @@
 </span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">44</span><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="o">//</span> <span class="n">mul</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">exp</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="1296-聪明的燕姿--原题链接httpswwwacwingcomproblemcontentdescription1298">1296. 聪明的燕姿 | <a href="https://www.acwing.com/problem/content/description/1298/">原题链接</a></h2>
+<p>由于已知对于一个大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。因此我们可以使用深搜，依次枚举每一组 $(1+p_i+p_i^2+\cdots+p_i^{a_i})$，同时特判满足 $s=p_i+1$ 的值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">MAX</span> <span class="o">=</span> <span class="mf">2e9</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">SQRT_MAX</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">MAX</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">SQRT_MAX</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">SQRT_MAX</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">SQRT_MAX</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">SQRT_MAX</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">visited</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">curr</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="k">if</span> <span class="n">rest</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">ans</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">curr</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">rest</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">rest</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">primes</span><span class="p">[(</span><span class="n">last</span> <span class="k">if</span> <span class="n">last</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)]:</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="n">ans</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">curr</span> <span class="o">*</span> <span class="p">(</span><span class="n">rest</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="n">last</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rest</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">p</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="n">m</span> <span class="o">=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">        <span class="k">while</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="n">rest</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">            <span class="k">if</span> <span class="n">rest</span> <span class="o">%</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">                <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">curr</span> <span class="o">*</span> <span class="n">m</span><span class="p">,</span> <span class="n">rest</span> <span class="o">//</span> <span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">            <span class="n">m</span> <span class="o">*=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">            <span class="n">s</span> <span class="o">+=</span> <span class="n">m</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">
+</span></span><span class="line"><span class="ln">48</span><span class="cl">
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="k">for</span> <span class="n">S</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">    <span class="n">ans</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">    <span class="n">dfs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ans</span><span class="p">)))</span>
+</span></span></code></pre></div><p>可以过 13/14 个测试点，最后一个测试点一直 WA，调半天也不知道哪有问题……</p>
+<h2 id="1299-五指山--原题链接httpswwwacwingcomproblemcontent1301">1299. 五指山 | <a href="https://www.acwing.com/problem/content/1301/">原题链接</a></h2>
+<div class="notice info" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            
+        </span>重要</p><ul>
+<li>裴蜀定理：若 $a,b$ 是整数,且 $GCD(a,b)=d$，那么对于任意的整数 $x,y$ 都有 $d|(ax+by)$。特别地，一定存在整数 $x,y$ 使得 $ax+by=d$ 成立。</li>
+</ul></div>
+
+<p>解方程 $ax+by=GCD(a,b)$ 可以通过<strong>扩展欧几里得算法</strong>解决，模板如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">exgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span> <span class="o">*</span> <span class="n">y</span>
+</span></span></code></pre></div><p>该算法可用于解<strong>线性同余方程</strong>，如本题。</p>
+<ol>
+<li>假设当大圣到达 $y$ 时一共翻了 $m$ 次筋斗云，那么可以列出同余方程 $md+x\equiv y\space(mod\space n)$，也可写作 $n|md+x-y$ 或者 $kn=md+x-y$；</li>
+<li>若方程有解，根据裴蜀定理可知一定有 $GCD(d,n)|y-x$，否则方程无解。若方程有解，此时可以使用扩展欧几里得算法求出线性同余方程的一组解 $m_0,k_0$；</li>
+<li>根据线性同余方程解的结构计算出 $m=m_0\cdot\frac{y-x}{GCD(d,n)}$；</li>
+<li>因为大圣只能逆时针移动，即需要 $m&gt;0$，因此令 $m=m\space mod\space(\frac{n}{GCD(d,n)})$。方程所有有效的解都是以循环方式出现的。有效解的集合可以表示为：$m=m_0+p\cdot\frac{n}{GCD(d,n)}$，所有解以 $\frac{n}{GCD(d,n)}$ 为步长。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">exgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">gcd</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Impossible&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">m0</span><span class="p">,</span> <span class="n">k0</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">//</span> <span class="n">gcd</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">m</span> <span class="o">%=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">gcd</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="1223-最大比例--原题链接httpswwwacwingcomproblemcontent1225">1223. 最大比例 | <a href="https://www.acwing.com/problem/content/1225/">原题链接</a></h2>
+<ul>
+<li>辗转相减法求最大公约数：$GCD(a,b)=GCD(b,a-b)\space(a\geq b)$</li>
+</ul>
+<p>题目要求的是公比可能的最大值。假设一个符合条件的公比最简形式为 $\frac{m}{n}$，即其中 $m,n$ 互质且 $\frac{m}{n}$ 不能表示为另一个最简分数整数次幂的形式。令题目要求的值为 $q^k$，即 $\frac{m^k}{n^k}$。</p>
+<p>根据题目的数据可以直接求出 $q^a,q^b,\cdots$，将分子与分母分别表示为 $\frac{m^a}{n^a},\frac{m^b}{n^b},\cdots$。因为对于 $\forall i,\frac{m^i}{n^i}=(\frac{m^k}{n^k})^{\alpha_1}$，所以 $k=GCD(a,b,\cdots)$。</p>
+<p>又因为 $q^{GCD(a,b,\cdots)}=GCD(q^a,q^b,\cdots)$，不妨分别求 $GCD(m^a,m^b,\cdots)$ 和 $GCD(n^a,n^b,\cdots)$ 再输出。不过这里的 $GCD$ 需要用辗转相减法求而非传统的辗转相除法。如果要用辗转相除法做，需要将每个数分解质因数，然后再对每个质因子的次数求最大公约数。</p>
+<p>假设 $f(q^x,q^y)=q^{GCD(x,y)}$，因此有
+$$
+\begin{aligned}
+&amp; f(q^x,q^y) \\
+=&amp;q^{GCD(x,y)} \\
+=&amp;q^{GCD(x,y-x)} \\
+=&amp;f(q^x,q^{y-x}) \\
+=&amp;f(q^x,\frac{q^y}{q^x})
+\end{aligned}
+$$</p>
+<p>注意对原始数据的去重与排序。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">def</span> <span class="nf">gcd_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">return</span> <span class="n">y</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">return</span> <span class="n">gcd_sub</span><span class="p">(</span><span class="n">y</span> <span class="o">//</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">numes</span><span class="p">,</span> <span class="n">denos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="n">nume</span><span class="p">,</span> <span class="n">deno</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">ni</span><span class="p">,</span> <span class="n">nj</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">g</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">nj</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="n">numes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nj</span> <span class="o">//</span> <span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="n">denos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ni</span> <span class="o">//</span> <span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="n">nume</span><span class="p">,</span> <span class="n">deno</span> <span class="o">=</span> <span class="n">numes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">denos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numes</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">nume</span> <span class="o">=</span> <span class="n">gcd_sub</span><span class="p">(</span><span class="n">nume</span><span class="p">,</span> <span class="n">numes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">deno</span> <span class="o">=</span> <span class="n">gcd_sub</span><span class="p">(</span><span class="n">deno</span><span class="p">,</span> <span class="n">denos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">nume</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">deno</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><a href="https://blog.csdn.net/destiny_balabala/article/details/105074056">辗转相减法</a>具体应用。</p>
+<h2 id="1301-c-循环--原题链接httpswwwacwingcomproblemcontent1303">1301. C 循环 | <a href="https://www.acwing.com/problem/content/1303/">原题链接</a></h2>
+<p>这道题和前面的五指山一样，是一道解线性同余方程的问题。令 $K=2^k$，此题要解的方程为 $A+Cx\equiv B\space(mod\space K)$。剩下的套模板即可。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">def</span> <span class="nf">exgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">if</span> <span class="n">A</span> <span class="o">==</span> <span class="n">B</span> <span class="o">==</span> <span class="n">C</span> <span class="o">==</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="n">K</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">k</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">B</span> <span class="o">-</span> <span class="n">A</span><span class="p">)</span> <span class="o">%</span> <span class="n">gcd</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;FOREVER&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span> <span class="o">-</span> <span class="n">A</span><span class="p">)</span> <span class="o">//</span> <span class="n">gcd</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">x</span> <span class="o">%=</span> <span class="n">K</span> <span class="o">//</span> <span class="n">gcd</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="1225-正则问题--原题链接httpswwwacwingcomproblemcontent1227">1225. 正则问题 | <a href="https://www.acwing.com/problem/content/1227/">原题链接</a></h2>
+<p>这道题像极了初学栈时做的匹配括号练习题：每读到一个下括号，就往回走到上括号并记录每一段“或”的长度，然后用其中最长的一段覆盖处理完的括号。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span><span class="p">,</span> <span class="n">defaultdict</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;)&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&#34;)&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="n">segs</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">seg</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">while</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34;(&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="n">ch</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s2">&#34;|&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">                <span class="n">seg</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="n">segs</span><span class="p">[</span><span class="n">seg</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">segs</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;x&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">))</span>
 </span></span></code></pre></div>
     </div>
 
 	<h2 class="post_related">系列文章</h2>
 	<ul>
 	  
-	      <li><a href="http://localhost:1313/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习（五）——分组背包问题">背包问题练习（五）——分组背包问题</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习（五）——分组背包问题">背包问题练习（五）——分组背包问题</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum-1/" class="nav-link" title="二分查找与前缀和练习（一）">二分查找与前缀和练习（一）</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/" class="nav-link" title="二分查找与前缀和练习（一）">二分查找与前缀和练习（一）</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题练习（四）——多维背包问题">背包问题练习（四）——多维背包问题</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题练习（四）——多维背包问题">背包问题练习（四）——多维背包问题</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-knapsackproblem-3/" class="nav-link" title="背包问题练习（三）——多重背包问题">背包问题练习（三）——多重背包问题</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-3/" class="nav-link" title="背包问题练习（三）——多重背包问题">背包问题练习（三）——多重背包问题</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-knapsackproblem-2/" class="nav-link" title="背包问题练习（二）——完全背包问题">背包问题练习（二）——完全背包问题</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-2/" class="nav-link" title="背包问题练习（二）——完全背包问题">背包问题练习（二）——完全背包问题</a></li>
 	  
-	      <li><a href="http://localhost:1313/post/algo-knapsackproblem-1/" class="nav-link" title="背包问题练习（一）——01背包问题">背包问题练习（一）——01背包问题</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-1/" class="nav-link" title="背包问题练习（一）——01背包问题">背包问题练习（一）——01背包问题</a></li>
 	  
 	</ul>
 
@@ -319,7 +664,7 @@
       <div class="author_bio">
         东北林业大学在读本科生，学习计算机科学与技术专业。
       </div>
-      <a href='http://localhost:1313/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
+      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
 
     
       <div class="sidebardisclaimer">
@@ -333,67 +678,67 @@
       <ul>
         
         <li>
-          <a href="http://localhost:1313/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
+          <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
+          <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a>
+          <a href="https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
+          <a href="https://jackgdn.github.io/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a>
+          <a href="https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习（五）——分组背包问题">背包问题练习（五）——分组背包问题</a>
+          <a href="https://jackgdn.github.io/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习（五）——分组背包问题">背包问题练习（五）——分组背包问题</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a>
+          <a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
+          <a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
+          <a href="https://jackgdn.github.io/post/algo-greedy/" class="nav-link" title="贪心策略练习">贪心策略练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum-1/" class="nav-link" title="二分查找与前缀和练习（一）">二分查找与前缀和练习（一）</a>
+          <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/" class="nav-link" title="二分查找与前缀和练习（一）">二分查找与前缀和练习（一）</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a>
+          <a href="https://jackgdn.github.io/post/algo-recursion&#43;iteration/" class="nav-link" title="递归与递推练习">递归与递推练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a>
+          <a href="https://jackgdn.github.io/post/algo-searching/" class="nav-link" title="搜索练习">搜索练习</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题练习（四）——多维背包问题">背包问题练习（四）——多维背包问题</a>
+          <a href="https://jackgdn.github.io/post/algo-knapsackproblem-4/" class="nav-link" title="背包问题练习（四）——多维背包问题">背包问题练习（四）——多维背包问题</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-knapsackproblem-3/" class="nav-link" title="背包问题练习（三）——多重背包问题">背包问题练习（三）——多重背包问题</a>
+          <a href="https://jackgdn.github.io/post/algo-knapsackproblem-3/" class="nav-link" title="背包问题练习（三）——多重背包问题">背包问题练习（三）——多重背包问题</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-knapsackproblem-2/" class="nav-link" title="背包问题练习（二）——完全背包问题">背包问题练习（二）——完全背包问题</a>
+          <a href="https://jackgdn.github.io/post/algo-knapsackproblem-2/" class="nav-link" title="背包问题练习（二）——完全背包问题">背包问题练习（二）——完全背包问题</a>
         </li>
         
         <li>
-          <a href="http://localhost:1313/post/algo-knapsackproblem-1/" class="nav-link" title="背包问题练习（一）——01背包问题">背包问题练习（一）——01背包问题</a>
+          <a href="https://jackgdn.github.io/post/algo-knapsackproblem-1/" class="nav-link" title="背包问题练习（一）——01背包问题">背包问题练习（一）——01背包问题</a>
         </li>
         
       </ul>
@@ -401,118 +746,118 @@
     <h2 class="mt-4">精选文章</h2>
     <ul>
       <li>
-        <a href="http://localhost:1313/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+        <a href="https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
+        <a href="https://jackgdn.github.io/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
+        <a href="https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
+        <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/2.19/" class="nav-link" title="2.19 解题记录">2.19 解题记录</a>
+        <a href="https://jackgdn.github.io/post/2.19/" class="nav-link" title="2.19 解题记录">2.19 解题记录</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" class="nav-link" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
+        <a href="https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" class="nav-link" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="nav-link" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
+        <a href="https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="nav-link" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
       </li>
     </ul>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="http://localhost:1313/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
+        <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/" class="nav-link" title="每日一题 3.10-3.16">每日一题 3.10-3.16</a>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/" class="nav-link" title="每日一题 3.10-3.16">每日一题 3.10-3.16</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
+        <a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/" class="nav-link" title="每日一题 3.3-3.9">每日一题 3.3-3.9</a>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/" class="nav-link" title="每日一题 3.3-3.9">每日一题 3.3-3.9</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a>
+        <a href="https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/" class="nav-link" title="双指针、广搜与图论练习">双指针、广搜与图论练习</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/" class="nav-link" title="每日一题 2.24-3.2">每日一题 2.24-3.2</a>
+        <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/" class="nav-link" title="每日一题 2.24-3.2">每日一题 2.24-3.2</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
+        <a href="https://jackgdn.github.io/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
       </li>
       <li>
-        <a href="http://localhost:1313/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a>
+        <a href="https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
           <span class="button_tally">38</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+        <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
           <span class="button_tally">26</span>
         </a>
         
-        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/categories/java/' class="post_tag button button_translucent" title="java">
+        <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
           学习记录
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/categories/python/' class="post_tag button button_translucent" title="python">
+        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">6</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
           数据结构
-          <span class="button_tally">4</span>
+          <span class="button_tally">5</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">4</span>
         </a>
         
-        <a href='http://localhost:1313/categories/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/categories/linux/' class="post_tag button button_translucent" title="linux">
+        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
           <span class="button_tally">2</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
           逆向
           <span class="button_tally">2</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
           数学
           <span class="button_tally">1</span>
         </a>
         
-        <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
+        <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class="post_tag button button_translucent" title="渗透">
           渗透
           <span class="button_tally">1</span>
         </a>
@@ -523,32 +868,32 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
+        <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
           <span class="button_tally">16</span>
         </a>
         
-        <a href='http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
+        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
           2025 寒假算法练习
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
           JAVA 练习
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
+        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
           每日一题
           <span class="button_tally">4</span>
         </a>
         
-        <a href='http://localhost:1313/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
+        <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
         </a>
         
-        <a href='http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
+        <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
           <span class="button_tally">3</span>
         </a>
@@ -559,69 +904,69 @@
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
-        <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+        <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
           <span class="button_tally">26</span>
         </a>
         
-        <a href='http://localhost:1313/tags/dfs/' class="post_tag button button_translucent" title="dfs">
+        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
           DFS
-          <span class="button_tally">10</span>
+          <span class="button_tally">11</span>
         </a>
         
-        <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">10</span>
         </a>
         
-        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
+        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">9</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
+        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
           <span class="button_tally">9</span>
         </a>
         
-        <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
+        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
           贪心策略
           <span class="button_tally">8</span>
         </a>
         
-        <a href='http://localhost:1313/tags/java/' class="post_tag button button_translucent" title="java">
+        <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
           背包问题
           <span class="button_tally">7</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class="post_tag button button_translucent" title="前缀和">
+        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
+          二分查找
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class="post_tag button button_translucent" title="前缀和">
           前缀和
           <span class="button_tally">6</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E6%9E%9A%E4%B8%BE/' class="post_tag button button_translucent" title="枚举">
+        <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class="post_tag button button_translucent" title="枚举">
           枚举
           <span class="button_tally">6</span>
         </a>
         
-        <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
-          二分查找
+        <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+          数据结构
           <span class="button_tally">5</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/bfs/' class="post_tag button button_translucent" title="bfs">
-          BFS
-          <span class="button_tally">4</span>
         </a>
         
         
@@ -630,223 +975,227 @@
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='http://localhost:1313/tags/bfs/' class=" post_tag button button_translucent" data-position=4 title="bfs">BFS<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/bfs/' class=" post_tag button button_translucent" data-position=4 title="bfs">BFS<span class="button_tally">4</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=2 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=2 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/dfs/' class=" post_tag button button_translucent" data-position=10 title="dfs">DFS<span class="button_tally">10</span>
+            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=11 title="dfs">DFS<span class="button_tally">11</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/gcd/' class=" post_tag button button_translucent" data-position=2 title="gcd">GCD<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/gcd/' class=" post_tag button button_translucent" data-position=2 title="gcd">GCD<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
+            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=9 title="python">PYTHON<span class="button_tally">9</span>
+            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=9 title="python">PYTHON<span class="button_tally">9</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
+            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
+            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=7 title="背包问题">背包问题<span class="button_tally">7</span>
+            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=7 title="背包问题">背包问题<span class="button_tally">7</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%B7%AE%E5%88%86/' class=" post_tag button button_translucent" data-position=2 title="差分">差分<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E5%B7%AE%E5%88%86/' class=" post_tag button button_translucent" data-position=2 title="差分">差分<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="单链表">单链表<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="单链表">单链表<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=2 title="递归">递归<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=2 title="递归">递归<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=9 title="动态规划">动态规划<span class="button_tally">9</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=9 title="动态规划">动态规划<span class="button_tally">9</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="队列">队列<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="队列">队列<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=5 title="二分查找">二分查找<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=6 title="二分查找">二分查找<span class="button_tally">6</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="分治策略">分治策略<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="分治策略">分治策略<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="归并排序">归并排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="归并排序">归并排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="链表">链表<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/' class=" post_tag button button_translucent" data-position=1 title="扩展 gcd">扩展 GCD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=6 title="枚举">枚举<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="链表">链表<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A8%A1%E6%8B%9F/' class=" post_tag button button_translucent" data-position=3 title="模拟">模拟<span class="button_tally">3</span>
+            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=6 title="枚举">枚举<span class="button_tally">6</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=6 title="前缀和">前缀和<span class="button_tally">6</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A8%A1%E6%8B%9F/' class=" post_tag button button_translucent" data-position=3 title="模拟">模拟<span class="button_tally">3</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=4 title="日志">日志<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=6 title="前缀和">前缀和<span class="button_tally">6</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/' class=" post_tag button button_translucent" data-position=1 title="扫描线">扫描线<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=4 title="日志">日志<span class="button_tally">4</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/' class=" post_tag button button_translucent" data-position=1 title="扫描线">扫描线<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="树">树<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=1 title="沙箱逃逸">沙箱逃逸<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/' class=" post_tag button button_translucent" data-position=1 title="树状数组">树状数组<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="树">树<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=4 title="数据结构">数据结构<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/' class=" post_tag button button_translucent" data-position=1 title="树状数组">树状数组<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=4 title="数论">数论<span class="button_tally">4</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=5 title="数据结构">数据结构<span class="button_tally">5</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=4 title="数论">数论<span class="button_tally">4</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%8F%8C%E6%8C%87%E9%92%88/' class=" post_tag button button_translucent" data-position=1 title="双指针">双指针<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=2 title="数学">数学<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=26 title="算法">算法<span class="button_tally">26</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/' class=" post_tag button button_translucent" data-position=1 title="双指针">双指针<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="拓扑排序">拓扑排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=26 title="算法">算法<span class="button_tally">26</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=8 title="贪心策略">贪心策略<span class="button_tally">8</span>
+            <a href='https://jackgdn.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="拓扑排序">拓扑排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=8 title="贪心策略">贪心策略<span class="button_tally">8</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="图论">图论<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="线段树">线段树<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/' class=" post_tag button button_translucent" data-position=2 title="图论">图论<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="线段树">线段树<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=1 title="栈">栈<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=1 title="线性代数">线性代数<span class="button_tally">1</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' class=" post_tag button button_translucent" data-position=1 title="质数筛">质数筛<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=2 title="栈">栈<span class="button_tally">2</span>
             </a>
             
             
-            <a href='http://localhost:1313/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/' class=" post_tag button button_translucent" data-position=1 title="置换环">置换环<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' class=" post_tag button button_translucent" data-position=1 title="质数筛">质数筛<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/' class=" post_tag button button_translucent" data-position=1 title="置换环">置换环<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -960,7 +1309,7 @@
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='http://localhost:1313/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
+    <img src='https://jackgdn.github.io/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
     <p>版权所有&nbsp;2024 -&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利.<br/>
     除特别声明外, 本博客内所有文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可协议发布。转载请注明出处。</p><a class="to_top" href="#documentTop">
   <svg class="icon">
@@ -973,9 +1322,9 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="http://localhost:1313/zh-cn/js/bundle.6032f9991223a0041632fc3e1459ce4138b326411d9d8b661aa7e2883cd35ee02326c81a564f7a94bc24fa48459867e7a006f778805c11cbb889727fe6c590fe.js" integrity="sha512-YDL5mRIjoAQWMvw&#43;FFnOQTizJkEdnYtmGqfiiDzTXuAjJsgaVk96lLwk&#43;khFmGfnoAb3eIBcEcu4iXJ/5sWQ/g==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.4c4b71ad5b2f30b575b143ae68620d4360d2e813755b914f76e924e6a746926e5c86fe090d4b20a261b9259fc0f5b855123bfa3e6dc3cf2afab6c67443256a11.js" integrity="sha512-TEtxrVsvMLV1sUOuaGINQ2DS6BN1W5FPdukk5qdGkm5chv4JDUsgomG5JZ/A9bhVEjv6Pm3Dzyr6tsZ0QyVqEQ==" crossorigin="anonymous"></script>
 
-  <script src="http://localhost:1313/js/search.min.3b86f120a43abeeb2418c60805cce6e08a0b5a475e948e9ec71cba472622b61bb784e3b3c8d3c83e99fbafcae74f1e27b9888bd6f4bd1764de7e5394ceaca15a.js"></script>
+  <script src="https://jackgdn.github.io/js/search.min.3b86f120a43abeeb2418c60805cce6e08a0b5a475e948e9ec71cba472622b61bb784e3b3c8d3c83e99fbafcae74f1e27b9888bd6f4bd1764de7e5394ceaca15a.js"></script>
 <script>
     function checkReferer() {
         var referer = document.referrer;
