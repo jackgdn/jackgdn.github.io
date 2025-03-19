@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bfs on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/bfs/</link>
+    <link>http://localhost:1313/tags/bfs/</link>
     <description>Recent content in Bfs on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>双指针、广搜与图论练习</title>
-      <link>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
+      <link>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
+      <guid>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>2025寒假算法练习——Week 8</title>
-      <link>https://jackgdn.github.io/post/2025winter-week8/</link>
+      <link>http://localhost:1313/post/2025winter-week8/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025winter-week8/</guid>
+      <guid>http://localhost:1313/post/2025winter-week8/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>递归与递推练习</title>
-      <link>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</link>
+      <link>http://localhost:1313/post/algo-recursion&#43;iteration/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</guid>
+      <guid>http://localhost:1313/post/algo-recursion&#43;iteration/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>搜索练习</title>
-      <link>https://jackgdn.github.io/post/algo-searching/</link>
+      <link>http://localhost:1313/post/algo-searching/</link>
       <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/algo-searching/</guid>
+      <guid>http://localhost:1313/post/algo-searching/</guid>
       <description>
         
           

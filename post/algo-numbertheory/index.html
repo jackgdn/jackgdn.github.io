@@ -9,7 +9,7 @@
   
   >
   <head>
-<title>数论类题目练习  |  &lt;jack-gdn/&gt;</title>
+<title>数学与数论类题目练习  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -30,10 +30,10 @@ src='https://plausible.io/js/plausible.js'>
 对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1&#43;1)(a_2&#43;1)\cdots(a_k&#43;1)$，$N$ …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="数论类题目练习" />
+<meta name="twitter:title" content="数学与数论类题目练习" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/algo-numbertheory/" />
-<meta property="og:title" content="数论类题目练习" />
+<meta property="og:title" content="数学与数论类题目练习" />
 <meta property="og:description" content="前几天光往医院跑，没大抽出时间做题。
 题目来自 AcWing 重要
 对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1&#43;1)(a_2&#43;1)\cdots(a_k&#43;1)$，$N$ …" />
@@ -150,7 +150,7 @@ src='https://plausible.io/js/plausible.js'>
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">数论类题目练习</h1>
+    <h1 class="post_title">数学与数论类题目练习</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -166,7 +166,7 @@ src='https://plausible.io/js/plausible.js'>
         </a><a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' title="贪心策略" class="post_tag button button_translucent">贪心策略
         </a><a href='https://jackgdn.github.io/tags/gcd/' title="gcd" class="post_tag button button_translucent">gcd
         </a><a href='https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' title="质数筛" class="post_tag button button_translucent">质数筛
-        </a><a href='https://jackgdn.github.io/tags/dfs/' title="dfs" class="post_tag button button_translucent">dfs
+        </a><a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' title="深搜" class="post_tag button button_translucent">深搜
         </a><a href='https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/' title="扩展 gcd" class="post_tag button button_translucent">扩展 gcd
         </a><a href='https://jackgdn.github.io/tags/%E6%A0%88/' title="栈" class="post_tag button button_translucent">栈
         </a>
@@ -196,6 +196,7 @@ src='https://plausible.io/js/plausible.js'>
     <li><a href="#1223-最大比例--原题链接httpswwwacwingcomproblemcontent1225">1223. 最大比例 | <a href="https://www.acwing.com/problem/content/1225/">原题链接</a></a></li>
     <li><a href="#1301-c-循环--原题链接httpswwwacwingcomproblemcontent1303">1301. C 循环 | <a href="https://www.acwing.com/problem/content/1303/">原题链接</a></a></li>
     <li><a href="#1225-正则问题--原题链接httpswwwacwingcomproblemcontent1227">1225. 正则问题 | <a href="https://www.acwing.com/problem/content/1227/">原题链接</a></a></li>
+    <li><a href="#1303-斐波那契前-n-项和--原题链接httpswwwacwingcomproblemcontent1305">1303. 斐波那契前 n 项和 | <a href="https://www.acwing.com/problem/content/1305/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
@@ -598,13 +599,31 @@ $$</p>
 </span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">22</span><span class="cl">
 </span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">))</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="1303-斐波那契前-n-项和--原题链接httpswwwacwingcomproblemcontent1305">1303. 斐波那契前 n 项和 | <a href="https://www.acwing.com/problem/content/1305/">原题链接</a></h2>
+<p>这道题看着不难，但是数据量很大，想要 AC 还是得费点心思。首先是一个最常规的做法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">exit</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">s</span> <span class="o">+=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">s</span> <span class="o">%=</span> <span class="n">m</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">%</span> <span class="n">m</span><span class="p">)</span>
+</span></span></code></pre></div><p>可以过 7/13 个测试点。</p>
+
     </div>
 
 	<h2 class="post_related">系列文章</h2>
 	<ul>
 	  
-	      <li><a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-dp-2/" class="nav-link" title="动态规划练习（二）">动态规划练习（二）</a></li>
+	  
+	      <li><a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数学与数论类题目练习">数学与数论类题目练习</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/" class="nav-link" title="二分查找与前缀和练习（二）">二分查找与前缀和练习（二）</a></li>
 	  
@@ -616,7 +635,7 @@ $$</p>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-knapsackproblem-5/" class="nav-link" title="背包问题练习（五）——分组背包问题">背包问题练习（五）——分组背包问题</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a></li>
+	      <li><a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习（一）">动态规划练习（一）</a></li>
 	  
 	      <li><a href="https://jackgdn.github.io/post/algo-math&#43;dp/" class="nav-link" title="数学与动态规划练习">数学与动态规划练习</a></li>
 	  
@@ -678,7 +697,11 @@ $$</p>
       <ul>
         
         <li>
-          <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
+          <a href="https://jackgdn.github.io/post/algo-dp-2/" class="nav-link" title="动态规划练习（二）">动态规划练习（二）</a>
+        </li>
+        
+        <li>
+          <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数学与数论类题目练习">数学与数论类题目练习</a>
         </li>
         
         <li>
@@ -702,7 +725,7 @@ $$</p>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习">动态规划练习</a>
+          <a href="https://jackgdn.github.io/post/algo-dp-1/" class="nav-link" title="动态规划练习（一）">动态规划练习（一）</a>
         </li>
         
         <li>
@@ -770,7 +793,10 @@ $$</p>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数论类题目练习">数论类题目练习</a>
+        <a href="https://jackgdn.github.io/post/algo-dp-2/" class="nav-link" title="动态规划练习（二）">动态规划练习（二）</a>
+      </li>
+      <li>
+        <a href="https://jackgdn.github.io/post/algo-numbertheory/" class="nav-link" title="数学与数论类题目练习">数学与数论类题目练习</a>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/" class="nav-link" title="每日一题 3.10-3.16">每日一题 3.10-3.16</a>
@@ -790,21 +816,18 @@ $$</p>
       <li>
         <a href="https://jackgdn.github.io/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/" class="nav-link" title="枚举、模拟与排序练习">枚举、模拟与排序练习</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">38</span>
+          <span class="button_tally">39</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">26</span>
+          <span class="button_tally">27</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -870,7 +893,7 @@ $$</p>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
-          <span class="button_tally">16</span>
+          <span class="button_tally">17</span>
         </a>
         
         <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
@@ -906,16 +929,21 @@ $$</p>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">26</span>
+          <span class="button_tally">27</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/dfs/' class="post_tag button button_translucent" title="dfs">
-          DFS
-          <span class="button_tally">11</span>
+        <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' class="post_tag button button_translucent" title="深搜">
+          深搜
+          <span class="button_tally">12</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
+          <span class="button_tally">10</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
+          动态规划
           <span class="button_tally">10</span>
         </a>
         
@@ -924,18 +952,13 @@ $$</p>
           <span class="button_tally">9</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
-          动态规划
+        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
+          贪心策略
           <span class="button_tally">9</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
-          <span class="button_tally">8</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
-          贪心策略
           <span class="button_tally">8</span>
         </a>
         
@@ -964,8 +987,8 @@ $$</p>
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
-          数据结构
+        <a href='https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/' class="post_tag button button_translucent" title="广搜">
+          广搜
           <span class="button_tally">5</span>
         </a>
         
@@ -974,10 +997,6 @@ $$</p>
         <div class="post_tags_toggle button">所有标签</div>
         <div class="post_tags">
           <div class="tags_list">
-            
-            <a href='https://jackgdn.github.io/tags/bfs/' class=" post_tag button button_translucent" data-position=4 title="bfs">BFS<span class="button_tally">4</span>
-            </a>
-            
             
             <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
             </a>
@@ -988,10 +1007,6 @@ $$</p>
             
             
             <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
-            </a>
-            
-            
-            <a href='https://jackgdn.github.io/tags/dfs/' class=" post_tag button button_translucent" data-position=11 title="dfs">DFS<span class="button_tally">11</span>
             </a>
             
             
@@ -1079,7 +1094,7 @@ $$</p>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=9 title="动态规划">动态规划<span class="button_tally">9</span>
+            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=10 title="动态规划">动态规划<span class="button_tally">10</span>
             </a>
             
             
@@ -1092,6 +1107,10 @@ $$</p>
             
             
             <a href='https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="分治策略">分治策略<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/' class=" post_tag button button_translucent" data-position=5 title="广搜">广搜<span class="button_tally">5</span>
             </a>
             
             
@@ -1135,6 +1154,10 @@ $$</p>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' class=" post_tag button button_translucent" data-position=12 title="深搜">深搜<span class="button_tally">12</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="树">树<span class="button_tally">1</span>
             </a>
             
@@ -1151,7 +1174,7 @@ $$</p>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=2 title="数学">数学<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=3 title="数学">数学<span class="button_tally">3</span>
             </a>
             
             
@@ -1159,7 +1182,7 @@ $$</p>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=26 title="算法">算法<span class="button_tally">26</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=27 title="算法">算法<span class="button_tally">27</span>
             </a>
             
             
@@ -1167,7 +1190,7 @@ $$</p>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=8 title="贪心策略">贪心策略<span class="button_tally">8</span>
+            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=9 title="贪心策略">贪心策略<span class="button_tally">9</span>
             </a>
             
             

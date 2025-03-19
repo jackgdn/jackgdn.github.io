@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>广搜 on &lt;jack-gdn/&gt;</title>
+    <link>https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/</link>
+    <description>Recent content in 广搜 on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>动态规划练习（二）</title>
+      <link>https://jackgdn.github.io/post/algo-dp-2/</link>
+      <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-dp-2/</guid>
+      <description>
+        
+          
+            动态规划练习（二）
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>双指针、广搜与图论练习</title>
+      <link>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
+      <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
+      <description>
+        
+          
+            双指针、广搜与图论练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>2025寒假算法练习——Week 8</title>
+      <link>https://jackgdn.github.io/post/2025winter-week8/</link>
+      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/2025winter-week8/</guid>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>递归与递推练习</title>
+      <link>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</guid>
+      <description>
+        
+          
+            递归与递推练习
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>搜索练习</title>
+      <link>https://jackgdn.github.io/post/algo-searching/</link>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-searching/</guid>
+      <description>
+        
+          
+            搜索练习
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
