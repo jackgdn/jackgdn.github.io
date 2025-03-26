@@ -6,7 +6,23 @@
     <description>Recent content in 数据结构 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025春季算法练习——Week 3</title>
+      <link>https://jackgdn.github.io/post/2025spring-week3/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/2025spring-week3/</guid>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/algo-numbertheory/</link>
@@ -81,6 +97,38 @@
         
           
             栈的使用
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>动态规划练习（一）</title>
+      <link>https://jackgdn.github.io/post/algo-dp-1/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-dp-1/</guid>
+      <description>
+        
+          
+            动态规划练习（一）
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>2025寒假算法练习——Week 2</title>
+      <link>https://jackgdn.github.io/post/2025winter-week2/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/2025winter-week2/</guid>
+      <description>
+        
+          
+            算法练习
           
           
         

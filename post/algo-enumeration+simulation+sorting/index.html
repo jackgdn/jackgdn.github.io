@@ -155,13 +155,14 @@ src='https://plausible.io/js/plausible.js'>
 </span>
     <span class="post_date">
       2025-02-26</span>
-    <span class="post_time"> · 10 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
+    <span class="post_time"> · 13 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' title="算法" class="post_tag button button_translucent">算法
         </a><a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' title="枚举" class="post_tag button button_translucent">枚举
         </a><a href='https://jackgdn.github.io/tags/%E6%A8%A1%E6%8B%9F/' title="模拟" class="post_tag button button_translucent">模拟
         </a><a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' title="二分查找" class="post_tag button button_translucent">二分查找
         </a><a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' title="前缀和" class="post_tag button button_translucent">前缀和
         </a><a href='https://jackgdn.github.io/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' title="归并排序" class="post_tag button button_translucent">归并排序
         </a><a href='https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' title="分治策略" class="post_tag button button_translucent">分治策略
+        </a><a href='https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/' title="快速排序" class="post_tag button button_translucent">快速排序
         </a>
     </span>
     <span class="page_only">&nbsp;·
@@ -193,6 +194,8 @@ src='https://plausible.io/js/plausible.js'>
     <li><a href="#1231-航班时间--原题链接httpswwwacwingcomproblemcontent1233">1231. 航班时间 | <a href="https://www.acwing.com/problem/content/1233/">原题链接</a></a></li>
     <li><a href="#1241-外卖店优先级--原题链接httpswwwacwingcomproblemcontentdescription1243">1241. 外卖店优先级 | <a href="https://www.acwing.com/problem/content/description/1243/">原题链接</a></a></li>
     <li><a href="#788-逆序对的数量--原题链接httpswwwacwingcomproblemcontentdescription790">788. 逆序对的数量 | <a href="https://www.acwing.com/problem/content/description/790/">原题链接</a></a></li>
+    <li><a href="#785-快速排序--原题链接httpswwwacwingcomproblemcontent787">785. 快速排序 | <a href="https://www.acwing.com/problem/content/787/">原题链接</a></a></li>
+    <li><a href="#786-第k个数--原题链接httpswwwacwingcomproblemcontent788">786. 第k个数 | <a href="https://www.acwing.com/problem/content/788/">原题链接</a></a></li>
   </ul>
 </nav>
       </div>
@@ -771,7 +774,162 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">29</span><span class="cl">
 </span></span><span class="line"><span class="ln">30</span><span class="cl">
 </span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">merge_sort</span><span class="p">(</span><span class="n">nums</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="785-快速排序--原题链接httpswwwacwingcomproblemcontent787">785. 快速排序 | <a href="https://www.acwing.com/problem/content/787/">原题链接</a></h2>
+<p>快速排序：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">l</span> <span class="o">=</span> <span class="n">start</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">end</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">            <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="n">quick_sort</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">quick_sort</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="n">quick_sort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="p">)</span>
+</span></span></code></pre></div><p>不过既然都用 Python 了，下面这种 out-place 的写法看起来更简单。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="k">return</span> <span class="n">arr</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="n">p</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">quick_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</span></span></code></pre></div><p>不过上面两种写法都没法 AC，其中 out-place 写法会 MLE，in-place 写法会爆栈。不用递归，用栈记录待排序的区间就可以 AC 了……吧</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">stack</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">arr</span><span class="p">[(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">            <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="k">if</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">start</span><span class="p">,</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="p">)</span>
+</span></span></code></pre></div><p>不仅是使用栈，这段代码还通过在 <code>arr[(l + r) // 2]</code> 的位置选择 <code>pivot</code> 以防数组原本就是有序的，此时需要将 <code>pivot</code> 与待排序部分的头元素交换，以确保后续交换中数组元素排序正确。然而现在还是有个点过不去。</p>
+<h2 id="786-第k个数--原题链接httpswwwacwingcomproblemcontent788">786. 第k个数 | <a href="https://www.acwing.com/problem/content/788/">原题链接</a></h2>
+<p>核心思想就是利用快速排序每一层的迭代判断第 $k$ 个数应该在哪一个区间内。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">topk</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="k">elif</span> <span class="n">num</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">topk</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="n">topk</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">topk</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">topk</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></span></code></pre></div><p>这种写法是正确的，但是 Python 就是原罪，用递归肯定会爆栈。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">while</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">                <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="n">pos_seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                <span class="n">pos_seq</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">if</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">start</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">elif</span> <span class="n">l</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="n">end</span> <span class="o">=</span> <span class="n">r</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">])</span>
+</span></span></code></pre></div><p>用递推写法就可以 AC。</p>
+
     </div>
 
 	<h2 class="post_related">系列文章</h2>
@@ -949,6 +1107,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/2025spring-week3/" class="nav-link" title="2025春季算法练习——Week 3">2025春季算法练习——Week 3</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/algo-dp-2/" class="nav-link" title="动态规划练习（二）">动态规划练习（二）</a>
       </li>
       <li>
@@ -969,21 +1130,18 @@ src='https://plausible.io/js/plausible.js'>
       <li>
         <a href="https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/" class="nav-link" title="每日一题 2.24-3.2">每日一题 2.24-3.2</a>
       </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/algo-segmenttree/" class="nav-link" title="树状数组、线段树与差分练习">树状数组、线段树与差分练习</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">39</span>
+          <span class="button_tally">40</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">27</span>
+          <span class="button_tally">28</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
@@ -1008,7 +1166,7 @@ src='https://plausible.io/js/plausible.js'>
         
         <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
           数据结构
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
@@ -1077,6 +1235,11 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">3</span>
         </a>
         
+        <a href='https://jackgdn.github.io/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 春季算法练习">
+          2025 春季算法练习
+          <span class="button_tally">1</span>
+        </a>
+        
         
       </nav>
     </div>
@@ -1085,7 +1248,7 @@ src='https://plausible.io/js/plausible.js'>
       <nav class="tags_nav">
         <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">27</span>
+          <span class="button_tally">28</span>
         </a>
         
         <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' class="post_tag button button_translucent" title="深搜">
@@ -1103,18 +1266,23 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">10</span>
         </a>
         
+        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
+          贪心策略
+          <span class="button_tally">10</span>
+        </a>
+        
         <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">9</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
-          贪心策略
-          <span class="button_tally">9</span>
-        </a>
-        
         <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
+          <span class="button_tally">8</span>
+        </a>
+        
+        <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+          数据结构
           <span class="button_tally">8</span>
         </a>
         
@@ -1141,11 +1309,6 @@ src='https://plausible.io/js/plausible.js'>
         <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class="post_tag button button_translucent" title="枚举">
           枚举
           <span class="button_tally">6</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/' class="post_tag button button_translucent" title="广搜">
-          广搜
-          <span class="button_tally">5</span>
         </a>
         
         
@@ -1175,6 +1338,10 @@ src='https://plausible.io/js/plausible.js'>
             
             
             <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/kmp/' class=" post_tag button button_translucent" data-position=1 title="kmp">KMP<span class="button_tally">1</span>
             </a>
             
             
@@ -1214,6 +1381,10 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/trie-%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="trie 树">TRIE 树<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
             </a>
             
@@ -1231,6 +1402,10 @@ src='https://plausible.io/js/plausible.js'>
             
             
             <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/' class=" post_tag button button_translucent" data-position=1 title="并查集">并查集<span class="button_tally">1</span>
             </a>
             
             
@@ -1258,6 +1433,10 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%8F%89%E5%A0%86/' class=" post_tag button button_translucent" data-position=4 title="二叉堆">二叉堆<span class="button_tally">4</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=6 title="二分查找">二分查找<span class="button_tally">6</span>
             </a>
             
@@ -1274,11 +1453,19 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/%E5%93%88%E5%B8%8C/' class=" post_tag button button_translucent" data-position=1 title="哈希">哈希<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
             </a>
             
             
             <a href='https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/' class=" post_tag button button_translucent" data-position=3 title="快速幂">快速幂<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="快速排序">快速排序<span class="button_tally">1</span>
             </a>
             
             
@@ -1326,7 +1513,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=5 title="数据结构">数据结构<span class="button_tally">5</span>
+            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=8 title="数据结构">数据结构<span class="button_tally">8</span>
             </a>
             
             
@@ -1338,11 +1525,15 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
+            <a href='https://jackgdn.github.io/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="双端队列">双端队列<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://jackgdn.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/' class=" post_tag button button_translucent" data-position=1 title="双指针">双指针<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=27 title="算法">算法<span class="button_tally">27</span>
+            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=28 title="算法">算法<span class="button_tally">28</span>
             </a>
             
             
@@ -1350,7 +1541,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=9 title="贪心策略">贪心策略<span class="button_tally">9</span>
+            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=10 title="贪心策略">贪心策略<span class="button_tally">10</span>
             </a>
             
             
@@ -1370,7 +1561,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=2 title="栈">栈<span class="button_tally">2</span>
+            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=3 title="栈">栈<span class="button_tally">3</span>
             </a>
             
             
