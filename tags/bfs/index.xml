@@ -6,65 +6,17 @@
     <description>Recent content in Bfs on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>双指针、广搜与图论练习</title>
-      <link>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
-      <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      <title>图论练习</title>
+      <link>http://localhost:1313/post/algo-graphtheory/</link>
+      <pubDate>Thu, 27 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
+      <guid>http://localhost:1313/post/algo-graphtheory/</guid>
       <description>
         
           
-            双指针、广搜与图论练习
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>2025寒假算法练习——Week 8</title>
-      <link>http://localhost:1313/post/2025winter-week8/</link>
-      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/2025winter-week8/</guid>
-      <description>
-        
-          
-            算法练习
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>递归与递推练习</title>
-      <link>http://localhost:1313/post/algo-recursion&#43;iteration/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/algo-recursion&#43;iteration/</guid>
-      <description>
-        
-          
-            递归与递推练习
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>搜索练习</title>
-      <link>http://localhost:1313/post/algo-searching/</link>
-      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/algo-searching/</guid>
-      <description>
-        
-          
-            搜索练习
+            图论练习
           
           
         

@@ -6,7 +6,23 @@
     <description>Recent content in 数据结构 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图论练习</title>
+      <link>https://jackgdn.github.io/post/algo-graphtheory/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/algo-graphtheory/</guid>
+      <description>
+        
+          
+            图论练习
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>2025春季算法练习——Week 3</title>
       <link>https://jackgdn.github.io/post/2025spring-week3/</link>
