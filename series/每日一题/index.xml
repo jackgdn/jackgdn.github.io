@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>每日一题 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</link>
+    <link>http://localhost:1313/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</link>
     <description>Recent content in 每日一题 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日一题 3.10-3.16</title>
-      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
+      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
       <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
+      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>每日一题 3.3-3.9</title>
-      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
+      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
+      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>每日一题 2.24-3.2</title>
-      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
+      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
+      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>每日一题 2.17-2.23</title>
-      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</link>
+      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</link>
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</guid>
+      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</guid>
       <description>
         
           

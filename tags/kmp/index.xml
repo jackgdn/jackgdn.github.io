@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kmp on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/kmp/</link>
+    <link>http://localhost:1313/tags/kmp/</link>
     <description>Recent content in Kmp on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/kmp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/kmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025春季算法练习——Week 3</title>
-      <link>https://jackgdn.github.io/post/2025spring-week3/</link>
+      <link>http://localhost:1313/post/2025spring-week3/</link>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/2025spring-week3/</guid>
+      <guid>http://localhost:1313/post/2025spring-week3/</guid>
       <description>
         
           

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Forensics on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/forensics/</link>
+    <link>http://localhost:1313/tags/forensics/</link>
     <description>Recent content in Forensics on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PearlCTF 2024 WP</title>
-      <link>https://jackgdn.github.io/post/pearl2024/</link>
+      <link>http://localhost:1313/post/pearl2024/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/pearl2024/</guid>
+      <guid>http://localhost:1313/post/pearl2024/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>BeginCTF 解题记录</title>
-      <link>https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <link>http://localhost:1313/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <guid>http://localhost:1313/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
       <description>
         
           

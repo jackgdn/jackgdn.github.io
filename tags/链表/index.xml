@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>链表 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
+    <link>http://localhost:1313/tags/%E9%93%BE%E8%A1%A8/</link>
     <description>Recent content in 链表 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>双指针、广搜与图论练习</title>
-      <link>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
+      <link>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
+      <guid>http://localhost:1313/post/algo-doublepointers&#43;bfs&#43;graphs/</guid>
       <description>
         
           
