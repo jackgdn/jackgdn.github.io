@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>递推 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/%E9%80%92%E6%8E%A8/</link>
+    <link>https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/</link>
     <description>Recent content in 递推 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%80%92%E6%8E%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>递归与递推练习</title>
-      <link>http://localhost:1313/post/algo-recursion&#43;iteration/</link>
+      <link>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/algo-recursion&#43;iteration/</guid>
+      <guid>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</guid>
       <description>
         
           

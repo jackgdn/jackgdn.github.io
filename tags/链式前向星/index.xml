@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>链式前向星 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/</link>
+    <link>https://jackgdn.github.io/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/</link>
     <description>Recent content in 链式前向星 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论练习</title>
-      <link>http://localhost:1313/post/algo-graphtheory/</link>
+      <link>https://jackgdn.github.io/post/algo-graphtheory/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/algo-graphtheory/</guid>
+      <guid>https://jackgdn.github.io/post/algo-graphtheory/</guid>
       <description>
         
           

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>模拟 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/%E6%A8%A1%E6%8B%9F/</link>
+    <link>https://jackgdn.github.io/tags/%E6%A8%A1%E6%8B%9F/</link>
     <description>Recent content in 模拟 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025春季算法练习——Week 5</title>
-      <link>http://localhost:1313/post/2025spring-week5/</link>
+      <link>https://jackgdn.github.io/post/2025spring-week5/</link>
       <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2025spring-week5/</guid>
+      <guid>https://jackgdn.github.io/post/2025spring-week5/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>每日一题 3.3-3.9</title>
-      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
+      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
+      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>每日一题 2.24-3.2</title>
-      <link>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
+      <link>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
+      <guid>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>枚举、模拟与排序练习</title>
-      <link>http://localhost:1313/post/algo-enumeration&#43;simulation&#43;sorting/</link>
+      <link>https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/algo-enumeration&#43;simulation&#43;sorting/</guid>
+      <guid>https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/</guid>
       <description>
         
           
