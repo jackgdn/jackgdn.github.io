@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,8 +41,17 @@
                 href="https://jackgdn.github.io/post/"
                 />
   </url><url>
+    <loc>https://jackgdn.github.io/tags/ros/</loc>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/categories/ros/</loc>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/bundle-ros/ros-basic/</loc>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -60,13 +69,13 @@
     <loc>https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2025-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/log-2025-04-10/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-04-10/</loc>
     <lastmod>2025-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2025-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025spring-week5/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week5/</loc>
     <lastmod>2025-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/kruskal/</loc>
@@ -121,7 +130,7 @@
     <loc>https://jackgdn.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</loc>
     <lastmod>2025-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025spring-week4/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/</loc>
     <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/bellman-ford/</loc>
@@ -172,7 +181,7 @@
     <loc>https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-graphtheory/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</loc>
     <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/</loc>
@@ -181,7 +190,7 @@
     <loc>https://jackgdn.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025spring-week3/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week3/</loc>
     <lastmod>2025-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/kmp/</loc>
@@ -199,7 +208,7 @@
     <loc>https://jackgdn.github.io/tags/%E6%A0%88/</loc>
     <lastmod>2025-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-dp-2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
@@ -217,7 +226,7 @@
     <loc>https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-numbertheory/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</loc>
     <lastmod>2025-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
@@ -229,19 +238,19 @@
     <loc>https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
     <lastmod>2025-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</loc>
     <lastmod>2025-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
     <lastmod>2025-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</loc>
     <lastmod>2025-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%B7%AE%E5%88%86/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/</loc>
@@ -256,13 +265,13 @@
     <loc>https://jackgdn.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-doublepointers&#43;bfs&#43;graphs/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</loc>
@@ -271,7 +280,7 @@
     <loc>https://jackgdn.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-segmenttree/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
@@ -283,19 +292,19 @@
     <loc>https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-enumeration&#43;simulation&#43;sorting/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week8/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week8/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</loc>
     <lastmod>2025-02-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week7/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week7/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E9%80%92%E5%BD%92/</loc>
@@ -304,65 +313,65 @@
     <loc>https://jackgdn.github.io/tags/%E9%98%9F%E5%88%97/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week6/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week6/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-knapsackproblem-5/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-dp-1/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/log-2025-02-19/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-02-19/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jackgdn.github.io/en/post/log-2025-02-19/"
+                href="https://jackgdn.github.io/en/post/bundle-%E6%97%A5%E5%BF%97/log-2025-02-19/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://jackgdn.github.io/post/log-2025-02-19/"
+                href="https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-02-19/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-math&#43;dp/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week5/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week5/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-greedy/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-greedy/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-binarysearch&#43;prefixsum-1/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</loc>
     <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-recursion&#43;iteration/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-recursion&#43;iteration/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week4/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week4/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/lcm/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-searching/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-searching/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week3/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week3/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-knapsackproblem-4/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</loc>
     <lastmod>2025-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-knapsackproblem-3/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</loc>
     <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week2/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/</loc>
@@ -377,37 +386,37 @@
     <loc>https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A07/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/</loc>
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-knapsackproblem-2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</loc>
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A06/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2025winter-week1/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week1/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/algo-knapsackproblem-1/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A05/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A04/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A03/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/</loc>
     <lastmod>2025-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A02/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/</loc>
     <lastmod>2024-12-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/java%E7%BB%83%E4%B9%A01/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/</loc>
     <lastmod>2024-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/rust/</loc>
@@ -419,13 +428,13 @@
     <loc>https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/rust3/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/rust2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/rust/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</loc>
     <lastmod>2024-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/python/</loc>
@@ -434,7 +443,7 @@
     <loc>https://jackgdn.github.io/categories/python/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/</loc>
@@ -449,10 +458,10 @@
     <loc>https://jackgdn.github.io/post/chaoxing-gui/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</loc>
     <lastmod>2024-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/c&#43;&#43;/</loc>
@@ -467,23 +476,23 @@
     <loc>https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2024-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/log-2024-09-18/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-18/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/log-2024-09-16/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-16/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jackgdn.github.io/en/post/log-2024-09-16/"
+                href="https://jackgdn.github.io/en/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-16/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://jackgdn.github.io/post/log-2024-09-16/"
+                href="https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-16/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/post/args-and-kwargs-in-python/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/regex/</loc>
@@ -505,17 +514,17 @@
                 href="https://jackgdn.github.io/links/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/post/log-2024-08-06/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/</loc>
     <lastmod>2024-08-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jackgdn.github.io/en/post/log-2024-08-06/"
+                href="https://jackgdn.github.io/en/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://jackgdn.github.io/post/log-2024-08-06/"
+                href="https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/"
                 />
   </url><url>
     <loc>https://jackgdn.github.io/about/</loc>
@@ -577,7 +586,7 @@
                 href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/</loc>
     <lastmod>2024-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
@@ -589,10 +598,10 @@
     <loc>https://jackgdn.github.io/tags/misc/</loc>
     <lastmod>2024-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/pearl2024/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/pearl2024/</loc>
     <lastmod>2024-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-03-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/unicode/</loc>
@@ -604,10 +613,10 @@
     <loc>https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2024-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/2.19/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/2.19/</loc>
     <lastmod>2024-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/nss18/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/nss18/</loc>
     <lastmod>2024-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/pwn/</loc>
@@ -619,19 +628,19 @@
     <loc>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</loc>
     <lastmod>2024-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/tags/web/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240126/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240126/</loc>
     <lastmod>2024-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20230113/</loc>
     <lastmod>2024-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jackgdn.github.io/post/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20231226/</loc>
+    <loc>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20231226/</loc>
     <lastmod>2023-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/search/</loc>
