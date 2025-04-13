@@ -16,7 +16,7 @@
       <description>
         
           
-            认识 ROS 的通信机制，实现自定义 `msg` 类型
+            认识 ROS 的通信机制，尝试用 C++ 和 Python 分别实现话题通信、服务通信和参数服务器通信。
           
           
         
@@ -32,7 +32,7 @@
       <description>
         
           
-            初步认识 ROS，利用 ROS 输出 Hello World
+            初步认识 ROS，利用 ROS 输出 Hello World。
           
           
         
