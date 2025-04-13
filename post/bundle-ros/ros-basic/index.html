@@ -25,18 +25,16 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="ROS 教程
-创建并初始化工作空间 安装完 ROS 后，创建工作空间。假设工作空间名称为 ros-project，依次输入下面的命令创建并且初始化工作空间：
-1mkdir -p ./ros-project/src/ 2cd ros-project 3catkin_make 创建 ROS 包 进入 src/ 目录并且创建 …" />
+<meta name="description" content="创建并初始化工作空间 安装完 ROS 后，创建工作空间。假设工作空间名称为 ros-project，依次输入下面的命令创建并且初始化工作空间：
+1mkdir -p ./ros-project/src/ 2cd ros-project 3catkin_make 创建 ROS 包 进入 src/ 目录并且创建一个 ROS  …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="ROS 学习记录（一）——快速体验" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/bundle-ros/ros-basic/" />
 <meta property="og:title" content="ROS 学习记录（一）——快速体验" />
-<meta property="og:description" content="ROS 教程
-创建并初始化工作空间 安装完 ROS 后，创建工作空间。假设工作空间名称为 ros-project，依次输入下面的命令创建并且初始化工作空间：
-1mkdir -p ./ros-project/src/ 2cd ros-project 3catkin_make 创建 ROS 包 进入 src/ 目录并且创建 …" />
+<meta property="og:description" content="创建并初始化工作空间 安装完 ROS 后，创建工作空间。假设工作空间名称为 ros-project，依次输入下面的命令创建并且初始化工作空间：
+1mkdir -p ./ros-project/src/ 2cd ros-project 3catkin_make 创建 ROS 包 进入 src/ 目录并且创建一个 ROS  …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -194,8 +192,7 @@ src='https://plausible.io/js/plausible.js'>
 </nav>
       </div>
     
-    <div class="post_body"><p><a href="http://www.autolabor.com.cn/book/ROSTutorials/">ROS 教程</a></p>
-<h2 id="创建并初始化工作空间">创建并初始化工作空间</h2>
+    <div class="post_body"><h2 id="创建并初始化工作空间">创建并初始化工作空间</h2>
 <p>安装完 ROS 后，创建工作空间。假设工作空间名称为 <code>ros-project</code>，依次输入下面的命令创建并且初始化工作空间：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkdir -p ./ros-project/src/
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">cd</span> ros-project
@@ -242,7 +239,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span></code></pre></div><p>然后更新运行环境并且运行 Hello World 程序：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">. ./devel/setup.sh
 </span></span><span class="line"><span class="ln">2</span><span class="cl">rosrun test_package_node
-</span></span></code></pre></div><p>如果需要结束 ROS 内核，可以用 <code>fg</code> 将进程调取到前台再用 <code>Ctrl</code> + <code>C</code> 结束，或者用 <code>jobs</code> 命令查看进程作业号，再用 <code>kill</code> 结束指定作业号的进程，例如当进程的作业号为 <code>1</code> 时，使用 <code>kill %1</code> 结束进程。</p>
+</span></span></code></pre></div><p>如果需要结束 ROS 内核，可以用 <code>fg</code> 将进程调取到前台再用 <code>Ctrl</code>+<code>C</code> 结束，或者用 <code>jobs</code> 命令查看进程作业号，再用 <code>kill</code> 结束指定作业号的进程，例如当进程的作业号为 <code>1</code> 时，使用 <code>kill %1</code> 结束进程。</p>
 <h3 id="python-实现">Python 实现</h3>
 <p>回到包目录下，创建 <code>scripts/</code> 目录并且创建 <code>test_package_node.py</code>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">cd</span> test_package
@@ -296,7 +293,7 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="p">]</span>
 </span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>此时修改好 <code>CMakeList.txt</code> 文件后，按下 <code>Ctrl</code> + <code>Shift</code> + <code>B</code> 快捷键即可直接编译。</p>
+</span></span></code></pre></div><p>此时修改好 <code>CMakeList.txt</code> 文件后，按下 <code>Ctrl</code>+<code>Shift</code>+<code>B</code> 快捷键即可直接编译。</p>
 <h2 id="使用-roslaunch-同时运行多个节点">使用 <code>roslaunch</code> 同时运行多个节点</h2>
 <p>回到包目录下并创建 <code>launch/test_package.launch</code> 文件：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">cd</span> test_package
@@ -375,6 +372,9 @@ src='https://plausible.io/js/plausible.js'>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://jackgdn.github.io/post/bundle-ros/ros-msgs/" class="nav-link" title="ROS 学习记录（二）——ROS 的通信机制">ROS 学习记录（二）——ROS 的通信机制</a>
+      </li>
+      <li>
         <a href="https://jackgdn.github.io/post/bundle-ros/ros-basic/" class="nav-link" title="ROS 学习记录（一）——快速体验">ROS 学习记录（一）——快速体验</a>
       </li>
       <li>
@@ -394,9 +394,6 @@ src='https://plausible.io/js/plausible.js'>
       </li>
       <li>
         <a href="https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/" class="nav-link" title="动态规划练习（二）">动态规划练习（二）</a>
-      </li>
-      <li>
-        <a href="https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/" class="nav-link" title="数学与数论类题目练习">数学与数论类题目练习</a>
       </li>
     </ul>
     <div>
@@ -452,14 +449,14 @@ src='https://plausible.io/js/plausible.js'>
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
-          逆向
+        <a href='https://jackgdn.github.io/categories/ros/' class="post_tag button button_translucent" title="ros">
+          ROS
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/ros/' class="post_tag button button_translucent" title="ros">
-          ROS
-          <span class="button_tally">1</span>
+        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+          逆向
+          <span class="button_tally">2</span>
         </a>
         
         <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
@@ -485,7 +482,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/ros/' class=" post_tag button button_translucent" data-position=1 title="ros">ROS<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/categories/ros/' class=" post_tag button button_translucent" data-position=2 title="ros">ROS<span class="button_tally">2</span>
             </a>
             
             
@@ -736,7 +733,7 @@ src='https://plausible.io/js/plausible.js'>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/ros/' class=" post_tag button button_translucent" data-position=1 title="ros">ROS<span class="button_tally">1</span>
+            <a href='https://jackgdn.github.io/tags/ros/' class=" post_tag button button_translucent" data-position=2 title="ros">ROS<span class="button_tally">2</span>
             </a>
             
             
