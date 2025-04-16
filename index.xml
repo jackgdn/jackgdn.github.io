@@ -6,13 +6,29 @@
     <description>Recent content on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS 学习记录（三）——ROS 通信机制实践</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</guid>
+      <description>
+        
+          
+            分别尝试使用话题通信、服务通信和参数服务器通信与 turtlesim_node 节点通信。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS 学习记录（二）——ROS 的通信机制</title>
-      <link>https://jackgdn.github.io/post/bundle-ros/ros-msgs/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm/</link>
       <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-ros/ros-msgs/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm/</guid>
       <description>
         
           
