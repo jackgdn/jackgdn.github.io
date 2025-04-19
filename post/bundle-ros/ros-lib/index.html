@@ -268,6 +268,42 @@ src='https://plausible.io/js/plausible.js'>
 </span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&#34;hello_py&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">hello</span><span class="o">.</span><span class="n">hello</span><span class="p">()</span>
+</span></span></code></pre></div><p>为了避免每次创建 Python 脚本都需要手动赋予可执行权限，可以在 <code>.vscode/tasks.json</code> 中添加一个新任务，并将其作为 <code>catkin_make</code> 的依赖：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="c1">// 有关 tasks.json 格式的文档，请参见
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span>    <span class="c1">// https://go.microsoft.com/fwlink/?LinkId=733558
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>    <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;2.0.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nt">&#34;tasks&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;catkin_make:debug&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;shell&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;catkin_make&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nt">&#34;group&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">                <span class="nt">&#34;kind&#34;</span><span class="p">:</span> <span class="s2">&#34;build&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">                <span class="nt">&#34;isDefault&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="nt">&#34;dependsOn&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;chmod_scripts&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="nt">&#34;presentation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="nt">&#34;reveal&#34;</span><span class="p">:</span> <span class="s2">&#34;always&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="nt">&#34;problemMatcher&#34;</span><span class="p">:</span> <span class="s2">&#34;$msCompile&#34;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;chmod_scripts&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;shell&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;chmod&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                <span class="s2">&#34;+x&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                <span class="s2">&#34;/home/jackgdn/ros-project/src/*/scripts/*.py&#34;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">            <span class="p">],</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">            <span class="nt">&#34;problemMatcher&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">            <span class="nt">&#34;presentation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">                <span class="nt">&#34;reveal&#34;</span><span class="p">:</span> <span class="s2">&#34;always&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">                <span class="nt">&#34;echo&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>随后修改 <code>CMakeLists.txt</code> 文件运行即可。</p>
 <hr>
 <p>看上去这篇记录内容很少，但是实际上我花了一上午时间查找将 Debug 级别的日志输出到控制台的方法。首先，<code>roscpp</code> 的日志输出通过 <code>log4j</code> 实现，而 <code>rospy</code> 的日志输出通过 <code>logger</code> 实现，两者的实现方式不同。因此可以在配置文件 <code>libtest/config/rosconsole.conf</code> 中写入 <code>log4j.logger.ros=DEBUG</code>，然后在 <code>libtest.launch</code> 中添加标签 <code>&lt;env name=&quot;ROSCONSOLE_CONFIG_FILE&quot; value=&quot;$(find my_package)/config/custom_rosconsole.conf&quot; /&gt;</code> 来修改 C++ 节点的日志输出级别。</p>
