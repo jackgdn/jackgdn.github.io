@@ -6,7 +6,23 @@
     <description>Recent content in ROS on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-lib/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-lib/</guid>
+      <description>
+        
+          
+            尝试使用自定义的头文件和模块，并以 Debug 级别输出日志。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS 学习记录（三）——ROS 通信机制实践</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</link>

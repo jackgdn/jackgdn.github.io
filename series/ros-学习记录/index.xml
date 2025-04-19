@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS 学习记录 on &lt;jack-gdn/&gt;</title>
+    <link>https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in ROS 学习记录 on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-lib/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-lib/</guid>
+      <description>
+        
+          
+            尝试使用自定义的头文件和模块，并以 Debug 级别输出日志。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>ROS 学习记录（三）——ROS 通信机制实践</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</guid>
+      <description>
+        
+          
+            分别尝试使用话题通信、服务通信和参数服务器通信与 turtlesim_node 节点通信。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>ROS 学习记录（二）——ROS 的通信机制</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm/</link>
+      <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm/</guid>
+      <description>
+        
+          
+            认识 ROS 的通信机制，尝试用 C++ 和 Python 分别实现话题通信、服务通信和参数服务器通信。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>ROS 学习记录（一）——快速体验</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-basic/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-basic/</guid>
+      <description>
+        
+          
+            初步认识 ROS，利用 ROS 输出 Hello World。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
