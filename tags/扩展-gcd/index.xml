@@ -4,16 +4,24 @@
     <title>扩展 Gcd on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/</link>
     <description>Recent content in 扩展 Gcd on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</guid>
-      <description>前几天光往医院跑，没大抽出时间做题。&#xA;题目来自 AcWing Info&#xA;对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。&#xA;1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split())) 3nums.sort() 4 5if nums[-1] == nums[0]: 6 print(n) 7 exit() 8 9def gcd(a, b): 10 return a if b == 0 else gcd(b, a % b) 11 12b = list() 13for i in range(1, n): 14 b.append(nums[i] - nums[i - 1]) 15 16g = b[0] 17for i in range(n - 1): 18 g = gcd(g, b[i]) 19print((nums[-1] - nums[0]) // g + 1) 1295.</description>
+      <description>
+        
+          
+            数学与数论类题目练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

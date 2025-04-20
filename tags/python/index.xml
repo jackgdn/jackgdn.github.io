@@ -4,72 +4,152 @@
     <title>Python on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/python/</link>
     <description>Recent content in Python on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
-      <description>前面两篇笔记里介绍的内容都不过是开胃小菜，这一篇笔记里记录的才是硬菜，写一句话代码时真正实用的技巧。&#xA;lambda 匿名函数 lambda 关键字的用法如下 lambda [parameters]: expression，其中 expression 的结果直接作为返回值。这一结构决定了：&#xA;lambda 定义的匿名函数中只能有一个表达式 lambda 定义的匿名函数一定有返回值 下面是一个 lambda 的使用示例： 1print(list(map(lambda x: x + 1, [1, 1, 4, 5, 1, 4]))) 2 3# output: [2, 2, 5, 6, 2, 5] lambda函数经常与 map() 函数及其他需要以函数作为为参数的函数共同使用，用于提高代码的简洁性与灵活性。因为 lambda 会创建一个函数，这个匿名函数也可以使用常规的 function([parameters]) 的方式调用：&#xA;1print((lambda x: [i + 1 if i % 2 else i for i in x])([1, 1, 4, 5, 1, 4])) 2 3# output: [2, 2, 4, 6, 2, 4] 在上面这个例子中，x 为匿名函数的形式参数，后面的列表 [1, 1, 4, 5, 1, 4] 是传入函数的实际参数。</description>
+      <description>
+        
+          
+            利用匿名函数、海象运算符、动态创建类、名称重整机制等高级技巧，使一句话代码实现各种有趣的功能。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>超星学习通自动化完成任务点（GUI 版）项目介绍</title>
       <link>https://jackgdn.github.io/post/chaoxing-gui/</link>
       <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/chaoxing-gui/</guid>
-      <description>过去一星期，我开发了一个名为 chaoxing-GUI 的项目，并将其上传至 Github。这个项目基于 Github 上的 Samueli924/chaoxing 项目开发。原项目的描述为“超星学习通自动化完成任务点(命令行版)”，而我在这个命令行程序基础上，使用 PySide6 模块为其添加了图形化的界面。目前程序的功能较为单一，我会在后续更新中，逐步合并原项目中程序提供的功能。&#xA;项目的详细信息可见 README 文档。</description>
+      <description>
+        
+          
+            [项目地址（Click Me）](https://github.com/jackgdn/chaoxing-GUI)
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（二）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
-      <description>使用 sum() 函数或 list.count() 方法统计数量 sum() 函数的常规用法是求一个可迭代对象里面各元素的和（如果可求和的话）。当然，如果我们对一个只有 1 和 0 的列表求和，那么就可以求出列表中 1 的数量。根据这个思路，我们可以先将待处理的列表转换为一个仅存储布尔值的列表，再对其求和，就可以统计出其中满足条件元素的数量。例如还是上一篇文章中的例子：&#xA;1value = 7 2count = 0 3lst = [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] 4for i in lst: 5 if i &amp;gt; value: 6 count += 1 7print(count) 8 9# output: 4 我们结合推导式创建一个新的列表，将满足条件的存储为 1，这样再求和。&#xA;1print(sum(1 if i &amp;gt; 7 else 0 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10])) 2# 如果只有 if 语句，则将 if 语句放到 for 后。如果是 if-else 三元表达式，则将 if-else 前置。 3# 也可以写成 4print([1 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] if i &amp;gt; 7].</description>
+      <description>
+        
+          
+            使用 Python 中几个常用的内置函数：sum()、map()、zip()、enumerate()、next()、filter()、any() 和 all() 操作可迭代对象以简化代码。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（一）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
       <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</guid>
-      <description>我还在学习 CTF 时，我接触到了一些 Python 的有趣特性，例如使用 NFKC 进行沙箱逃逸以及 Python 存储对象时的一些机制。最近我对 Python 的“一句话代码”产生了兴趣，具体来说就是使用一些特别的 Python 编程技巧以及语法糖将大段代码压缩到一行或少数几行中，用几行短短的代码（但是每一行都会很长）实现一个完整的功能。例如说下面这三行代码分别时冒泡排序、选择排序和插入排序算法的“一句话代码”形式。&#xA;1print((bubble_sort := lambda lst: ([(tmp := lst.__getitem__(i), lst.__setitem__(i, lst.__getitem__(j)), lst.__setitem__(j, tmp), None)[-1] for i in range(len(lst) - 1) for j in range(i, len(lst)) if lst[j] &amp;lt; lst[i]] + lst)[-len(lst):])([int(i) for i in input().split()])) 2# 冒泡排序 3 4print((selection_sort := lambda lst: ([(index := i, j := i + 1, index := (my_while := lambda index, lst, j: my_while(index := j if lst[j] &amp;lt; lst[index] else index, lst, j := j + 1) if j &amp;lt; len(lst) else index)(index, lst, j), tmp := lst.</description>
+      <description>
+        
+          
+            在 Python 中通过“一句话代码”和多种编程技巧来压缩代码行数，提高代码的简洁性和可读性。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 中函数的参数</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</guid>
-      <description>必选参数 初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: 114514 1919810 函数定义中要求传入两个参数，那么在调用时就必须传入两个参数，如果出入过多或者过少参数均会报错。&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514) 5 6&amp;#34;&amp;#34;&amp;#34; 7output: 8Traceback (most recent call last): 9 File &amp;#34;/home/jackgdn/python-script/test.py&amp;#34;, line 4, in &amp;lt;module&amp;gt; 10 foo(114514) 11TypeError: foo() missing 1 required positional argument: &amp;#39;bParam&amp;#39; 12&amp;#34;&amp;#34;&amp;#34; 传入过少参数&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810, &amp;#34;Hello, World!&amp;#34;) 5 6&amp;#34;&amp;#34;&amp;#34; 7Traceback (most recent call last): 8 File &amp;#34;/home/jackgdn/python-script/test.</description>
+      <description>
+        
+          
+            学习 Python 声明函数时的参数，分为必选参数、默认参数、可变参数和关键字参数。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 课程设计项目报告</title>
       <link>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
-      <description>项目情况 项目介绍 本项目为一个商品管理应用程序，主要功能是创建、编辑、存储商品信息，同时程序还支持图表视图浏览、密码保护、日志记录等功能。程序使用 Textual 模块创建 TUI（Text-based User Interface，基于文本的用户界面） 程序，用户使用 TUI 与程序交互。我们选择使用 TUI 的理由如下：&#xA;相比于 GUI 程序，TUI 程序可以在没有图形化界面的计算机系统内运行，有较强可移植性；相比于 CLI 程序，TUI 程序更易于用户操作。 用户只需键盘作为输入设备即可与程序交互，若用户使用鼠标则可以获得更佳交互体验。 使用 TUI 作为程序界面的人少之又少，而用于创建 TUI 程序的模块 Textual 的资料更是稀缺。因此，制作 TUI 程序可以体现作者完成这一项目的过程即是学习的过程。 作者个人情怀 程序功能的详细介绍如下：&#xA;权限异常提示。当用户以无读写文件权限的普通用户身份执行程序时，程序会通过 AlertModalScreen 类创建弹窗提醒用户权限不足。此外，为了确保数据安全，程序使用的数据文件、密码存储文件、日志文件的权限均设为 600。 登录模块。登录界面的会根据用户登录状态的不同而显示不同内容（登录界面的可复用性极强，下面三种不同状态下的登录界面都是基于 LoginModalScreen 类创建的）：用户首次登录时，由于没有可用账户，程序会提示用户创建新的账户；有可用账户时，程序会在运行时提示用户登录，登录成功后数据才会加载；用户登录成功后，可以修改密码，修改密码后下次登录使用旧密码则会登录失败。用户名和密码输入框都限制了无法输入空格。用户的用户名及密码使用 PBKDF2 与 SHA256 算法（通过 hashlib.pbkdf2_hmac() 函数实现）进行保护，并加入随机密码盐确保密码不会遭到彩虹表攻击。无论用户在何时注册或者修改密码，也无论用户使用何用户名密码，存储到 logininfo 密码文件中的数据几乎没有重复的可能性。 数据处理模块。这一部分是程序的核心部分。用户在登录后会自动加载已保存的数据并且以组件的形式显示在屏幕上。数据包含商品名称、商品单价、商品数量、商品分区以及商品编号，用户可以编辑每一个商品的相关信息或者删除这些信息。其中，商品名称一栏尽可填写大小写字母、数字以及空格；商品单价一栏仅可输入浮点类型或者整型数据，商品数量一栏仅可输入整型数据；商品分区为一个下拉菜单，其中有十种类别可以选择。编辑后的数据需要用户手动保存，数据存储为 TSV 格式。 日志模块。创建用户、登录、登录失败以及保存文件这四种操作及操作时间会被记录并存储到日志文件中。 以表格视图浏览数据。表格视图可以浏览用户实时编辑的数据而非从已保存的文件中读取数据。在表格视图中，用户可以以商品名称、商品单价、商品数量、商品分区以及商品编号为排序依据对数据进行排序。 切换亮/暗显示模式。 命令托盘。保存数据、修改密码、切换亮/暗显示模式、退出程序、联系作者等命令可以在命令托盘（Command Palette）中查找并执行。 显示时间。 程序运行截图 程序代码 1from textual.screen import ModalScreen, Screen 2from textual.widgets import Label, Button, Input, Select, Header, Footer, DataTable, RichLog 3from textual.</description>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>逆向相关算法脚本（暂时停更）</title>
       <link>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</link>
       <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</guid>
-      <description>Base16 [已完成] Base32 [已完成] Base64 UUencode XXencode [已完成] Base58 (Python 实现) [已完成] TEA XTEA [已完成] XXTEA [已完成] RC4 [已完成] RC5 [队列中] SM4 [队列中] AES [队列中] DES 3DES [队列中] Blowfish [队列中] Chacha20 [队列中] Rabbit [队列中] RSA [队列中] MD5 [队列中] SHA256 [队列中] CRC32 [队列中] 有一个 IDA 插件叫做 Findcrypt, 其工作原理是寻找“关键值”，例如 TEA 加密的 DELTA、AES 加密的 S 盒、MD5 算法的状态变量。出于安全性的原因，这些值在算法里都是被规定好不能更改的。但是万恶的出题人可不管这些，如果这些值被修改，Findcrypt 就不好用了。因此我打算做这个脚本库。&#xA;除特别说明，本文中的脚本均使用 C++ 编写，使用 VC++ 编译器，以便于在遇到“魔改”算法题目时可直接修改。&#xA;编码 Base16 实际上 Base16 编码就是将每个字符的十六进制打印出来。但是既然是一种编码，就要考虑在题目中变表的可能。&#xA;编码脚本：&#xA;1#include &amp;lt;iostream&amp;gt; 2#include &amp;lt;cstring&amp;gt; 3#include &amp;lt;sstream&amp;gt; 4 5using namespace std; 6 7string dec2hex(int deci) 8{ 9&#x9;stringstream ss; 10&#x9;ss &amp;lt;&amp;lt; hex &amp;lt;&amp;lt; deci; 11&#x9;return ss.</description>
+      <description>
+        
+          
+            与逆向相关的编码、加解密、信息摘要算法脚本库（未完成，已停更）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 内存相关学习记录</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 &amp;gt;&amp;gt;&amp;gt; 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。&#xA;可变对象与不可变对象 可变对象 不可变对象 列表、字典、集合 整型、浮点型、布尔型、字符串、元组 简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用转移到新创建的对象上。&#xA;1dictnry = {&amp;#39;a&amp;#39;: 0, &amp;#39;b&amp;#39;: 1} # 字典对象为可变对象 2print(id(dictnry)) 3dictnry[&amp;#39;a&amp;#39;] = 1 4print(id(dictnry)) 5 6&amp;#39;&amp;#39;&amp;#39; 7output: 81570839226304 91570839226304 10&amp;#39;&amp;#39;&amp;#39; 下面是一个不可变对象的例子：&#xA;1string = &amp;#39;Hello, world?&amp;#39; 2print(id(string)) 3new_string = string.replace(&amp;#39;?&amp;#39;, &amp;#39;!&amp;#39;) # 因为字符串是不可变对象，因此在修改时需要一个新的变量接受修改后的字符串 4print(id(new_string)) 5print(string) 6print(new_string) 7 8&amp;#39;&amp;#39;&amp;#39; 9output: 101668896675760 111668896210864 12Hello, world? 13Hello, world! 14&amp;#39;&amp;#39;&amp;#39; 深拷贝与浅拷贝 浅拷贝：拷贝对象的引用。当原对象的数据改变时，拷贝的对象也会发生改变。 深拷贝：创建一个新的对象并将原数据存入新的对象。原对象数据改变不影响拷贝对象 在 Python 中，使用 copy() 函数实现浅拷贝，使用 copy.deepcopy() 函数实现深拷贝。&#xA;1# 浅拷贝 2&amp;gt;&amp;gt;&amp;gt; a = {&amp;#39;a&amp;#39;: [1, 2]} 3&amp;gt;&amp;gt;&amp;gt; b = a.</description>
+      <description>
+        
+          
+            初步学习 Python 的内存管理机制，包括可变对象与不可变对象、深浅拷贝、小整数池、Intering、字符串驻留五个部分。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Unicode 学习记录</title>
       <link>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。&#xA;NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！&#xA;简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (U+FB03) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。&#xA;因此在 Python 中就会有如下输出：&#xA;1print(&amp;#34;１&amp;#34; == &amp;#34;1&amp;#34;) # U+FF11 2print(int(&amp;#34;１&amp;#34;) == int(&amp;#34;1&amp;#34;)) 3 4# output: 5# 6# False 7# True 在下面两个网站里可以找到取代某个 ASCII 字符的 Unicode 字符：&#xA;Github - h13t0ry/UnicodeToy: Unicode fuzzer for various purposes&#xA;List of Unicode Characters of Bidirectional Class “European Number”</description>
+      <description>
+        
+          
+            Unicode 相关知识
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

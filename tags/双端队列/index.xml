@@ -4,16 +4,24 @@
     <title>双端队列 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/</link>
     <description>Recent content in 双端队列 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025春季算法练习——Week 3</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week3/</link>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week3/</guid>
-      <description>这些题看上去较简单，但是实操起来还有很多细节需要注意。&#xA;题目来自 AcWing 830. 单调栈 | 原题链接 遍历原数组中的每个数，然后作如下操作：&#xA;将栈顶元素出栈直到栈顶元素小于列表当前元素 将栈顶元素添加到答案列表中 将列表当前元素入栈 在栈中，如果一个元素小于前一个元素，那么这个元素后面所有元素的“左边第一个比它小的数”就不可能是当前这个元素前面的元素。&#xA;1from collections import deque 2 3n = int(input().strip()) 4nums = tuple(map(int, input().strip().split())) 5stack = deque() 6ans = list() 7for num in nums: 8 while stack and stack[-1] &amp;gt;= num: 9 stack.pop() 10 ans.append(-1 if not stack else stack[-1]) 11 stack.append(num) 12 13print(*ans) 154. 滑动窗口 | 原题链接 这道题像是上一道题的进阶版，区别是这道题只能在一个区间范围内找最大/最小值。解决这道题的流程如下：&#xA;将已经离开窗口的元素从队首弹出 确保队尾元素大于/小于列表当前元素，否则将元素从队尾出队 将列表当前元素入队 队首元素即为当前窗口的最大/最小值，将这个值添加到答案列表中 为了方便判断某个元素是否已经离开窗口，队列中存储的是元素的下标。&#xA;1from collections import deque 2 3n, k = map(int, input().</description>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

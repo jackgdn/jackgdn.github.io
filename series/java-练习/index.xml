@@ -4,58 +4,120 @@
     <title>Java 练习 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/</link>
     <description>Recent content in Java 练习 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 练习（七）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/</guid>
-      <description>源代码：Java-OOP-Practice&#xA;题目网页截图如下：</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（六）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/</link>
       <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/</guid>
-      <description>已知高斯随机数的公式为：$w=sin(2\pi v)(-21lnu)^{\frac12}$，从键盘输入一个（0,1）范围内的u，再输入一个（0,1）范围内的v。计算并输出w的值。 1example: 2 3input: 40.2 50.3 6 7output: 85.529082710300016 1package com.jackgdn; 2 3import java.util.Scanner; 4 5public class Main { 6 public static void main(String[] args) { 7 Scanner scanner = new Scanner(System.in); 8 double u = scanner.nextDouble(); 9 double v = scanner.nextDouble(); 10 scanner.close(); 11 12 double w = Math.sin(2 * Math.PI * v) * Math.sqrt(-21.0 * Math.log(u)); 13 System.out.println(w); 14 } 15} 从键盘依次读入两个整数字符，判断一下，他们是否互素。如果互素打印True，不互素打印False。 1example: 2 3input： 49 56 6 7output: 8False 1package com.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（五）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/</link>
       <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/</guid>
-      <description>从键盘输入一个m，代表二维矩阵A的行和列，然后输入m行数据，每行数据用空格分割。再输入一个n，代表矩阵的幂运算次数，即n = 2输出A * A 的值。n = 3 输出A * A *A的值。 1example： 2 3input： 42 51 1 61 1 72 8 9output： 10[[2, 2], [2, 2]] 1package com.jackgdn; 2 3import java.util.Scanner; 4import java.util.Arrays; 5 6public class Main { 7 public static void main(String[] args) { 8 Scanner scanner = new Scanner(System.in); 9 int order = scanner.nextInt(); 10 int[][] matrix = new int[order][order]; 11 for (int i = 0; i &amp;lt; order; i++) { 12 for (int j = 0; j &amp;lt; order; j++) { 13 matrix[i][j] = scanner.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（四）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/</guid>
-      <description>从键盘接收一个长字符串，统计其中的元音字母（包括大写和小写的），并按照字母表的顺序，把元音和元音的个数组成一个一位数组元素存在二维数组中。假设元音a的个数为0个，应该在数组中添加元素[&amp;quot;a&amp;quot;, 0]。（注意：大写和小写的元音，统一转换为小写字母计算元音个数） 1example: 2 3input: 4diwisniisiaidiengiowiwiOAIANAIDID 5 6output: 7[[&amp;#39;a&amp;#39;, 4], [&amp;#39;e&amp;#39;, 1], [&amp;#39;i&amp;#39;, 13], [&amp;#39;o&amp;#39;, 2], [&amp;#39;u&amp;#39;, 0]] 1package com.jackgdn; 2 3import java.util.Scanner; 4import java.util.Map; 5import java.util.TreeMap; 6import java.util.List; 7import java.util.ArrayList; 8 9public class Main { 10 public static void main(String[] args) { 11 String s; 12 try (Scanner scanner = new Scanner(System.in)) { 13 s = scanner.nextLine(); 14 } 15 16 Map&amp;lt;Character, Integer&amp;gt; result = new TreeMap&amp;lt;&amp;gt;(); // TreeMap 将 key 按字典序排序 17 for (char c : new char[] { &amp;#39;a&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;i&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39;u&amp;#39; }) { 18 result.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（三）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/</guid>
-      <description>从键盘输入一个n，代表二维数组的行和列，依次读入n行由空格和数字字符组成的字符串，将字符串中的每个数字字符转换成整形数据，存成二维数组的一行，如果输入的数字字符数目少于n个，以0补足，如果超过n个，截取前n位。 1example: 2 3input: 45 53 2 1 7 6 8 611 2 4 12 5 74 3 1 87 6 5 91 10 11output: 12[[3, 2, 1, 7, 6], [11, 2, 4, 12, 5], [4, 3, 1, 0, 0], [7, 6, 5, 0, 0], [1, 0, 0, 0, 0]] 1import java.util.Scanner; 2import java.util.Arrays; 3 4public class Main { 5 public static void main(String[] args) { 6 Scanner scanner = new Scanner(System.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/</guid>
-      <description>从键盘接收两个数据，一个代表鸡和兔子的头数，一个代表，鸡和兔子的腿数。编写一个程序，计算有多少只鸡，多少只兔子。如果无解，则输出：No solution. 1input: 235 394 4 5output: 6rabbit: 12 chicken: 23 7 8input: 920 1040 11 12output: 13only have chicken: 20 14 15input: 1615 1760 18 19output: 20only have rabbit: 15 21 22input: 2310 24100 25 26output: 27No solution 1import java.util.Scanner; 2 3public class Main { 4 public static void main(String[] args) { 5 try (Scanner scanner = new Scanner(System.in)) { 6 int heads = scanner.nextInt(); 7 int legs = scanner.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Java 练习（一）</title>
       <link>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/</link>
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/</guid>
-      <description>小明在银行的存款有1万元，已知，银行的年利率是1.9%，请问，不取出钱的情况下，存五年后，小明一共可以取出多少钱？ 注意：输出的钱数单位为元。&#xA;1public class Main { 2 public static void main(String[] args) { 3 double principal = 10000; 4 double savingPeriod = 5; 5 for (int i = 1; i &amp;lt;= savingPeriod; i++){ 6 principal *= 1.019; 7 } 8 System.out.println(principal); 9 } 10} 如上题，小明有一笔存款，存款的钱数由键盘来录入，存款的利率是1.9%，输入存款年限，根据年限和本金，给出最终取出的钱数。 以下为给出的测试样例。&#xA;1example： 2 3input： 410000 55 6 7output： 810986.792440810985 1import java.util.Scanner; 2 3public class Main { 4 public static void main(String[] args) { 5 Scanner scanner = new Scanner(System.</description>
+      <description>
+        
+          
+            Java 练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

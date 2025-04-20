@@ -4,16 +4,24 @@
     <title>C# on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/c%23/</link>
     <description>Recent content in C# on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 13 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 13 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>修改 Overcooked! 2 存档</title>
       <link>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</link>
       <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</guid>
-      <description>这两天玩 Overcooked! 2 ，有的关卡因为没有攒够星星玩不了。我花钱买了游戏却不让我往后玩，那我自己改存档吧！&#xA;Overcooked! 2 存档位于 C:\Users\{username}\AppData\LocalLow\Team17\Overcooked2\{key}\ 文件夹下。username 是自己的用户名；key 是 Steam 账号的 17 位 SteamID，我的账号的 key 是 76561198849752742。&#xA;不难看出 Overcooked! 2 的存档都是以 .save 作为后缀。诸多游戏厂商都会把自家游戏存档存为 .save 格式。不过这并不是一种通用格式，不同厂商间存储的方式还不一样，有些使用文本文档或者 .json 格式明文存储（例如 Insurgency），有些使用序列化方式存储（例如 Arma3）。Overcooked! 2 的存储方式比较高级：&#xA;它加密了……&#xA;Overcooked! 2 是使用 Unity 引擎开发的游戏，这件事你一打开游戏就能知道。那我不妨把这游戏逆掉。&#xA;dnSpy，启动！&#xA;这样一款游戏，里边出现的类可以说是相当之多了。不过我只需要找到加密和解密存档的代码，因此我选择搜索 &amp;quot;save&amp;quot; 关键词来查找代码。不知道什么原因，开发人员没有使用 Unity 的 Mono Security 来保护代码，这也方便了我逆向。最终我在 GlobalSave 类里找到了极其可疑的代码：&#xA;相关加密解密代码如下：&#xA;1private byte[] Obfuscate(byte[] deobfuscatedText, int size, int start = 0, string salt = &amp;#34;jjo+Ffqil5bdpo5VG82kLj8Ng1sK7L/rCqFTa39Zkom2/baqf5j9HMmsuCr0ipjYsPrsaNIOESWy7bDDGYWx1eA==&amp;#34;, string hashFunction = &amp;#34;SHA1&amp;#34;, int keySize = 256) 2{ 3&#x9;if (deobfuscatedText == null || deobfuscatedText.</description>
+      <description>
+        
+          
+            《胡闹厨房 2》对游戏存档加密，使用逆向手段找到加解密算法后，对游戏存档进行解密、修改并且重新加密。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

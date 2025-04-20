@@ -4,16 +4,24 @@
     <title>分治策略 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/</link>
     <description>Recent content in 分治策略 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>枚举、模拟与排序练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</guid>
-      <description>题目来自 AcWing 1210. 连号区间数 | 原题链接 暴力枚举的做法就是遍历 l 和 r 并对区间排序，判断区间内的数字是否连续递增。这样做的时间复杂度是 $O(n^3logn)$， 而 $1\leq N\leq10^4$ 的范围显然不支持这样的算法。经过观察发现，一段连续递增的数列中，其最大值减去最小值一定与数列长度相等。利用这个特点，在遍历 l 与 r 时，只需要维护区间内最大值和最小值，然后随时做判断，这样做的时间复杂度为 $O(n^2)$，在 $N$ 的数据范围内够用。&#xA;1n = int(input().strip()) 2nums = tuple(map(int, input().strip().split())) 3 4count = 0 5for l in range(n): 6 max_val = nums[l] 7 min_val = nums[l] 8 for r in range(l, n): 9 if nums[r] &amp;gt; max_val: 10 max_val = nums[r] 11 elif nums[r] &amp;lt; min_val: 12 min_val = nums[r] 13 14 if max_val - min_val == r - l: 15 count += 1 16 17print(count) 1236.</description>
+      <description>
+        
+          
+            枚举、模拟与排序练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

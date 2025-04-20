@@ -4,16 +4,24 @@
     <title>RegEx on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/regex/</link>
     <description>Recent content in RegEx on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>正则表达式学习记录（一）——正则表达式的编写</title>
       <link>https://jackgdn.github.io/post/regex-pt-1/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/regex-pt-1/</guid>
-      <description>正则表达式的编写 交互式学习正则表达式：RegexOne 中文&#xA;正则表达式练习：RegExr&#xA;正则表达式文档：MDN Web Docs 正则表达式&#xA;基础篇 标记&#xA;说明 样例 直接匹配，输入什么匹配什么。 RegEx: abc&#xA;Match: abc&#xA;Match: xyzabcdef . 匹配任何单个字符。 RegEx: .a&#xA;Match: 123abc \ 转义字符，用于匹配某个用于标记的原始字符。 RegEx: \.&#xA;Match: Hi.&#xA;Match: 3.14 [] 匹配特定范围内的单个字符 RegEx: [abc]an&#xA;Match: banana&#xA;Match: abcan [-] 用简略的方式表示范围。例如 [2-6] 等价于 [23456] RegEx: [0-3][a-c]&#xA;Match: 1a​2b8y9z [^] 排除特定范围内的单个字符 RegEx: b[^e]r&#xA;Match: barber \d 匹配 0-9 中的单个数字字符，相当于 [0-9] RegEx: \da&#xA;Match: 01a2b34 \D 匹配单个非数字字符，相当于 [^0-9] RegEx: \D2</description>
+      <description>
+        
+          
+            学习正则表达式的编写
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

@@ -4,23 +4,40 @@
     <title>Forensics on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/forensics/</link>
     <description>Recent content in Forensics on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PearlCTF 2024 WP</title>
       <link>https://jackgdn.github.io/post/bundle-wp/pearl2024/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-wp/pearl2024/</guid>
-      <description>I am so vegetable 我太菜了 :-(&#xA;b4by_jail 一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下：&#xA;1#!/usr/local/bin/python 2import time 3flag=&amp;#34;pearl{f4k3_fl4g}&amp;#34; 4blacklist=list(&amp;#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`![]{},&amp;lt;&amp;gt;/123456789&amp;#34;) 5def banner(): 6 file=open(&amp;#34;txt.txt&amp;#34;,&amp;#34;r&amp;#34;).read() 7 print(file) 8def check_blocklist(string): 9 for i in string: 10 if i in blacklist: 11 return(0) 12 return(1) 13def main(): 14 banner() 15 cmd=input(&amp;#34;&amp;gt;&amp;gt;&amp;gt; &amp;#34;) 16 time.sleep(1) 17 if(check_blocklist(cmd)): 18 try: 19 print(eval(cmd)) 20 except: 21 print(&amp;#34;Sorry no valid output to show.&amp;#34;) 22 else: 23 print(&amp;#34;Your sentence has been increased by 2 years for attempted escape.</description>
+      <description>
+        
+          
+            贡献分数 908/1807
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>BeginCTF 解题记录</title>
       <link>https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-      <description>题量大，题目难度适中，我挑选关键题目写写 WP&#xA;Misc Tupper 先把文件内容提取并拼接起来：&#xA;1txts = [] 2for i in range(0, 673, 4): 3 path = f&amp;#34;{i}.txt&amp;#34; 4 with open(path, &amp;#39;r&amp;#39;) as file: 5 txts.append(file.read()) 6txts = &amp;#39;&amp;#39;.join(txts) 7print(txts) 得到一段 Base64： MTQyNzgxOTM0MzI3MjgwMjYwNDkyOTg1NzQ1NzU1NTc1MzQzMjEwNjIzNDkzNTI1NDM1NjI2NTY3NjY0Njk3MDQwOTI4NzQ2ODgzNTQ2NzkzNzEyMTI0NDQzODIyOTg4MjEzNDIwOTM0NTAzOTg5MDcwOTY5NzYwMDI0NTg4MDc1OTg1MzU3MzUxNzIxMjY2NTc1MDQxMzExNzE2ODQ5MDcxNzMwODY2NTk1MDUxNDM5MjAzMDAwODU4MDg4MDk2NDcyNTY3OTAzODQzNzg1NTM3ODAyODI4OTQyMzk3NTE4OTg2MjAwNDExNDMzODMzMTcwNjQ3MjcxMzY5MDM2MzQ3NzA5MzYzOTg1MTg1NDc5MDA1MTI1NDg0MTk0ODYzNjQ5MTUzOTkyNTM5NDEyNDU5MTEyMDUyNjI0OTM1OTExNTg0OTc3MDgyMTkxMjY0NTM1ODc0NTY2MzczMDI4ODg3MDEzMDMzODIyMTA3NDg2Mjk4MDAwODE4MjE2ODQyODMxODczNjg1NDM2MDE1NTk3Nzg0MzE3MzUwMDY3OTQ3NjE1NDI0MTMwMDY2MjEyMTkyMDczMjI4MDg0NDkyMzIwNTA1Nzg4NTI0MzEzNjE2Nzg3NDUzNTU3NzY5MjExMzIzNTI0MTk5MzE5MDc4MzgyMDUwMDExODQ=&#xA;解码得到一串数：&#xA;14278193432728026049298574575557534321062349352543562656766469704092874688354679371212444382298821342093450398907096976002458807598535735172126657504131171684907173086659505143920300085808809647256790384378553780282894239751898620041143383317064727136903634770936398518547900512548419486364915399253941245911205262493591158497708219126453587456637302888701303382210748629800081821684283187368543601559778431735006794761542413006621219207322808449232050578852431361678745355776921132352419931907838205001184&#xD;根据题目名称可以知道与塔伯自指公式有关。用 Tupper&#39;s self-referential fomula 解一下：&#xA;where is crazyman 系列 三道社工题，前两道用谷歌识图可以直接找到地点；第三道的图片：&#xA;矿泉水瓶子上有 Boudl Apart&#39; Hotel 字样，根据提示在谷歌地图里找到在 Boudl Al Munsiyah 旁的 Starbucks。flag 在谷歌地图里这一家 Starbucks 的评论区里，按时间顺序查看能找到。&#xA;devil&#39;s word 一查是温州话，听音频把“魔鬼的语言”转成数字 0-9，最后十六进制转字符得到 flag。&#xA;发音 数字 leng 0 lia 2 sa 3 sii 4 ng 5 leu 6 cai 7 bo 8 jau 9 使用某些文本编辑器的 Ctrl+H 一键替换的时候注意，不要把 leng 里的 ng 替换成 5。</description>
+      <description>
+        
+          
+            真实一场酣畅淋漓的坐牢啊！
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

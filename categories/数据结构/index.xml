@@ -4,58 +4,120 @@
     <title>数据结构 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
     <description>Recent content in 数据结构 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</guid>
-      <description>题目来自 AcWing 848. 有向图的拓扑序列 | 原题链接 拓扑排序已经做过好几遍了，而且这还是一道模板题。如果一个有向图中有环（自环也是环），那么它一定无法拓扑排序。如果一个图拓扑排序得到的节点数和图中的节点数不同，那么这个图无法被拓扑排序。又因为“有向图可以被拓扑排序”和“图是有向无环图”互为充要条件，所以，则这个图一定不是有向无环图。&#xA;1import sys 2from collections import defaultdict, deque 3 4data = sys.stdin.read().strip().splitlines() 5n, m = map(int, data[0].strip().split()) 6 7indegree = [0 for _ in range(n + 1)] 8graph = defaultdict(list) 9ans = list() 10 11for i in range(1, m + 1): 12 u, v = map(int, data[i].strip().split()) 13 graph[u].append(v) 14 indegree[v] += 1 15 16q = deque() 17for node in range(1, n + 1): 18 if indegree[node] == 0: 19 q.</description>
+      <description>
+        
+          
+            图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>2025春季算法练习——Week 3</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week3/</link>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week3/</guid>
-      <description>这些题看上去较简单，但是实操起来还有很多细节需要注意。&#xA;题目来自 AcWing 830. 单调栈 | 原题链接 遍历原数组中的每个数，然后作如下操作：&#xA;将栈顶元素出栈直到栈顶元素小于列表当前元素 将栈顶元素添加到答案列表中 将列表当前元素入栈 在栈中，如果一个元素小于前一个元素，那么这个元素后面所有元素的“左边第一个比它小的数”就不可能是当前这个元素前面的元素。&#xA;1from collections import deque 2 3n = int(input().strip()) 4nums = tuple(map(int, input().strip().split())) 5stack = deque() 6ans = list() 7for num in nums: 8 while stack and stack[-1] &amp;gt;= num: 9 stack.pop() 10 ans.append(-1 if not stack else stack[-1]) 11 stack.append(num) 12 13print(*ans) 154. 滑动窗口 | 原题链接 这道题像是上一道题的进阶版，区别是这道题只能在一个区间范围内找最大/最小值。解决这道题的流程如下：&#xA;将已经离开窗口的元素从队首弹出 确保队尾元素大于/小于列表当前元素，否则将元素从队尾出队 将列表当前元素入队 队首元素即为当前窗口的最大/最小值，将这个值添加到答案列表中 为了方便判断某个元素是否已经离开窗口，队列中存储的是元素的下标。&#xA;1from collections import deque 2 3n, k = map(int, input().</description>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</guid>
-      <description>前几天光往医院跑，没大抽出时间做题。&#xA;题目来自 AcWing Info&#xA;对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。&#xA;1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split())) 3nums.sort() 4 5if nums[-1] == nums[0]: 6 print(n) 7 exit() 8 9def gcd(a, b): 10 return a if b == 0 else gcd(b, a % b) 11 12b = list() 13for i in range(1, n): 14 b.append(nums[i] - nums[i - 1]) 15 16g = b[0] 17for i in range(n - 1): 18 g = gcd(g, b[i]) 19print((nums[-1] - nums[0]) // g + 1) 1295.</description>
+      <description>
+        
+          
+            数学与数论类题目练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>双指针、广搜与图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</guid>
-      <description>题目来自 AcWing 1238. 日志统计 | 原题链接 暴力做法：存储每个帖子在对应时间的点赞数，并计算前缀和，再遍历前缀和数组得到答案。时间复杂度和空间复杂度 $O(ND)$，可以通过 13/15 个测试点。&#xA;1from collections import defaultdict 2 3 4def check(nums, D, K): 5 prefs = [0] * int(1e5 + 1) 6 for i in range(1, int(1e5 + 1)): 7 prefs[i] = prefs[i - 1] + nums[i - 1] 8 if i &amp;gt;= D and prefs[i] - prefs[i - D] &amp;gt;= K: 9 return True 10 return False 11 12 13N, D, K = map(int, input().</description>
+      <description>
+        
+          
+            双指针、广搜与图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>树状数组、线段树与差分练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
-      <description>Info&#xA;树状数组与线段树的适用范围是“单点修改，区间查询”。树状数组更适合用于动态维护前缀和，而线段树还可用于求区间最值 树状数组和线段树都是在线方法，支持动态修改与维护。&#xA;题目来自 AcWing 1264. 动态求连续区间和 | 原题链接 这是一道树状数组模板题。树状数组最基础的用法就是动态维护前缀和。下面出现的 lowbit add query 操作都是维护树状数组的基本函数。&#xA;1import sys 2 3 4def lowbit(x): 5 return x &amp;amp; -x 6 7 8def add(x, val): 9 while x &amp;lt;= n: 10 tree[x] += val 11 x += lowbit(x) 12 13 14def query(x): 15 res = 0 16 while x &amp;gt; 0: 17 res += tree[x] 18 x -= lowbit(x) 19 return res 20 21 22data = sys.</description>
+      <description>
+        
+          
+            树状数组、线段树与差分练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>2025寒假算法练习——Week 7</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week7/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week7/</guid>
-      <description>习题均来自 NEFU OJ Problem 1632 | 周末舞会-队列 Description 假设在周末舞会上，男士们和女士们进入舞厅时，各自排成一队。跳舞开始时，依次从男队和女队的队头上各出一人配成舞伴。规定每个舞曲只能有一对跳舞者。若两队初始人数不相同，则较长的那一队中未配对者等待下一轮舞曲。现要求写一个程序，模拟上述舞伴配对问题。&#xA;Input 第 1 行两个正整数，表示男士人数 m 和女士人数 n，1≤m，n≤1000； 第 2 行一个正整数，表示舞曲的数目 k，k≤1000。&#xA;Output 共 k 行，每行两个数，之间用一个空格隔开，表示配对舞伴的序号，男士在前，女士在后。&#xA;Sample Input 12 4 26 Sample Output 11 1 22 2 31 3 42 4 51 1 62 2 用队列反而时空消耗大，不如直接取模。&#xA;1import java.util.Scanner; 2 3public class Main { 4 public static void main(String[] args) { 5 try (Scanner sc = new Scanner(System.in)) { 6 int m = sc.</description>
+      <description>
+        
+          
+            队列的使用
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>2025寒假算法练习——Week 6</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week6/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week6/</guid>
-      <description>前段时间做 DP 有些头晕，今天做些水题。&#xA;习题均来自 NEFU OJ Problem 1624 | 栈-程序员输入问题 Description 程序员输入程序出现差错时，可以采取以下的补救措施：按错了一个键时，可以补按一个退格符“#”，以表示前一个字符无效；发现当前一行有错，可以按一个退行符“@”，以表示“@”与前一个换行符之间的字符全部无效。&#xA;Input 输入一行字符，个数不超过 100。&#xA;Output 输出一行字符，表示实际有效字符。&#xA;Sample Input 1sdfosif@for (ii#=1,#;i&amp;lt;.#=8;i+++#); Sample Output 1for (i=1;i&amp;lt;=8;i++); Hint 例子输入2：1234## 例子输出2：12&#xA;也许是不同语言对字符串的处理有差异，用 Java 会 WA。&#xA;1#include &amp;lt;iostream&amp;gt; 2#include &amp;lt;stack&amp;gt; 3#include &amp;lt;string&amp;gt; 4 5using namespace std; 6 7int main() { 8 string s; 9 getline(cin, s); 10 stack&amp;lt;char&amp;gt; st; 11 12 for (char ch : s) { 13 if (ch == &amp;#39;#&amp;#39;) { 14 st.</description>
+      <description>
+        
+          
+            栈的使用
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

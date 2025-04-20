@@ -4,135 +4,296 @@
     <title>算法学习 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 算法学习 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</guid>
-      <description>题目来自 AcWing 848. 有向图的拓扑序列 | 原题链接 拓扑排序已经做过好几遍了，而且这还是一道模板题。如果一个有向图中有环（自环也是环），那么它一定无法拓扑排序。如果一个图拓扑排序得到的节点数和图中的节点数不同，那么这个图无法被拓扑排序。又因为“有向图可以被拓扑排序”和“图是有向无环图”互为充要条件，所以，则这个图一定不是有向无环图。&#xA;1import sys 2from collections import defaultdict, deque 3 4data = sys.stdin.read().strip().splitlines() 5n, m = map(int, data[0].strip().split()) 6 7indegree = [0 for _ in range(n + 1)] 8graph = defaultdict(list) 9ans = list() 10 11for i in range(1, m + 1): 12 u, v = map(int, data[i].strip().split()) 13 graph[u].append(v) 14 indegree[v] += 1 15 16q = deque() 17for node in range(1, n + 1): 18 if indegree[node] == 0: 19 q.</description>
+      <description>
+        
+          
+            图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>动态规划练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/</guid>
-      <description>题目来自 AcWing 1050. 鸣人的影分身 | 原题链接 数据量很小，深搜可以 AC。&#xA;1t = int(input().strip()) 2 3 4def dfs(last_pow, rest_pow, rest_cnt): 5 global plans 6 if rest_pow == 0 and rest_cnt == 0: 7 plans += 1 8 return 9 10 if rest_pow &amp;lt; 0 or rest_cnt &amp;lt; 0: 11 return 12 13 if rest_cnt * last_pow &amp;gt; rest_pow: 14 return 15 16 for p in range(last_pow, rest_pow + 1): 17 dfs(p, rest_pow - p, rest_cnt - 1) 18 19 20for _ in range(t): 21 m, n = map(int, input().</description>
+      <description>
+        
+          
+            动态规划练习（二）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</guid>
-      <description>前几天光往医院跑，没大抽出时间做题。&#xA;题目来自 AcWing Info&#xA;对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。&#xA;1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split())) 3nums.sort() 4 5if nums[-1] == nums[0]: 6 print(n) 7 exit() 8 9def gcd(a, b): 10 return a if b == 0 else gcd(b, a % b) 11 12b = list() 13for i in range(1, n): 14 b.append(nums[i] - nums[i - 1]) 15 16g = b[0] 17for i in range(n - 1): 18 g = gcd(g, b[i]) 19print((nums[-1] - nums[0]) // g + 1) 1295.</description>
+      <description>
+        
+          
+            数学与数论类题目练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>二分查找与前缀和练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</guid>
-      <description>题目来自洛谷题单【算法1-6】二分查找与二分答案&#xA;P2249 【深基13.例1】查找 题目描述 输入 $n$ 个不超过 $10^9$ 的单调不减的（就是后面的数字不小于前面的数字）非负整数 $a_1,a_2,\dots,a_{n}$，然后进行 $m$ 次询问。对于每次询问，给出一个整数 $q$，要求输出这个数字在序列中第一次出现的编号，如果没有找到的话输出 $-1$ 。&#xA;输入格式 第一行 $2$ 个整数 $n$ 和 $m$，表示数字个数和询问次数。&#xA;第二行 $n$ 个整数，表示这些待查询的数字。&#xA;第三行 $m$ 个整数，表示询问这些数字的编号，从 $1$ 开始编号。&#xA;输出格式 输出一行，$m$ 个整数，以空格隔开，表示答案。&#xA;输入输出样例 #1 输入 #1 111 3 21 3 3 3 5 7 9 11 13 15 15 31 3 6 输出 #1 11 2 -1 说明/提示 数据保证，$1 \leq n \leq 10^6$，$0 \leq a_i,q \leq 10^9$，$1 \leq m \leq 10^5$</description>
+      <description>
+        
+          
+            二分查找与前缀和练习（二）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>双指针、广搜与图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</guid>
-      <description>题目来自 AcWing 1238. 日志统计 | 原题链接 暴力做法：存储每个帖子在对应时间的点赞数，并计算前缀和，再遍历前缀和数组得到答案。时间复杂度和空间复杂度 $O(ND)$，可以通过 13/15 个测试点。&#xA;1from collections import defaultdict 2 3 4def check(nums, D, K): 5 prefs = [0] * int(1e5 + 1) 6 for i in range(1, int(1e5 + 1)): 7 prefs[i] = prefs[i - 1] + nums[i - 1] 8 if i &amp;gt;= D and prefs[i] - prefs[i - D] &amp;gt;= K: 9 return True 10 return False 11 12 13N, D, K = map(int, input().</description>
+      <description>
+        
+          
+            双指针、广搜与图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>树状数组、线段树与差分练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
-      <description>Info&#xA;树状数组与线段树的适用范围是“单点修改，区间查询”。树状数组更适合用于动态维护前缀和，而线段树还可用于求区间最值 树状数组和线段树都是在线方法，支持动态修改与维护。&#xA;题目来自 AcWing 1264. 动态求连续区间和 | 原题链接 这是一道树状数组模板题。树状数组最基础的用法就是动态维护前缀和。下面出现的 lowbit add query 操作都是维护树状数组的基本函数。&#xA;1import sys 2 3 4def lowbit(x): 5 return x &amp;amp; -x 6 7 8def add(x, val): 9 while x &amp;lt;= n: 10 tree[x] += val 11 x += lowbit(x) 12 13 14def query(x): 15 res = 0 16 while x &amp;gt; 0: 17 res += tree[x] 18 x -= lowbit(x) 19 return res 20 21 22data = sys.</description>
+      <description>
+        
+          
+            树状数组、线段树与差分练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>枚举、模拟与排序练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</guid>
-      <description>题目来自 AcWing 1210. 连号区间数 | 原题链接 暴力枚举的做法就是遍历 l 和 r 并对区间排序，判断区间内的数字是否连续递增。这样做的时间复杂度是 $O(n^3logn)$， 而 $1\leq N\leq10^4$ 的范围显然不支持这样的算法。经过观察发现，一段连续递增的数列中，其最大值减去最小值一定与数列长度相等。利用这个特点，在遍历 l 与 r 时，只需要维护区间内最大值和最小值，然后随时做判断，这样做的时间复杂度为 $O(n^2)$，在 $N$ 的数据范围内够用。&#xA;1n = int(input().strip()) 2nums = tuple(map(int, input().strip().split())) 3 4count = 0 5for l in range(n): 6 max_val = nums[l] 7 min_val = nums[l] 8 for r in range(l, n): 9 if nums[r] &amp;gt; max_val: 10 max_val = nums[r] 11 elif nums[r] &amp;lt; min_val: 12 min_val = nums[r] 13 14 if max_val - min_val == r - l: 15 count += 1 16 17print(count) 1236.</description>
+      <description>
+        
+          
+            枚举、模拟与排序练习
+          
+          
+        
+      </description>
     </item>
-    <item>
-      <title>动态规划练习（一）</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</link>
-      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</guid>
-      <description>下面的题目来自洛谷题单【动态规划1】动态规划的引入&#xA;解决动态规划问题的三个核心：dp 数组含义、状态转移方程、初始值。&#xA;P1216 [IOI 1994] 数字三角形 Number Triangles 题目描述 观察下面的数字金字塔。&#xA;写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。&#xA;在上面的样例中，从 $7 \to 3 \to 8 \to 7 \to 5$ 的路径产生了最大权值。&#xA;输入格式 第一个行一个正整数 $r$ ,表示行的数目。&#xA;后面每行为这个数字金字塔特定行包含的整数。&#xA;输出格式 单独的一行,包含那个可能得到的最大的和。&#xA;输入输出样例 #1 输入 #1 15 27 33 8 48 1 0 52 7 4 4 64 5 2 6 5 输出 #1 130 说明/提示 【数据范围】 对于 $100%$ 的数据，$1\le r \le 1000$，所有输入在 $[0,100]$ 范围内。&#xA;题目翻译来自NOCOW。&#xA;USACO Training Section 1.5&#xA;IOI1994 Day1T1</description>
-    </item>
+    
     <item>
       <title>背包问题练习（五）——分组背包问题</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</guid>
-      <description>题目来自洛谷题单背包问题&#xA;分组背包中的每一组都只能选择一种物品。从外向内的遍历顺序依次是：组号 $i$、当前背包重量 $j$ 和当前组内物品 $g_i$。&#xA;P1757 通天之分组背包 题目背景 直达通天路·小 A 历险记第二篇&#xA;题目描述 自 $01$ 背包问世之后，小 A 对此深感兴趣。一天，小 A 去远游，却发现他的背包不同于 $01$ 背包，他的物品大致可分为 $k$ 组，每组中的物品相互冲突，现在，他想知道最大的利用价值是多少。&#xA;输入格式 两个数 $m,n$，表示一共有 $n$ 件物品，总重量为 $m$。&#xA;接下来 $n$ 行，每行 $3$ 个数 $a_i,b_i,c_i$，表示物品的重量，利用价值，所属组数。&#xA;输出格式 一个数，最大的利用价值。&#xA;输入输出样例 #1 输入 #1 145 3 210 10 1 310 5 1 450 400 2 输出 #1 110 说明/提示 $0 \leq m \leq 1000$，$1 \leq n \leq 1000$，$1\leq k\leq 100$，$a_i, b_i, c_i$ 在 int 范围内。</description>
+      <description>
+        
+          
+            背包问题练习（五）——分组背包问题
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>动态规划练习（一）</title>
+      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</guid>
+      <description>
+        
+          
+            动态规划练习（一）
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>数学与动态规划练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</guid>
-      <description>题目来自 AcWing 1205. 买不到的数目 | 原题链接 首先说暴力做法。假设存在非负整数 $x,\space y$ 使得 $k=nx+my$。同时存在两组数非负整数 $(a_0,b_0)$ 与 $(a_1,b_1)$ 使得 $a_0n-b_0m=1,\space b_1m-a_1n=1$，这样可以得到 $k-1=(x-a_0)n+(y+b_0)m=(x+a_1)n+(y-b_1)m$。从大到小遍历 $k$ 时，第一个无法使 $x-a_0,\space y+b_0$ 或 $x+a_1,\space y-b_1$ 同时为正的 $k$ 即为所求值。&#xA;例如对样例中 $n=4,\space m=7$ 来说，$2\times4-1\times7=1,\space3\times7-5\times4=1$。当 $k=4x+7y,\space x,y\geq0$ 时，$k-1=4(x-2)+7(y+1)=4(x+5)-7(y-3)$。当 $k=18$ 时，$k=1\times4+2\times7$；而当 $k=17$ 时，$k=(-1)\times4+3\times7=6\times4+(-1)\times7$，无法满足条件。&#xA;根据上面的思路写出代码：&#xA;1n, m = map(int, input().strip().split(&amp;#34; &amp;#34;)) 2if n &amp;gt; m: 3 n, m = m, n 4 5i = 0 6while True: 7 if (i * m - 1) % n == 0: 8 km = ((i * m - 1) // n, i) 9 break 10 i += 1 11 12i = 0 13while True: 14 if (i * m + 1) % n == 0: 15 kn = ((i * m + 1) // n, i) 16 break 17 i += 1 18 19k = [0, n] 20for i in range(1, n * m)[::-1]: 21 if k[0] - kn[0] &amp;gt;= 0: 22 k[0] -= kn[0] 23 k[1] += kn[1] 24 elif k[1] - km[1] &amp;gt;= 0: 25 k[0] += km[0] 26 k[1] -= km[1] 27 else: 28 print(i) 29 break 经过观察发现，$k=18$ 能够表示而 $k=17$ 时不能够被表示，是因为 $1-2&amp;lt;0,\space 2-3&amp;lt;0$，推广后可以表示为 $k=nx+my,\space x-a_0&amp;lt;0,\space y-b_1&amp;lt;0$。那么当 $x-a_0=y-b_1=-1$ 时，$k$ 刚好不满足条件且最大，因此可以用 $(a_0-1)n+(b_1-1)m-1$ 来求出这个值。</description>
+      <description>
+        
+          
+            数学与动态规划练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>贪心策略练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-greedy/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-greedy/</guid>
-      <description>题目来自 AcWing 贪心更像是一种策略和思想，而不是某一种特定的算法。&#xA;1055. 股票买卖 II | 原题链接 这道题的解决思路就是的低价卖高价卖。因为可以买卖多次，因此通过追求局部最优解得到答案。&#xA;1n = int(input()) 2nums = tuple(map(int, input().split(&amp;#34; &amp;#34;))) 3 4profit = 0 5for i in range(1, n): 6 if nums[i] &amp;gt; nums[i - 1]: 7 profit += nums[i] - nums[i - 1] 8 9print(profit) 104. 货仓选址 | 原题链接 货仓的在数轴上的位置一定在最小值和最大值之间，以确保总距离最近。当只有两个商店时，只要货仓的位置在两个商店中间，则总距离一定最小且相等；如果再增加两个商店，当货仓的位置位于所有商店的中间时，总距离依然最小且相等……再假设商店 $A_1,A_2,\cdots A_n$ 的位置升序排列，则货仓的位置一定在编号最中间的商店。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split(&amp;#34; &amp;#34;))) 3 4if n == 1: 5 print(0) 6 exit() 7 8if n == 2: 9 print(abs(nums[1] - nums[0])) 10 exit() 11 12nums.</description>
+      <description>
+        
+          
+            贪心策略练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>二分查找与前缀和练习（一）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</guid>
-      <description>题目来自 AcWing 789. 数的范围 | 原题链接 这道题做法很多。&#xA;使用双指针将每一段的信息存储到字典中：&#xA;1n, q = map(int, input().strip().split(&amp;#34; &amp;#34;)) 2nums = tuple(map(int, input().strip().split(&amp;#34; &amp;#34;))) 3d = dict() 4l = len(nums) 5 6front = 0 7rear = 0 8while front &amp;lt; l: 9 if nums[front] != nums[rear]: 10 d[nums[rear]] = (rear, front - 1) 11 rear = front 12 front += 1 13 14d[nums[rear]] = (rear, front - 1) 15 16result = list() 17for _ in range(q): 18 k = int(input().</description>
+      <description>
+        
+          
+            二分查找与前缀和练习（一）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>递归与递推练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-recursion&#43;iteration/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-recursion&#43;iteration/</guid>
-      <description>题目来自 AcWing 92. 递归实现指数型枚举 | 原题链接 使用 AcWing 上的挑战模式做题，所以码风看上去比较乱。&#xA;1n = int(input()) 2nums = list(range(1, n + 1)) 3 4def dfs(current, nums): 5 if len(nums) == 0: 6 print(&amp;#34; &amp;#34;.join(current)) 7 return 8 9 dfs(current, nums[1:]) 10 dfs(current + [str(nums[0])], nums[1:]) 11 12dfs(list(), nums) 94. 递归实现排列型枚举 | 原题链接 全排列，一般做法：&#xA;1n = int(input()) 2nums = {k: True for k in range(1, n + 1)} 3result = list() 4 5def dfs(current): 6 if not any(nums.</description>
+      <description>
+        
+          
+            递归与递推练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>搜索练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-searching/</link>
       <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-searching/</guid>
-      <description>Info&#xA;深度优先搜索适合用于查找路径、解决组合问题，缺点是递归调用的时间复杂度高。 广度优先搜索适合用于找最短路径，缺点是空间复杂度高。 [NOIP2001 普及组] 求先序排列 题目描述 给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，且二叉树的节点个数 $ \le 8$）。&#xA;输入格式 共两行，均为大写字母组成的字符串，表示一棵二叉树的中序与后序排列。&#xA;输出格式 共一行一个字符串，表示一棵二叉树的先序。&#xA;样例 #1 样例输入 #1 1BADC 2BDCA 样例输出 #1 1ABCD 提示 【题目来源】&#xA;NOIP 2001 普及组第三题&#xA;题解 中序遍历是以左-&amp;gt;中-&amp;gt;右的顺序遍历树，后续遍历是以左-&amp;gt;右-&amp;gt;中的顺序遍历树。根据定义我们可以知道以下规律：&#xA;后序遍历的最后一个节点一定是根节点，对子树同样成立 中序遍历左子节点一定在根节点前，根节点一定在右子节点前，对子树同样成立 后序遍历左子节点一定在右子节点前，对子树同样成立 随后可以按照这些规律设计算法，还原一颗二叉树：&#xA;从后向前读取后序遍历字符串，每一个字符都是某个树的根节点 在中序遍历字符串中找到这个根节点字符，这个字符前面的 n 个字符都属于左子树，后面的 m 个字符都属于右子树 后序遍历字符串的前 n 个字符属于左子树，紧接着的 m 个字符属于右子树 按照上述规律处理子树 1class Node: 2 3 def __init__(self, left=None, right=None, value=str()): 4 self.left = left 5 self.right = right 6 self.value = value 7 8 9def dfs(inorder, postorder): 10 if not postorder: 11 return None 12 node = Node() 13 root = postorder[-1] 14 node.</description>
+      <description>
+        
+          
+            搜索练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>背包问题练习（四）——多维背包问题</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</guid>
-      <description>题目来自洛谷题单背包问题 和 NEFU OJ&#xA;QWQ 和 QAQ (reprise) 之前遇见过的 QWQ 和 QAQ 这道题，实际上也可以按照三维完全背包的方式来解（时间复杂度和空间复杂度更高，但是可以 AC）。&#xA;题解 1#define _CRT_SECURE_NO_WARNINGS 2 3#include &amp;lt;cstdio&amp;gt; 4#include &amp;lt;cstring&amp;gt; 5#include &amp;lt;algorithm&amp;gt; 6 7using namespace std; 8 9int t, a[4] = { 0 }, b[4] = { 0 }, c[4] = { 0 }, d[4] = { 0 }, dp[205][205][205], i, j, k, l; 10 11int main() { 12 scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); 13 14 while (t--) { 15 for (i = 1; i &amp;lt;= 4; i++) { 16 scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;a[i % 4], &amp;amp; b[i % 4], &amp;amp;c[i % 4]); 17 } 18 scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;d[1], &amp;amp;d[2], &amp;amp;d[3]); 19 20 memset(dp, 0, sizeof(dp)); 21 for (i = 1; i &amp;lt;= 3; i++) { 22 for (j = a[i]; j &amp;lt;= a[0]; j++) { 23 for (k = b[i]; k &amp;lt;= b[0]; k++) { 24 for (l = c[i]; l &amp;lt;= c[0]; l++) { 25 dp[j][k][l] = max(dp[j][k][l], dp[j - a[i]][k - b[i]][l - c[i]] + d[i]); 26 } 27 } 28 } 29 } 30 31 printf(&amp;#34;%d\n&amp;#34;, dp[a[0]][b[0]][c[0]]); 32 } 33} 榨取kkksc03 题目描述 洛谷 2 的团队功能是其他任何 OJ 和工具难以达到的。借助洛谷强大的服务器资源，任何学校都可以在洛谷上零成本的搭建 OJ 并高效率的完成训练计划。</description>
+      <description>
+        
+          
+            背包问题练习（四）——多维背包问题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>背包问题练习（三）——多重背包问题</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</guid>
-      <description>多重背包问题讲解视频：多重背包两种解法硬头皮算和二进制优化 动态规划&#xA;题目来自洛谷题单背包问题&#xA;樱花 题目背景 《爱与愁的故事第四弹·plant》第一章。&#xA;题目描述 爱与愁大神后院里种了 $n$ 棵樱花树，每棵都有美学值 $C_i(0 \le C_i \le 200)$。爱与愁大神在每天上学前都会来赏花。爱与愁大神可是生物学霸，他懂得如何欣赏樱花：一种樱花树看一遍过，一种樱花树最多看 $P_i(0 \le P_i \le 100)$ 遍，一种樱花树可以看无数遍。但是看每棵樱花树都有一定的时间 $T_i(0 \le T_i \le 100)$。爱与愁大神离去上学的时间只剩下一小会儿了。求解看哪几棵樱花树能使美学值最高且爱与愁大神能准时（或提早）去上学。&#xA;输入格式 共 $n+1$行：&#xA;第 $1$ 行：现在时间 $T_s$（几时：几分），去上学的时间 $T_e$（几时：几分），爱与愁大神院子里有几棵樱花树 $n$。这里的 $T_s$，$T_e$ 格式为：hh:mm，其中 $0 \leq hh \leq 23$，$0 \leq mm \leq 59$，且 $hh,mm,n$ 均为正整数。&#xA;第 $2$ 行到第 $n+1$ 行，每行三个正整数：看完第 $i$ 棵树的耗费时间 $T_i$，第 $i$ 棵树的美学值 $C_i$，看第 $i$ 棵树的次数 $P_i$（$P_i=0$ 表示无数次，$P_i$ 是其他数字表示最多可看的次数 $P_i$）。&#xA;输出格式 只有一个整数，表示最大美学值。&#xA;样例 #1 样例输入 #1 16:50 7:00 3 22 1 0 33 3 1 44 5 4 样例输出 #1 111 提示 $100%$ 数据：$T_e-T_s \leq 1000$（即开始时间距离结束时间不超过 $1000$ 分钟），$n \leq 10000$。保证 $T_e,T_s$ 为同一天内的时间。</description>
+      <description>
+        
+          
+            背包问题练习（三）——多重背包问题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>背包问题练习（二）——完全背包问题</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</guid>
-      <description>完全背包问题讲解视频：新手向 再冲完全背包两种解法 二维数组 滚动数组&#xA;题目来自洛谷题单背包问题&#xA;疯狂的采药 题目背景 此题为纪念 LiYuxiang 而生。&#xA;题目描述 LiYuxiang 是个天资聪颖的孩子，他的梦想是成为世界上最伟大的医师。为此，他想拜附近最有威望的医师为师。医师为了判断他的资质，给他出了一个难题。医师把他带到一个到处都是草药的山洞里对他说：“孩子，这个山洞里有一些不同种类的草药，采每一种都需要一些时间，每一种也有它自身的价值。我会给你一段时间，在这段时间里，你可以采到一些草药。如果你是一个聪明的孩子，你应该可以让采到的草药的总价值最大。”&#xA;如果你是 LiYuxiang，你能完成这个任务吗？&#xA;此题和原题的不同点：&#xA;$1$. 每种草药可以无限制地疯狂采摘。&#xA;$2$. 药的种类眼花缭乱，采药时间好长好长啊！师傅等得菊花都谢了！&#xA;输入格式 输入第一行有两个整数，分别代表总共能够用来采药的时间 $t$ 和代表山洞里的草药的数目 $m$。&#xA;第 $2$ 到第 $(m + 1)$ 行，每行两个整数，第 $(i + 1)$ 行的整数 $a_i, b_i$ 分别表示采摘第 $i$ 种草药的时间和该草药的价值。&#xA;输出格式 输出一行，这一行只包含一个整数，表示在规定的时间内，可以采到的草药的最大总价值。&#xA;样例 #1 样例输入 #1 170 3 271 100 369 1 41 2 样例输出 #1 1140 提示 数据规模与约定 对于 $30%$ 的数据，保证 $m \le 10^3$ 。 对于 $100%$ 的数据，保证 $1 \leq m \le 10^4$，$1 \leq t \leq 10^7$，且 $1 \leq m \times t \leq 10^7$，$1 \leq a_i, b_i \leq 10^4$。 题解 完全背包模板题，用 Python 写的话，不管是用二维数组还是一维滚动数组都会 MLE，所以使用 Java。 另外这道题的数据范围比较大，dp 数组使用 long 类型。</description>
+      <description>
+        
+          
+            背包问题练习（二）——完全背包问题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>背包问题练习（一）——01背包问题</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</guid>
-      <description>通俗易懂的 0-1 背包问题讲解视频：带你学透0-1背包问题！| 关于背包问题，你不清楚的地方，这里都讲了！| 动态规划经典问题 | 数据结构与算法&#xA;题目来自洛谷题单背包问题&#xA;[NOIP2005 普及组] 采药 题目描述 辰辰是个天资聪颖的孩子，他的梦想是成为世界上最伟大的医师。为此，他想拜附近最有威望的医师为师。医师为了判断他的资质，给他出了一个难题。医师把他带到一个到处都是草药的山洞里对他说：“孩子，这个山洞里有一些不同的草药，采每一株都需要一些时间，每一株也有它自身的价值。我会给你一段时间，在这段时间里，你可以采到一些草药。如果你是一个聪明的孩子，你应该可以让采到的草药的总价值最大。”&#xA;如果你是辰辰，你能完成这个任务吗？&#xA;输入格式 第一行有 $2$ 个整数 $T$（$1 \le T \le 1000$）和 $M$（$1 \le M \le 100$），用一个空格隔开，$T$ 代表总共能够用来采药的时间，$M$ 代表山洞里的草药的数目。&#xA;接下来的 $M$ 行每行包括两个在 $1$ 到 $100$ 之间（包括 $1$ 和 $100$）的整数，分别表示采摘某株草药的时间和这株草药的价值。&#xA;输出格式 输出在规定的时间内可以采到的草药的最大总价值。&#xA;样例 #1 样例输入 #1 170 3 271 100 369 1 41 2 样例输出 #1 13 提示 【数据范围】&#xA;对于 $30%$ 的数据，$M \le 10$； 对于全部的数据，$M \le 100$。 【题目来源】&#xA;NOIP 2005 普及组第三题</description>
+      <description>
+        
+          
+            背包问题练习（一）——01背包问题
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

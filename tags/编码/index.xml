@@ -4,16 +4,24 @@
     <title>编码 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/</link>
     <description>Recent content in 编码 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unicode 学习记录</title>
       <link>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。&#xA;NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！&#xA;简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (U+FB03) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。&#xA;因此在 Python 中就会有如下输出：&#xA;1print(&amp;#34;１&amp;#34; == &amp;#34;1&amp;#34;) # U+FF11 2print(int(&amp;#34;１&amp;#34;) == int(&amp;#34;1&amp;#34;)) 3 4# output: 5# 6# False 7# True 在下面两个网站里可以找到取代某个 ASCII 字符的 Unicode 字符：&#xA;Github - h13t0ry/UnicodeToy: Unicode fuzzer for various purposes&#xA;List of Unicode Characters of Bidirectional Class “European Number”</description>
+      <description>
+        
+          
+            Unicode 相关知识
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

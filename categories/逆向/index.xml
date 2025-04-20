@@ -4,23 +4,40 @@
     <title>逆向 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/</link>
     <description>Recent content in 逆向 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 30 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 30 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>逆向相关算法脚本（暂时停更）</title>
       <link>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</link>
       <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/%E8%84%9A%E6%9C%AC%E5%BA%93/</guid>
-      <description>Base16 [已完成] Base32 [已完成] Base64 UUencode XXencode [已完成] Base58 (Python 实现) [已完成] TEA XTEA [已完成] XXTEA [已完成] RC4 [已完成] RC5 [队列中] SM4 [队列中] AES [队列中] DES 3DES [队列中] Blowfish [队列中] Chacha20 [队列中] Rabbit [队列中] RSA [队列中] MD5 [队列中] SHA256 [队列中] CRC32 [队列中] 有一个 IDA 插件叫做 Findcrypt, 其工作原理是寻找“关键值”，例如 TEA 加密的 DELTA、AES 加密的 S 盒、MD5 算法的状态变量。出于安全性的原因，这些值在算法里都是被规定好不能更改的。但是万恶的出题人可不管这些，如果这些值被修改，Findcrypt 就不好用了。因此我打算做这个脚本库。&#xA;除特别说明，本文中的脚本均使用 C++ 编写，使用 VC++ 编译器，以便于在遇到“魔改”算法题目时可直接修改。&#xA;编码 Base16 实际上 Base16 编码就是将每个字符的十六进制打印出来。但是既然是一种编码，就要考虑在题目中变表的可能。&#xA;编码脚本：&#xA;1#include &amp;lt;iostream&amp;gt; 2#include &amp;lt;cstring&amp;gt; 3#include &amp;lt;sstream&amp;gt; 4 5using namespace std; 6 7string dec2hex(int deci) 8{ 9&#x9;stringstream ss; 10&#x9;ss &amp;lt;&amp;lt; hex &amp;lt;&amp;lt; deci; 11&#x9;return ss.</description>
+      <description>
+        
+          
+            与逆向相关的编码、加解密、信息摘要算法脚本库（未完成，已停更）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>修改 Overcooked! 2 存档</title>
       <link>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</link>
       <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/</guid>
-      <description>这两天玩 Overcooked! 2 ，有的关卡因为没有攒够星星玩不了。我花钱买了游戏却不让我往后玩，那我自己改存档吧！&#xA;Overcooked! 2 存档位于 C:\Users\{username}\AppData\LocalLow\Team17\Overcooked2\{key}\ 文件夹下。username 是自己的用户名；key 是 Steam 账号的 17 位 SteamID，我的账号的 key 是 76561198849752742。&#xA;不难看出 Overcooked! 2 的存档都是以 .save 作为后缀。诸多游戏厂商都会把自家游戏存档存为 .save 格式。不过这并不是一种通用格式，不同厂商间存储的方式还不一样，有些使用文本文档或者 .json 格式明文存储（例如 Insurgency），有些使用序列化方式存储（例如 Arma3）。Overcooked! 2 的存储方式比较高级：&#xA;它加密了……&#xA;Overcooked! 2 是使用 Unity 引擎开发的游戏，这件事你一打开游戏就能知道。那我不妨把这游戏逆掉。&#xA;dnSpy，启动！&#xA;这样一款游戏，里边出现的类可以说是相当之多了。不过我只需要找到加密和解密存档的代码，因此我选择搜索 &amp;quot;save&amp;quot; 关键词来查找代码。不知道什么原因，开发人员没有使用 Unity 的 Mono Security 来保护代码，这也方便了我逆向。最终我在 GlobalSave 类里找到了极其可疑的代码：&#xA;相关加密解密代码如下：&#xA;1private byte[] Obfuscate(byte[] deobfuscatedText, int size, int start = 0, string salt = &amp;#34;jjo+Ffqil5bdpo5VG82kLj8Ng1sK7L/rCqFTa39Zkom2/baqf5j9HMmsuCr0ipjYsPrsaNIOESWy7bDDGYWx1eA==&amp;#34;, string hashFunction = &amp;#34;SHA1&amp;#34;, int keySize = 256) 2{ 3&#x9;if (deobfuscatedText == null || deobfuscatedText.</description>
+      <description>
+        
+          
+            《胡闹厨房 2》对游戏存档加密，使用逆向手段找到加解密算法后，对游戏存档进行解密、修改并且重新加密。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

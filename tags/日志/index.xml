@@ -4,23 +4,88 @@
     <title>日志 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/</link>
     <description>Recent content in 日志 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日志-2025-04-10</title>
       <link>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-04-10/</link>
       <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-04-10/</guid>
-      <description>这次我给页面添加了 vim 键位，按键绑定如下：&#xA;按键 功能 gg 回到顶部 Shift+G 回到底部 / 搜索 j 向上滚动半屏 k 向下滚动半屏 也加了一些非 vim 快捷键：&#xA;按键 功能 Shift+M 向我发邮件 Shift+H 访问我的 Github 主页 Shift+D 打开我的 Discord 页面 Shift+N 切换显示模式 </description>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>日志-2025-02-19</title>
+      <link>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-02-19/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-02-19/</guid>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>日志-2024-09-18</title>
       <link>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-18/</link>
       <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-18/</guid>
-      <description>我又给 &amp;lt;a&amp;gt; 标签加了一个酷酷的 hover 效果，有下面两种 &amp;lt;a&amp;gt; 标签使用了 hover 效果：&#xA;没有 class 和 title 属性 class 属性中有 nav_item 但没有 nav_brand 我把自定义的效果写成 SASS 格式并写到主题给的 _custom.sass 文件里。&#xA;1a 2 &amp;amp;:not([class]):not([title]) 3 position: relative 4 &amp;amp;:after 5 content: &amp;#39;&amp;#39; 6 position: absolute 7 left: 0 8 bottom: -5px 9 display: inline-block 10 height: 1px 11 background-color: #0077b8 12 width: 0 13 opacity: 0 14 transition: opacity 0.35s, width 0.35s 15 &amp;amp;:hover:after 16 opacity: 1 17 width: 100% 18 &amp;amp;.</description>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>日志-2024-09-16</title>
+      <link>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-16/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-09-16/</guid>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>日志-2024-08-06</title>
+      <link>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/</guid>
+      <description>
+        
+          
+             
+          
+          
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

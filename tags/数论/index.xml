@@ -4,44 +4,88 @@
     <title>数论 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/</link>
     <description>Recent content in 数论 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025春季算法练习——Week 5</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week5/</link>
       <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week5/</guid>
-      <description>题目来自 蓝桥云课 19714 数字诗意 | 原题链接 假设数字 $n$ 可以被表示为从 $a$ 到 $a+k-1$ 共 $k$ 个数字的和，则 $n=\frac{k(2a+k-1)}2$，通过观察不难发现，$n$ 一定有奇数因子。也就是说，如果一个数是 $2$ 的幂，那么它一定没有诗意。&#xA;令 $n=o\cdot e$，$o$ 为 $n$ 的奇数因子，$e$ 为 $n$ 的偶数因子。当 $o&amp;gt;e$ 时，令 $k=e$，则 $a=\frac{o+1-e}2$，此时 $a\in \mathbb{N_+}$；当 $o&amp;lt;e$ 时，令 $k=o$，则 $a=\frac{e+1-o}2$，此时 $a\in \mathbb{N_+}$。&#xA;因此当且仅当 $n\neq2^k$ 时，$n$ 有诗意。&#xA;1_ = int(input().strip()) 2nums = tuple(map(int, input().strip().split())) 3p2 = set() 4p = 1 5while p &amp;lt;= 1e16: 6 p2.add(p) 7 p *= 2 8count = 0 9for num in nums: 10 if num in p2: 11 count += 1 12print(count) 19715 回文数组 | 原题链接 模拟一下就行。</description>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</guid>
-      <description>前几天光往医院跑，没大抽出时间做题。&#xA;题目来自 AcWing Info&#xA;对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。&#xA;1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split())) 3nums.sort() 4 5if nums[-1] == nums[0]: 6 print(n) 7 exit() 8 9def gcd(a, b): 10 return a if b == 0 else gcd(b, a % b) 11 12b = list() 13for i in range(1, n): 14 b.append(nums[i] - nums[i - 1]) 15 16g = b[0] 17for i in range(n - 1): 18 g = gcd(g, b[i]) 19print((nums[-1] - nums[0]) // g + 1) 1295.</description>
+      <description>
+        
+          
+            数学与数论类题目练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>每日一题 2.24-3.2</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
-      <description>上周忙着返校所以没来得及做题，这几天把上周的题目补上。&#xA;题目来自 AcWing 6131. 农夫约翰最喜欢的操作 | 原题链接 $M\mid a_i-x$ 对任意 $1\leq i\leq N$ 成立亦可以理解为对任意 $1\leq i,j\leq N$ 有 $a_i\equiv a_j\space(mod\space M)$。使原数列每一个数对 $m$ 取模得到模数列 $b$，再找一个数 $k$ 使得模数列中每一个值与 $k$ 的差的绝对值之和最小，即 $\sum^n_{i=1}|b_i-k|$ 最小，这个最小值就是题目要求的值。看起来这就是 货仓选址 的翻版，只要找到中位数即可。但情况真的如此吗？&#xA;实际情况是，由于 $a_i\equiv a_i\pm m\space(mod\space m)$，所有的同余类实际组成了一个环，在这个环上有 $n$ 中不同的取法，也就是说最多可能有 $n$ 个不同的中位数，而题目要求找到这 $n$ 中情况中找到最小的 $\sum^n_{i=1}|b_i-k|$。&#xA;如果将每种情况的模数列算出来，再遍历数列求出答案，时间复杂度为 $O(n^2)$ 必然超时。因此使用滑动窗口优化。首先找出最小的模数列，即每一项都小于 $m$，求出这一个模数列的最小 $\sum^n_{i=1}|b_i-k|$，这个值等于$中位数 \times 中位数左侧元素个数 - 中位数左侧元素之和 + 中位数右侧元素之和 - 中位数 \times 中位数右侧元素个数$。当窗口滑动时，中位数右移一位，中位数左右元素数量不变，而左右元素之和只需各自加减对应边界值。这样的时间复杂度为 $O(n)$。&#xA;1t = int(input().strip()) 2while t &amp;gt; 0: 3 n, m = map(int, input().</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>数学与动态规划练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</guid>
-      <description>题目来自 AcWing 1205. 买不到的数目 | 原题链接 首先说暴力做法。假设存在非负整数 $x,\space y$ 使得 $k=nx+my$。同时存在两组数非负整数 $(a_0,b_0)$ 与 $(a_1,b_1)$ 使得 $a_0n-b_0m=1,\space b_1m-a_1n=1$，这样可以得到 $k-1=(x-a_0)n+(y+b_0)m=(x+a_1)n+(y-b_1)m$。从大到小遍历 $k$ 时，第一个无法使 $x-a_0,\space y+b_0$ 或 $x+a_1,\space y-b_1$ 同时为正的 $k$ 即为所求值。&#xA;例如对样例中 $n=4,\space m=7$ 来说，$2\times4-1\times7=1,\space3\times7-5\times4=1$。当 $k=4x+7y,\space x,y\geq0$ 时，$k-1=4(x-2)+7(y+1)=4(x+5)-7(y-3)$。当 $k=18$ 时，$k=1\times4+2\times7$；而当 $k=17$ 时，$k=(-1)\times4+3\times7=6\times4+(-1)\times7$，无法满足条件。&#xA;根据上面的思路写出代码：&#xA;1n, m = map(int, input().strip().split(&amp;#34; &amp;#34;)) 2if n &amp;gt; m: 3 n, m = m, n 4 5i = 0 6while True: 7 if (i * m - 1) % n == 0: 8 km = ((i * m - 1) // n, i) 9 break 10 i += 1 11 12i = 0 13while True: 14 if (i * m + 1) % n == 0: 15 kn = ((i * m + 1) // n, i) 16 break 17 i += 1 18 19k = [0, n] 20for i in range(1, n * m)[::-1]: 21 if k[0] - kn[0] &amp;gt;= 0: 22 k[0] -= kn[0] 23 k[1] += kn[1] 24 elif k[1] - km[1] &amp;gt;= 0: 25 k[0] += km[0] 26 k[1] -= km[1] 27 else: 28 print(i) 29 break 经过观察发现，$k=18$ 能够表示而 $k=17$ 时不能够被表示，是因为 $1-2&amp;lt;0,\space 2-3&amp;lt;0$，推广后可以表示为 $k=nx+my,\space x-a_0&amp;lt;0,\space y-b_1&amp;lt;0$。那么当 $x-a_0=y-b_1=-1$ 时，$k$ 刚好不满足条件且最大，因此可以用 $(a_0-1)n+(b_1-1)m-1$ 来求出这个值。</description>
+      <description>
+        
+          
+            数学与动态规划练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>2025寒假算法练习——Week 4</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week4/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week4/</guid>
-      <description>习题均来自 NEFU OJ Problem 1077 | 最大公约数和最小公倍数 Description 请计算2个数的最大公约数和最小公倍数；（最大公约数可以使用辗转相除法，最小公倍数=2个数的乘积/它们的最大公约数；）&#xA;Input 输入数据有多组，每组2个正整数a,b(2&amp;lt;a,b&amp;lt;1000)&#xA;Output 在一行内输出a和b的最大公约数和最小公倍数；&#xA;Sample Input 115 10 Sample Output 15 30 1import java.util.Scanner; 2 3public class Main { 4 public static void main(String[] args) { 5 Scanner scanner = new Scanner(System.in); 6 while (scanner.hasNextInt()) { 7 int a = scanner.nextInt(); 8 int b = scanner.nextInt(); 9 int d = gcd(a, b); 10 int m = a * b / d; 11 System.</description>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

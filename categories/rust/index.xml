@@ -4,30 +4,56 @@
     <title>Rust on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/rust/</link>
     <description>Recent content in Rust on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust 练习（三）</title>
       <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</link>
       <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</guid>
-      <description>已知高斯随机数的公式为：$w=sin(2\pi v)(-21lnu)^{\frac{1}{2}}$,从键盘输入一个（0,1）范围内的u，再输入一个（0,1）范围内的v。计算并输出w的值。 example:&#xA;input:&#xA;0.2&#xA;0.3&#xA;output:&#xA;5.529082710300016&#xA;1use std::f64::consts::PI; 2use std::io::stdin; 3 4fn main() { 5 let mut input = String::new(); 6 stdin().read_line(&amp;amp;mut input).expect(&amp;#34;Failed to read line&amp;#34;); 7 let u: f64 = input.trim().parse().expect(&amp;#34;Failed to parse input&amp;#34;); 8 input.clear(); 9 stdin().read_line(&amp;amp;mut input).expect(&amp;#34;Failed to read line&amp;#34;); 10 let v: f64 = input.trim().parse().expect(&amp;#34;Failed to parse input&amp;#34;); 11 12 let w = (2.0 * PI * v).sin() * (-21.0 * u.ln()).powf(0.5); 13 println!</description>
+      <description>
+        
+          
+            Rust 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Rust 练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</guid>
-      <description>从键盘输入一个n，代表一维数组包含的元素数，从键盘读入一个由数字字符和空格组成的字符串，并将它们转换成int型存入到一维数组中。如果得到的数字不足n位，剩余的几个数组元素由0补足，如果超过n位截取前n位组成的数组，并输出该数组。 example:&#xA;input:&#xA;5&#xA;2 3 1 7 10 15&#xA;output:&#xA;[2, 3, 1, 7, 10]&#xA;input:&#xA;4&#xA;10 2&#xA;output:&#xA;[10, 2, 0, 0]&#xA;1use std::io::stdin; 2 3fn main() { 4 let mut input = String::new(); 5 stdin().read_line(&amp;amp;mut input).expect(&amp;#34;Failed to read line&amp;#34;); 6 let n: i32 = input.trim().parse().expect(&amp;#34;Failed to parse input&amp;#34;); 7 8 input.clear(); 9 stdin().read_line(&amp;amp;mut input).expect(&amp;#34;Failed to read line&amp;#34;); 10 let mut nums: Vec&amp;lt;i32&amp;gt; = input 11 .</description>
+      <description>
+        
+          
+            Rust 练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Rust 练习（一）</title>
       <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</guid>
-      <description>从键盘接收一个整数，判断一下该整数是奇数还是偶数，如果是奇数，输出“odd&amp;quot;，如果是偶数，输出“even” example:&#xA;input:&#xA;20&#xA;output:&#xA;even&#xA;1use std::io::stdin; 2 3fn main() { 4 let mut num: String = String::new(); 5 stdin().read_line(&amp;amp;mut num).expect(&amp;#34;Failed to read line&amp;#34;); 6 let num: i32 = num.trim().parse().expect(&amp;#34;Failed to parse number&amp;#34;); 7 if num % 2 == 0 { 8 println!(&amp;#34;even&amp;#34;); 9 } else { 10 println!(&amp;#34;odd&amp;#34;); 11 } 12} 从键盘输入一个代表年份的四位数，判断一下当前输入的年份是不是闰年，是闰年返回“is leap year”，不是闰年返回“is not leap year” example:&#xA;input:&#xA;2024&#xA;output:&#xA;is leap year&#xA;1use std::io::stdin; 2 3fn main() { 4 let mut year: String = String::new(); 5 stdin().</description>
+      <description>
+        
+          
+            Rust 练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

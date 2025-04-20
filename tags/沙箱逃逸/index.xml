@@ -4,23 +4,40 @@
     <title>沙箱逃逸 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/</link>
     <description>Recent content in 沙箱逃逸 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
-      <description>前面两篇笔记里介绍的内容都不过是开胃小菜，这一篇笔记里记录的才是硬菜，写一句话代码时真正实用的技巧。&#xA;lambda 匿名函数 lambda 关键字的用法如下 lambda [parameters]: expression，其中 expression 的结果直接作为返回值。这一结构决定了：&#xA;lambda 定义的匿名函数中只能有一个表达式 lambda 定义的匿名函数一定有返回值 下面是一个 lambda 的使用示例： 1print(list(map(lambda x: x + 1, [1, 1, 4, 5, 1, 4]))) 2 3# output: [2, 2, 5, 6, 2, 5] lambda函数经常与 map() 函数及其他需要以函数作为为参数的函数共同使用，用于提高代码的简洁性与灵活性。因为 lambda 会创建一个函数，这个匿名函数也可以使用常规的 function([parameters]) 的方式调用：&#xA;1print((lambda x: [i + 1 if i % 2 else i for i in x])([1, 1, 4, 5, 1, 4])) 2 3# output: [2, 2, 4, 6, 2, 4] 在上面这个例子中，x 为匿名函数的形式参数，后面的列表 [1, 1, 4, 5, 1, 4] 是传入函数的实际参数。</description>
+      <description>
+        
+          
+            利用匿名函数、海象运算符、动态创建类、名称重整机制等高级技巧，使一句话代码实现各种有趣的功能。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>PearlCTF 2024 WP</title>
       <link>https://jackgdn.github.io/post/bundle-wp/pearl2024/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-wp/pearl2024/</guid>
-      <description>I am so vegetable 我太菜了 :-(&#xA;b4by_jail 一道简单的 Python 沙箱逃逸（指连我都会做），题目附件如下：&#xA;1#!/usr/local/bin/python 2import time 3flag=&amp;#34;pearl{f4k3_fl4g}&amp;#34; 4blacklist=list(&amp;#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`![]{},&amp;lt;&amp;gt;/123456789&amp;#34;) 5def banner(): 6 file=open(&amp;#34;txt.txt&amp;#34;,&amp;#34;r&amp;#34;).read() 7 print(file) 8def check_blocklist(string): 9 for i in string: 10 if i in blacklist: 11 return(0) 12 return(1) 13def main(): 14 banner() 15 cmd=input(&amp;#34;&amp;gt;&amp;gt;&amp;gt; &amp;#34;) 16 time.sleep(1) 17 if(check_blocklist(cmd)): 18 try: 19 print(eval(cmd)) 20 except: 21 print(&amp;#34;Sorry no valid output to show.&amp;#34;) 22 else: 23 print(&amp;#34;Your sentence has been increased by 2 years for attempted escape.</description>
+      <description>
+        
+          
+            贡献分数 908/1807
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

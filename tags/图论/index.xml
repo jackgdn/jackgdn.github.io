@@ -4,30 +4,56 @@
     <title>图论 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/</link>
     <description>Recent content in 图论 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</guid>
-      <description>题目来自 AcWing 848. 有向图的拓扑序列 | 原题链接 拓扑排序已经做过好几遍了，而且这还是一道模板题。如果一个有向图中有环（自环也是环），那么它一定无法拓扑排序。如果一个图拓扑排序得到的节点数和图中的节点数不同，那么这个图无法被拓扑排序。又因为“有向图可以被拓扑排序”和“图是有向无环图”互为充要条件，所以，则这个图一定不是有向无环图。&#xA;1import sys 2from collections import defaultdict, deque 3 4data = sys.stdin.read().strip().splitlines() 5n, m = map(int, data[0].strip().split()) 6 7indegree = [0 for _ in range(n + 1)] 8graph = defaultdict(list) 9ans = list() 10 11for i in range(1, m + 1): 12 u, v = map(int, data[i].strip().split()) 13 graph[u].append(v) 14 indegree[v] += 1 15 16q = deque() 17for node in range(1, n + 1): 18 if indegree[node] == 0: 19 q.</description>
+      <description>
+        
+          
+            图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>双指针、广搜与图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</guid>
-      <description>题目来自 AcWing 1238. 日志统计 | 原题链接 暴力做法：存储每个帖子在对应时间的点赞数，并计算前缀和，再遍历前缀和数组得到答案。时间复杂度和空间复杂度 $O(ND)$，可以通过 13/15 个测试点。&#xA;1from collections import defaultdict 2 3 4def check(nums, D, K): 5 prefs = [0] * int(1e5 + 1) 6 for i in range(1, int(1e5 + 1)): 7 prefs[i] = prefs[i - 1] + nums[i - 1] 8 if i &amp;gt;= D and prefs[i] - prefs[i - D] &amp;gt;= K: 9 return True 10 return False 11 12 13N, D, K = map(int, input().</description>
+      <description>
+        
+          
+            双指针、广搜与图论练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>动态规划练习（一）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</guid>
-      <description>下面的题目来自洛谷题单【动态规划1】动态规划的引入&#xA;解决动态规划问题的三个核心：dp 数组含义、状态转移方程、初始值。&#xA;P1216 [IOI 1994] 数字三角形 Number Triangles 题目描述 观察下面的数字金字塔。&#xA;写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。&#xA;在上面的样例中，从 $7 \to 3 \to 8 \to 7 \to 5$ 的路径产生了最大权值。&#xA;输入格式 第一个行一个正整数 $r$ ,表示行的数目。&#xA;后面每行为这个数字金字塔特定行包含的整数。&#xA;输出格式 单独的一行,包含那个可能得到的最大的和。&#xA;输入输出样例 #1 输入 #1 15 27 33 8 48 1 0 52 7 4 4 64 5 2 6 5 输出 #1 130 说明/提示 【数据范围】 对于 $100%$ 的数据，$1\le r \le 1000$，所有输入在 $[0,100]$ 范围内。&#xA;题目翻译来自NOCOW。&#xA;USACO Training Section 1.5&#xA;IOI1994 Day1T1</description>
+      <description>
+        
+          
+            动态规划练习（一）
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

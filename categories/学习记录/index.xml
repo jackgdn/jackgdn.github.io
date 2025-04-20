@@ -4,58 +4,120 @@
     <title>学习记录 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in 学习记录 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
-      <description>前面两篇笔记里介绍的内容都不过是开胃小菜，这一篇笔记里记录的才是硬菜，写一句话代码时真正实用的技巧。&#xA;lambda 匿名函数 lambda 关键字的用法如下 lambda [parameters]: expression，其中 expression 的结果直接作为返回值。这一结构决定了：&#xA;lambda 定义的匿名函数中只能有一个表达式 lambda 定义的匿名函数一定有返回值 下面是一个 lambda 的使用示例： 1print(list(map(lambda x: x + 1, [1, 1, 4, 5, 1, 4]))) 2 3# output: [2, 2, 5, 6, 2, 5] lambda函数经常与 map() 函数及其他需要以函数作为为参数的函数共同使用，用于提高代码的简洁性与灵活性。因为 lambda 会创建一个函数，这个匿名函数也可以使用常规的 function([parameters]) 的方式调用：&#xA;1print((lambda x: [i + 1 if i % 2 else i for i in x])([1, 1, 4, 5, 1, 4])) 2 3# output: [2, 2, 4, 6, 2, 4] 在上面这个例子中，x 为匿名函数的形式参数，后面的列表 [1, 1, 4, 5, 1, 4] 是传入函数的实际参数。</description>
+      <description>
+        
+          
+            利用匿名函数、海象运算符、动态创建类、名称重整机制等高级技巧，使一句话代码实现各种有趣的功能。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（二）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
-      <description>使用 sum() 函数或 list.count() 方法统计数量 sum() 函数的常规用法是求一个可迭代对象里面各元素的和（如果可求和的话）。当然，如果我们对一个只有 1 和 0 的列表求和，那么就可以求出列表中 1 的数量。根据这个思路，我们可以先将待处理的列表转换为一个仅存储布尔值的列表，再对其求和，就可以统计出其中满足条件元素的数量。例如还是上一篇文章中的例子：&#xA;1value = 7 2count = 0 3lst = [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] 4for i in lst: 5 if i &amp;gt; value: 6 count += 1 7print(count) 8 9# output: 4 我们结合推导式创建一个新的列表，将满足条件的存储为 1，这样再求和。&#xA;1print(sum(1 if i &amp;gt; 7 else 0 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10])) 2# 如果只有 if 语句，则将 if 语句放到 for 后。如果是 if-else 三元表达式，则将 if-else 前置。 3# 也可以写成 4print([1 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] if i &amp;gt; 7].</description>
+      <description>
+        
+          
+            使用 Python 中几个常用的内置函数：sum()、map()、zip()、enumerate()、next()、filter()、any() 和 all() 操作可迭代对象以简化代码。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（一）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
       <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</guid>
-      <description>我还在学习 CTF 时，我接触到了一些 Python 的有趣特性，例如使用 NFKC 进行沙箱逃逸以及 Python 存储对象时的一些机制。最近我对 Python 的“一句话代码”产生了兴趣，具体来说就是使用一些特别的 Python 编程技巧以及语法糖将大段代码压缩到一行或少数几行中，用几行短短的代码（但是每一行都会很长）实现一个完整的功能。例如说下面这三行代码分别时冒泡排序、选择排序和插入排序算法的“一句话代码”形式。&#xA;1print((bubble_sort := lambda lst: ([(tmp := lst.__getitem__(i), lst.__setitem__(i, lst.__getitem__(j)), lst.__setitem__(j, tmp), None)[-1] for i in range(len(lst) - 1) for j in range(i, len(lst)) if lst[j] &amp;lt; lst[i]] + lst)[-len(lst):])([int(i) for i in input().split()])) 2# 冒泡排序 3 4print((selection_sort := lambda lst: ([(index := i, j := i + 1, index := (my_while := lambda index, lst, j: my_while(index := j if lst[j] &amp;lt; lst[index] else index, lst, j := j + 1) if j &amp;lt; len(lst) else index)(index, lst, j), tmp := lst.</description>
+      <description>
+        
+          
+            在 Python 中通过“一句话代码”和多种编程技巧来压缩代码行数，提高代码的简洁性和可读性。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 中函数的参数</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</guid>
-      <description>必选参数 初学者必会的参数类型，也是 Python 函数参数传递最基础的方式。函数在定义中要求传入，调用时必须传入的参数就是必选参数。&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810) 5 6# output: 114514 1919810 函数定义中要求传入两个参数，那么在调用时就必须传入两个参数，如果出入过多或者过少参数均会报错。&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514) 5 6&amp;#34;&amp;#34;&amp;#34; 7output: 8Traceback (most recent call last): 9 File &amp;#34;/home/jackgdn/python-script/test.py&amp;#34;, line 4, in &amp;lt;module&amp;gt; 10 foo(114514) 11TypeError: foo() missing 1 required positional argument: &amp;#39;bParam&amp;#39; 12&amp;#34;&amp;#34;&amp;#34; 传入过少参数&#xA;1def foo(aParam, bParam): 2 print(aParam, bParam) 3 4foo(114514, 1919810, &amp;#34;Hello, World!&amp;#34;) 5 6&amp;#34;&amp;#34;&amp;#34; 7Traceback (most recent call last): 8 File &amp;#34;/home/jackgdn/python-script/test.</description>
+      <description>
+        
+          
+            学习 Python 声明函数时的参数，分为必选参数、默认参数、可变参数和关键字参数。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>正则表达式学习记录（一）——正则表达式的编写</title>
       <link>https://jackgdn.github.io/post/regex-pt-1/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/regex-pt-1/</guid>
-      <description>正则表达式的编写 交互式学习正则表达式：RegexOne 中文&#xA;正则表达式练习：RegExr&#xA;正则表达式文档：MDN Web Docs 正则表达式&#xA;基础篇 标记&#xA;说明 样例 直接匹配，输入什么匹配什么。 RegEx: abc&#xA;Match: abc&#xA;Match: xyzabcdef . 匹配任何单个字符。 RegEx: .a&#xA;Match: 123abc \ 转义字符，用于匹配某个用于标记的原始字符。 RegEx: \.&#xA;Match: Hi.&#xA;Match: 3.14 [] 匹配特定范围内的单个字符 RegEx: [abc]an&#xA;Match: banana&#xA;Match: abcan [-] 用简略的方式表示范围。例如 [2-6] 等价于 [23456] RegEx: [0-3][a-c]&#xA;Match: 1a​2b8y9z [^] 排除特定范围内的单个字符 RegEx: b[^e]r&#xA;Match: barber \d 匹配 0-9 中的单个数字字符，相当于 [0-9] RegEx: \da&#xA;Match: 01a2b34 \D 匹配单个非数字字符，相当于 [^0-9] RegEx: \D2</description>
+      <description>
+        
+          
+            学习正则表达式的编写
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 内存相关学习记录</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>本文中交替出现 Python 的编译模式和交互模式代码块，为便于区分，带有 &amp;gt;&amp;gt;&amp;gt; 的 Python 代码块为交互模式，其余 Python 代码块为编译模式。&#xA;可变对象与不可变对象 可变对象 不可变对象 列表、字典、集合 整型、浮点型、布尔型、字符串、元组 简单来说，可变对象就是指在修改数据时，直接修改原来的数据对象；不可变对象则是创建一个新的对象，并且将变量的引用转移到新创建的对象上。&#xA;1dictnry = {&amp;#39;a&amp;#39;: 0, &amp;#39;b&amp;#39;: 1} # 字典对象为可变对象 2print(id(dictnry)) 3dictnry[&amp;#39;a&amp;#39;] = 1 4print(id(dictnry)) 5 6&amp;#39;&amp;#39;&amp;#39; 7output: 81570839226304 91570839226304 10&amp;#39;&amp;#39;&amp;#39; 下面是一个不可变对象的例子：&#xA;1string = &amp;#39;Hello, world?&amp;#39; 2print(id(string)) 3new_string = string.replace(&amp;#39;?&amp;#39;, &amp;#39;!&amp;#39;) # 因为字符串是不可变对象，因此在修改时需要一个新的变量接受修改后的字符串 4print(id(new_string)) 5print(string) 6print(new_string) 7 8&amp;#39;&amp;#39;&amp;#39; 9output: 101668896675760 111668896210864 12Hello, world? 13Hello, world! 14&amp;#39;&amp;#39;&amp;#39; 深拷贝与浅拷贝 浅拷贝：拷贝对象的引用。当原对象的数据改变时，拷贝的对象也会发生改变。 深拷贝：创建一个新的对象并将原数据存入新的对象。原对象数据改变不影响拷贝对象 在 Python 中，使用 copy() 函数实现浅拷贝，使用 copy.deepcopy() 函数实现深拷贝。&#xA;1# 浅拷贝 2&amp;gt;&amp;gt;&amp;gt; a = {&amp;#39;a&amp;#39;: [1, 2]} 3&amp;gt;&amp;gt;&amp;gt; b = a.</description>
+      <description>
+        
+          
+            初步学习 Python 的内存管理机制，包括可变对象与不可变对象、深浅拷贝、小整数池、Intering、字符串驻留五个部分。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Unicode 学习记录</title>
       <link>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。&#xA;NFKC 利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！&#xA;简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (U+FB03) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。&#xA;因此在 Python 中就会有如下输出：&#xA;1print(&amp;#34;１&amp;#34; == &amp;#34;1&amp;#34;) # U+FF11 2print(int(&amp;#34;１&amp;#34;) == int(&amp;#34;1&amp;#34;)) 3 4# output: 5# 6# False 7# True 在下面两个网站里可以找到取代某个 ASCII 字符的 Unicode 字符：&#xA;Github - h13t0ry/UnicodeToy: Unicode fuzzer for various purposes&#xA;List of Unicode Characters of Bidirectional Class “European Number”</description>
+      <description>
+        
+          
+            Unicode 相关知识
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

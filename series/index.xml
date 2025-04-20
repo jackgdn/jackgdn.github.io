@@ -4,65 +4,8 @@
     <title>Series on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/series/</link>
     <description>Recent content in Series on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ROS 学习记录</title>
-      <link>https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>2025 春季算法练习</title>
-      <link>https://jackgdn.github.io/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
-      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>算法学习</title>
-      <link>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>每日一题</title>
-      <link>https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</link>
-      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>2025 寒假算法练习</title>
-      <link>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
-      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java 练习</title>
-      <link>https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/</link>
-      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rust 练习</title>
-      <link>https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/</link>
-      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python 一行代码</title>
-      <link>https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/</guid>
-      <description></description>
-    </item>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

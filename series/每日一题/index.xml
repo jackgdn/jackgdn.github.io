@@ -4,37 +4,72 @@
     <title>每日一题 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</link>
     <description>Recent content in 每日一题 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日一题 3.10-3.16</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
       <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
-      <description>题目来自 AcWing 刚说完上周题简单，这周一的题就给我干碎了……&#xA;5589. 哞语言逻辑 | 原题链接 首先用 Python 特有的 eval 来试一下：&#xA;1true, false = True, False 2n, q = map(int, input().strip().split()) 3exp = input().strip().split() 4 5ans = list() 6for _ in range(q): 7 a, b, bl = input().strip().split() 8 a = int(a) - 1 9 b = int(b) - 1 10 if eval(&amp;#39; &amp;#39;.join(exp[:a] + [&amp;#34;true&amp;#34;] + exp[b + 1:])) == eval(bl) or eval(&amp;#39; &amp;#39;.join(exp[:a] + [&amp;#34;false&amp;#34;] + exp[b + 1:])) == eval(bl): 11 ans.</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>每日一题 3.3-3.9</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
-      <description>题目来自 AcWing 感觉每日一题越来越简单，代码量也越来越短。第一周优化暴力枚举的题目兼具创新性和挑战性，而这周的题目几乎不需要“深度求索”。&#xA;5525. 炮弹 | 原题链接 只需要把情况模拟一下就行了。唯一要注意的是，如果 Bessie 陷入了死循环就直接输出。判断死循环的方式也特别简单，每次弹跳后将当前的位置、能量、方向存储进一个集合（in 关键字访问集合的时间复杂度为 $O(1)$），同时每次弹跳前查看此次弹跳是否已经被记录。&#xA;1N, S = map(int, input().strip().split()) 2field = [0] * N 3cate = [0] * N 4S -= 1 5targets = 0 6for i in range(N): 7 qi, vi = map(int, input().strip().split()) 8 cate[i] = qi 9 field[i] = vi 10 targets += qi 11 12memo = set() 13count = 0 14power = 1 15directions = {1: -1, -1: 1} 16d = 1 17while 0 &amp;lt;= S &amp;lt; N: 18 if cate[S] == 1: 19 if field[S] &amp;gt;= 0 and power &amp;gt;= field[S]: 20 field[S] = -1 21 count += 1 22 S += d * power 23 else: 24 power += field[S] 25 d = directions[d] 26 S += d * power 27 28 if (S, d, power) in memo: 29 break 30 memo.</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>每日一题 2.24-3.2</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.24-3.2/</guid>
-      <description>上周忙着返校所以没来得及做题，这几天把上周的题目补上。&#xA;题目来自 AcWing 6131. 农夫约翰最喜欢的操作 | 原题链接 $M\mid a_i-x$ 对任意 $1\leq i\leq N$ 成立亦可以理解为对任意 $1\leq i,j\leq N$ 有 $a_i\equiv a_j\space(mod\space M)$。使原数列每一个数对 $m$ 取模得到模数列 $b$，再找一个数 $k$ 使得模数列中每一个值与 $k$ 的差的绝对值之和最小，即 $\sum^n_{i=1}|b_i-k|$ 最小，这个最小值就是题目要求的值。看起来这就是 货仓选址 的翻版，只要找到中位数即可。但情况真的如此吗？&#xA;实际情况是，由于 $a_i\equiv a_i\pm m\space(mod\space m)$，所有的同余类实际组成了一个环，在这个环上有 $n$ 中不同的取法，也就是说最多可能有 $n$ 个不同的中位数，而题目要求找到这 $n$ 中情况中找到最小的 $\sum^n_{i=1}|b_i-k|$。&#xA;如果将每种情况的模数列算出来，再遍历数列求出答案，时间复杂度为 $O(n^2)$ 必然超时。因此使用滑动窗口优化。首先找出最小的模数列，即每一项都小于 $m$，求出这一个模数列的最小 $\sum^n_{i=1}|b_i-k|$，这个值等于$中位数 \times 中位数左侧元素个数 - 中位数左侧元素之和 + 中位数右侧元素之和 - 中位数 \times 中位数右侧元素个数$。当窗口滑动时，中位数右移一位，中位数左右元素数量不变，而左右元素之和只需各自加减对应边界值。这样的时间复杂度为 $O(n)$。&#xA;1t = int(input().strip()) 2while t &amp;gt; 0: 3 n, m = map(int, input().</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>每日一题 2.17-2.23</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</link>
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2.17-2.23/</guid>
-      <description>题目来自 AcWing AcWing 6122. 农夫约翰的奶酪块 | 原题链接 最容易想到的是开一个三维数l组用于记录方块状态，如果此时需要判断是否有一整个 $1\times1\times N$ 的区域被挖空，则对三个方向分别求前缀和，当 $(N,y,z)=0$ 或 $(x,N,z)=0$ 或 $(z,y,N)=0$ 时，可以填充的砖块方案数 $+1$。&#xA;这样看来，能否填充砖块实际上只与 $x=N$ 或 $y=N$ 或 $z=N$ 处的前缀和有关，因此做出优化：用三个二维数组分别表示三个维度的前缀和，或者说对应位置的剩余方块数量，例如 yz_projection[0][1] 就表示 $y=0,\space z=1$ 区域中剩余方块数量。当一个区域中剩余方块数为 0 时，可以填充的砖块方案数 $+1$。&#xA;1n, q = map(int, input().strip().split(&amp;#34; &amp;#34;)) 2yz_projection = [[n for _ in range(n)] for _ in range(n)] 3xz_projection = [[n for _ in range(n)] for _ in range(n)] 4xy_projection = [[n for _ in range(n)] for _ in range(n)] 5 6count = 0 7for _ in range(q): 8 x, y, z = map(int, input().</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

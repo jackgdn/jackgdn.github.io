@@ -4,30 +4,56 @@
     <title>快速幂 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
     <description>Recent content in 快速幂 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>动态规划练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-2/</guid>
-      <description>题目来自 AcWing 1050. 鸣人的影分身 | 原题链接 数据量很小，深搜可以 AC。&#xA;1t = int(input().strip()) 2 3 4def dfs(last_pow, rest_pow, rest_cnt): 5 global plans 6 if rest_pow == 0 and rest_cnt == 0: 7 plans += 1 8 return 9 10 if rest_pow &amp;lt; 0 or rest_cnt &amp;lt; 0: 11 return 12 13 if rest_cnt * last_pow &amp;gt; rest_pow: 14 return 15 16 for p in range(last_pow, rest_pow + 1): 17 dfs(p, rest_pow - p, rest_cnt - 1) 18 19 20for _ in range(t): 21 m, n = map(int, input().</description>
+      <description>
+        
+          
+            动态规划练习（二）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>数学与数论类题目练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-numbertheory/</guid>
-      <description>前几天光往医院跑，没大抽出时间做题。&#xA;题目来自 AcWing Info&#xA;对于任意大于 $1$ 的整数 $N$，分解质因数得 $N=p_1^{a_1}\cdot p_2^{a_2}\cdots p_k^{a_k}$，$N$ 的因数个数为 $(a_1+1)(a_2+1)\cdots(a_k+1)$，$N$ 的因数之和为 $(1+p_1+p_1^2+\cdots+p_1^{a_1})(1+p_2+p_2^2+\cdots+p_2^{a_2})\cdots(1+p_k+p_k^2+\cdots+p_k^{a_k})$。&#xA;1246. 等差数列 | 原题链接 给出的数据中，令其中的最小项为首项，最大项为末项，且公差最大时，项数最少。对给出的数据排序并两两作差，当公差为这些差的最大公约数时最大，此时项数最少。&#xA;1n = int(input()) 2nums = list(map(int, input().strip().split())) 3nums.sort() 4 5if nums[-1] == nums[0]: 6 print(n) 7 exit() 8 9def gcd(a, b): 10 return a if b == 0 else gcd(b, a % b) 11 12b = list() 13for i in range(1, n): 14 b.append(nums[i] - nums[i - 1]) 15 16g = b[0] 17for i in range(n - 1): 18 g = gcd(g, b[i]) 19print((nums[-1] - nums[0]) // g + 1) 1295.</description>
+      <description>
+        
+          
+            数学与数论类题目练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>2025寒假算法练习——Week 4</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week4/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025winter-week4/</guid>
-      <description>习题均来自 NEFU OJ Problem 1077 | 最大公约数和最小公倍数 Description 请计算2个数的最大公约数和最小公倍数；（最大公约数可以使用辗转相除法，最小公倍数=2个数的乘积/它们的最大公约数；）&#xA;Input 输入数据有多组，每组2个正整数a,b(2&amp;lt;a,b&amp;lt;1000)&#xA;Output 在一行内输出a和b的最大公约数和最小公倍数；&#xA;Sample Input 115 10 Sample Output 15 30 1import java.util.Scanner; 2 3public class Main { 4 public static void main(String[] args) { 5 Scanner scanner = new Scanner(System.in); 6 while (scanner.hasNextInt()) { 7 int a = scanner.nextInt(); 8 int b = scanner.nextInt(); 9 int d = gcd(a, b); 10 int m = a * b / d; 11 System.</description>
+      <description>
+        
+          
+            算法练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

@@ -4,16 +4,24 @@
     <title>SPFA on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/spfa/</link>
     <description>Recent content in SPFA on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/spfa/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/spfa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/</guid>
-      <description>题目来自 AcWing 848. 有向图的拓扑序列 | 原题链接 拓扑排序已经做过好几遍了，而且这还是一道模板题。如果一个有向图中有环（自环也是环），那么它一定无法拓扑排序。如果一个图拓扑排序得到的节点数和图中的节点数不同，那么这个图无法被拓扑排序。又因为“有向图可以被拓扑排序”和“图是有向无环图”互为充要条件，所以，则这个图一定不是有向无环图。&#xA;1import sys 2from collections import defaultdict, deque 3 4data = sys.stdin.read().strip().splitlines() 5n, m = map(int, data[0].strip().split()) 6 7indegree = [0 for _ in range(n + 1)] 8graph = defaultdict(list) 9ans = list() 10 11for i in range(1, m + 1): 12 u, v = map(int, data[i].strip().split()) 13 graph[u].append(v) 14 indegree[v] += 1 15 16q = deque() 17for node in range(1, n + 1): 18 if indegree[node] == 0: 19 q.</description>
+      <description>
+        
+          
+            图论练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

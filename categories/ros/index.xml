@@ -4,37 +4,72 @@
     <title>ROS on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/ros/</link>
     <description>Recent content in ROS on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/ros/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/ros/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-lib/</link>
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-ros/ros-lib/</guid>
-      <description>自定义 C++ 头文件 当前包名为 libtest，自定义头文件 libtest/include/libtest/hello.h：&#xA;1#pragma once 2 3#include &amp;#34;ros/ros.h&amp;#34; 4 5namespace Hello 6{ 7 void hello(); 8} 编辑 .vscode/c_cpp_properties.json 文件，添加头文件搜索路径，确保 IntelliSense 能够识别自定义头文件：&#xA;1{ 2 &amp;#34;configurations&amp;#34;: [ 3 { 4 &amp;#34;browse&amp;#34;: { 5 &amp;#34;databaseFilename&amp;#34;: &amp;#34;${default}&amp;#34;, 6 &amp;#34;limitSymbolsToIncludedHeaders&amp;#34;: false 7 }, 8 &amp;#34;includePath&amp;#34;: [ 9 &amp;#34;/opt/ros/noetic/include/**&amp;#34;, 10 &amp;#34;/home/jackgdn/ros-project/src/**/include/**&amp;#34;, // 将这一项添加到 includePath 中 11 &amp;#34;/usr/include/**&amp;#34;, 12 &amp;#34;/home/jackgdn/ros-project/devel/include/**&amp;#34; 13 ], 14 &amp;#34;name&amp;#34;: &amp;#34;ROS&amp;#34;, 15 &amp;#34;intelliSenseMode&amp;#34;: &amp;#34;gcc-x64&amp;#34;, 16 &amp;#34;compilerPath&amp;#34;: &amp;#34;/usr/bin/gcc&amp;#34;, 17 &amp;#34;cStandard&amp;#34;: &amp;#34;gnu11&amp;#34;, 18 &amp;#34;cppStandard&amp;#34;: &amp;#34;c++14&amp;#34; 19 } 20 ], 21 &amp;#34;version&amp;#34;: 4 22} 编写 hello_cpp.</description>
+      <description>
+        
+          
+            尝试使用自定义的头文件和模块，并以 Debug 级别输出日志。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>ROS 学习记录（三）——ROS 通信机制实践</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</link>
       <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</guid>
-      <description>话题通信 话题发布 在安装完 ROS 的测试样例中，系统提供了一个 turtlesim_node 节点，用于显示乌龟移动路径。我们要尝试的就是向这个节点发布话题，让它显示我们自定义的移动轨迹。&#xA;首先运行 ros 和 turtlesim_node 节点：&#xA;1roscore &amp;amp; 2rosrun turtlesim turtlesim_node 查看当前可用话题：&#xA;1rostopic list 输出：&#xA;1/rosout 2/rosout_agg 3/turtle1/cmd_vel 4/turtle1/color_sensor 5/turtle1/pose 可以看到，turtlesim_node 节点提供了三个话题，而我们要发布的轨迹信息就发布在 /turtle1/cmd_vel 话题上。&#xA;用下面的命令查看 /turtle1/cmd_vel 话题的类型：&#xA;1rostopic type /turtle1/cmd_vel 输出：&#xA;1geometry_msgs/Twist 可以看到，/turtle1/cmd_vel 话题的类型是 geometry_msgs/Twist。再查看一下这个类型的定义：&#xA;1rosmsg show geometry_msgs/Twist 输出：&#xA;1geometry_msgs/Vector3 linear 2 float64 x 3 float64 y 4 float64 z 5geometry_msgs/Vector3 angular 6 float64 x 7 float64 y 8 float64 z 可以看到，/turtle1/cmd_vel 话题的消息类型是 geometry_msgs/Twist，其中包含两个成员变量 linear 和 angular，分别表示线速度和角速度。我们希望乌龟做匀速圆周运动，因此设定其线速度为 1，角速度为 0.</description>
+      <description>
+        
+          
+            分别尝试使用话题通信、服务通信和参数服务器通信与 turtlesim_node 节点通信。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>ROS 学习记录（二）——ROS 的通信机制</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-comm/</link>
       <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm/</guid>
-      <description>话题通信 模型 ROS 话题通信中涉及三个角色：&#xA;ROS Master（管理者） Talker（发布者） Listener（订阅者） 话题通信由以下步骤实现：&#xA;Talker 注册 Listener 注册 ROS Master 匹配已注册的 Talker 和 Listener Listener 向 Talker 发送请求 Talker 确认请求 Listener 与 Talker 建立连接 Talker 向 Lkstener 发送消息 Note&#xA;通信步骤的前五步使用 RPC 协议，后两步使用 TCP 协议。 Talker 和 Listener 启动顺序无要求。 一个 Talker 可以与多个 Listener 建立连接，反之亦然。 Talker 与 Listener 建立连接后，不再需要 ROS Master。此时即使关闭 ROS Master 也不会影响通信。 C++ 实现话题通信 创建一个新的包 communication_package，通信部分的脚本都在这个包中测试。&#xA;1catkin_create_pkg communication_package roscpp rospy std_msgs 在 communication_package/src/ 下创建 topic_talker_cpp.cpp 作为 C++ 实现的 Talker：</description>
+      <description>
+        
+          
+            认识 ROS 的通信机制，尝试用 C++ 和 Python 分别实现话题通信、服务通信和参数服务器通信。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>ROS 学习记录（一）——快速体验</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-basic/</link>
       <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-ros/ros-basic/</guid>
-      <description>创建并初始化工作空间 安装完 ROS 后，创建工作空间。假设工作空间名称为 ros-project，依次输入下面的命令创建并且初始化工作空间：&#xA;1mkdir -p ./ros-project/src/ 2cd ros-project 3catkin_make 创建 ROS 包 进入 src/ 目录并且创建一个 ROS 包，一般 ROS 包的名称为 *_package：&#xA;1cd src 2catkin_create_pkg test_package roscpp rospy std_msgs 上述命令会在 ros-project/src/ 下创建一个名为 test_package 的文件夹，文件夹的结构如下：&#xA;1. 2├── CMakeLists.txt 3├── include 4│ └── test_package 5├── package.xml 6└── src 参数中的 roscpp rospy std_msgs 是 ROS 中的常用模块。&#xA;创建源码并且输出 Hello World C++ 实现 在当前包的 src/ 目录下创建 test_package_node.cpp：&#xA;1cd test_package/ 2touch src/test_package_node.cpp 在当前 C++ 源文件中写入如下代码：&#xA;1#include &amp;#34;ros/ros.</description>
+      <description>
+        
+          
+            初步认识 ROS，利用 ROS 输出 Hello World。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

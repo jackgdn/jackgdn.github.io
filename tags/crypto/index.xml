@@ -4,23 +4,40 @@
     <title>Crypto on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/crypto/</link>
     <description>Recent content in Crypto on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>近期解题 2024.3.14</title>
       <link>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/</guid>
-      <description>[SWPU2019] ReverseMe 乍一看 main() 函数里没有什么东西。切到反汇编界面，我们看到了一位老朋友——SEH。&#xA;通过使用“广撒网”的打断点方式（在每一个可疑的 call 指令打断点），找到输入函数的位置：&#xA;紧接着下面就对输入内容的长度进行判定，输入内容的长度为 0x20。&#xA;继续调试，可以看到输入的内容在下面位置进行了异或操作：&#xA;最后在下面与密文进行比较：&#xA;根据此操作的特点，流程图模式中指向自己的代码块更可能是执行加密算法的部分。&#xA;提取数据后使用脚本解密：&#xA;1k1 = &amp;#39;SWPU_2019_CTF&amp;#39; 2k2 = [ 3 0x86, 0x0C, 0x3E, 0xCA, 0x98, 0xD7, 0xAE, 0x19, 0xE2, 0x77, 4 0x6B, 0xA6, 0x6A, 0xA1, 0x77, 0xB0, 0x69, 0x91, 0x37, 0x05, 5 0x7A, 0xF9, 0x7B, 0x30, 0x43, 0x5A, 0x4B, 0x10, 0x86, 0x7D, 6 0xD4, 0x28 7] 8k3 = [ 9 0xB3, 0x37, 0x0F, 0xF8, 0xBC, 0xBC, 0xAE, 0x5D, 0xBA, 0x5A, 10 0x4D, 0x86, 0x44, 0x97, 0x62, 0xD3, 0x4F, 0xBA, 0x24, 0x16, 11 0x0B, 0x9F, 0x72, 0x1A, 0x65, 0x68, 0x6D, 0x26, 0xBA, 0x6B, 12 0xC8, 0x67 13] 14 15for i in range(0x20): 16 print(chr(ord(k1[i % 13]) ^ k2[i] ^ k3[i]), end = &amp;#39;&amp;#39;) 17 18# output: flag{Y0uaretheB3st!</description>
+      <description>
+        
+          
+            近期解题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>BeginCTF 解题记录</title>
       <link>https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-      <description>题量大，题目难度适中，我挑选关键题目写写 WP&#xA;Misc Tupper 先把文件内容提取并拼接起来：&#xA;1txts = [] 2for i in range(0, 673, 4): 3 path = f&amp;#34;{i}.txt&amp;#34; 4 with open(path, &amp;#39;r&amp;#39;) as file: 5 txts.append(file.read()) 6txts = &amp;#39;&amp;#39;.join(txts) 7print(txts) 得到一段 Base64： MTQyNzgxOTM0MzI3MjgwMjYwNDkyOTg1NzQ1NzU1NTc1MzQzMjEwNjIzNDkzNTI1NDM1NjI2NTY3NjY0Njk3MDQwOTI4NzQ2ODgzNTQ2NzkzNzEyMTI0NDQzODIyOTg4MjEzNDIwOTM0NTAzOTg5MDcwOTY5NzYwMDI0NTg4MDc1OTg1MzU3MzUxNzIxMjY2NTc1MDQxMzExNzE2ODQ5MDcxNzMwODY2NTk1MDUxNDM5MjAzMDAwODU4MDg4MDk2NDcyNTY3OTAzODQzNzg1NTM3ODAyODI4OTQyMzk3NTE4OTg2MjAwNDExNDMzODMzMTcwNjQ3MjcxMzY5MDM2MzQ3NzA5MzYzOTg1MTg1NDc5MDA1MTI1NDg0MTk0ODYzNjQ5MTUzOTkyNTM5NDEyNDU5MTEyMDUyNjI0OTM1OTExNTg0OTc3MDgyMTkxMjY0NTM1ODc0NTY2MzczMDI4ODg3MDEzMDMzODIyMTA3NDg2Mjk4MDAwODE4MjE2ODQyODMxODczNjg1NDM2MDE1NTk3Nzg0MzE3MzUwMDY3OTQ3NjE1NDI0MTMwMDY2MjEyMTkyMDczMjI4MDg0NDkyMzIwNTA1Nzg4NTI0MzEzNjE2Nzg3NDUzNTU3NzY5MjExMzIzNTI0MTk5MzE5MDc4MzgyMDUwMDExODQ=&#xA;解码得到一串数：&#xA;14278193432728026049298574575557534321062349352543562656766469704092874688354679371212444382298821342093450398907096976002458807598535735172126657504131171684907173086659505143920300085808809647256790384378553780282894239751898620041143383317064727136903634770936398518547900512548419486364915399253941245911205262493591158497708219126453587456637302888701303382210748629800081821684283187368543601559778431735006794761542413006621219207322808449232050578852431361678745355776921132352419931907838205001184&#xD;根据题目名称可以知道与塔伯自指公式有关。用 Tupper&#39;s self-referential fomula 解一下：&#xA;where is crazyman 系列 三道社工题，前两道用谷歌识图可以直接找到地点；第三道的图片：&#xA;矿泉水瓶子上有 Boudl Apart&#39; Hotel 字样，根据提示在谷歌地图里找到在 Boudl Al Munsiyah 旁的 Starbucks。flag 在谷歌地图里这一家 Starbucks 的评论区里，按时间顺序查看能找到。&#xA;devil&#39;s word 一查是温州话，听音频把“魔鬼的语言”转成数字 0-9，最后十六进制转字符得到 flag。&#xA;发音 数字 leng 0 lia 2 sa 3 sii 4 ng 5 leu 6 cai 7 bo 8 jau 9 使用某些文本编辑器的 Ctrl+H 一键替换的时候注意，不要把 leng 里的 ng 替换成 5。</description>
+      <description>
+        
+          
+            真实一场酣畅淋漓的坐牢啊！
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

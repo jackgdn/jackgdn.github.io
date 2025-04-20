@@ -4,16 +4,24 @@
     <title>渗透 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/</link>
     <description>Recent content in 渗透 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记一次 ARP 欺骗 &#43; DNS 劫持攻击的尝试</title>
       <link>https://jackgdn.github.io/post/mitm-attack/</link>
       <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/mitm-attack/</guid>
-      <description>前置知识 用较为生动的语言来讲，我们把网络类比成一间屋子，屋子里坐着的每一个人都是一台主机，每个人都有自己的编号（IP 地址）和位置（MAC 地址）。假如说屋子里的 A 需要和 B 通信，A 已知 B 的编号为 13 但是不知道 B 的位置，因此 A 无法和 B 通信。此时 A 会在屋子里大喊“谁的编号是 13”并等待 B 的回复。正常来说，除了 B 以外其他人会对 A 的请求视而不见，只有 B 收到 A 的请求后将自己的位置告诉 A，随后两人就可以开始通信。&#xA;但是，这是出现了一个不怀好意的 C，当 A 发送请求的时候，C 就拼命地给 A 回复“我就是 13 号”以至于 A 根本听不到 B 给他的回复，因此 A 就会把 C 当作 B 并与之通信，C 便可以借机充当中间人实施攻击。&#xA;动手尝试 攻击前准备 本次攻击尝试中，攻击机与靶机均为使用 NAT 模式连接物理机的虚拟机。这样既可以使两台虚拟机连接到外部网络，又不会在攻击过程中造成流量泄露。&#xA;攻击机配置&#xA;操作系统：Kali Linux IPv4 地址：192.168.107.135 MAC 地址：00:0c:29:62:a9:97 靶机配置&#xA;操作系统：Windows 10 IPv4 地址：192.168.107.139 MAC 地址：00:0C:29:B6:7E:52 网关配置</description>
+      <description>
+        
+          
+            使用 Ettercap 对内网中的设备进行 ARP poisoning 与 DNS spoofing。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

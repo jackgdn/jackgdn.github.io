@@ -4,23 +4,40 @@
     <title>Linux on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/categories/linux/</link>
     <description>Recent content in Linux on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>终端播放视频</title>
       <link>https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/</link>
       <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/</guid>
-      <description>之前见过使用 telnet towel.blinkenlights.nl 命令在终端中播放《星球大战》。于是想自己也做一个。我选择的是《米奇妙妙屋》的片头。&#xA;我的思路是这样的：下载视频 -&amp;gt; 将视频提取成一张张图片 -&amp;gt; 将图片转化为像素画 -&amp;gt; 连续播放像素画 -&amp;gt; 放到服务器上使其他人也可以连接&#xA;视频切片 使用 FFmpeg 工具将视频切片。我选择将帧率定为 16，即每秒钟播放 16 张“图片”。如果帧率太高，终端会由于自身绘制速度及网络带宽导致刷新缓慢，进而导致视频看起来“很慢”。最后尝试时，Electerm 以及 Termux 的表现都很差，而 Windows 原生的 Shell（无论是 cmd 还是 Powershell）都有更优秀的表现。&#xA;使用 FFmpeg 视频切片的命令如下：&#xA;1sudo ffmpeg -i vid/vid.mp4 -vf fps=16 pic/frame_%04d.png 参数 解释 -i 输入文件 -v 设置视频限制 执行完上面的命令，我得到了 1354 张图片，这些图片名称依次为 frame_0001.png 到 frame_1354.png。&#xA;图像转字符 我使用 jp2a 工具将图片转化为字符。命令为：&#xA;1counter=1; 2for img in pic/frame_*.png; do 3 sudo jp2a --colors --color-depth=24 --height=77 &amp;#34;$img&amp;#34; --fill --chars=&amp;#34; ░&amp;#34; --output=&amp;#34;txt/frame_$(printf &amp;#39;%04d&amp;#39; $counter).</description>
+      <description>
+        
+          
+            在终端中看《米奇妙妙屋》
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>远程控制一台在内网中的设备</title>
       <link>https://jackgdn.github.io/post/nat/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/nat/</guid>
-      <description>前段时间 wanqian 师傅添置了一台树莓派作为服务器连接到实验室的内网网络环境中。这台树莓派上安装了 Ubuntu 操作系统并装有一个摄像头模块，可以使用 fswebcam 命令控制摄像头拍照。不过遗憾的是，树莓派上没有图形化界面，如果想要查看图片就必须将图片传输到其他设备上；树莓派上的相机模块是反的，要是想正常查看需要将图片旋转 180°；树莓派在一个内网环境中，如果我想在宿舍里连接树莓派则需要每天交 1 元钱网费。&#xA;拍照、旋转、上传 wanqian 师傅出于安全性的考虑，不希望我使用内网穿透控制树莓派拍照。所以，我只能让树莓派与我的云服务器单线联系。因此我想到让树莓派检测云服务器上的某个端口是否开放，若开放则自动执行拍照上传等一系列命令，所以有了下面一个脚本（路径为 /home/gdn/gwc/agwc.sh。下文为便于叙述，树莓派用 R 表示，云服务器用 S 表示，个人计算机用 PC 表示）:&#xA;1#!/bin/bash 2CONN=&amp;#39;nc -zv IP_S 8963&amp;#39; 3while true 4do 5 if $CONN ; then 6 time=$(date +&amp;#34;%Y-%m-%d_%H-%M-%S&amp;#34;) 7 fswebcam --no-banner -r 1920x1080 /home/gdn/gwc/fagwc/$time.jpg 8 convert /home/gdn/gwc/fagwc/$time.jpg -rotate 180 /home/gdn/gwc/fagwc/$time.jpg 9 nc -v IP_S 8965 &amp;lt; /home/gdn/gwc/fagwc/$time.jpg 10 fi 11 sleep 10 12done 该脚本在 R 上运行，每隔十秒钟就会检测一次 S 的 8963 端口是否开放，如果开放，则使用 fswebcam 命令拍照，使用 convert 命令（在 ImageMagisk 工具集中）旋转图片并将图片使用 netcat 传输到 S 的 8965 端口上去。由于 netcat 连接特性，开放两个端口是必需的。另外，#!</description>
+      <description>
+        
+          
+            在不使用内网穿透的前提下，远程控制一台内网环境下的树莓派拍照并将图像发送到个人计算机。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

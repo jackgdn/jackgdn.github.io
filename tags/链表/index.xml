@@ -4,16 +4,24 @@
     <title>链表 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
     <description>Recent content in 链表 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>双指针、广搜与图论练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</link>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-doublepointers&#43;bfs&#43;graphs/</guid>
-      <description>题目来自 AcWing 1238. 日志统计 | 原题链接 暴力做法：存储每个帖子在对应时间的点赞数，并计算前缀和，再遍历前缀和数组得到答案。时间复杂度和空间复杂度 $O(ND)$，可以通过 13/15 个测试点。&#xA;1from collections import defaultdict 2 3 4def check(nums, D, K): 5 prefs = [0] * int(1e5 + 1) 6 for i in range(1, int(1e5 + 1)): 7 prefs[i] = prefs[i - 1] + nums[i - 1] 8 if i &amp;gt;= D and prefs[i] - prefs[i - D] &amp;gt;= K: 9 return True 10 return False 11 12 13N, D, K = map(int, input().</description>
+      <description>
+        
+          
+            双指针、广搜与图论练习
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

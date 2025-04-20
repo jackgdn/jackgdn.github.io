@@ -4,51 +4,104 @@
     <title>二分查找 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</link>
     <description>Recent content in 二分查找 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日一题 3.10-3.16</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
       <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
-      <description>题目来自 AcWing 刚说完上周题简单，这周一的题就给我干碎了……&#xA;5589. 哞语言逻辑 | 原题链接 首先用 Python 特有的 eval 来试一下：&#xA;1true, false = True, False 2n, q = map(int, input().strip().split()) 3exp = input().strip().split() 4 5ans = list() 6for _ in range(q): 7 a, b, bl = input().strip().split() 8 a = int(a) - 1 9 b = int(b) - 1 10 if eval(&amp;#39; &amp;#39;.join(exp[:a] + [&amp;#34;true&amp;#34;] + exp[b + 1:])) == eval(bl) or eval(&amp;#39; &amp;#39;.join(exp[:a] + [&amp;#34;false&amp;#34;] + exp[b + 1:])) == eval(bl): 11 ans.</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>二分查找与前缀和练习（二）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</guid>
-      <description>题目来自洛谷题单【算法1-6】二分查找与二分答案&#xA;P2249 【深基13.例1】查找 题目描述 输入 $n$ 个不超过 $10^9$ 的单调不减的（就是后面的数字不小于前面的数字）非负整数 $a_1,a_2,\dots,a_{n}$，然后进行 $m$ 次询问。对于每次询问，给出一个整数 $q$，要求输出这个数字在序列中第一次出现的编号，如果没有找到的话输出 $-1$ 。&#xA;输入格式 第一行 $2$ 个整数 $n$ 和 $m$，表示数字个数和询问次数。&#xA;第二行 $n$ 个整数，表示这些待查询的数字。&#xA;第三行 $m$ 个整数，表示询问这些数字的编号，从 $1$ 开始编号。&#xA;输出格式 输出一行，$m$ 个整数，以空格隔开，表示答案。&#xA;输入输出样例 #1 输入 #1 111 3 21 3 3 3 5 7 9 11 13 15 15 31 3 6 输出 #1 11 2 -1 说明/提示 数据保证，$1 \leq n \leq 10^6$，$0 \leq a_i,q \leq 10^9$，$1 \leq m \leq 10^5$</description>
+      <description>
+        
+          
+            二分查找与前缀和练习（二）
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>每日一题 3.3-3.9</title>
       <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
-      <description>题目来自 AcWing 感觉每日一题越来越简单，代码量也越来越短。第一周优化暴力枚举的题目兼具创新性和挑战性，而这周的题目几乎不需要“深度求索”。&#xA;5525. 炮弹 | 原题链接 只需要把情况模拟一下就行了。唯一要注意的是，如果 Bessie 陷入了死循环就直接输出。判断死循环的方式也特别简单，每次弹跳后将当前的位置、能量、方向存储进一个集合（in 关键字访问集合的时间复杂度为 $O(1)$），同时每次弹跳前查看此次弹跳是否已经被记录。&#xA;1N, S = map(int, input().strip().split()) 2field = [0] * N 3cate = [0] * N 4S -= 1 5targets = 0 6for i in range(N): 7 qi, vi = map(int, input().strip().split()) 8 cate[i] = qi 9 field[i] = vi 10 targets += qi 11 12memo = set() 13count = 0 14power = 1 15directions = {1: -1, -1: 1} 16d = 1 17while 0 &amp;lt;= S &amp;lt; N: 18 if cate[S] == 1: 19 if field[S] &amp;gt;= 0 and power &amp;gt;= field[S]: 20 field[S] = -1 21 count += 1 22 S += d * power 23 else: 24 power += field[S] 25 d = directions[d] 26 S += d * power 27 28 if (S, d, power) in memo: 29 break 30 memo.</description>
+      <description>
+        
+          
+            每日一题
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>树状数组、线段树与差分练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
-      <description>Info&#xA;树状数组与线段树的适用范围是“单点修改，区间查询”。树状数组更适合用于动态维护前缀和，而线段树还可用于求区间最值 树状数组和线段树都是在线方法，支持动态修改与维护。&#xA;题目来自 AcWing 1264. 动态求连续区间和 | 原题链接 这是一道树状数组模板题。树状数组最基础的用法就是动态维护前缀和。下面出现的 lowbit add query 操作都是维护树状数组的基本函数。&#xA;1import sys 2 3 4def lowbit(x): 5 return x &amp;amp; -x 6 7 8def add(x, val): 9 while x &amp;lt;= n: 10 tree[x] += val 11 x += lowbit(x) 12 13 14def query(x): 15 res = 0 16 while x &amp;gt; 0: 17 res += tree[x] 18 x -= lowbit(x) 19 return res 20 21 22data = sys.</description>
+      <description>
+        
+          
+            树状数组、线段树与差分练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>枚举、模拟与排序练习</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</guid>
-      <description>题目来自 AcWing 1210. 连号区间数 | 原题链接 暴力枚举的做法就是遍历 l 和 r 并对区间排序，判断区间内的数字是否连续递增。这样做的时间复杂度是 $O(n^3logn)$， 而 $1\leq N\leq10^4$ 的范围显然不支持这样的算法。经过观察发现，一段连续递增的数列中，其最大值减去最小值一定与数列长度相等。利用这个特点，在遍历 l 与 r 时，只需要维护区间内最大值和最小值，然后随时做判断，这样做的时间复杂度为 $O(n^2)$，在 $N$ 的数据范围内够用。&#xA;1n = int(input().strip()) 2nums = tuple(map(int, input().strip().split())) 3 4count = 0 5for l in range(n): 6 max_val = nums[l] 7 min_val = nums[l] 8 for r in range(l, n): 9 if nums[r] &amp;gt; max_val: 10 max_val = nums[r] 11 elif nums[r] &amp;lt; min_val: 12 min_val = nums[r] 13 14 if max_val - min_val == r - l: 15 count += 1 16 17print(count) 1236.</description>
+      <description>
+        
+          
+            枚举、模拟与排序练习
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>二分查找与前缀和练习（一）</title>
       <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</guid>
-      <description>题目来自 AcWing 789. 数的范围 | 原题链接 这道题做法很多。&#xA;使用双指针将每一段的信息存储到字典中：&#xA;1n, q = map(int, input().strip().split(&amp;#34; &amp;#34;)) 2nums = tuple(map(int, input().strip().split(&amp;#34; &amp;#34;))) 3d = dict() 4l = len(nums) 5 6front = 0 7rear = 0 8while front &amp;lt; l: 9 if nums[front] != nums[rear]: 10 d[nums[rear]] = (rear, front - 1) 11 rear = front 12 front += 1 13 14d[nums[rear]] = (rear, front - 1) 15 16result = list() 17for _ in range(q): 18 k = int(input().</description>
+      <description>
+        
+          
+            二分查找与前缀和练习（一）
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

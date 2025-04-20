@@ -4,30 +4,56 @@
     <title>Python 一行代码 on &lt;jack-gdn/&gt;</title>
     <link>https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/</link>
     <description>Recent content in Python 一行代码 on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
-      <description>前面两篇笔记里介绍的内容都不过是开胃小菜，这一篇笔记里记录的才是硬菜，写一句话代码时真正实用的技巧。&#xA;lambda 匿名函数 lambda 关键字的用法如下 lambda [parameters]: expression，其中 expression 的结果直接作为返回值。这一结构决定了：&#xA;lambda 定义的匿名函数中只能有一个表达式 lambda 定义的匿名函数一定有返回值 下面是一个 lambda 的使用示例： 1print(list(map(lambda x: x + 1, [1, 1, 4, 5, 1, 4]))) 2 3# output: [2, 2, 5, 6, 2, 5] lambda函数经常与 map() 函数及其他需要以函数作为为参数的函数共同使用，用于提高代码的简洁性与灵活性。因为 lambda 会创建一个函数，这个匿名函数也可以使用常规的 function([parameters]) 的方式调用：&#xA;1print((lambda x: [i + 1 if i % 2 else i for i in x])([1, 1, 4, 5, 1, 4])) 2 3# output: [2, 2, 4, 6, 2, 4] 在上面这个例子中，x 为匿名函数的形式参数，后面的列表 [1, 1, 4, 5, 1, 4] 是传入函数的实际参数。</description>
+      <description>
+        
+          
+            利用匿名函数、海象运算符、动态创建类、名称重整机制等高级技巧，使一句话代码实现各种有趣的功能。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（二）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
-      <description>使用 sum() 函数或 list.count() 方法统计数量 sum() 函数的常规用法是求一个可迭代对象里面各元素的和（如果可求和的话）。当然，如果我们对一个只有 1 和 0 的列表求和，那么就可以求出列表中 1 的数量。根据这个思路，我们可以先将待处理的列表转换为一个仅存储布尔值的列表，再对其求和，就可以统计出其中满足条件元素的数量。例如还是上一篇文章中的例子：&#xA;1value = 7 2count = 0 3lst = [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] 4for i in lst: 5 if i &amp;gt; value: 6 count += 1 7print(count) 8 9# output: 4 我们结合推导式创建一个新的列表，将满足条件的存储为 1，这样再求和。&#xA;1print(sum(1 if i &amp;gt; 7 else 0 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10])) 2# 如果只有 if 语句，则将 if 语句放到 for 后。如果是 if-else 三元表达式，则将 if-else 前置。 3# 也可以写成 4print([1 for i in [1, 1, 4, 5, 1, 4, 1, 9, 1, 9, 8, 10] if i &amp;gt; 7].</description>
+      <description>
+        
+          
+            使用 Python 中几个常用的内置函数：sum()、map()、zip()、enumerate()、next()、filter()、any() 和 all() 操作可迭代对象以简化代码。
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Python 一句话代码技巧（一）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
       <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</guid>
-      <description>我还在学习 CTF 时，我接触到了一些 Python 的有趣特性，例如使用 NFKC 进行沙箱逃逸以及 Python 存储对象时的一些机制。最近我对 Python 的“一句话代码”产生了兴趣，具体来说就是使用一些特别的 Python 编程技巧以及语法糖将大段代码压缩到一行或少数几行中，用几行短短的代码（但是每一行都会很长）实现一个完整的功能。例如说下面这三行代码分别时冒泡排序、选择排序和插入排序算法的“一句话代码”形式。&#xA;1print((bubble_sort := lambda lst: ([(tmp := lst.__getitem__(i), lst.__setitem__(i, lst.__getitem__(j)), lst.__setitem__(j, tmp), None)[-1] for i in range(len(lst) - 1) for j in range(i, len(lst)) if lst[j] &amp;lt; lst[i]] + lst)[-len(lst):])([int(i) for i in input().split()])) 2# 冒泡排序 3 4print((selection_sort := lambda lst: ([(index := i, j := i + 1, index := (my_while := lambda index, lst, j: my_while(index := j if lst[j] &amp;lt; lst[index] else index, lst, j := j + 1) if j &amp;lt; len(lst) else index)(index, lst, j), tmp := lst.</description>
+      <description>
+        
+          
+            在 Python 中通过“一句话代码”和多种编程技巧来压缩代码行数，提高代码的简洁性和可读性。
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>
