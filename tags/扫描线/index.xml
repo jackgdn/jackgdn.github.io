@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>扫描线 on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</link>
+    <link>https://jackgdn.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</link>
     <description>Recent content in 扫描线 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jackgdn.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>树状数组、线段树与差分练习</title>
-      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
+      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
       <description>&lt;style type=&#34;text/css&#34;&gt;&#xA;     &#xA;     &#xA;&#xA;     &#xA;     &#xA;        .notice {&#xA;            --title-color: #fff;&#xA;            --title-background-color: #069;&#xA;            --content-color: #ddd;&#xA;            --content-background-color: #023;&#xA;        }&#xA;&#xA;        .notice.info {&#xA;            --title-background-color: #a50;&#xA;            --content-background-color: #420;&#xA;        }&#xA;&#xA;        .notice.tip {&#xA;            --title-background-color: #363;&#xA;            --content-background-color: #121;&#xA;        }&#xA;&#xA;        .notice.warning {&#xA;            --title-background-color: #800;&#xA;            --content-background-color: #400;&#xA;        }&#xA;     &#xA;&#xA;    body.dark .notice {&#xA;        --title-color: #fff;&#xA;        --title-background-color: #069;&#xA;        --content-color: #ddd;&#xA;        --content-background-color: #023;&#xA;    }&#xA;&#xA;    body.dark .notice.info {&#xA;        --title-background-color: #a50;&#xA;        --content-background-color: #420;&#xA;    }&#xA;&#xA;    body.dark .notice.tip {&#xA;        --title-background-color: #363;&#xA;        --content-background-color: #121;&#xA;    }&#xA;&#xA;    body.dark .notice.warning {&#xA;        --title-background-color: #800;&#xA;        --content-background-color: #400;&#xA;    }&#xA;&#xA;     &#xA;    .notice {&#xA;        padding: 18px;&#xA;        line-height: 24px;&#xA;        margin-bottom: 24px;&#xA;        border-radius: 4px;&#xA;        color: var(--content-color);&#xA;        background: var(--content-background-color);&#xA;    }&#xA;&#xA;    .notice p:last-child {&#xA;        margin-bottom: 0&#xA;    }&#xA;&#xA;     &#xA;    .notice-title {&#xA;        margin: -18px -18px 12px;&#xA;        padding: 4px 18px;&#xA;        border-radius: 4px 4px 0 0;&#xA;        font-weight: 700;&#xA;        color: var(--title-color);&#xA;        background: var(--title-background-color);&#xA;    }&#xA;&#xA;     &#xA;    .icon-notice {&#xA;        display: inline-flex;&#xA;        align-self: center;&#xA;        margin-right: 8px;&#xA;    }&#xA;&#xA;    .icon-notice img,&#xA;    .icon-notice svg {&#xA;        height: 1em;&#xA;        width: 1em;&#xA;        fill: currentColor;&#xA;    }&#xA;&#xA;    .icon-notice img,&#xA;    .icon-notice.baseline svg {&#xA;        top: .125em;&#xA;        position: relative;&#xA;    }&#xA;&lt;/style&gt;&lt;div class=&#34;notice info&#34; &gt;&#xA;    &lt;p class=&#34;notice-title&#34;&gt;&#xA;        &lt;span class=&#34;icon-notice baseline&#34;&gt;&#xA;            &#xA;        &lt;/span&gt;Info&lt;/p&gt;</description>
     </item>
   </channel>
