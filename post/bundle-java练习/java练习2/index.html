@@ -8,7 +8,7 @@
   
   
   >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <title>Java 练习（二）  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
@@ -16,42 +16,60 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-<script async defer data-domain="jackgdn.github.io"
-src='https://plausible.io/js/plausible.js'>
-</script>
-
-
-
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="从键盘接收两个数据，一个代表鸡和兔子的头数，一个代表，鸡和兔子的腿数。编写一个程序，计算有多少只鸡，多少只兔子。如果无解，则输出：No solution. 1input: 235 394 4 5output: 6rabbit: 12 chicken: 23 7 8input: 920 1040 11 12output: …" />
+<meta name="description" content="
+从键盘接收两个数据，一个代表鸡和兔子的头数，一个代表，鸡和兔子的腿数。编写一个程序，计算有多少只鸡，多少只兔子。如果无解，则输出：No solution.
+
+ 1input:
+ 235
+ 394
+ 4
+ 5output:
+ 6rabbit: 12 chicken: 23
+ 7
+ 8input:
+ 920
+1040 …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Java 练习（二）" />
-<meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" />
+<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
+<meta property="og:url" content="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" />
 <meta property="og:title" content="Java 练习（二）" />
-<meta property="og:description" content="从键盘接收两个数据，一个代表鸡和兔子的头数，一个代表，鸡和兔子的腿数。编写一个程序，计算有多少只鸡，多少只兔子。如果无解，则输出：No solution. 1input: 235 394 4 5output: 6rabbit: 12 chicken: 23 7 8input: 920 1040 11 12output: …" />
-<meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
+<meta property="og:description" content="
+从键盘接收两个数据，一个代表鸡和兔子的头数，一个代表，鸡和兔子的腿数。编写一个程序，计算有多少只鸡，多少只兔子。如果无解，则输出：No solution.
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
-<link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
+ 1input:
+ 235
+ 394
+ 4
+ 5output:
+ 6rabbit: 12 chicken: 23
+ 7
+ 8input:
+ 920
+1040 …" />
+<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
 
-<link rel="canonical" href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/icons/favicon-32x32.png">
+<link rel="manifest" href="http://localhost:1313/icons/site.webmanifest">
+
+<link rel="canonical" href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/">
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/css/styles.d55a0b4a7db242982f93fe1a61b7abe53bc1db5b41427bb4950569919fe5cb19e8a1f5a14a831fa51198ebe70092e36159b89aa5cad0edc28f36b4e75643cb8b.css" integrity = "sha512-1VoLSn2yQpgvk/4aYber5TvB21tBQnu0lQVpkZ/lyxnoofWhSoMfpRGY6&#43;cAkuNhWbiapcrQ7cKPNrTnVkPLiw==" as="style" crossorigin="anonymous">
+<link rel="preload" href="http://localhost:1313/css/styles.d55a0b4a7db242982f93fe1a61b7abe53bc1db5b41427bb4950569919fe5cb19e8a1f5a14a831fa51198ebe70092e36159b89aa5cad0edc28f36b4e75643cb8b.css" integrity = "sha512-1VoLSn2yQpgvk/4aYber5TvB21tBQnu0lQVpkZ/lyxnoofWhSoMfpRGY6&#43;cAkuNhWbiapcrQ7cKPNrTnVkPLiw==" as="style" crossorigin="anonymous">
 
 
 
-<link rel="preload" href="https://jackgdn.github.io/zh-cn/js/bundle.1414de91f90ad3ba5a94a60fcaf45b6e118fcec05aa3cccc2f29e7f2df9fbc985ac3977877a81403df375764552c9a14ec0f43efb3953d10ab52a8e958faba5b.js" as="script" integrity=
-"sha512-FBTekfkK07palKYPyvRbbhGPzsBao8zMLynn8t&#43;fvJhaw5d4d6gUA983V2RVLJoU7A9D77OVPRCrUqjpWPq6Ww==" crossorigin="anonymous">
+<link rel="preload" href="http://localhost:1313/zh-cn/js/bundle.6d8098ceca941515ba1a866a4a5f5e47fd6dbd667366c66c0126c78a6c232a89646896c4e153fce35c02ffb960f4de572dadf9a51a819d4eed43a52bdea04c19.js" as="script" integrity=
+"sha512-bYCYzsqUFRW6GoZqSl9eR/1tvWZzZsZsASbHimwjKolkaJbE4VP841wC/7lg9N5XLa35pRqBnU7tQ6Ur3qBMGQ==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="https://jackgdn.github.io/css/styles.d55a0b4a7db242982f93fe1a61b7abe53bc1db5b41427bb4950569919fe5cb19e8a1f5a14a831fa51198ebe70092e36159b89aa5cad0edc28f36b4e75643cb8b.css" integrity="sha512-1VoLSn2yQpgvk/4aYber5TvB21tBQnu0lQVpkZ/lyxnoofWhSoMfpRGY6&#43;cAkuNhWbiapcrQ7cKPNrTnVkPLiw==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/styles.d55a0b4a7db242982f93fe1a61b7abe53bc1db5b41427bb4950569919fe5cb19e8a1f5a14a831fa51198ebe70092e36159b89aa5cad0edc28f36b4e75643cb8b.css" integrity="sha512-1VoLSn2yQpgvk/4aYber5TvB21tBQnu0lQVpkZ/lyxnoofWhSoMfpRGY6&#43;cAkuNhWbiapcrQ7cKPNrTnVkPLiw==" crossorigin="anonymous">
 
 
 
@@ -64,8 +82,8 @@ src='https://plausible.io/js/plausible.js'>
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
-  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+  <nav class="nav"><a href='http://localhost:1313/' class="nav_brand nav_item nav_hide" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -86,13 +104,13 @@ src='https://plausible.io/js/plausible.js'>
         
 
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/" class="nav_item" title="主页">主页 </a>
+    <a href="http://localhost:1313/" class="nav_item" title="主页">主页 </a>
   </div>
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/about/" class="nav_item" title="关于">关于 </a>
+    <a href="http://localhost:1313/about/" class="nav_item" title="关于">关于 </a>
   </div>
   <div class="nav_parent">
-    <a href="https://jackgdn.github.io/links/" class="nav_item" title="链接">链接 </a>
+    <a href="http://localhost:1313/links/" class="nav_item" title="链接">链接 </a>
   </div>
       
       <div class="nav_parent">
@@ -100,13 +118,13 @@ src='https://plausible.io/js/plausible.js'>
         <div class="nav_sub">
           <span class="nav_child"></span>
           
-          <a href="https://jackgdn.github.io/" class="nav_child nav_item">简体中文</a>
+          <a href="http://localhost:1313/" class="nav_child nav_item">简体中文</a>
           
-          <a href="https://jackgdn.github.io/en/" class="nav_child nav_item">English</a>
+          <a href="http://localhost:1313/en/" class="nav_child nav_item">English</a>
           
         </div>
-      </div><a href='https://jackgdn.github.io/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
-  <img src="https://jackgdn.github.io/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
+      </div><a href='http://localhost:1313/' class="nav_brand nav_item nav_center" title="&lt;jack-gdn/&gt;">
+  <img src="http://localhost:1313/logos/logo.png" class="logo" alt="&lt;jack-gdn/&gt;">
 </a>
 
 <div class='follow'>
@@ -155,13 +173,13 @@ src='https://plausible.io/js/plausible.js'>
 </span>
     <span class="post_date">
       2024-12-29</span>
-    <span class="post_time"> · 11 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/java/' title="Java" class="post_tag button button_translucent">Java
+    <span class="post_time"> · 11 分钟阅读</span><span>&nbsp;· <a href='http://localhost:1313/tags/java/' title="Java" class="post_tag button button_translucent">Java
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" title="Copy Link" class="link link_yank">
+    <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -894,19 +912,19 @@ $$</p>
 	<h2 class="post_related">系列文章</h2>
 	<ul>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/" class="nav-link" title="Java 练习（五）">Java 练习（五）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/" class="nav-link" title="Java 练习（五）">Java 练习（五）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/" class="nav-link" title="Java 练习（四）">Java 练习（四）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/" class="nav-link" title="Java 练习（四）">Java 练习（四）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/" class="nav-link" title="Java 练习（三）">Java 练习（三）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/" class="nav-link" title="Java 练习（三）">Java 练习（三）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" class="nav-link" title="Java 练习（二）">Java 练习（二）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" class="nav-link" title="Java 练习（二）">Java 练习（二）</a></li>
 	  
-	      <li><a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/" class="nav-link" title="Java 练习（一）">Java 练习（一）</a></li>
+	      <li><a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/" class="nav-link" title="Java 练习（一）">Java 练习（一）</a></li>
 	  
 	</ul>
 
@@ -932,16 +950,11 @@ $$</p>
     <div class="search_results results"></div>
   </div>
 
-        <h2>jack_gdn</h2>
-      <div class="author_bio">
-        东北林业大学在读本科生，学习计算机科学与技术专业。
-      </div>
-      <a href='https://jackgdn.github.io/about/' class="button mt-1" role="button" title='阅读更多'>阅读更多</a>
 
     
       <div class="sidebardisclaimer">
         <h2 class="mt-4">注意</h2>
-        不同语言版本的文章在内容上可能会有差异。
+        
       </div>
     
     
@@ -950,31 +963,31 @@ $$</p>
       <ul>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A07/" class="nav-link" title="Java 练习（七）">Java 练习（七）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A06/" class="nav-link" title="Java 练习（六）">Java 练习（六）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/" class="nav-link" title="Java 练习（五）">Java 练习（五）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A05/" class="nav-link" title="Java 练习（五）">Java 练习（五）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/" class="nav-link" title="Java 练习（四）">Java 练习（四）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A04/" class="nav-link" title="Java 练习（四）">Java 练习（四）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/" class="nav-link" title="Java 练习（三）">Java 练习（三）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A03/" class="nav-link" title="Java 练习（三）">Java 练习（三）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" class="nav-link" title="Java 练习（二）">Java 练习（二）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A02/" class="nav-link" title="Java 练习（二）">Java 练习（二）</a>
         </li>
         
         <li>
-          <a href="https://jackgdn.github.io/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/" class="nav-link" title="Java 练习（一）">Java 练习（一）</a>
+          <a href="http://localhost:1313/post/bundle-java%E7%BB%83%E4%B9%A0/java%E7%BB%83%E4%B9%A01/" class="nav-link" title="Java 练习（一）">Java 练习（一）</a>
         </li>
         
       </ul>
@@ -982,118 +995,118 @@ $$</p>
     <h2 class="mt-4">精选文章</h2>
     <ul>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
+        <a href="http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/" class="nav-link" title="Python 一句话代码技巧（三）">Python 一句话代码技巧（三）</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
+        <a href="http://localhost:1313/post/chaoxing-gui/" class="nav-link" title="超星学习通自动化完成任务点（GUI 版）项目介绍">超星学习通自动化完成任务点（GUI 版）项目介绍</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
+        <a href="http://localhost:1313/post/%E7%BB%88%E7%AB%AF%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" class="nav-link" title="终端播放视频">终端播放视频</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
+        <a href="http://localhost:1313/post/%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AF%81%E6%98%8E/" class="nav-link" title="范德蒙德行列式证明">范德蒙德行列式证明</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-wp/2.19/" class="nav-link" title="2.19 解题记录">2.19 解题记录</a>
+        <a href="http://localhost:1313/post/bundle-wp/2.19/" class="nav-link" title="2.19 解题记录">2.19 解题记录</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" class="nav-link" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
+        <a href="http://localhost:1313/post/%E4%B8%80%E5%B0%8F%E4%BC%99%E8%A7%89%E5%BE%97-overcooked-2-%E5%A4%AA%E9%9A%BE%E4%BA%8E%E6%98%AF%E4%BB%96/" class="nav-link" title="修改 Overcooked! 2 存档">修改 Overcooked! 2 存档</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="nav-link" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
+        <a href="http://localhost:1313/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="nav-link" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
       </li>
     </ul>
     <h2 class="mt-4">最新文章</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-ros/ros-lib/" class="nav-link" title="ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别">ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</a>
+        <a href="http://localhost:1313/post/bundle-ros/ros-lib/" class="nav-link" title="ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别">ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/" class="nav-link" title="ROS 学习记录（三）——ROS 通信机制实践">ROS 学习记录（三）——ROS 通信机制实践</a>
+        <a href="http://localhost:1313/post/bundle-ros/ros-comm-prac/" class="nav-link" title="ROS 学习记录（三）——ROS 通信机制实践">ROS 学习记录（三）——ROS 通信机制实践</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-ros/ros-comm/" class="nav-link" title="ROS 学习记录（二）——ROS 的通信机制">ROS 学习记录（二）——ROS 的通信机制</a>
+        <a href="http://localhost:1313/post/bundle-ros/ros-comm/" class="nav-link" title="ROS 学习记录（二）——ROS 的通信机制">ROS 学习记录（二）——ROS 的通信机制</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-ros/ros-basic/" class="nav-link" title="ROS 学习记录（一）——快速体验">ROS 学习记录（一）——快速体验</a>
+        <a href="http://localhost:1313/post/bundle-ros/ros-basic/" class="nav-link" title="ROS 学习记录（一）——快速体验">ROS 学习记录（一）——快速体验</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-%E6%97%A5%E5%BF%97/log-2025-04-10/" class="nav-link" title="日志-2025-04-10">日志-2025-04-10</a>
+        <a href="http://localhost:1313/post/bundle-%E6%97%A5%E5%BF%97/log-2025-04-10/" class="nav-link" title="日志-2025-04-10">日志-2025-04-10</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week5/" class="nav-link" title="2025春季算法练习——Week 5">2025春季算法练习——Week 5</a>
+        <a href="http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week5/" class="nav-link" title="2025春季算法练习——Week 5">2025春季算法练习——Week 5</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/" class="nav-link" title="2025春季算法练习——Week 4">2025春季算法练习——Week 4</a>
+        <a href="http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/" class="nav-link" title="2025春季算法练习——Week 4">2025春季算法练习——Week 4</a>
       </li>
       <li>
-        <a href="https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/" class="nav-link" title="图论练习">图论练习</a>
+        <a href="http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-graphtheory/" class="nav-link" title="图论练习">图论练习</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">分类</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
+        <a href='http://localhost:1313/categories/%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="练习">
           练习
-          <span class="button_tally">43</span>
+          <span class="button_tally">41</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+        <a href='http://localhost:1313/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">31</span>
+          <span class="button_tally">29</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='http://localhost:1313/categories/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/java/' class="post_tag button button_translucent" title="java">
+        <a href='http://localhost:1313/categories/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
+        <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="学习记录">
           学习记录
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+        <a href='http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
           数据结构
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/python/' class="post_tag button button_translucent" title="python">
+        <a href='http://localhost:1313/categories/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
+        <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class="post_tag button button_translucent" title="日志">
           日志
           <span class="button_tally">5</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/ros/' class="post_tag button button_translucent" title="ros">
+        <a href='http://localhost:1313/categories/ros/' class="post_tag button button_translucent" title="ros">
           ROS
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/rust/' class="post_tag button button_translucent" title="rust">
+        <a href='http://localhost:1313/categories/rust/' class="post_tag button button_translucent" title="rust">
           RUST
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/linux/' class="post_tag button button_translucent" title="linux">
+        <a href='http://localhost:1313/categories/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
+        <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class="post_tag button button_translucent" title="逆向">
           逆向
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+        <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
           数学
           <span class="button_tally">1</span>
         </a>
@@ -1104,59 +1117,59 @@ $$</p>
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='https://jackgdn.github.io/categories/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
+            <a href='http://localhost:1313/categories/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
+            <a href='http://localhost:1313/categories/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/python/' class=" post_tag button button_translucent" data-position=6 title="python">PYTHON<span class="button_tally">6</span>
+            <a href='http://localhost:1313/categories/python/' class=" post_tag button button_translucent" data-position=6 title="python">PYTHON<span class="button_tally">6</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/ros/' class=" post_tag button button_translucent" data-position=4 title="ros">ROS<span class="button_tally">4</span>
+            <a href='http://localhost:1313/categories/ros/' class=" post_tag button button_translucent" data-position=4 title="ros">ROS<span class="button_tally">4</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
+            <a href='http://localhost:1313/categories/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
+            <a href='http://localhost:1313/categories/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E7%BB%83%E4%B9%A0/' class=" post_tag button button_translucent" data-position=43 title="练习">练习<span class="button_tally">43</span>
+            <a href='http://localhost:1313/categories/%E7%BB%83%E4%B9%A0/' class=" post_tag button button_translucent" data-position=41 title="练习">练习<span class="button_tally">41</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E9%80%86%E5%90%91/' class=" post_tag button button_translucent" data-position=2 title="逆向">逆向<span class="button_tally">2</span>
+            <a href='http://localhost:1313/categories/%E9%80%86%E5%90%91/' class=" post_tag button button_translucent" data-position=2 title="逆向">逆向<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=5 title="日志">日志<span class="button_tally">5</span>
+            <a href='http://localhost:1313/categories/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=5 title="日志">日志<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E6%B8%97%E9%80%8F/' class=" post_tag button button_translucent" data-position=1 title="渗透">渗透<span class="button_tally">1</span>
+            <a href='http://localhost:1313/categories/%E6%B8%97%E9%80%8F/' class=" post_tag button button_translucent" data-position=1 title="渗透">渗透<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=7 title="数据结构">数据结构<span class="button_tally">7</span>
+            <a href='http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=7 title="数据结构">数据结构<span class="button_tally">7</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
+            <a href='http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=1 title="数学">数学<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=31 title="算法">算法<span class="button_tally">31</span>
+            <a href='http://localhost:1313/categories/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=29 title="算法">算法<span class="button_tally">29</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class=" post_tag button button_translucent" data-position=7 title="学习记录">学习记录<span class="button_tally">7</span>
+            <a href='http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class=" post_tag button button_translucent" data-position=7 title="学习记录">学习记录<span class="button_tally">7</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -1171,44 +1184,44 @@ $$</p>
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">专栏</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
+        <a href='http://localhost:1313/series/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/' class="post_tag button button_translucent" title="算法学习">
           算法学习
           <span class="button_tally">18</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
+        <a href='http://localhost:1313/series/2025-%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 寒假算法练习">
           2025 寒假算法练习
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
+        <a href='http://localhost:1313/series/java-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="java 练习">
           JAVA 练习
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="ros 学习记录">
+        <a href='http://localhost:1313/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' class="post_tag button button_translucent" title="ros 学习记录">
           ROS 学习记录
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
-          每日一题
-          <span class="button_tally">4</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 春季算法练习">
+        <a href='http://localhost:1313/series/2025-%E6%98%A5%E5%AD%A3%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="2025 春季算法练习">
           2025 春季算法练习
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
+        <a href='http://localhost:1313/series/python-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81/' class="post_tag button button_translucent" title="python 一行代码">
           PYTHON 一行代码
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
+        <a href='http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/' class="post_tag button button_translucent" title="rust 练习">
           RUST 练习
           <span class="button_tally">3</span>
+        </a>
+        
+        <a href='http://localhost:1313/series/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/' class="post_tag button button_translucent" title="每日一题">
+          每日一题
+          <span class="button_tally">2</span>
         </a>
         
         
@@ -1217,69 +1230,69 @@ $$</p>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">标签</h2>
       <nav class="tags_nav">
-        <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+        <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
           算法
-          <span class="button_tally">31</span>
+          <span class="button_tally">29</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' class="post_tag button button_translucent" title="深搜">
+        <a href='http://localhost:1313/tags/%E6%B7%B1%E6%90%9C/' class="post_tag button button_translucent" title="深搜">
           深搜
           <span class="button_tally">15</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
+        <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class="post_tag button button_translucent" title="动态规划">
           动态规划
           <span class="button_tally">12</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
-          贪心策略
-          <span class="button_tally">11</span>
-        </a>
-        
-        <a href='https://jackgdn.github.io/tags/reverse/' class="post_tag button button_translucent" title="reverse">
+        <a href='http://localhost:1313/tags/reverse/' class="post_tag button button_translucent" title="reverse">
           REVERSE
           <span class="button_tally">10</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/python/' class="post_tag button button_translucent" title="python">
+        <a href='http://localhost:1313/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">9</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
+        <a href='http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class="post_tag button button_translucent" title="数据结构">
           数据结构
           <span class="button_tally">9</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/wp/' class="post_tag button button_translucent" title="wp">
+        <a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class="post_tag button button_translucent" title="贪心策略">
+          贪心策略
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='http://localhost:1313/tags/wp/' class="post_tag button button_translucent" title="wp">
           WP
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
+        <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class="post_tag button button_translucent" title="背包问题">
           背包问题
           <span class="button_tally">8</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/java/' class="post_tag button button_translucent" title="java">
+        <a href='http://localhost:1313/tags/java/' class="post_tag button button_translucent" title="java">
           JAVA
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/' class="post_tag button button_translucent" title="广搜">
+        <a href='http://localhost:1313/tags/%E5%B9%BF%E6%90%9C/' class="post_tag button button_translucent" title="广搜">
           广搜
           <span class="button_tally">7</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
+        <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class="post_tag button button_translucent" title="二分查找">
           二分查找
-          <span class="button_tally">6</span>
+          <span class="button_tally">5</span>
         </a>
         
-        <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class="post_tag button button_translucent" title="前缀和">
-          前缀和
-          <span class="button_tally">6</span>
+        <a href='http://localhost:1313/tags/%E4%BA%8C%E5%8F%89%E5%A0%86/' class="post_tag button button_translucent" title="二叉堆">
+          二叉堆
+          <span class="button_tally">5</span>
         </a>
         
         
@@ -1288,311 +1301,311 @@ $$</p>
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='https://jackgdn.github.io/tags/bellman-ford/' class=" post_tag button button_translucent" data-position=1 title="bellman-ford">BELLMAN-FORD<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/bellman-ford/' class=" post_tag button button_translucent" data-position=1 title="bellman-ford">BELLMAN-FORD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/c%23/' class=" post_tag button button_translucent" data-position=1 title="c#">C#<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=2 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=2 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/crypto/' class=" post_tag button button_translucent" data-position=2 title="crypto">CRYPTO<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/dijkstra/' class=" post_tag button button_translucent" data-position=1 title="dijkstra">DIJKSTRA<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/dijkstra/' class=" post_tag button button_translucent" data-position=1 title="dijkstra">DIJKSTRA<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/floyd/' class=" post_tag button button_translucent" data-position=1 title="floyd">FLOYD<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/floyd/' class=" post_tag button button_translucent" data-position=1 title="floyd">FLOYD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/forensics/' class=" post_tag button button_translucent" data-position=2 title="forensics">FORENSICS<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/gcd/' class=" post_tag button button_translucent" data-position=2 title="gcd">GCD<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/gcd/' class=" post_tag button button_translucent" data-position=2 title="gcd">GCD<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
+            <a href='http://localhost:1313/tags/java/' class=" post_tag button button_translucent" data-position=7 title="java">JAVA<span class="button_tally">7</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/kmp/' class=" post_tag button button_translucent" data-position=1 title="kmp">KMP<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/kmp/' class=" post_tag button button_translucent" data-position=1 title="kmp">KMP<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/kruskal/' class=" post_tag button button_translucent" data-position=1 title="kruskal">KRUSKAL<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/kruskal/' class=" post_tag button button_translucent" data-position=1 title="kruskal">KRUSKAL<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/lcm/' class=" post_tag button button_translucent" data-position=1 title="lcm">LCM<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/linux/' class=" post_tag button button_translucent" data-position=2 title="linux">LINUX<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/manacher/' class=" post_tag button button_translucent" data-position=1 title="manacher">MANACHER<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/manacher/' class=" post_tag button button_translucent" data-position=1 title="manacher">MANACHER<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/misc/' class=" post_tag button button_translucent" data-position=3 title="misc">MISC<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/penetration/' class=" post_tag button button_translucent" data-position=1 title="penetration">PENETRATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/prim/' class=" post_tag button button_translucent" data-position=1 title="prim">PRIM<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/prim/' class=" post_tag button button_translucent" data-position=1 title="prim">PRIM<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/pwn/' class=" post_tag button button_translucent" data-position=2 title="pwn">PWN<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/python/' class=" post_tag button button_translucent" data-position=9 title="python">PYTHON<span class="button_tally">9</span>
+            <a href='http://localhost:1313/tags/python/' class=" post_tag button button_translucent" data-position=9 title="python">PYTHON<span class="button_tally">9</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/regex/' class=" post_tag button button_translucent" data-position=1 title="regex">REGEX<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
+            <a href='http://localhost:1313/tags/reverse/' class=" post_tag button button_translucent" data-position=10 title="reverse">REVERSE<span class="button_tally">10</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/ros/' class=" post_tag button button_translucent" data-position=4 title="ros">ROS<span class="button_tally">4</span>
+            <a href='http://localhost:1313/tags/ros/' class=" post_tag button button_translucent" data-position=4 title="ros">ROS<span class="button_tally">4</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/rust/' class=" post_tag button button_translucent" data-position=3 title="rust">RUST<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/spfa/' class=" post_tag button button_translucent" data-position=1 title="spfa">SPFA<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/spfa/' class=" post_tag button button_translucent" data-position=1 title="spfa">SPFA<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/trie-%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="trie 树">TRIE 树<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/trie-%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="trie 树">TRIE 树<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/unicode/' class=" post_tag button button_translucent" data-position=1 title="unicode">UNICODE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/web/' class=" post_tag button button_translucent" data-position=1 title="web">WEB<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
+            <a href='http://localhost:1313/tags/wp/' class=" post_tag button button_translucent" data-position=8 title="wp">WP<span class="button_tally">8</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=8 title="背包问题">背包问题<span class="button_tally">8</span>
+            <a href='http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/' class=" post_tag button button_translucent" data-position=8 title="背包问题">背包问题<span class="button_tally">8</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BC%96%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="编码">编码<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/' class=" post_tag button button_translucent" data-position=3 title="并查集">并查集<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/' class=" post_tag button button_translucent" data-position=3 title="并查集">并查集<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%B7%AE%E5%88%86/' class=" post_tag button button_translucent" data-position=2 title="差分">差分<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E5%B7%AE%E5%88%86/' class=" post_tag button button_translucent" data-position=1 title="差分">差分<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="单链表">单链表<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="单链表">单链表<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=2 title="递归">递归<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E9%80%92%E5%BD%92/' class=" post_tag button button_translucent" data-position=2 title="递归">递归<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E9%80%92%E6%8E%A8/' class=" post_tag button button_translucent" data-position=1 title="递推">递推<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=12 title="动态规划">动态规划<span class="button_tally">12</span>
+            <a href='http://localhost:1313/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/' class=" post_tag button button_translucent" data-position=12 title="动态规划">动态规划<span class="button_tally">12</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="队列">队列<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="队列">队列<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%8F%89%E5%A0%86/' class=" post_tag button button_translucent" data-position=5 title="二叉堆">二叉堆<span class="button_tally">5</span>
+            <a href='http://localhost:1313/tags/%E4%BA%8C%E5%8F%89%E5%A0%86/' class=" post_tag button button_translucent" data-position=5 title="二叉堆">二叉堆<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=6 title="二分查找">二分查找<span class="button_tally">6</span>
+            <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/' class=" post_tag button button_translucent" data-position=5 title="二分查找">二分查找<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/' class=" post_tag button button_translucent" data-position=1 title="二分图">二分图<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/' class=" post_tag button button_translucent" data-position=1 title="二分图">二分图<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="分治策略">分治策略<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=1 title="分治策略">分治策略<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%B9%BF%E6%90%9C/' class=" post_tag button button_translucent" data-position=7 title="广搜">广搜<span class="button_tally">7</span>
+            <a href='http://localhost:1313/tags/%E5%B9%BF%E6%90%9C/' class=" post_tag button button_translucent" data-position=7 title="广搜">广搜<span class="button_tally">7</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=2 title="归并排序">归并排序<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=2 title="归并排序">归并排序<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%93%88%E5%B8%8C/' class=" post_tag button button_translucent" data-position=1 title="哈希">哈希<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%93%88%E5%B8%8C/' class=" post_tag button button_translucent" data-position=1 title="哈希">哈希<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="结构体排序">结构体排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/' class=" post_tag button button_translucent" data-position=3 title="快速幂">快速幂<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/' class=" post_tag button button_translucent" data-position=3 title="快速幂">快速幂<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="快速排序">快速排序<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="快速排序">快速排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%89%A9%E5%B1%95-gcd/' class=" post_tag button button_translucent" data-position=1 title="扩展 gcd">扩展 GCD<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%89%A9%E5%B1%95-gcd/' class=" post_tag button button_translucent" data-position=1 title="扩展 gcd">扩展 GCD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="链表">链表<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E9%93%BE%E8%A1%A8/' class=" post_tag button button_translucent" data-position=1 title="链表">链表<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/' class=" post_tag button button_translucent" data-position=1 title="链式前向星">链式前向星<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/' class=" post_tag button button_translucent" data-position=1 title="链式前向星">链式前向星<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=6 title="枚举">枚举<span class="button_tally">6</span>
+            <a href='http://localhost:1313/tags/%E6%9E%9A%E4%B8%BE/' class=" post_tag button button_translucent" data-position=5 title="枚举">枚举<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A8%A1%E6%8B%9F/' class=" post_tag button button_translucent" data-position=4 title="模拟">模拟<span class="button_tally">4</span>
+            <a href='http://localhost:1313/tags/%E6%A8%A1%E6%8B%9F/' class=" post_tag button button_translucent" data-position=2 title="模拟">模拟<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=6 title="前缀和">前缀和<span class="button_tally">6</span>
+            <a href='http://localhost:1313/tags/%E5%89%8D%E7%BC%80%E5%92%8C/' class=" post_tag button button_translucent" data-position=5 title="前缀和">前缀和<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=5 title="日志">日志<span class="button_tally">5</span>
+            <a href='http://localhost:1313/tags/%E6%97%A5%E5%BF%97/' class=" post_tag button button_translucent" data-position=5 title="日志">日志<span class="button_tally">5</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/' class=" post_tag button button_translucent" data-position=1 title="扫描线">扫描线<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/' class=" post_tag button button_translucent" data-position=1 title="扫描线">扫描线<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=2 title="沙箱逃逸">沙箱逃逸<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' class=" post_tag button button_translucent" data-position=2 title="沙箱逃逸">沙箱逃逸<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%B7%B1%E6%90%9C/' class=" post_tag button button_translucent" data-position=15 title="深搜">深搜<span class="button_tally">15</span>
+            <a href='http://localhost:1313/tags/%E6%B7%B1%E6%90%9C/' class=" post_tag button button_translucent" data-position=15 title="深搜">深搜<span class="button_tally">15</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="树">树<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="树">树<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/' class=" post_tag button button_translucent" data-position=1 title="树状数组">树状数组<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/' class=" post_tag button button_translucent" data-position=1 title="树状数组">树状数组<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=9 title="数据结构">数据结构<span class="button_tally">9</span>
+            <a href='http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' class=" post_tag button button_translucent" data-position=9 title="数据结构">数据结构<span class="button_tally">9</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=5 title="数论">数论<span class="button_tally">5</span>
+            <a href='http://localhost:1313/tags/%E6%95%B0%E8%AE%BA/' class=" post_tag button button_translucent" data-position=4 title="数论">数论<span class="button_tally">4</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=3 title="数学">数学<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E6%95%B0%E5%AD%A6/' class=" post_tag button button_translucent" data-position=3 title="数学">数学<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="双端队列">双端队列<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/' class=" post_tag button button_translucent" data-position=1 title="双端队列">双端队列<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/' class=" post_tag button button_translucent" data-position=1 title="双指针">双指针<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%8F%8C%E6%8C%87%E9%92%88/' class=" post_tag button button_translucent" data-position=1 title="双指针">双指针<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=31 title="算法">算法<span class="button_tally">31</span>
+            <a href='http://localhost:1313/tags/%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=29 title="算法">算法<span class="button_tally">29</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=2 title="拓扑排序">拓扑排序<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=2 title="拓扑排序">拓扑排序<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=11 title="贪心策略">贪心策略<span class="button_tally">11</span>
+            <a href='http://localhost:1313/tags/%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/' class=" post_tag button button_translucent" data-position=9 title="贪心策略">贪心策略<span class="button_tally">9</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/' class=" post_tag button button_translucent" data-position=1 title="桶排序">桶排序<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%9B%BE%E8%AE%BA/' class=" post_tag button button_translucent" data-position=3 title="图论">图论<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/' class=" post_tag button button_translucent" data-position=3 title="图论">图论<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="线段树">线段树<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/' class=" post_tag button button_translucent" data-position=1 title="线段树">线段树<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=3 title="线性代数">线性代数<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/' class=" post_tag button button_translucent" data-position=3 title="线性代数">线性代数<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=1 title="匈牙利算法">匈牙利算法<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/' class=" post_tag button button_translucent" data-position=1 title="匈牙利算法">匈牙利算法<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=3 title="栈">栈<span class="button_tally">3</span>
+            <a href='http://localhost:1313/tags/%E6%A0%88/' class=" post_tag button button_translucent" data-position=3 title="栈">栈<span class="button_tally">3</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' class=" post_tag button button_translucent" data-position=2 title="质数筛">质数筛<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/' class=" post_tag button button_translucent" data-position=2 title="质数筛">质数筛<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/' class=" post_tag button button_translucent" data-position=1 title="置换环">置换环<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/' class=" post_tag button button_translucent" data-position=1 title="置换环">置换环<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/' class=" post_tag button button_translucent" data-position=1 title="最短路径">最短路径<span class="button_tally">1</span>
+            <a href='http://localhost:1313/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/' class=" post_tag button button_translucent" data-position=1 title="最短路径">最短路径<span class="button_tally">1</span>
             </a>
             
             
-            <a href='https://jackgdn.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' class=" post_tag button button_translucent" data-position=2 title="最小生成树">最小生成树<span class="button_tally">2</span>
+            <a href='http://localhost:1313/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' class=" post_tag button button_translucent" data-position=2 title="最小生成树">最小生成树<span class="button_tally">2</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -1706,7 +1719,7 @@ $$</p>
 </script>
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='https://jackgdn.github.io/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
+    <img src='http://localhost:1313/icons/G.png' class="icon icon_2 transparent" alt="&lt;jack-gdn/&gt;">
     <p>版权所有&nbsp;2024 -&nbsp;<span class="year"></span>&nbsp;&lt;JACK-GDN/&gt;. 保留一切权利.<br/>
     除特别声明外, 本博客内所有文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可协议发布。转载请注明出处。</p><a class="to_top" href="#documentTop">
   <svg class="icon">
@@ -1719,9 +1732,9 @@ $$</p>
   </div>
 </footer>
 
-<script type="text/javascript" src="https://jackgdn.github.io/zh-cn/js/bundle.1414de91f90ad3ba5a94a60fcaf45b6e118fcec05aa3cccc2f29e7f2df9fbc985ac3977877a81403df375764552c9a14ec0f43efb3953d10ab52a8e958faba5b.js" integrity="sha512-FBTekfkK07palKYPyvRbbhGPzsBao8zMLynn8t&#43;fvJhaw5d4d6gUA983V2RVLJoU7A9D77OVPRCrUqjpWPq6Ww==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://localhost:1313/zh-cn/js/bundle.6d8098ceca941515ba1a866a4a5f5e47fd6dbd667366c66c0126c78a6c232a89646896c4e153fce35c02ffb960f4de572dadf9a51a819d4eed43a52bdea04c19.js" integrity="sha512-bYCYzsqUFRW6GoZqSl9eR/1tvWZzZsZsASbHimwjKolkaJbE4VP841wC/7lg9N5XLa35pRqBnU7tQ6Ur3qBMGQ==" crossorigin="anonymous"></script>
 
-  <script src="https://jackgdn.github.io/js/search.min.3b86f120a43abeeb2418c60805cce6e08a0b5a475e948e9ec71cba472622b61bb784e3b3c8d3c83e99fbafcae74f1e27b9888bd6f4bd1764de7e5394ceaca15a.js"></script>
+  <script src="http://localhost:1313/js/search.min.96f02124b9cdea9e7b0ae2531a96946e41b6751ecaa433592ea461c1fc312453de389a86d5b29fd608844a149de2208129501524fd1a07baf080f72f2734e05a.js"></script>
 <script>
     function checkReferer() {
         var referer = document.referrer;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Log on &lt;jack-gdn/&gt;</title>
+    <link>http://localhost:1313/tags/log/</link>
+    <description>Recent content in Log on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log-2024-08-06</title>
+      <link>http://localhost:1313/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/bundle-%E6%97%A5%E5%BF%97/log-2024-08-06/</guid>
+      <description>&lt;p&gt;After several days of work, I have completed the basic migration of my personal blog from Hexo to Hugo. I was using &lt;a href=&#34;https://hexo-theme-async.imalun.com/&#34;&gt;Hexo-Theme-Async&lt;/a&gt; theme previously. Both Hexo and Hugo have their own advantages and disadvantages. The advantage of Hexo is its simplicity. Without complex operations can anyone construct a pleasing blog with Hexo. Meanwhile, Hugo excels in speed of generation and high customization capabilities.&lt;/p&gt;&#xA;&lt;p&gt;In terms of generation speed, running &lt;code&gt;hugo server&lt;/code&gt; command is significantly faster than running &lt;code&gt;hexo g&lt;/code&gt; and &lt;code&gt;hexo s&lt;/code&gt; combined. Additonally, Hugo&#39;s hot reload mode surpasses that of Hexo&#39;s. Whenever I make a change to an article, Hugo directly displays modified contents, whereas using Hexo requires regeneration with its slow generation speed... Clearly, Hugo is superior to Hexo.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

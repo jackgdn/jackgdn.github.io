@@ -2,26 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unicode on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/unicode/</link>
+    <link>http://localhost:1313/tags/unicode/</link>
     <description>Recent content in Unicode on &lt;jack-gdn/&gt;</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unicode 学习记录</title>
-      <link>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <link>http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackgdn.github.io/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <description>
-        
-          
-            Unicode 相关知识
-          
-          
-        
-      </description>
+      <guid>http://localhost:1313/post/unicode-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;前段时间有一道不是很难的 Python 沙箱逃逸问题，用到了 Unicode 的 NFKC。这一次详细记录一下 Unicode 里有点意思的特性。&lt;/p&gt;&#xA;&lt;h2 id=&#34;nfkc&#34;&gt;NFKC&lt;/h2&gt;&#xA;&lt;p&gt;利用 NFKC 算是 Python 沙箱逃逸类题目里较为常用的一种方式。在编写攻击载荷时不得不用到某个字符，但是这个字符又被列入了检测的黑名单中，则会利用 Unicode 的 NFKC 标准化，而 Python 恰好也支持 NFKC，这不就巧了嘛！&lt;/p&gt;&#xA;&lt;p&gt;简单来说，NFKC 可以让程序更好地理解一些字符，它将那些形状类似但是编码不同的字符归为一组字符。例如说在 Unicode 中合字 ﬃ (&lt;em&gt;&lt;code&gt;U+FB03&lt;/code&gt;&lt;/em&gt;) 在视觉上等同于 ffi 三个字符拼凑而成，因此需要计算机软件能够识别 ffi 三个字符等同于 ﬃ 合字字符，以便于用户检索。&lt;/p&gt;&#xA;&lt;p&gt;因此在 Python 中就会有如下输出：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;１&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# U+FF11&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;１&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# output:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# False&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# True&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在下面两个网站里可以找到取代某个 ASCII 字符的 Unicode 字符：&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/h13t0ry/UnicodeToy&#34;&gt;Github - h13t0ry/UnicodeToy: Unicode fuzzer for various purposes&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.compart.com/en/unicode/bidiclass/EN&#34;&gt;List of Unicode Characters of Bidirectional Class “European Number”&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
