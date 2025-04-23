@@ -25,16 +25,16 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="坐标消息 坐标消息有两种常用类型，geometry_msgs/TransformStamped 和 geometry_msgs/PoseStamped。
-1$ rosmsg info geometry_msgs/TransformStamped 2std_msgs/Header header 3 uint32 seq …" />
+<meta name="description" content="创建一个包 catkin_create_pkg tf_demo geometry_msgs roscpp rospy std_msgs tf2 tf2_geometry_msgs tf2_ros
+坐标消息 坐标消息有两种常用类型，geometry_msgs/TransformStamped …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="ROS 学习记录（五）——TF 坐标变换" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
 <meta property="og:url" content="https://jackgdn.github.io/post/bundle-ros/ros-tf/" />
 <meta property="og:title" content="ROS 学习记录（五）——TF 坐标变换" />
-<meta property="og:description" content="坐标消息 坐标消息有两种常用类型，geometry_msgs/TransformStamped 和 geometry_msgs/PoseStamped。
-1$ rosmsg info geometry_msgs/TransformStamped 2std_msgs/Header header 3 uint32 seq …" />
+<meta property="og:description" content="创建一个包 catkin_create_pkg tf_demo geometry_msgs roscpp rospy std_msgs tf2 tf2_geometry_msgs tf2_ros
+坐标消息 坐标消息有两种常用类型，geometry_msgs/TransformStamped …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
@@ -201,7 +201,8 @@ src='https://plausible.io/js/plausible.js'>
 </nav>
       </div>
     
-    <div class="post_body"><h2 id="坐标消息">坐标消息</h2>
+    <div class="post_body"><p>创建一个包 <code>catkin_create_pkg tf_demo geometry_msgs roscpp rospy std_msgs tf2 tf2_geometry_msgs tf2_ros</code></p>
+<h2 id="坐标消息">坐标消息</h2>
 <p>坐标消息有两种常用类型，<code>geometry_msgs/TransformStamped</code> 和 <code>geometry_msgs/PoseStamped</code>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">$ rosmsg info geometry_msgs/TransformStamped
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">std_msgs/Header header
