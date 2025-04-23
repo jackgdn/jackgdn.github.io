@@ -6,7 +6,23 @@
     <description>Recent content in ROS 学习记录 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/ros-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS 学习记录（五）——TF 坐标变换</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-tf/</link>
+      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-tf/</guid>
+      <description>
+        
+          
+            使用 TF 工具实现坐标转换。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS 学习记录（四）——ROS 自定义头文件/模块，更改日志输出级别</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-lib/</link>
