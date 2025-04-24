@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ROS on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/tags/ros/</link>
+    <link>https://jackgdn.github.io/tags/ros/</link>
     <description>Recent content in ROS on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/ros/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ROS 学习记录（六）——TF 坐标变换实操</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-tf-prac/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-tf-prac/</link>
       <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-tf-prac/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-tf-prac/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>ROS 学习记录（五）——TF 坐标变换</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-tf/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-tf/</link>
       <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-tf/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-tf/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>ROS 学习记录（四）——自定义头文件/模块，更改日志输出级别</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-lib/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-lib/</link>
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-lib/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-lib/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>ROS 学习记录（三）——ROS 通信机制实践</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-comm-prac/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</link>
       <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-comm-prac/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm-prac/</guid>
       <description>
         
           
@@ -73,10 +73,10 @@
     
     <item>
       <title>ROS 学习记录（二）——ROS 的通信机制</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-comm/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-comm/</link>
       <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-comm/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-comm/</guid>
       <description>
         
           
@@ -89,10 +89,10 @@
     
     <item>
       <title>ROS 学习记录（一）——快速体验</title>
-      <link>http://localhost:1313/post/bundle-ros/ros-basic/</link>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros-basic/</link>
       <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-ros/ros-basic/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros-basic/</guid>
       <description>
         
           
