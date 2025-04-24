@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust 练习 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/</link>
+    <link>http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/</link>
     <description>Recent content in Rust 练习 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/rust-%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/rust-%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust 练习（三）</title>
-      <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</link>
+      <link>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</link>
       <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</guid>
+      <guid>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust3/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>Rust 练习（二）</title>
-      <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</link>
+      <link>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</guid>
+      <guid>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust2/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>Rust 练习（一）</title>
-      <link>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</link>
+      <link>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</guid>
+      <guid>http://localhost:1313/post/bundle-rust%E7%BB%83%E4%B9%A0/rust/</guid>
       <description>
         
           

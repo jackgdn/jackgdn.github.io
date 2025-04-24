@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>背包问题 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</link>
+    <link>http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</link>
     <description>Recent content in 背包问题 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025春季算法练习——Week 4</title>
-      <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/</link>
+      <link>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/</guid>
+      <guid>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025spring-week4/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>背包问题练习（五）——分组背包问题</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-5/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>动态规划练习（一）</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-dp-1/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>数学与动态规划练习</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-math&#43;dp/</guid>
       <description>
         
           
@@ -73,10 +73,10 @@
     
     <item>
       <title>背包问题练习（四）——多维背包问题</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-4/</guid>
       <description>
         
           
@@ -89,10 +89,10 @@
     
     <item>
       <title>背包问题练习（三）——多重背包问题</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-3/</guid>
       <description>
         
           
@@ -105,10 +105,10 @@
     
     <item>
       <title>背包问题练习（二）——完全背包问题</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</link>
       <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-2/</guid>
       <description>
         
           
@@ -121,10 +121,10 @@
     
     <item>
       <title>背包问题练习（一）——01背包问题</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-knapsackproblem-1/</guid>
       <description>
         
           

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>二分查找 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</link>
+    <link>http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</link>
     <description>Recent content in 二分查找 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日一题 3.10-3.16</title>
-      <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
+      <link>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</link>
       <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
+      <guid>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.10-3.16/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>二分查找与前缀和练习（二）</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-2/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>每日一题 3.3-3.9</title>
-      <link>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
+      <link>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
+      <guid>http://localhost:1313/post/bundle-%E5%91%A8%E7%BB%83/2025%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-3.3-3.9/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>树状数组、线段树与差分练习</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-segmenttree/</guid>
       <description>
         
           
@@ -73,10 +73,10 @@
     
     <item>
       <title>枚举、模拟与排序练习</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-enumeration&#43;simulation&#43;sorting/</guid>
       <description>
         
           
@@ -89,10 +89,10 @@
     
     <item>
       <title>二分查找与前缀和练习（一）</title>
-      <link>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</link>
+      <link>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</guid>
+      <guid>http://localhost:1313/post/bundle-%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/algo-binarysearch&#43;prefixsum-1/</guid>
       <description>
         
           
