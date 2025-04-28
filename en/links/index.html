@@ -185,34 +185,23 @@ Compiler Explorer …" />
   </span>
   </div>
 
-    <div class="post_body"><p>
-  <figure>
-  <picture>
+    <div class="post_body"><script>
+	async function fetchBingWallpaper() {
+		const response = await fetch('https://bing.biturl.top/?resolution=UHD&format=json&index=0&mkt=en-US');
+		const data = await response.json();
+		const imageUrl = data.url;
+		const imageDescription = data.copyright;
 
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt=""
-      
-        class="image_figure image_internal image_processed"
-        width="5472"
-        height="3648"
-        src="/links/links/index.jpg"
-      
-      
-    />
+		const imageContainer = document.getElementById('bing-wallpaper');
+		imageContainer.innerHTML = `
+			<img src="${imageUrl}" alt="${imageDescription}" style="width:100%; height:auto;">
+			<figcaption class="img_alt">${imageDescription}</figcaption>
+		`;
+	}
 
-    </picture>
-</figure>
-</p>
+	fetchBingWallpaper();
+</script>
+<div id="bing-wallpaper"></div>
 <h1 id="docs--tutorials">Docs &amp; Tutorials</h1>
 <ul>
 <li>
