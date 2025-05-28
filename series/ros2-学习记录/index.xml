@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS2 学习记录 on &lt;jack-gdn/&gt;</title>
+    <link>https://jackgdn.github.io/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+    <description>Recent content in ROS2 学习记录 on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS2 学习记录（一）——ROS2 的话题通信与服务通信</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</guid>
+      <description>
+        
+          
+            学习 ROS2 中的话题通信与服务通信
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

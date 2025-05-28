@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -39,6 +39,44 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/post/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/ros2/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/categories/ros2/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/series/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/tags/"
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/ros/</loc>
@@ -52,32 +90,6 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros-tf-prac/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/series/"
-                />
-  </url><url>
-    <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/tags/"
-                />
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros-tf/</loc>
     <lastmod>2025-04-23T00:00:00+00:00</lastmod>

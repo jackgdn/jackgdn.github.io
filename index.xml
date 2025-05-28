@@ -6,7 +6,23 @@
     <description>Recent content on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS2 学习记录（一）——ROS2 的话题通信与服务通信</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</guid>
+      <description>
+        
+          
+            学习 ROS2 中的话题通信与服务通信
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS 学习记录（六）——TF 坐标变换实操</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros-tf-prac/</link>
