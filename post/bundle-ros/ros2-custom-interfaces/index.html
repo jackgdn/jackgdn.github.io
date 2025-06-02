@@ -4,10 +4,12 @@
   lang="zh-cn"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Crypto  |  &lt;jack-gdn/&gt;</title>
+<title>ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -23,22 +25,23 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="自定义 ROS2 消息类型与服务类型 单独创建一个 ROS2 包，专门用于存储自定义的消息与服务。由于这个包中不需要存放节点，因此在创建包时，包的类型可以任选，包的依赖可以为空。
+1ros2 pkg create --build-type ament_cmake custom_interfaces …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Crypto" />
+<meta name="twitter:title" content="ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/tags/crypto/" />
-<meta property="og:title" content="Crypto" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/" />
+<meta property="og:title" content="ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件" />
+<meta property="og:description" content="自定义 ROS2 消息类型与服务类型 单独创建一个 ROS2 包，专门用于存储自定义的消息与服务。由于这个包中不需要存放节点，因此在创建包时，包的类型可以任选，包的依赖可以为空。
+1ros2 pkg create --build-type ament_cmake custom_interfaces …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/tags/crypto/">
-<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/tags/crypto/index.xml" title="<jack-gdn/>" />
+<link rel="canonical" href="https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/">
 
 
 
@@ -142,19 +145,10 @@ src='https://plausible.io/js/plausible.js'>
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="近期解题 2024.3.14">近期解题 2024.3.14</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -162,16 +156,14 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2024-03-14</span>
-    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/crypto/' title="Crypto" class="post_tag button button_translucent">Crypto
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
+      2025-06-02</span>
+    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/ros2/' title="ROS2" class="post_tag button button_translucent">ROS2
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -182,82 +174,196 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>近期解题</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20240314/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#自定义-ros2-消息类型与服务类型">自定义 ROS2 消息类型与服务类型</a></li>
+    <li><a href="#使用-launch-文件启动多个节点">使用 launch 文件启动多个节点</a></li>
+  </ul>
+</nav>
       </div>
+    
+    <div class="post_body"><h2 id="自定义-ros2-消息类型与服务类型">自定义 ROS2 消息类型与服务类型</h2>
+<p>单独创建一个 ROS2 包，专门用于存储自定义的消息与服务。由于这个包中不需要存放节点，因此在创建包时，包的类型可以任选，包的依赖可以为空。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ros2 pkg create --build-type ament_cmake custom_interfaces
+</span></span></code></pre></div><p>在 <code>custom_interfaces</code> 中，创建 <code>msg</code> 和 <code>srv</code> 目录，分别用于存放初始消息文件和服务文件。ROS2 中的消息文件与服务文件均与 ROS1 中相同。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkdir -p custom_interfaces/msg
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mkdir -p custom_interfaces/srv
+</span></span><span class="line"><span class="ln">3</span><span class="cl">touch custom_interfaces/msg/Coordinate.msg
+</span></span><span class="line"><span class="ln">4</span><span class="cl">touch custom_interfaces/srv/CoordinteTransformation.srv
+</span></span></code></pre></div><p>在 <code>Coordinate.msg</code> 中，我希望该类型消息能够传递一组平面直角坐标参数，包括横纵坐标两个值，因此在文件中输入如下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">float64 x
+</span></span><span class="line"><span class="ln">2</span><span class="cl">float64 y
+</span></span></code></pre></div><p>而在 <code>CoordinateTransformation.srv</code> 中，我希望该服务的请求为一组平面直角坐标系的坐标，响应为该点在平面极坐标系中的坐标，在文件中输入如下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">float64 x
+</span></span><span class="line"><span class="ln">2</span><span class="cl">float64 y
+</span></span><span class="line"><span class="ln">3</span><span class="cl">---
+</span></span><span class="line"><span class="ln">4</span><span class="cl">float64 radius
+</span></span><span class="line"><span class="ln">5</span><span class="cl">float64 theta
+</span></span></code></pre></div><p>现在需要编译消息与服务，生成对应的 C++ 头文件和 Python 库文件。首先编辑 <code>package.xml</code> 文件，添加编译消息与服务的依赖：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;build_depend&gt;</span>rosidl_default_generators<span class="nt">&lt;/build_depend&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nt">&lt;exec_depend&gt;</span>rosidl_default_runtime<span class="nt">&lt;/exec_depend&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nt">&lt;member_of_group&gt;</span>rosidl_interface_packages<span class="nt">&lt;/member_of_group&gt;</span>
+</span></span></code></pre></div><p>随后编辑 <code>CMakeLists.txt</code>，将自定义消息与服务设置为编译目标：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">find_package</span><span class="p">(</span><span class="s">rosidl_default_generators</span> <span class="s">REQUIRED</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nb">rosidl_generate_interfaces</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="s2">&#34;msg/Coordinate.msg&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  <span class="s2">&#34;srv/CoordinateTransformation.srv&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="err"></span><span class="nb">ament_export_dependencies</span><span class="p">(</span><span class="s">rosidl_default_runtime</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><p>随后，编译自定义消息与服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">colcon build --packages-select custom_interfaces
+</span></span></code></pre></div><p>编译成功后，在 <code>install/custom_interfaces</code> 目录下能够找到生成的 C++ 头文件和 Python 库文件。此时需要手动将头文件和库文件的路径添加到 IntelliSense 的读取路径中，确保后续编写代码时，IntelliSense 能够正确识别。</p>
+<h2 id="使用-launch-文件启动多个节点">使用 launch 文件启动多个节点</h2>
+<p>现在以自定义服务通信为例，使用 C++ 编写服务端节点和客户端节点。首先创建一个包，存放两个 C++ 节点：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ros2 pkg create --build-type ament_cmake cpp_custom --dependencies rclcpp custom_interfaces
+</span></span></code></pre></div><p>在 <code>cpp_custom/src</code> 目录下创建两个 C++ 文件 <code>server.cpp</code> 与 <code>client.cpp</code>，分别表示服务端节点和客户端节点。</p>
+<p>服务端：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;custom_interfaces/srv/coordinate_transformation.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;rclcpp/rclcpp.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">using</span> <span class="n">custom_interfaces</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">CoordinateTransformation</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">class</span> <span class="nc">TransformationServer</span> <span class="o">:</span> <span class="k">public</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">TransformationServer</span><span class="p">()</span> <span class="o">:</span> <span class="n">Node</span><span class="p">(</span><span class="s">&#34;transformation_server&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="n">service_</span> <span class="o">=</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="n">create_service</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;transformation&#34;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">TransformationServer</span><span class="o">::</span><span class="n">handle</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">_1</span><span class="p">,</span> <span class="n">_2</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">Service</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">service_</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="kt">void</span> <span class="nf">handle</span><span class="p">(</span><span class="k">const</span> <span class="n">CoordinateTransformation</span><span class="o">::</span><span class="n">Request</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">request</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="k">const</span> <span class="n">CoordinateTransformation</span><span class="o">::</span><span class="n">Response</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">request</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">request</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span> <span class="s">&#34;Received request: x=%f y=%f&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="n">response</span><span class="o">-&gt;</span><span class="n">radius</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">response</span><span class="o">-&gt;</span><span class="n">theta</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TransformationServer</span><span class="o">&gt;</span><span class="p">());</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>客户端：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;custom_interfaces/srv/coordinate_transformation.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;rclcpp/rclcpp.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;random&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">using</span> <span class="n">custom_interfaces</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">CoordinateTransformation</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono_literals</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">class</span> <span class="nc">TransformationClient</span> <span class="o">:</span> <span class="k">public</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="n">TransformationClient</span><span class="p">()</span> <span class="o">:</span> <span class="n">Node</span><span class="p">(</span><span class="s">&#34;transformation_client&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="n">client_</span> <span class="o">=</span> <span class="n">create_client</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;transformation&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">timer_</span> <span class="o">=</span> <span class="n">create_wall_timer</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">TransformationClient</span><span class="o">::</span><span class="n">send_request</span><span class="p">,</span> <span class="k">this</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">client_</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">TimerBase</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">timer_</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="kt">void</span> <span class="nf">send_request</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">auto</span> <span class="n">request</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">::</span><span class="n">Request</span><span class="o">&gt;</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="k">auto</span> <span class="n">random_pair</span> <span class="o">=</span> <span class="n">generate_random</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="n">request</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="n">random_pair</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="n">request</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">=</span> <span class="n">random_pair</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="n">client_</span><span class="o">-&gt;</span><span class="n">async_send_request</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">TransformationClient</span><span class="o">::</span><span class="n">response_callback</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">generate_random</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">default_random_engine</span> <span class="n">generator</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">uniform_real_distribution</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">distribution</span><span class="p">(</span><span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">        <span class="n">generator</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">        <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">distribution</span><span class="p">(</span><span class="n">generator</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="n">generator</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">distribution</span><span class="p">(</span><span class="n">generator</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl">    <span class="kt">void</span> <span class="nf">response_callback</span><span class="p">(</span><span class="k">const</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span><span class="n">CoordinateTransformation</span><span class="o">&gt;::</span><span class="n">SharedFuture</span> <span class="n">future</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">        <span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span> <span class="s">&#34;Received response: radius=%f theta=%f&#34;</span><span class="p">,</span> <span class="n">future</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">radius</span><span class="p">,</span> <span class="n">future</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">theta</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">
+</span></span><span class="line"><span class="ln">44</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TransformationClient</span><span class="o">&gt;</span><span class="p">());</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">    <span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>编辑 <code>CMakeLists.txt</code>，添加编译目标：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nb">add_executable</span><span class="p">(</span><span class="s">transformation_server</span> <span class="s">src/server.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="err"></span><span class="nb">ament_target_dependencies</span><span class="p">(</span><span class="s">transformation_server</span> <span class="s">rclcpp</span> <span class="s">custom_interfaces</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">transformation_client</span> <span class="s">src/client.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="err"></span><span class="nb">ament_target_dependencies</span><span class="p">(</span><span class="s">transformation_client</span> <span class="s">rclcpp</span> <span class="s">custom_interfaces</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="err"></span><span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="s">transformation_server</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="s">transformation_client</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="s">DESTINATION</span> <span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><p>运行命令编译该包中的两个节点：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">colcon build --packages-select cpp_custom
+</span></span></code></pre></div><p>编译成功后，在包目录下创建 <code>luanch</code> 目录，用于存放 launch 文件。ROS1 中的 launch 文件为 XML 格式，而 ROS2 中的 launch 文件为 Python 脚本。在 <code>launch</code> 目录下创建 <code>transformation.launch.py</code> 文件，内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">return</span> <span class="n">LaunchDescription</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="n">Node</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                <span class="n">package</span><span class="o">=</span><span class="s2">&#34;cpp_custom&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">                <span class="n">executable</span><span class="o">=</span><span class="s2">&#34;transformation_server&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">&#34;transformation_server&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="n">Node</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="n">package</span><span class="o">=</span><span class="s2">&#34;cpp_custom&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="n">executable</span><span class="o">=</span><span class="s2">&#34;transformation_client&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">&#34;transformation_client&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div><p>虽然 ROS2 中的 launch 文件格式与 ROS1 中不同，但是其文件结构与 ROS1 一致。运行如下命令使用 launch 文件启动这两个节点：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ros2 launch cpp_custom/launch/transformation.launch.py
+</span></span></code></pre></div><p>随后即可看到两个节点运行。</p>
+
     </div>
-  </li>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-02-08</span>
-    <span class="post_time"> · 10 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
-        </a><a href='https://jackgdn.github.io/tags/misc/' title="MISC" class="post_tag button button_translucent">MISC
-        </a><a href='https://jackgdn.github.io/tags/web/' title="Web" class="post_tag button button_translucent">Web
-        </a><a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/crypto/' title="Crypto" class="post_tag button button_translucent">Crypto
-        </a><a href='https://jackgdn.github.io/tags/forensics/' title="Forensics" class="post_tag button button_translucent">Forensics
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
+	<h2 class="post_related">系列文章</h2>
+	<ul>
+	  
+	      <li><a href="https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/" class="nav-link" title="ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件">ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件</a></li>
+	  
+	      <li><a href="https://jackgdn.github.io/post/bundle-ros/ros2-comm/" class="nav-link" title="ROS2 学习记录（一）——ROS2 的话题通信与服务通信">ROS2 学习记录（一）——ROS2 的话题通信与服务通信</a></li>
+	  
+	</ul>
 
-    </a>
-  </div>
-  </span>
-  </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>真实一场酣畅淋漓的坐牢啊！</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
 
-      <li>
-      </li>
-    </ul>
-  </div>
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -280,6 +386,20 @@ src='https://plausible.io/js/plausible.js'>
         不同语言版本的文章在内容上可能会有差异。
       </div>
     
+    
+      
+	    <h2 class="mt-4">系列文章</h2>
+      <ul>
+        
+        <li>
+          <a href="https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/" class="nav-link" title="ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件">ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件</a>
+        </li>
+        
+        <li>
+          <a href="https://jackgdn.github.io/post/bundle-ros/ros2-comm/" class="nav-link" title="ROS2 学习记录（一）——ROS2 的话题通信与服务通信">ROS2 学习记录（一）——ROS2 的话题通信与服务通信</a>
+        </li>
+        
+      </ul>
     
     <h2 class="mt-4">精选文章</h2>
     <ul>
@@ -922,9 +1042,8 @@ src='https://plausible.io/js/plausible.js'>
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>

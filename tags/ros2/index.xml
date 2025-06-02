@@ -6,7 +6,23 @@
     <description>Recent content in ROS2 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/ros2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/tags/ros2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件</title>
+      <link>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</guid>
+      <description>
+        
+          
+            自定义 ROS2 消息与服务，使用 launch 文件启动多个节点
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS2 学习记录（一）——ROS2 的话题通信与服务通信</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</link>
