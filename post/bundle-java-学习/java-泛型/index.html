@@ -4,10 +4,12 @@
   lang="zh-cn"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Forensics  |  &lt;jack-gdn/&gt;</title>
+<title>Java 泛型  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -23,22 +25,23 @@ src='https://plausible.io/js/plausible.js'>
 <meta property="og:locale" content="zh-cn" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="在 Java 反射中，Class 类和 Constructor 类后都有 &lt;?&gt; 的标识，这个标识表示“任意类型”，即泛型。通过这个标识，一个 Class 类可以存储任何类型的 Class 对象。
+泛型的定义与使用 泛型标记符 上面提到的 &lt;?&gt; 中的 ? 是一种常用的标记符。Java 中有如下 …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Forensics" />
+<meta name="twitter:title" content="Java 泛型" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/tags/forensics/" />
-<meta property="og:title" content="Forensics" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%9B%E5%9E%8B/" />
+<meta property="og:title" content="Java 泛型" />
+<meta property="og:description" content="在 Java 反射中，Class 类和 Constructor 类后都有 &lt;?&gt; 的标识，这个标识表示“任意类型”，即泛型。通过这个标识，一个 Class 类可以存储任何类型的 Class 对象。
+泛型的定义与使用 泛型标记符 上面提到的 &lt;?&gt; 中的 ? 是一种常用的标记符。Java 中有如下 …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/tags/forensics/">
-<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/tags/forensics/index.xml" title="<jack-gdn/>" />
+<link rel="canonical" href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%9B%E5%9E%8B/">
 
 
 
@@ -142,19 +145,10 @@ src='https://plausible.io/js/plausible.js'>
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/bundle-wp/pearl2024/" title="PearlCTF 2024 WP">PearlCTF 2024 WP</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Java 泛型</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -162,18 +156,14 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2024-03-10</span>
-    <span class="post_time"> · 5 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/misc/' title="Misc" class="post_tag button button_translucent">Misc
-        </a><a href='https://jackgdn.github.io/tags/forensics/' title="Forensics" class="post_tag button button_translucent">Forensics
-        </a><a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
-        </a><a href='https://jackgdn.github.io/tags/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/' title="沙箱逃逸" class="post_tag button button_translucent">沙箱逃逸
+      2025-06-11</span>
+    <span class="post_time"> · 4 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/java/' title="Java" class="post_tag button button_translucent">Java
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/post/bundle-wp/pearl2024/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%9B%E5%9E%8B/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -184,82 +174,369 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-            
-          
-            <p>贡献分数 908/1807</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/bundle-wp/pearl2024/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#泛型的定义与使用">泛型的定义与使用</a>
+      <ul>
+        <li><a href="#泛型标记符">泛型标记符</a></li>
+        <li><a href="#泛型类">泛型类</a></li>
+        <li><a href="#泛型方法">泛型方法</a></li>
+        <li><a href="#泛型接口">泛型接口</a></li>
+      </ul>
+    </li>
+    <li><a href="#类型擦除">类型擦除</a></li>
+  </ul>
+</nav>
       </div>
-    </div>
-  </li>
+    
+    <div class="post_body"><p>在 <a href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/">Java 反射</a>中，<code>Class</code> 类和 <code>Constructor</code> 类后都有 <code>&lt;?&gt;</code> 的标识，这个标识表示“任意类型”，即泛型。通过这个标识，一个 <code>Class</code> 类可以存储任何类型的 <code>Class</code> 对象。</p>
+<h2 id="泛型的定义与使用">泛型的定义与使用</h2>
+<h3 id="泛型标记符">泛型标记符</h3>
+<p>上面提到的 <code>&lt;?&gt;</code> 中的 <code>?</code> 是一种常用的标记符。Java 中有如下常用标记符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标记符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>E</code></td>
+<td style="text-align:center">Element - 在集合中使用，表示集合元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T</code></td>
+<td style="text-align:center">Type - 类型</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>K</code></td>
+<td style="text-align:center">Key - 键</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>V</code></td>
+<td style="text-align:center">Value - 值，常与 K 搭配使用</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>N</code></td>
+<td style="text-align:center">Number - 数值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:center">无法确定类型</td>
+</tr>
+</tbody>
+</table>
+<style type="text/css">
+     
+     
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="BeginCTF 解题记录">BeginCTF 解题记录</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-02-08</span>
-    <span class="post_time"> · 10 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/wp/' title="WP" class="post_tag button button_translucent">WP
-        </a><a href='https://jackgdn.github.io/tags/misc/' title="MISC" class="post_tag button button_translucent">MISC
-        </a><a href='https://jackgdn.github.io/tags/web/' title="Web" class="post_tag button button_translucent">Web
-        </a><a href='https://jackgdn.github.io/tags/reverse/' title="Reverse" class="post_tag button button_translucent">Reverse
-        </a><a href='https://jackgdn.github.io/tags/crypto/' title="Crypto" class="post_tag button button_translucent">Crypto
-        </a><a href='https://jackgdn.github.io/tags/forensics/' title="Forensics" class="post_tag button button_translucent">Forensics
-        </a>
-    </span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
+     
+     
+        .notice {
+            --title-color: #fff;
+            --title-background-color: #069;
+            --content-color: #ddd;
+            --content-background-color: #023;
+        }
 
-    </a>
-  </div>
-  </span>
-  </div>
+        .notice.info {
+            --title-background-color: #a50;
+            --content-background-color: #420;
+        }
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
+        .notice.tip {
+            --title-background-color: #363;
+            --content-background-color: #121;
+        }
+
+        .notice.warning {
+            --title-background-color: #800;
+            --content-background-color: #400;
+        }
+     
+
+    body.dark .notice {
+        --title-color: #fff;
+        --title-background-color: #069;
+        --content-color: #ddd;
+        --content-background-color: #023;
+    }
+
+    body.dark .notice.info {
+        --title-background-color: #a50;
+        --content-background-color: #420;
+    }
+
+    body.dark .notice.tip {
+        --title-background-color: #363;
+        --content-background-color: #121;
+    }
+
+    body.dark .notice.warning {
+        --title-background-color: #800;
+        --content-background-color: #400;
+    }
+
+     
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--content-color);
+        background: var(--content-background-color);
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+     
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background-color);
+    }
+
+     
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px;
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative;
+    }
+</style><div class="notice tip" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
             
-          
-            <p>真实一场酣畅淋漓的坐牢啊！</p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/post/bundle-wp/beginctf-%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
+        </span>提示</p><p>上面提到的标记符除 <code>?</code> 外均为<strong>命名惯例</strong>，即使把代码中所有的 <code>T</code> 都改成 <code>D</code> 甚至 <code>GDN</code>，代码也是符合命名规范的。</p></div>
 
-      <li>
-      </li>
-    </ul>
-  </div>
+<h3 id="泛型类">泛型类</h3>
+<p>泛型类是指具有一个或多个<strong>类型参数</strong>的类。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.entities</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 泛型类 Box，T 是类型参数</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w"> </span><span class="c1">// Box 类中 content 属性的类型需要在实例化时指定</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Box</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Box</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setContent</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">getContent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 该方法的返回值类型是 T，即 Box 中存储的内容的类型</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTypeName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getName</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">orElse</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.entities.Box</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">        </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&#34;Hello, World!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Content: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">getContent</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Type Name: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">getTypeName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="cm"> * Content: Hello, World!
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="cm"> * Type Name: java.lang.String
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div><h3 id="泛型方法">泛型方法</h3>
+<p>泛型方法是指在方法声明中定义了类型参数的方法。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.entities</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Sorter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 上限通配符，表示 T 必须实现 Comparable 接口</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">array</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 使用冒泡排序算法</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">                    </span><span class="n">T</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">                    </span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">                    </span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.entities.Sorter</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="n">Integer</span><span class="o">[]</span><span class="w"> </span><span class="n">integers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">8</span><span class="p">,</span><span class="w"> </span><span class="n">9</span><span class="p">,</span><span class="w"> </span><span class="n">7</span><span class="p">,</span><span class="w"> </span><span class="n">9</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">        </span><span class="n">Sorter</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">integers</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">integers</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">strings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&#34;Hello&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;World&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Java&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Generics&#34;</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">        </span><span class="n">Sorter</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">strings</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">strings</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="cm"> * [2, 3, 3, 3, 5, 5, 7, 8, 9, 9]
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="cm"> * [Generics, Hello, Java, World]
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div><p><code>Sorter.sort</code> 方法中 <code>&lt;T extends Comparable&lt;T&gt;&gt;</code> 是一个上限通配符，一般写法是 <code>&lt;? extends T&gt;</code>，表示 <code>?</code> 类型是 <code>T</code> 类型的子类/实现了 <code>T</code> 接口；与之对应的是下限通配符，一般写法是 <code>&lt;? super T&gt;</code>，表示 <code>?</code> 类型是 <code>T</code> 的祖先类。</p>
+<h3 id="泛型接口">泛型接口</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.interfaces</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="c1">// 泛型接口</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="n">K</span><span class="w"> </span><span class="nf">getKey</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="n">V</span><span class="w"> </span><span class="nf">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setKey</span><span class="p">(</span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setValue</span><span class="p">(</span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.entities</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.interfaces.Pair</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w"></span><span class="nd">@NoArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w"></span><span class="nd">@AllArgsConstructor</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w"></span><span class="c1">// 实现 Pair 泛型接口</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderedPair</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.entities.OrderedPair</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.interfaces.Pair</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">        </span><span class="c1">// 创建键为 String，值为 Double 的 Pair</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OrderedPair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&#34;PI&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">.</span><span class="na">14</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="c1">// 创建键为 Integer，值为 Boolean 的 Pair</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">        </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OrderedPair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">        </span><span class="n">pair2</span><span class="p">.</span><span class="na">setKey</span><span class="p">(</span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">        </span><span class="n">pair2</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pair1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pair2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="cm"> * OrderedPair(key=PI, value=3.14)
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="cm"> * OrderedPair(key=1, value=true)
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div><h2 id="类型擦除">类型擦除</h2>
+<p>Java 泛型是通过类型擦除实现的。在编译时，所有泛型类型信息都会被擦除：</p>
+<ol>
+<li>如果泛型类型没有边界（如 <code>&lt;T&gt;</code>），则所有的 <code>T</code> 都会被替换为 <code>Object</code></li>
+<li>如果泛型类型有边界（如 <code>&lt;T extends Comparable&lt;T&gt;&gt;</code>），则所有的 <code>T</code> 都会被替换为 <code>Comparable</code></li>
+</ol>
+<p>以 <code>OrderedPair</code> 中的例子来说，当通过 <code>Pair&lt;String, Double&gt; pair1 = new OrderedPair&lt;&gt;(&quot;PI&quot;, 3.14);</code> 创建 <code>pair1</code> 之后，<code>pair1</code> 中的所有 <code>K</code> 都会变为 <code>String</code> 类型，所有 <code>V</code> 都会变为 <code>Double</code> 类型。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Constructor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.entities.Box</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">        </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&#34;GDN&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">boxClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringBox</span><span class="p">.</span><span class="na">getClass</span><span class="p">();</span><span class="w"> </span><span class="c1">// 获取 stringBox 的运行时类型</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">            </span><span class="c1">// stringBox 中已经发生类型擦除，其含参构造方法的参数被指定为了 Object 类型</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">            </span><span class="n">Constructor</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">boxConstructor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boxClass</span><span class="p">.</span><span class="na">getConstructor</span><span class="p">(</span><span class="n">Object</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">boxConstructor</span><span class="p">.</span><span class="na">getParameterTypes</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NoSuchMethodException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="cm"> * [class java.lang.Object]
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div><div class="notice info" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            
+        </span>重要</p><p><strong>泛型的限制</strong>：</p>
+<ol>
+<li>不能实例化泛型类型：不能使用 <code>new T()</code> 这样的语法</li>
+<li>不能创建泛型数组：不能声明 <code>T[] array = new T[10]</code></li>
+<li>静态成员不能使用类的泛型类型参数：静态方法和字段属于类，而不是实例</li>
+<li>不能使用基本数据类型作为泛型类型参数：必须使用包装类（如 <code>Integer</code> 而不是 <code>int</code>）</li>
+<li>不能捕获泛型类型的异常：<code>catch</code> 块不能使用泛型类型参数</li>
+</ol></div>
+
+
+    </div>
+
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -927,9 +1204,8 @@ src='https://plausible.io/js/plausible.js'>
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
