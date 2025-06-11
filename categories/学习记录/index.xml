@@ -6,7 +6,23 @@
     <description>Recent content in 学习记录 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 泛型</title>
+      <link>https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/</guid>
+      <description>
+        
+          
+            本文详细介绍了 Java 反射机制的基本原理、常用 API 及其实际用法，包括 Class、Field、Method、Constructor 的动态操作与示例。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Python 一句话代码技巧（三）</title>
       <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>

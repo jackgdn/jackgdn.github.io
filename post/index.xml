@@ -6,7 +6,23 @@
     <description>Recent content in Posts on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 泛型</title>
+      <link>https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/</guid>
+      <description>
+        
+          
+            本文详细介绍了 Java 反射机制的基本原理、常用 API 及其实际用法，包括 Class、Field、Method、Constructor 的动态操作与示例。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>ROS2 学习记录（三）——ROS2 参数服务器与动作通信</title>
       <link>https://jackgdn.github.io/post/bundle-ros/ros2-param&#43;action/</link>
