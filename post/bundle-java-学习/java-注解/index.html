@@ -4,10 +4,12 @@
   lang="zh-cn"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>标签  |  &lt;jack-gdn/&gt;</title>
+<title>Java 注解  |  &lt;jack-gdn/&gt;</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,25 +24,22 @@ src='https://plausible.io/js/plausible.js'>
 
 <meta property="og:locale" content="zh-cn" />
 
-<meta property="og:locale:alternate" content="en" />
-
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Java 注解（Annotation）在 Java 5 中引入，用于向程序中添加元数据信息。例如 @Override 就是一个常用的注解，这个注解用于告诉编译器当前方法重写了父类中的方法；lombok.Data 中的 @Data 注解则会自动向类中添加 Getter、Setter …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Tags" />
+<meta name="twitter:title" content="Java 注解" />
 <meta name="twitter:image" content="https://jackgdn.github.io/images/thumbnail.png"/>
-<meta property="og:url" content="https://jackgdn.github.io/tags/" />
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%A8%E8%A7%A3/" />
+<meta property="og:title" content="Java 注解" />
+<meta property="og:description" content="Java 注解（Annotation）在 Java 5 中引入，用于向程序中添加元数据信息。例如 @Override 就是一个常用的注解，这个注解用于告诉编译器当前方法重写了父类中的方法；lombok.Data 中的 @Data 注解则会自动向类中添加 Getter、Setter …" />
 <meta property="og:image" content="https://jackgdn.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://jackgdn.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://jackgdn.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://jackgdn.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://jackgdn.github.io/tags/">
-<link rel="alternate" type="application/rss+xml" href="https://jackgdn.github.io/tags/index.xml" title="<jack-gdn/>" />
+<link rel="canonical" href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%A8%E8%A7%A3/">
 
 
 
@@ -144,19 +143,10 @@ src='https://plausible.io/js/plausible.js'>
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/wp/" title="WP">WP</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Java 注解</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -164,12 +154,14 @@ src='https://plausible.io/js/plausible.js'>
 </svg>
 </span>
     <span class="post_date">
-      2024-03-14</span>
-    <span class="post_time"> · 0 分钟阅读</span>
+      2025-06-15</span>
+    <span class="post_time"> · 3 分钟阅读</span><span>&nbsp;· <a href='https://jackgdn.github.io/tags/java/' title="Java" class="post_tag button button_translucent">Java
+        </a>
+    </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     复制链接:
-    <a href="https://jackgdn.github.io/tags/wp/" title="Copy Link" class="link link_yank">
+    <a href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E6%B3%A8%E8%A7%A3/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -180,360 +172,354 @@ src='https://plausible.io/js/plausible.js'>
   </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/wp/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
+      <div class="post_toc">
+        <h2>文章目录</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#java-的内置注解">Java 的内置注解</a></li>
+    <li><a href="#自定义注解">自定义注解</a>
+      <ul>
+        <li><a href="#元注解">元注解</a></li>
+        <li><a href="#定义注解">定义注解</a></li>
+        <li><a href="#注解处理">注解处理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
+    
+    <div class="post_body"><p>Java 注解（Annotation）在 Java 5 中引入，用于向程序中添加元数据信息。例如 <code>@Override</code> 就是一个常用的注解，这个注解用于告诉编译器当前方法重写了父类中的方法；<code>lombok.Data</code> 中的 <code>@Data</code> 注解则会自动向类中添加 Getter、Setter 方法和 <code>toString</code>、<code>hashCode</code>、<code>equals</code> 等方法。注解为代码提供额外信息，并且通常不会影响程序执行逻辑。</p>
+<h2 id="java-的内置注解">Java 的内置注解</h2>
+<ol>
+<li><code>@Override</code></li>
+</ol>
+<p><code>@Override</code> 注解用于告诉编译器，当前方法重写了父类中的方法。如果没有重写或者方法签名与父类中不同，编译器则会报错。</p>
+<ol start="2">
+<li><code>@Deprecated</code></li>
+</ol>
+<p><code>@Deprecated</code> 注解可以用于修饰构造方法、字段、局部变量、方法、包、模块、方法参数、类、接口、注解和枚举类型，该注解用于标记程序元素已经过时。虽然被标记的程序元素仍可使用，但是不推荐继续使。调用被标记为  <code>@Deprecated</code> 的程序元素时，编译器会发出警告，部分 IDE 会使用删除线标记。</p>
+<ol start="3">
+<li><code>@SuppressWarnings</code></li>
+</ol>
+<p><code>@SuppressWarnings</code> 注解用于抑制编译器生成的特定警告，但不会改变代码行为。该注解可以用于修饰类、接口、注解、枚举、字段、方法、参数、构造方法和局部变量。例如在 <a href="https://jackgdn.github.io/post/bundle-java-%E5%AD%A6%E4%B9%A0/java-%E5%8F%8D%E5%B0%84/">Java 反射</a>中使用的 <code>Person</code> 类，由于其中的 <code>addAge</code> 方法未被使用，因此编译器会发出警告 &quot;The method addAge(int) from the type Person is never used locally&quot;，如果我在方法前加入 <code>@SuppressWarnings(&quot;unused&quot;)</code> 注解，编译器则会停止对该方法发出警告。</p>
+<p>除了 <code>&quot;unused&quot;</code> 之外，还有其他常见的可抑制警告类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">警告类型</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&quot;unused&quot;</code></td>
+<td style="text-align:center">抑制未使用的变量或方法的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;unchecked&quot;</code></td>
+<td style="text-align:center">抑制未经检查的类型转换警告（泛型相关）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;rawtypes&quot;</code></td>
+<td style="text-align:center">抑制使用原始类型（不带泛型）的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;deprecation&quot;</code></td>
+<td style="text-align:center">抑制使用已弃用方法/类的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;serial&quot;</code></td>
+<td style="text-align:center">抑制可序列化类缺少 <code>serialVersionUID</code> 的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;fallthrough&quot;</code></td>
+<td style="text-align:center">抑制 <code>switch</code> 语句中 <code>case</code> 穿透的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;finally&quot;</code></td>
+<td style="text-align:center">抑制 <code>finally</code> 块无法正常完成的警告</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&quot;all&quot;</code></td>
+<td style="text-align:center">抑制所有警告（慎用）</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li><code>@SafeVarargs</code>（JDK 7 引入）</li>
+</ol>
+<p><code>@SafeVarargs</code> 注解用于向解释器声明<strong>一个带有泛型可变参数的方法或构造器是安全的</strong>，从而抑制相关的警告，相当于对特定的警告使用 <code>@SuppressWarnings(&quot;unchecked&quot;)</code> 注解。</p>
+<p>例如对于下面的方法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">unsafeOperation</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lists</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="w">    </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lists</span><span class="p">;</span><span class="w"> </span><span class="c1">// 合法但危险</span><span class="w">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="w">    </span><span class="n">array</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// 堆污染</span><span class="w">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lists</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 运行时 ClassCastExceptio</span><span class="w">
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 这行代码永远不会被执行，因为上面的代码会抛出异常</span><span class="w">
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>解释器会对这段代码发出关于类型安全的警告，使用 <code>@SafeVarargs</code> 注解可以抑制相应警告。</p>
+<ol start="5">
+<li><code>@FunctionalInterface</code>（JDK 8 引入）</li>
+</ol>
+<p><code>@FunctionalInterface</code> 用于声明一种接口为函数式接口，即接口中<strong>有且只有一个抽象方法</strong>，但可以有任意多个从 <code>Object</code> 中继承的抽象方法。函数式接口可以被隐式地转换为 Lambda 表达式，如下面的代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.interfaces.Validator</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">        </span><span class="n">Validator</span><span class="w"> </span><span class="n">lengthValidator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">isEmpty</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">        </span><span class="n">Validator</span><span class="w"> </span><span class="n">symbolValidator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;@&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="n">Validator</span><span class="w"> </span><span class="n">emailValidator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lengthValidator</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">symbolValidator</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">emailValidator</span><span class="p">.</span><span class="na">isValid</span><span class="p">(</span><span class="s">&#34;li_zhong_yao@foxmail.com&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">emailValidator</span><span class="p">.</span><span class="na">isValid</span><span class="p">(</span><span class="s">&#34;jackgdn.github.io&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="cm"> * true
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="cm"> * false
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div><h2 id="自定义注解">自定义注解</h2>
+<h3 id="元注解">元注解</h3>
+<p>元注解是用于修饰注解的注解。Java 中有五种元注解，分别是 <code>@Target</code>、<code>@Retention</code>、<code>@Documented</code>、<code>@Inherited</code> 和 <code>Repeatable</code>。</p>
+<ol>
+<li><code>@Target</code></li>
+</ol>
+<p><code>@Target</code> 注解用于标记一个注解的适用代码元素，其参数为 <code>ElementType</code> 的枚举类型，其中包含如下类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>ElementType.TYPE</code></td>
+<td style="text-align:center">类、接口（包括注解接口）、枚举或记录（<code>record</code>）声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.FIELD</code></td>
+<td style="text-align:center">字段声明（包括枚举常量）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.METHOD</code></td>
+<td style="text-align:center">方法声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.PARAMETER</code></td>
+<td style="text-align:center">形式参数声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.CONSTRUCTOR</code></td>
+<td style="text-align:center">构造函数声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.LOCAL_VARIABLE</code></td>
+<td style="text-align:center">局部变量声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.ANNOTATION_TYPE</code></td>
+<td style="text-align:center">注解接口声明（以前称为注解类型）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.PACKAGE</code></td>
+<td style="text-align:center">包声明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.TYPE_PARAMETER</code></td>
+<td style="text-align:center">类型参数声明（如泛型类型的<code>&lt;T&gt;</code>）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.TYPE_USE</code></td>
+<td style="text-align:center">任何类型的使用（如强制类型转换、泛型类型参数、异常声明等）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.MODULE</code></td>
+<td style="text-align:center">模块声明（Java 9+ 模块化系统）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ElementType.RECORD_COMPONENT</code></td>
+<td style="text-align:center">记录（<code>record</code>）组件（相当于自动生成的字段和访问器）</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><code>@Retention</code></li>
+</ol>
+<p><code>@Retention</code> 用于标记注解的生命周期，其参数是 <code>RetentionPolicy</code> 的枚举类型，其中包含如下类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>RetentionPolicy.SOURCE</code></td>
+<td style="text-align:center">注解仅在源码中保留，编译时丢弃</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>RetentionPolicy.CLASS</code></td>
+<td style="text-align:center">注解会在字节码中保留，运行时丢弃（默认保留策略）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>RetentionPolicy.RUNTIME</code></td>
+<td style="text-align:center">当程序运行时，JVM 仍会保留注解</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><code>@Documented</code></li>
+</ol>
+<p>使用 <code>@Documented</code> 修饰的注解会被包含到生成的 Javadoc 中。</p>
+<ol start="4">
+<li><code>@Inherited</code></li>
+</ol>
+<p>使用 <code>@Inherited</code> 注解标记的注解会继承父类的注解。</p>
+<ol start="5">
+<li><code>@Repeatable</code></li>
+</ol>
+<p>使用 <code>@Repeatable</code> 注解修饰的注解可以在同一代码元素中重复使用。</p>
+<h3 id="定义注解">定义注解</h3>
+<p>注解可以通过 <code>@interface</code> 关键字定义：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.annotations</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.ElementType</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.Retention</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.RetentionPolicy</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.Target</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w"></span><span class="nd">@Target</span><span class="p">({</span><span class="w"> </span><span class="n">ElementType</span><span class="p">.</span><span class="na">FIELD</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="p">.</span><span class="na">PARAMETER</span><span class="w"> </span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w"></span><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">ValidRange</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">min</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">100</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>该 <code>@ValidRange</code> 注解可以用于标记字段和参数，其保留策略为运行时保留策略。注解中定义了两个整形值，其中 <code>min</code> 的默认值为 0，<code>max</code> 的默认值为 100。</p>
+<p>注解中可以包含以下类型的元素：</p>
+<ul>
+<li>基本类型</li>
+<li><code>String</code></li>
+<li><code>Class</code></li>
+<li><code>enum</code></li>
+<li>注解</li>
+<li>以上类型的数组</li>
+</ul>
+<h3 id="注解处理">注解处理</h3>
+<p>注解本身只是标记，因此在定义并使用注解后，我们需要使用注解处理逻辑并且手动调用。一个常用处理注解的方法是利用反射 API。</p>
+<p>我们首先修改 <code>Person</code> 类：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.entities</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Data</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.annotations.ValidRange</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="nd">@ValidRange</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Gender</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Gender</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">        </span><span class="n">MALE</span><span class="p">,</span><span class="w"> </span><span class="n">FEMALE</span><span class="p">,</span><span class="w"> </span><span class="n">UNKNOWN</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Unknown&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gender</span><span class="p">.</span><span class="na">UNKNOWN</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">Gender</span><span class="w"> </span><span class="n">gender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="w">    </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&#34;unused&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">addAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>修改后的 <code>Person</code> 类的 <code>age</code> 字段使用 <code>ValidRange</code> 注解修饰，这要求 <code>age</code> 的范围只能在 $[0, 100]$ 之间。</p>
+<p>随后定义注解处理逻辑：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn.utils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Field</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ValidRangeProcessor</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">validateRange</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">getClass</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">        </span><span class="c1">// 便利所有字段</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Field</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredFields</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">            </span><span class="c1">// 判断是否有 ValidRange 注解</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">field</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">com</span><span class="p">.</span><span class="na">jackgdn</span><span class="p">.</span><span class="na">annotations</span><span class="p">.</span><span class="na">ValidRange</span><span class="p">.</span><span class="na">class</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">                </span><span class="n">com</span><span class="p">.</span><span class="na">jackgdn</span><span class="p">.</span><span class="na">annotations</span><span class="p">.</span><span class="na">ValidRange</span><span class="w"> </span><span class="n">range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">field</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">                        </span><span class="p">.</span><span class="na">getAnnotation</span><span class="p">(</span><span class="n">com</span><span class="p">.</span><span class="na">jackgdn</span><span class="p">.</span><span class="na">annotations</span><span class="p">.</span><span class="na">ValidRange</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">                </span><span class="n">field</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// 允许访问私有字段</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">field</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">                    </span><span class="c1">// 校验范围</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">range</span><span class="p">.</span><span class="na">min</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">range</span><span class="p">.</span><span class="na">max</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalAccessException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">                    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>编写主类：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">com.jackgdn</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.entities.Person</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.jackgdn.utils.ValidRangeProcessor</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">jack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&#34;Jack&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">120</span><span class="p">,</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="na">Gender</span><span class="p">.</span><span class="na">MALE</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ValidRangeProcessor</span><span class="p">.</span><span class="na">validateRange</span><span class="p">(</span><span class="n">jack</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">            </span><span class="n">jack</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">jack</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">jane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&#34;Jane&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">20</span><span class="p">,</span><span class="w"> </span><span class="n">Person</span><span class="p">.</span><span class="na">Gender</span><span class="p">.</span><span class="na">FEMALE</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ValidRangeProcessor</span><span class="p">.</span><span class="na">validateRange</span><span class="p">(</span><span class="n">jane</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">            </span><span class="n">jane</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">jane</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="cm"> * output:
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="cm"> * 0
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="cm"> * 20
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span></code></pre></div>
     </div>
-  </li>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/forensics/" title="Forensics">Forensics</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-10</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/forensics/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
 
-    </a>
-  </div>
-  </span>
-  </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/forensics/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/misc/" title="MISC">MISC</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-10</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/misc/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/misc/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/unicode/" title="Unicode">Unicode</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-06</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/unicode/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/unicode/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/" title="编码">编码</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-03-06</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/%E7%BC%96%E7%A0%81/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/pwn/" title="Pwn">Pwn</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-02-14</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/pwn/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/pwn/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/c%23/" title="C#">C#</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-02-13</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/c%23/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/c%23/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://jackgdn.github.io/tags/web/" title="Web">Web</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      2024-02-08</span>
-    <span class="post_time"> · 0 分钟阅读</span>
-    <span class="page_only">&nbsp;·
-  <div class="post_share">
-    复制链接:
-    <a href="https://jackgdn.github.io/tags/web/" title="Copy Link" class="link link_yank">
-      <svg class="icon">
-  <title>copy</title>
-  <use xlink:href="#copy"></use>
-</svg>
-
-    </a>
-  </div>
-  </span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://jackgdn.github.io/tags/web/" title="阅读更多" class="excerpt_more button">阅读更多</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-      <li>
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/tags/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/7/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 8" class="page-link" role="button">8</a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-      </li>
-    </ul>
-  </div>
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='搜索内容...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -1201,9 +1187,8 @@ src='https://plausible.io/js/plausible.js'>
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
