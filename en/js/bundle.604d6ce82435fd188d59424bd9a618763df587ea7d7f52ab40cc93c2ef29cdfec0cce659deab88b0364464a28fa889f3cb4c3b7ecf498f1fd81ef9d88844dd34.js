@@ -10,7 +10,7 @@ const imageAltClass = 'img_alt';
 
 
 const defaultSiteLanguage = 'zh-cn';
-const baseURL = 'https://jackgdn.github.io/';
+const baseURL = 'http://localhost:1313/';
 const searchFieldClass = '.search_field';
 const searchClass = '.search';
 const goBackClass = 'button_back';
@@ -1091,15 +1091,6 @@ window.addEventListener(pageHasLoaded, fileClosure());
 
 ;
 // add custom js in this file
-function checkReferer() {
-    var referer = document.referrer;
-    var sourceUrl = 'https://edwardgaming.github.io/link/';
-    console.log(referer);
-    if (referer.startsWith(sourceUrl)) {
-        window.location.href = 'https://edwardgaming.github.io/link/';
-    }
-}
-window.onload = checkReferer;
 
 // vim key bindings
 let gPressCount = 0;

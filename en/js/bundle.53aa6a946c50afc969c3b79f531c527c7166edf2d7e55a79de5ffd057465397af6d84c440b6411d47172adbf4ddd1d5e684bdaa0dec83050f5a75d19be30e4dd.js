@@ -1091,14 +1091,6 @@ window.addEventListener(pageHasLoaded, fileClosure());
 
 ;
 // add custom js in this file
-function checkReferer() {
-    var referer = document.referrer;
-    var sourceUrl = 'https://edwardgaming.github.io/link/';
-    if (referer && referer.startsWith(sourceUrl)) {
-        window.location.href = sourceUrl;
-    }
-}
-window.onload = checkReferer;
 
 // vim key bindings
 let gPressCount = 0;

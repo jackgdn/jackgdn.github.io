@@ -17,11 +17,11 @@ const goBackClass = 'button_back';
 const lineClass = '.line';
 
 // defined in i18n / translation files
-const quickLinks = 'Results';
-const searchResultsLabel = 'Search Results';
-const shortSearchQuery = 'Query is too short'
-const typeToSearch = 'Type to search';
-const noMatchesFound = 'No results found';
+const quickLinks = '搜索到的结果';
+const searchResultsLabel = '搜索到的结果';
+const shortSearchQuery = '搜索字符太短'
+const typeToSearch = '请输入内容查找';
+const noMatchesFound = '未找到结果';
 
 ;
 // global variables
@@ -1091,15 +1091,6 @@ window.addEventListener(pageHasLoaded, fileClosure());
 
 ;
 // add custom js in this file
-function checkReferer() {
-    var referer = document.referrer;
-    var sourceUrl = 'https://edwardgaming.github.io/link/';
-    console.log(referer);
-    if (referer.startsWith(sourceUrl)) {
-        window.location.href = 'https://edwardgaming.github.io/link/';
-    }
-}
-window.onload = checkReferer;
 
 // vim key bindings
 let gPressCount = 0;
