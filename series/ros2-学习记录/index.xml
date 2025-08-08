@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ROS2 学习记录 on &lt;jack-gdn/&gt;</title>
-    <link>https://jackgdn.github.io/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+    <link>http://localhost:1313/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in ROS2 学习记录 on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/ros2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ROS2 学习记录（三）——ROS2 参数服务器与动作通信</title>
-      <link>https://jackgdn.github.io/post/bundle-ros/ros2-param&#43;action/</link>
+      <link>http://localhost:1313/post/bundle-ros/ros2-param&#43;action/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-param&#43;action/</guid>
+      <guid>http://localhost:1313/post/bundle-ros/ros2-param&#43;action/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>ROS2 学习记录（二）——ROS2 自定义消息与服务，编写 ROS2 中的 launch 文件</title>
-      <link>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</link>
+      <link>http://localhost:1313/post/bundle-ros/ros2-custom-interfaces/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</guid>
+      <guid>http://localhost:1313/post/bundle-ros/ros2-custom-interfaces/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>ROS2 学习记录（一）——ROS2 的话题通信与服务通信</title>
-      <link>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</link>
+      <link>http://localhost:1313/post/bundle-ros/ros2-comm/</link>
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://jackgdn.github.io/post/bundle-ros/ros2-comm/</guid>
+      <guid>http://localhost:1313/post/bundle-ros/ros2-comm/</guid>
       <description>
         
           
