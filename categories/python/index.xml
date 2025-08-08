@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on &lt;jack-gdn/&gt;</title>
-    <link>http://localhost:1313/categories/python/</link>
+    <link>https://jackgdn.github.io/categories/python/</link>
     <description>Recent content in Python on &lt;jack-gdn/&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jackgdn.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 一句话代码技巧（三）</title>
-      <link>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
+      <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-3/</guid>
       <description>
         
           
@@ -25,10 +25,10 @@
     
     <item>
       <title>Python 一句话代码技巧（二）</title>
-      <link>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
+      <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-2/</guid>
       <description>
         
           
@@ -41,10 +41,10 @@
     
     <item>
       <title>Python 一句话代码技巧（一）</title>
-      <link>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
+      <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</link>
       <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%A3%E7%A0%81-pt-1/</guid>
       <description>
         
           
@@ -57,10 +57,10 @@
     
     <item>
       <title>Python 中函数的参数</title>
-      <link>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</link>
+      <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/args-and-kwargs-in-python/</guid>
       <description>
         
           
@@ -73,10 +73,10 @@
     
     <item>
       <title>Python 课程设计项目报告</title>
-      <link>http://localhost:1313/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
+      <link>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>https://jackgdn.github.io/post/python-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
       <description>
         
           
@@ -89,10 +89,10 @@
     
     <item>
       <title>Python 内存相关学习记录</title>
-      <link>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <link>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://jackgdn.github.io/post/bundle-python-%E5%AD%A6%E4%B9%A0/python-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
       <description>
         
           
