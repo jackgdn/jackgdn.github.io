@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "D:/ProgramData/Github Pages/jackgdn",
+	"sourceRoot": "D:/ProgramData/codebase/Github Pages/jackgdn",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",

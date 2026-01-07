@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on &lt;jack-gdn/&gt;</title>
+    <link>http://localhost:1313/categories/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on &lt;jack-gdn/&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 面向对象编程</title>
+      <link>http://localhost:1313/post/bundle-c&#43;&#43;-%E5%AD%A6%E4%B9%A0/oop/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/bundle-c&#43;&#43;-%E5%AD%A6%E4%B9%A0/oop/</guid>
+      <description>
+        
+          
+            最开始的开始 首先创建一个头文件并写一个最简单的 Logger 类：
+1// Logger.h 2#pragma once 3 4#include&amp;lt;iostream&amp;gt; 5 6class Logger { 7private: 8 int _log_level = 1; 9 10public: 11 enum levels : int { 12 LOG_LEVEL_INFO = 1, 13 LOG_LEVEL_WARN = 2, 14 LOG_LEVEL_ERROR = 3 15 }; 16 17 void set_level(int level) { 18 _log_level = level; 19 } 20 21 void info(const char* message) { 22 if (_log_level &amp;lt;= LOG_LEVEL_INFO) { 23 std::cout &amp;lt;&amp;lt; &amp;#34;\033[32m[INFO]: &amp;#34; &amp;lt;&amp;lt; message &amp;lt;&amp;lt; &amp;#34;\033[0m&amp;#34; &amp;lt;&amp;lt; std::endl; 24 } 25 } 26 27 void warn(const char* message) { 28 if (_log_level &amp;lt;= LOG_LEVEL_WARN) { 29 std::cout &amp;lt;&amp;lt; &amp;#34;\033[33m[WARN]: &amp;#34; &amp;lt;&amp;lt; message &amp;lt;&amp;lt; &amp;#34;\033[0m&amp;#34; &amp;lt;&amp;lt; std::endl; 30 } 31 } 32 33 void error(const char* message) { 34 if (_log_level &amp;lt;= LOG_LEVEL_ERROR) { 35 std::cout &amp;lt;&amp;lt; &amp;#34;\033[31m[ERROR]: &amp;#34; &amp;lt;&amp;lt; message &amp;lt;&amp;lt; &amp;#34;\033[0m&amp;#34; &amp;lt;&amp;lt; std::endl; 36 } 37 } 38 39 const int get_level() const { 40 return _log_level; 41 } 42 43 const char* get_level_name() const { 44 switch (_log_level) { 45 case LOG_LEVEL_INFO: return &amp;#34;INFO&amp;#34;; 46 case LOG_LEVEL_WARN: return &amp;#34;WARN&amp;#34;; 47 case LOG_LEVEL_ERROR: return &amp;#34;ERROR&amp;#34;; 48 default: return &amp;#34;UNDEFINED&amp;#34;; 49 } 50 } 51 52}; 以及包含主函数的 main.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

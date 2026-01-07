@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackgdn.github.io/</loc>
-    <lastmod>2025-08-07T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,54 @@
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/"
                 />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/kotlin/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/post/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/series/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/series/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/tags/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://jackgdn.github.io/series/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/categories/</loc>
     <lastmod>2025-08-07T00:00:00+00:00</lastmod>
@@ -26,32 +74,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/categories/"
-                />
-  </url><url>
-    <loc>https://jackgdn.github.io/post/</loc>
-    <lastmod>2025-08-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/post/"
-                />
-  </url><url>
-    <loc>https://jackgdn.github.io/tags/</loc>
-    <lastmod>2025-08-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/tags/"
                 />
   </url><url>
     <loc>https://jackgdn.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
@@ -92,19 +114,6 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros2-param&#43;action/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jackgdn.github.io/series/</loc>
-    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/series/"
-                />
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
@@ -700,6 +709,8 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-wp/%E8%BF%91%E6%9C%9F%E8%A7%A3%E9%A2%98_20231226/</loc>
     <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/post/bundle-c&#43;&#43;-%E5%AD%A6%E4%B9%A0/oop/</loc>
   </url><url>
     <loc>https://jackgdn.github.io/search/</loc>
     <xhtml:link
