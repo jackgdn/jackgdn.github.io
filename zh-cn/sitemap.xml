@@ -31,19 +31,6 @@
                 href="https://jackgdn.github.io/post/"
                 />
   </url><url>
-    <loc>https://jackgdn.github.io/series/</loc>
-    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jackgdn.github.io/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jackgdn.github.io/series/"
-                />
-  </url><url>
     <loc>https://jackgdn.github.io/tags/</loc>
     <lastmod>2026-01-06T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -56,9 +43,6 @@
                 hreflang="zh-cn"
                 href="https://jackgdn.github.io/tags/"
                 />
-  </url><url>
-    <loc>https://jackgdn.github.io/series/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jackgdn.github.io/post/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2026-01-06T00:00:00+00:00</lastmod>
@@ -114,6 +98,19 @@
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros2-param&#43;action/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jackgdn.github.io/series/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jackgdn.github.io/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jackgdn.github.io/series/"
+                />
   </url><url>
     <loc>https://jackgdn.github.io/post/bundle-ros/ros2-custom-interfaces/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
